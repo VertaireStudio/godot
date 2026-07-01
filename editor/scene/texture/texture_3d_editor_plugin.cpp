@@ -129,11 +129,11 @@ void Texture3DEditor::_draw_outline() {
 
 void Texture3DEditor::_texture_rect_update_area() {
 	Size2 size = get_size();
-	int tex_width = texture->get_width() * size.height / texture->get_height();
-	int tex_height = size.height;
+	int tex_width = texture->get_width() * size.y / texture->get_height();
+	int tex_height = size.y;
 
-	if (tex_width > size.width) {
-		tex_width = size.width;
+	if (tex_width > size.x) {
+		tex_width = size.x;
 		tex_height = texture->get_height() * tex_width / texture->get_width();
 	}
 
@@ -145,8 +145,8 @@ void Texture3DEditor::_texture_rect_update_area() {
 		tex_width = 1;
 	}
 
-	int ofs_x = (size.width - tex_width) / 2;
-	int ofs_y = (size.height - tex_height) / 2;
+	int ofs_x = (size.x - tex_width) / 2;
+	int ofs_y = (size.y - tex_height) / 2;
 
 	texture_rect->set_position(Vector2(ofs_x, ofs_y - Math::round(EDSCALE)));
 	texture_rect->set_size(Vector2(tex_width, tex_height));

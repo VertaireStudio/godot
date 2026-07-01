@@ -89,8 +89,8 @@ void Parallax2D::_camera_moved(const Transform2D &p_transform, const Point2 &p_s
 		if (get_viewport() && get_viewport()->is_snap_2d_transforms_to_pixel_enabled()) {
 			Size2 vps = get_viewport_rect().size;
 			Vector2 offset;
-			offset.x = ((int)vps.width % 2) ? 0.0 : 0.5;
-			offset.y = ((int)vps.height % 2) ? 0.0 : 0.5;
+			offset.x = ((int)vps.x % 2) ? 0.0 : 0.5;
+			offset.y = ((int)vps.y % 2) ? 0.0 : 0.5;
 			set_screen_offset((p_adj_screen_pos + offset).floor());
 		} else {
 			set_screen_offset(p_adj_screen_pos);

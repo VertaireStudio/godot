@@ -63,8 +63,8 @@ void ScalableContainer::_notification(int p_what) {
 	}
 
 	Size2 size = get_size() / EDSCALE;
-	size.width -= get_margin_size(SIDE_LEFT) + get_margin_size(SIDE_RIGHT);
-	size.height -= get_margin_size(SIDE_TOP) + get_margin_size(SIDE_BOTTOM);
+	size.x -= get_margin_size(SIDE_LEFT) + get_margin_size(SIDE_RIGHT);
+	size.y -= get_margin_size(SIDE_TOP) + get_margin_size(SIDE_BOTTOM);
 
 	for (Node *child : iterate_children()) {
 		Control *control = as_sortable_control(child);

@@ -495,8 +495,7 @@ Comment: OK Lab color space
 Copyright: 2021, Björn Ottosson
 License: Expat
 
-Files: thirdparty/misc/pcg.cpp
- thirdparty/misc/pcg.h
+Files: thirdparty/misc/pcg.h
 Comment: Minimal PCG32 implementation
 Copyright: 2014, M.E. O'Neill
 License: Apache-2.0

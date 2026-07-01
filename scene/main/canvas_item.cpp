@@ -926,7 +926,7 @@ void CanvasItem::draw_rect(const Rect2 &p_rect, const Color &p_color, bool p_fil
 		}
 
 		RenderingServer::get_singleton()->canvas_item_add_rect(canvas_item, rect, p_color, p_antialiased);
-	} else if (p_width >= rect.size.width || p_width >= rect.size.height) {
+	} else if (p_width >= rect.size.x || p_width >= rect.size.y) {
 		RenderingServer::get_singleton()->canvas_item_add_rect(canvas_item, rect.grow(0.5f * p_width), p_color, p_antialiased);
 	} else {
 		Vector<Vector2> points;

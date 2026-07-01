@@ -189,8 +189,8 @@ void EditorProfiler::_item_edited() {
 }
 
 void EditorProfiler::_update_plot() {
-	const int w = MAX(1, graph->get_size().width); // Clamp to 1 to prevent from crashing when profiler is autostarted.
-	const int h = MAX(1, graph->get_size().height);
+	const int w = MAX(1, graph->get_size().x); // Clamp to 1 to prevent from crashing when profiler is autostarted.
+	const int h = MAX(1, graph->get_size().y);
 	bool reset_texture = false;
 	const int desired_len = w * h * 4;
 
@@ -472,8 +472,8 @@ void EditorProfiler::_graph_tex_draw() {
 	if (seeking) {
 		int frame = cursor_metric_edit->get_value() - _get_frame_metric(0).frame_number;
 		frame = frame - _get_zoom_left_border() + 1;
-		int cur_x = (frame * graph->get_size().width * Math::exp(graph_zoom)) / frame_metrics.size();
-		cur_x = CLAMP(cur_x, 0, graph->get_size().width);
+		int cur_x = (frame * graph->get_size().x * Math::exp(graph_zoom)) / frame_metrics.size();
+		cur_x = CLAMP(cur_x, 0, graph->get_size().x);
 		graph->draw_line(Vector2(cur_x, 0), Vector2(cur_x, graph->get_size().y), theme_cache.seek_line_color);
 	}
 	if (hover_metric > -1) {
@@ -510,9 +510,9 @@ void EditorProfiler::_graph_tex_input(const Ref<InputEvent> &p_ev) {
 			(mb.is_valid() && button_idx == MouseButton::LEFT && mb->is_pressed()) ||
 			(mm.is_valid())) {
 		int x = me->get_position().x - 1;
-		hover_metric = x * frame_metrics.size() / graph->get_size().width;
+		hover_metric = x * frame_metrics.size() / graph->get_size().x;
 
-		x = x * frame_metrics.size() / graph->get_size().width;
+		x = x * frame_metrics.size() / graph->get_size().x;
 		x = x / Math::exp(graph_zoom) + _get_zoom_left_border();
 		x = CLAMP(x, 0, frame_metrics.size() - 1);
 
@@ -542,7 +542,7 @@ void EditorProfiler::_graph_tex_input(const Ref<InputEvent> &p_ev) {
 	if (graph_zoom > 0 && mm.is_valid() && (mm->get_button_mask().has_flag(MouseButtonMask::MIDDLE) || mm->get_button_mask().has_flag(MouseButtonMask::RIGHT))) {
 		// Panning.
 		const int max_profiles_shown = frame_metrics.size() / Math::exp(graph_zoom);
-		pan_accumulator += (float)mm->get_relative().x * max_profiles_shown / graph->get_size().width;
+		pan_accumulator += (float)mm->get_relative().x * max_profiles_shown / graph->get_size().x;
 
 		if (Math::abs(pan_accumulator) > 1) {
 			zoom_center = CLAMP(zoom_center - (int)pan_accumulator, max_profiles_shown / 2, frame_metrics.size() - max_profiles_shown / 2);
@@ -558,7 +558,7 @@ void EditorProfiler::_graph_tex_input(const Ref<InputEvent> &p_ev) {
 	} else if (button_idx == MouseButton::WHEEL_UP) {
 		if (graph_zoom == 0) {
 			zoom_center = me->get_position().x;
-			zoom_center = zoom_center * frame_metrics.size() / graph->get_size().width;
+			zoom_center = zoom_center * frame_metrics.size() / graph->get_size().x;
 		}
 		graph_zoom = MIN(0.05 + graph_zoom, 2);
 		_update_plot();

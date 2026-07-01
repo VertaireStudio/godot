@@ -224,9 +224,9 @@ Size2 PopupMenu::_get_item_icon_size(int p_idx) const {
 		max_width = item.icon_max_width;
 	}
 
-	if (max_width > 0 && icon_size.width > max_width) {
-		icon_size.height = icon_size.height * max_width / icon_size.width;
-		icon_size.width = max_width;
+	if (max_width > 0 && icon_size.x > max_width) {
+		icon_size.y = icon_size.y * max_width / icon_size.x;
+		icon_size.x = max_width;
 	}
 
 	return icon_size;
@@ -234,10 +234,10 @@ Size2 PopupMenu::_get_item_icon_size(int p_idx) const {
 
 Size2 PopupMenu::_get_contents_minimum_size() const {
 	Size2 minsize = theme_cache.panel_style->get_minimum_size();
-	minsize.width += scroll_container->get_v_scroll_bar()->get_size().width;
+	minsize.x += scroll_container->get_v_scroll_bar()->get_size().x;
 	// Take shadows into account.
-	minsize.width += panel->get_offset(SIDE_LEFT) - panel->get_offset(SIDE_RIGHT);
-	minsize.height += panel->get_offset(SIDE_TOP) - panel->get_offset(SIDE_BOTTOM);
+	minsize.x += panel->get_offset(SIDE_LEFT) - panel->get_offset(SIDE_RIGHT);
+	minsize.y += panel->get_offset(SIDE_TOP) - panel->get_offset(SIDE_BOTTOM);
 
 	real_t body_max_w = 0.0; // Indentation, text, and submenu arrow.
 	real_t icon_max_w = 0.0;
@@ -248,7 +248,7 @@ Size2 PopupMenu::_get_contents_minimum_size() const {
 	for (int i = 0; i < items.size(); i++) {
 		_shape_item(i);
 
-		icon_max_w = MAX(_get_item_icon_size(i).width, icon_max_w);
+		icon_max_w = MAX(_get_item_icon_size(i).x, icon_max_w);
 
 		if (items[i].checkable_type && !items[i].separator) {
 			has_check_gutter = true;
@@ -268,7 +268,7 @@ Size2 PopupMenu::_get_contents_minimum_size() const {
 		}
 		body_max_w = MAX(body_max_w, body_w);
 
-		minsize.height += _get_item_height(i) + theme_cache.v_separation;
+		minsize.y += _get_item_height(i) + theme_cache.v_separation;
 	}
 
 	body_max_w = theme_cache.item_start_padding + body_max_w + accel_max_w + theme_cache.item_end_padding;
@@ -287,20 +287,20 @@ Size2 PopupMenu::_get_contents_minimum_size() const {
 
 	if (search_bar->is_visible()) {
 		Size2 sb_min_size = search_bar->get_minimum_size();
-		minsize.width += MAX(body_max_w, sb_min_size.width);
-		minsize.height += sb_min_size.height + theme_cache.search_bar_separation;
+		minsize.x += MAX(body_max_w, sb_min_size.x);
+		minsize.y += sb_min_size.y + theme_cache.search_bar_separation;
 	} else {
-		minsize.width += body_max_w;
+		minsize.x += body_max_w;
 	}
 
 	if (is_inside_tree()) {
 		int height_limit = get_usable_parent_rect().size.height;
-		if (minsize.height > height_limit) {
-			minsize.height = height_limit;
+		if (minsize.y > height_limit) {
+			minsize.y = height_limit;
 		}
 	}
 
-	minsize.height = Math::ceil(minsize.height); // Ensures enough height at fractional content scales to prevent the v_scroll_bar from showing.
+	minsize.y = Math::ceil(minsize.y); // Ensures enough height at fractional content scales to prevent the v_scroll_bar from showing.
 	return minsize;
 }
 
@@ -308,19 +308,19 @@ int PopupMenu::_get_item_height(int p_idx) const {
 	ERR_FAIL_INDEX_V(p_idx, items.size(), 0);
 
 	Size2 icon_size = _get_item_icon_size(p_idx);
-	int icon_height = icon_size.height;
+	int icon_height = icon_size.y;
 	if (items[p_idx].checkable_type && !items[p_idx].separator) {
 		icon_height = MAX(icon_height, MAX(theme_cache.checked->get_height(), theme_cache.radio_checked->get_height()));
 	}
 
-	int text_height = items[p_idx].text_buf->get_size().height;
+	int text_height = items[p_idx].text_buf->get_size().y;
 	if (text_height == 0 && !items[p_idx].separator) {
 		text_height = theme_cache.font->get_height(theme_cache.font_size);
 	}
 
 	int separator_height = 0;
 	if (items[p_idx].separator) {
-		separator_height = MAX(theme_cache.separator_style->get_minimum_size().height, MAX(theme_cache.labeled_separator_left->get_minimum_size().height, theme_cache.labeled_separator_right->get_minimum_size().height));
+		separator_height = MAX(theme_cache.separator_style->get_minimum_size().y, MAX(theme_cache.labeled_separator_left->get_minimum_size().y, theme_cache.labeled_separator_right->get_minimum_size().y));
 	}
 
 	return MAX(separator_height, MAX(text_height, icon_height));
@@ -407,16 +407,16 @@ void PopupMenu::_activate_submenu(int p_over, bool p_by_keyboard) {
 
 	if (is_layout_rtl()) {
 		is_active_submenu_left = true;
-		submenu_pos.x = this_pos.x - submenu_size.width + panel_offset_end.x;
+		submenu_pos.x = this_pos.x - submenu_size.x + panel_offset_end.x;
 		if (submenu_pos.x < screen_rect.position.x) {
-			submenu_pos.x = this_pos.x + this_rect.size.width - panel_offset_start.x;
+			submenu_pos.x = this_pos.x + this_rect.size.x - panel_offset_start.x;
 			is_active_submenu_left = false;
 		}
 	} else {
 		is_active_submenu_left = false;
 		submenu_pos.x = this_pos.x + this_size.x + panel_offset_start.x;
-		if (submenu_pos.x + submenu_size.width > screen_rect.position.x + screen_rect.size.width) {
-			submenu_pos.x = this_pos.x - submenu_size.width + panel_offset_end.x;
+		if (submenu_pos.x + submenu_size.x > screen_rect.position.x + screen_rect.size.width) {
+			submenu_pos.x = this_pos.x - submenu_size.x + panel_offset_end.x;
 			is_active_submenu_left = true;
 		}
 	}
@@ -461,7 +461,7 @@ void PopupMenu::_activate_submenu(int p_over, bool p_by_keyboard) {
 	// Add an autohide area above the submenu item unless it's the top item.
 	// This avoids a narrow strip of area that can trigger the submenu to reload when reentering the parent item from the top.
 	const int y_to_item_top = item_top_y - panel_offset_start.y;
-	Rect2 top_rect = Rect2(this_rect.position.x, this_rect.position.y, this_size.width, y_to_item_top);
+	Rect2 top_rect = Rect2(this_rect.position.x, this_rect.position.y, this_size.x, y_to_item_top);
 	if (active_submenu_index != 0) {
 		submenu_popup->add_autohide_area(top_rect);
 	}
@@ -652,19 +652,19 @@ void PopupMenu::_input_from_window_internal(const Ref<InputEvent> &p_event) {
 	// Make the item area exclude shadows and the vertical margins and scrollbar.
 	Rect2 item_clickable_area = panel->get_global_rect();
 	if (scroll_container->get_v_scroll_bar()->is_visible_in_tree()) {
-		int scroll_width = scroll_container->get_v_scroll_bar()->get_size().width;
+		int scroll_width = scroll_container->get_v_scroll_bar()->get_size().x;
 		if (is_layout_rtl()) {
 			item_clickable_area.position.x += scroll_width;
-			item_clickable_area.size.width -= scroll_width;
+			item_clickable_area.size.x -= scroll_width;
 		}
-		item_clickable_area.size.width -= scroll_width;
+		item_clickable_area.size.x -= scroll_width;
 	}
 
 	float win_scale = get_content_scale_factor();
 	item_clickable_area.position.x += theme_cache.panel_style->get_margin(SIDE_LEFT);
 	item_clickable_area.position.y += theme_cache.panel_style->get_margin(SIDE_TOP);
 	item_clickable_area.position *= win_scale;
-	item_clickable_area.size.width -= theme_cache.panel_style->get_margin(SIDE_LEFT) + theme_cache.panel_style->get_margin(SIDE_RIGHT);
+	item_clickable_area.size.x -= theme_cache.panel_style->get_margin(SIDE_LEFT) + theme_cache.panel_style->get_margin(SIDE_RIGHT);
 	item_clickable_area.size.y -= theme_cache.panel_style->get_margin(SIDE_TOP) + theme_cache.panel_style->get_margin(SIDE_BOTTOM);
 	item_clickable_area.size *= win_scale;
 
@@ -678,7 +678,7 @@ void PopupMenu::_input_from_window_internal(const Ref<InputEvent> &p_event) {
 		if (button_idx == MouseButton::LEFT || initial_button_mask.has_flag(mouse_button_to_mask(button_idx))) {
 			if (b->is_pressed()) {
 				during_grabbed_click = false;
-				is_scrolling = is_layout_rtl() ? b->get_position().x < item_clickable_area.position.x - item_clickable_area.size.width : b->get_position().x > item_clickable_area.size.width + item_clickable_area.position.x;
+				is_scrolling = is_layout_rtl() ? b->get_position().x < item_clickable_area.position.x - item_clickable_area.size.x : b->get_position().x > item_clickable_area.size.x + item_clickable_area.position.x;
 
 				// Hide it if the shadows have been clicked.
 				if (get_flag(FLAG_POPUP)) {
@@ -895,7 +895,7 @@ void PopupMenu::_draw_items() {
 		submenu = theme_cache.submenu;
 	}
 
-	float display_width = control->get_size().width;
+	float display_width = control->get_size().x;
 
 	// Find the widest icon and whether any items have a checkbox, and store the offsets for each.
 	real_t icon_max_w = 0.0;
@@ -907,7 +907,7 @@ void PopupMenu::_draw_items() {
 			continue;
 		}
 
-		icon_max_w = MAX(_get_item_icon_size(i).width, icon_max_w);
+		icon_max_w = MAX(_get_item_icon_size(i).x, icon_max_w);
 
 		if (items[i].checkable_type) {
 			has_check_gutter = true;
@@ -951,26 +951,26 @@ void PopupMenu::_draw_items() {
 		item_ofs.x += items[i].indent * theme_cache.indent;
 		if (items[i].separator) {
 			if (!text.is_empty() || items[i].icon.is_valid()) {
-				int content_size = items[i].text_buf->get_size().width + theme_cache.h_separation * 2;
+				int content_size = items[i].text_buf->get_size().x + theme_cache.h_separation * 2;
 				if (items[i].icon.is_valid()) {
-					content_size += icon_size.width + theme_cache.h_separation;
+					content_size += icon_size.x + theme_cache.h_separation;
 				}
 
 				int content_center = display_width / 2;
 				int content_left = content_center - content_size / 2;
 				int content_right = content_center + content_size / 2;
 				if (content_left > item_ofs.x) {
-					int sep_h = theme_cache.labeled_separator_left->get_minimum_size().height;
+					int sep_h = theme_cache.labeled_separator_left->get_minimum_size().y;
 					int sep_ofs = Math::floor((h - sep_h) / 2.0);
 					theme_cache.labeled_separator_left->draw(ci, Rect2(item_ofs + Point2(0, sep_ofs), Size2(MAX(0, content_left - item_ofs.x), sep_h)));
 				}
 				if (content_right < display_width) {
-					int sep_h = theme_cache.labeled_separator_right->get_minimum_size().height;
+					int sep_h = theme_cache.labeled_separator_right->get_minimum_size().y;
 					int sep_ofs = Math::floor((h - sep_h) / 2.0);
 					theme_cache.labeled_separator_right->draw(ci, Rect2(Point2(content_right, item_ofs.y + sep_ofs), Size2(MAX(0, display_width - content_right), sep_h)));
 				}
 			} else {
-				int sep_h = theme_cache.separator_style->get_minimum_size().height;
+				int sep_h = theme_cache.separator_style->get_minimum_size().y;
 				int sep_ofs = Math::floor((h - sep_h) / 2.0);
 				theme_cache.separator_style->draw(ci, Rect2(item_ofs + Point2(0, sep_ofs), Size2(display_width, sep_h)));
 			}
@@ -988,32 +988,32 @@ void PopupMenu::_draw_items() {
 			int disabled = int(items[i].disabled) * 2;
 			Texture2D *icon = (items[i].checked ? check[items[i].checkable_type - 1 + disabled] : uncheck[items[i].checkable_type - 1 + disabled]).ptr();
 			if (rtl) {
-				icon->draw(ci, Size2(control->get_size().width - item_ofs.x - icon->get_width(), item_ofs.y) + Point2(0, Math::floor((h - icon->get_height()) / 2.0)), icon_color);
+				icon->draw(ci, Size2(control->get_size().x - item_ofs.x - icon->get_width(), item_ofs.y) + Point2(0, Math::floor((h - icon->get_height()) / 2.0)), icon_color);
 			} else {
 				icon->draw(ci, item_ofs + Point2(0, Math::floor((h - icon->get_height()) / 2.0)), icon_color);
 			}
 		}
 
-		int separator_ofs = (display_width - items[i].text_buf->get_size().width) / 2;
+		int separator_ofs = (display_width - items[i].text_buf->get_size().x) / 2;
 
 		// Icon
 		if (items[i].icon.is_valid()) {
-			const Point2 icon_offset = Point2(0, Math::floor((h - icon_size.height) / 2.0));
+			const Point2 icon_offset = Point2(0, Math::floor((h - icon_size.y) / 2.0));
 			Point2 icon_pos;
 
 			if (items[i].separator) {
-				separator_ofs -= (icon_size.width + theme_cache.h_separation) / 2;
+				separator_ofs -= (icon_size.x + theme_cache.h_separation) / 2;
 
 				if (rtl) {
-					icon_pos = Size2(control->get_size().width - item_ofs.x - separator_ofs - icon_size.width, item_ofs.y);
+					icon_pos = Size2(control->get_size().x - item_ofs.x - separator_ofs - icon_size.x, item_ofs.y);
 				} else {
 					icon_pos = item_ofs + Size2(separator_ofs, 0);
-					separator_ofs += icon_size.width + theme_cache.h_separation;
+					separator_ofs += icon_size.x + theme_cache.h_separation;
 				}
 			} else {
 				const real_t check_w = (gutter_compact || !has_check_gutter) ? 0 : (check_max_w + theme_cache.h_separation);
 				if (rtl) {
-					icon_pos = Size2(control->get_size().width - item_ofs.x - check_w - icon_size.width, item_ofs.y);
+					icon_pos = Size2(control->get_size().x - item_ofs.x - check_w - icon_size.x, item_ofs.y);
 				} else {
 					icon_pos = item_ofs + Size2(check_w, 0);
 				}
@@ -1053,7 +1053,7 @@ void PopupMenu::_draw_items() {
 				}
 			}
 			if (rtl) {
-				Vector2 text_pos = Size2(control->get_size().width - items[i].text_buf->get_size().width - item_ofs.x, item_ofs.y) + Point2(0, Math::floor((h - items[i].text_buf->get_size().y) / 2.0));
+				Vector2 text_pos = Size2(control->get_size().x - items[i].text_buf->get_size().x - item_ofs.x, item_ofs.y) + Point2(0, Math::floor((h - items[i].text_buf->get_size().y) / 2.0));
 				if (theme_cache.font_outline_size > 0 && theme_cache.font_outline_color.a > 0) {
 					items[i].text_buf->draw_outline(ci, text_pos, theme_cache.font_outline_size, theme_cache.font_outline_color);
 				}
@@ -1422,7 +1422,7 @@ void PopupMenu::_notification(int p_what) {
 			AccessibilityServer::get_singleton()->update_set_transform(accessibility_scroll_element, scroll_xform);
 			AccessibilityServer::get_singleton()->update_set_bounds(accessibility_scroll_element, Rect2(0, 0, get_size().x, scroll_container->get_v_scroll_bar()->get_max()));
 
-			float display_width = control->get_size().width;
+			float display_width = control->get_size().x;
 			Point2 ofs = scroll_container->get_global_position();
 
 			int item_index = 0;
@@ -2971,7 +2971,7 @@ void PopupMenu::scroll_to_item(int p_idx) {
 
 	// Calculate the position of the item relative to the visible area.
 	int item_y = items[p_idx]._ofs_cache;
-	int visible_height = scroll_container->get_size().height;
+	int visible_height = scroll_container->get_size().y;
 	int relative_y = item_y - scroll_container->get_v_scroll();
 
 	// If item is not fully visible, adjust scroll.
@@ -3718,13 +3718,13 @@ void PopupMenu::_pre_popup() {
 	if (is_wrapping_controls()) {
 		Size2 minsize = get_contents_minimum_size() * popup_scale;
 		Size2 maxsize = get_max_size();
-		if (maxsize.height > 0) {
-			minsize.height = MIN(minsize.height, maxsize.height);
+		if (maxsize.y > 0) {
+			minsize.y = MIN(minsize.y, maxsize.y);
 		}
-		if (maxsize.width > 0) {
-			minsize.width = MIN(minsize.width, maxsize.width);
+		if (maxsize.x > 0) {
+			minsize.x = MIN(minsize.x, maxsize.x);
 		}
-		minsize.height = Math::ceil(minsize.height); // Ensures enough height at fractional content scales to prevent the v_scroll_bar from showing.
+		minsize.y = Math::ceil(minsize.y); // Ensures enough height at fractional content scales to prevent the v_scroll_bar from showing.
 		set_min_size(minsize); // `height` is truncated here by the cast to Size2i for Window.min_size.
 		Size2i sz = get_size(); // Shrinkwraps to min size.
 		set_size(Vector2i(shrink_width ? 0 : sz.x, shrink_height ? 0 : sz.y));

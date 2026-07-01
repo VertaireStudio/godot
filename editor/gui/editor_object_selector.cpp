@@ -97,8 +97,8 @@ void EditorObjectSelector::_show_popup() {
 	sub_objects_menu->clear();
 
 	Rect2 rect = get_screen_rect();
-	rect.position.y += rect.size.height;
-	rect.size.height = 0;
+	rect.position.y += rect.size.y;
+	rect.size.y = 0;
 
 	sub_objects_menu->set_min_size(Size2(0, 0));
 	sub_objects_menu->popup(rect);

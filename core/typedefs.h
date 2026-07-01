@@ -53,6 +53,7 @@ static_assert(__cplusplus >= 201703L, "Minimum of C++17 required.");
 #include <cstring>
 #include <type_traits>
 #include <utility>
+#include <cmath>
 
 // IWYU pragma: end_exports
 

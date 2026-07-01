@@ -522,11 +522,11 @@ void ControlEditorPopupButton::toggled(bool p_pressed) {
 
 	Size2 size = get_size() * get_viewport()->get_canvas_transform().get_scale();
 
-	popup_panel->set_size(Size2(size.width, 0));
+	popup_panel->set_size(Size2(size.x, 0));
 	Point2 gp = get_screen_position();
 	gp.y += size.y;
 	if (is_layout_rtl()) {
-		gp.x += size.width - popup_panel->get_size().width;
+		gp.x += size.x - popup_panel->get_size().width;
 	}
 	popup_panel->set_position(gp);
 

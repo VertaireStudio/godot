@@ -69,10 +69,10 @@ Size2 EditorSpinSlider::get_minimum_size() const {
 
 	Size2 ms = sb->get_minimum_size();
 	Ref<Texture2D> updown = read_only ? theme_cache.updown_disabled_icon : theme_cache.updown_icon;
-	ms.width += updown->get_width();
+	ms.x += updown->get_width();
 
-	ms.height += font->get_height(font_size);
-	ms.height = MAX(ms.height, get_theme_constant(SNAME("inspector_property_height"), EditorStringName(Editor)));
+	ms.y += font->get_height(font_size);
+	ms.y = MAX(ms.y, get_theme_constant(SNAME("inspector_property_height"), EditorStringName(Editor)));
 
 	return ms;
 }
@@ -94,7 +94,7 @@ void EditorSpinSlider::gui_input(const Ref<InputEvent> &p_event) {
 			if (mb->is_pressed()) {
 				if (updown_offset != -1 && ((!is_layout_rtl() && mb->get_position().x > updown_offset) || (is_layout_rtl() && mb->get_position().x < updown_offset))) {
 					// Updown pressed.
-					if (mb->get_position().y < get_size().height / 2) {
+					if (mb->get_position().y < get_size().x / 2) {
 						set_value(get_value() + get_step());
 					} else {
 						set_value(get_value() - get_step());
@@ -358,12 +358,12 @@ void EditorSpinSlider::_draw_spin_slider() {
 	int sep_base = 4 * EDSCALE;
 	int sep = sep_base + sb->get_offset().x; //make it have the same margin on both sides, looks better
 
-	int label_width = font->get_string_size(label, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).width;
-	int number_width = size.width - sb->get_minimum_size().width - label_width - sep;
+	int label_width = font->get_string_size(label, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x;
+	int number_width = size.x - sb->get_minimum_size().x - label_width - sep;
 
 	String numstr = get_text_value();
 
-	int vofs = (size.height - font->get_height(font_size)) / 2 + font->get_ascent(font_size);
+	int vofs = (size.y - font->get_height(font_size)) / 2 + font->get_ascent(font_size);
 
 	Color fc = get_theme_color(read_only ? SNAME("font_uneditable_color") : SceneStringName(font_color), SNAME("LineEdit"));
 	Color lc = get_theme_color(read_only ? SNAME("read_only_label_color") : SNAME("label_color"));
@@ -371,9 +371,9 @@ void EditorSpinSlider::_draw_spin_slider() {
 	if (flat && !label.is_empty()) {
 		Ref<StyleBox> label_bg = get_theme_stylebox(SNAME("label_bg"), SNAME("EditorSpinSlider"));
 		if (rtl) {
-			draw_style_box(label_bg, Rect2(Vector2(size.width - (sb->get_offset().x * 2 + label_width), 0), Vector2(sb->get_offset().x * 2 + label_width, size.height)));
+			draw_style_box(label_bg, Rect2(Vector2(size.x - (sb->get_offset().x * 2 + label_width), 0), Vector2(sb->get_offset().x * 2 + label_width, size.y)));
 		} else {
-			draw_style_box(label_bg, Rect2(Vector2(), Vector2(sb->get_offset().x * 2 + label_width, size.height)));
+			draw_style_box(label_bg, Rect2(Vector2(), Vector2(sb->get_offset().x * 2 + label_width, size.y)));
 		}
 	}
 
@@ -383,7 +383,7 @@ void EditorSpinSlider::_draw_spin_slider() {
 	}
 
 	if (rtl) {
-		draw_string(font, Vector2(Math::round(size.width - sb->get_offset().x - label_width), vofs), label, HORIZONTAL_ALIGNMENT_RIGHT, -1, font_size, lc * Color(1, 1, 1, 0.5));
+		draw_string(font, Vector2(Math::round(size.x - sb->get_offset().x - label_width), vofs), label, HORIZONTAL_ALIGNMENT_RIGHT, -1, font_size, lc * Color(1, 1, 1, 0.5));
 	} else {
 		draw_string(font, Vector2(Math::round(sb->get_offset().x), vofs), label, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, lc * Color(1, 1, 1, 0.5));
 	}
@@ -417,11 +417,11 @@ void EditorSpinSlider::_draw_spin_slider() {
 	if (control_state != CONTROL_STATE_HIDE) {
 		if (editing_integer && control_state == CONTROL_STATE_DEFAULT) {
 			Ref<Texture2D> updown2 = read_only ? theme_cache.updown_disabled_icon : theme_cache.updown_icon;
-			int updown_vofs = (size.height - updown2->get_height()) / 2;
+			int updown_vofs = (size.y - updown2->get_height()) / 2;
 			if (rtl) {
 				updown_offset = sb->get_margin(SIDE_LEFT);
 			} else {
-				updown_offset = size.width - sb->get_margin(SIDE_RIGHT) - updown2->get_width();
+				updown_offset = size.x - sb->get_margin(SIDE_RIGHT) - updown2->get_width();
 			}
 			Color c(1, 1, 1);
 			if (hover_updown) {
@@ -436,9 +436,9 @@ void EditorSpinSlider::_draw_spin_slider() {
 			}
 		} else {
 			const int grabber_w = 4 * EDSCALE;
-			const int width = size.width - sb->get_minimum_size().width - grabber_w;
+			const int width = size.x - sb->get_minimum_size().x - grabber_w;
 			const int ofs = sb->get_offset().x;
-			const int svofs = (size.height + vofs) / 2 - 1;
+			const int svofs = (size.y + vofs) / 2 - 1;
 			Color c = fc;
 
 			// Draw the horizontal slider's background.

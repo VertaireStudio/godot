@@ -84,19 +84,19 @@ void GraphEditMinimap::update_minimap() {
 	camera_size = ge->get_size();
 
 	Vector2 render_size = _get_render_size();
-	float target_ratio = render_size.width / render_size.height;
-	float graph_ratio = graph_size.width / graph_size.height;
+	float target_ratio = render_size.x / render_size.y;
+	float graph_ratio = graph_size.x / graph_size.y;
 
 	graph_proportions = graph_size;
 	graph_padding = Vector2(0, 0);
 	if (graph_ratio > target_ratio) {
-		graph_proportions.width = graph_size.width;
-		graph_proportions.height = graph_size.width / target_ratio;
-		graph_padding.y = Math::abs(graph_size.height - graph_proportions.y) / 2;
+		graph_proportions.x = graph_size.x;
+		graph_proportions.y = graph_size.x / target_ratio;
+		graph_padding.y = Math::abs(graph_size.y - graph_proportions.y) / 2;
 	} else {
-		graph_proportions.width = graph_size.height * target_ratio;
-		graph_proportions.height = graph_size.height;
-		graph_padding.x = Math::abs(graph_size.width - graph_proportions.x) / 2;
+		graph_proportions.x = graph_size.y * target_ratio;
+		graph_proportions.y = graph_size.y;
+		graph_padding.x = Math::abs(graph_size.x - graph_proportions.x) / 2;
 	}
 
 	// This centers minimap inside the minimap rectangle.
@@ -125,11 +125,11 @@ Vector2 GraphEditMinimap::_get_graph_offset() {
 Vector2 GraphEditMinimap::_get_graph_size() {
 	Vector2 graph_size = ge->max_scroll_offset - ge->min_scroll_offset;
 
-	if (graph_size.width == 0) {
-		graph_size.width = 1;
+	if (graph_size.x == 0) {
+		graph_size.x = 1;
 	}
-	if (graph_size.height == 0) {
-		graph_size.height = 1;
+	if (graph_size.y == 0) {
+		graph_size.y = 1;
 	}
 
 	return graph_size;
@@ -139,8 +139,8 @@ Vector2 GraphEditMinimap::_convert_from_graph_position(const Vector2 &p_position
 	Vector2 map_position = Vector2(0, 0);
 	Vector2 render_size = _get_render_size();
 
-	map_position.x = p_position.x * render_size.width / graph_proportions.x;
-	map_position.y = p_position.y * render_size.height / graph_proportions.y;
+	map_position.x = p_position.x * render_size.x / graph_proportions.x;
+	map_position.y = p_position.y * render_size.y / graph_proportions.y;
 
 	return map_position;
 }
@@ -149,8 +149,8 @@ Vector2 GraphEditMinimap::_convert_to_graph_position(const Vector2 &p_position) 
 	Vector2 graph_position = Vector2(0, 0);
 	Vector2 render_size = _get_render_size();
 
-	graph_position.x = p_position.x * graph_proportions.x / render_size.width;
-	graph_position.y = p_position.y * graph_proportions.y / render_size.height;
+	graph_position.x = p_position.x * graph_proportions.x / render_size.x;
+	graph_position.y = p_position.y * graph_proportions.y / render_size.y;
 
 	return graph_position;
 }
@@ -496,7 +496,7 @@ void GraphEdit::_update_scrollbars() {
 	max_scroll_offset = screen_rect.position + screen_rect.size;
 
 	h_scrollbar->set_min(screen_rect.position.x);
-	h_scrollbar->set_max(screen_rect.position.x + screen_rect.size.width);
+	h_scrollbar->set_max(screen_rect.position.x + screen_rect.size.x);
 	h_scrollbar->set_page(get_size().x);
 	if (h_scrollbar->get_max() - h_scrollbar->get_min() <= h_scrollbar->get_page()) {
 		h_scrollbar->hide();
@@ -505,8 +505,8 @@ void GraphEdit::_update_scrollbars() {
 	}
 
 	v_scrollbar->set_min(screen_rect.position.y);
-	v_scrollbar->set_max(screen_rect.position.y + screen_rect.size.height);
-	v_scrollbar->set_page(get_size().height);
+	v_scrollbar->set_max(screen_rect.position.y + screen_rect.size.y);
+	v_scrollbar->set_page(get_size().y);
 
 	if (v_scrollbar->get_max() - v_scrollbar->get_min() <= v_scrollbar->get_page()) {
 		v_scrollbar->hide();
@@ -518,8 +518,8 @@ void GraphEdit::_update_scrollbars() {
 	Size2 vmin = v_scrollbar->get_bound_minimum_size();
 
 	// Avoid scrollbar overlapping.
-	h_scrollbar->set_anchor_and_offset(SIDE_RIGHT, ANCHOR_END, v_scrollbar->is_visible() ? -vmin.width : 0);
-	v_scrollbar->set_anchor_and_offset(SIDE_BOTTOM, ANCHOR_END, h_scrollbar->is_visible() ? -hmin.height : 0);
+	h_scrollbar->set_anchor_and_offset(SIDE_RIGHT, ANCHOR_END, v_scrollbar->is_visible() ? -vmin.x : 0);
+	v_scrollbar->set_anchor_and_offset(SIDE_BOTTOM, ANCHOR_END, h_scrollbar->is_visible() ? -hmin.y : 0);
 
 	set_block_minimum_size_adjust(false);
 
@@ -845,10 +845,10 @@ void GraphEdit::_notification(int p_what) {
 
 			h_scrollbar->set_anchor_and_offset(SIDE_LEFT, ANCHOR_BEGIN, 0);
 			h_scrollbar->set_anchor_and_offset(SIDE_RIGHT, ANCHOR_END, 0);
-			h_scrollbar->set_anchor_and_offset(SIDE_TOP, ANCHOR_END, -hmin.height);
+			h_scrollbar->set_anchor_and_offset(SIDE_TOP, ANCHOR_END, -hmin.y);
 			h_scrollbar->set_anchor_and_offset(SIDE_BOTTOM, ANCHOR_END, 0);
 
-			v_scrollbar->set_anchor_and_offset(SIDE_LEFT, ANCHOR_END, -vmin.width);
+			v_scrollbar->set_anchor_and_offset(SIDE_LEFT, ANCHOR_END, -vmin.x);
 			v_scrollbar->set_anchor_and_offset(SIDE_RIGHT, ANCHOR_END, 0);
 			v_scrollbar->set_anchor_and_offset(SIDE_TOP, ANCHOR_BEGIN, 0);
 			v_scrollbar->set_anchor_and_offset(SIDE_BOTTOM, ANCHOR_END, 0);
@@ -1916,7 +1916,7 @@ void GraphEdit::_draw_grid() {
 				}
 
 				float base_offset = i * snapping_distance * zoom - offset.x * zoom;
-				draw_line(Vector2(base_offset, 0), Vector2(base_offset, get_size().height), color);
+				draw_line(Vector2(base_offset, 0), Vector2(base_offset, get_size().y), color);
 			}
 
 			for (int i = from_pos.y; i < from_pos.y + len.y; i++) {
@@ -1929,7 +1929,7 @@ void GraphEdit::_draw_grid() {
 				}
 
 				float base_offset = i * snapping_distance * zoom - offset.y * zoom;
-				draw_line(Vector2(0, base_offset), Vector2(get_size().width, base_offset), color);
+				draw_line(Vector2(0, base_offset), Vector2(get_size().x, base_offset), color);
 			}
 		} break;
 		case GRID_PATTERN_DOTS: {
@@ -2777,8 +2777,8 @@ void GraphEdit::set_minimap_size(Vector2 p_size) {
 	Vector2 minimap_size = minimap->get_size(); // The size might've been adjusted by the minimum size.
 
 	minimap->set_anchors_preset(Control::PRESET_BOTTOM_RIGHT);
-	minimap->set_offset(Side::SIDE_LEFT, -minimap_size.width - MINIMAP_OFFSET);
-	minimap->set_offset(Side::SIDE_TOP, -minimap_size.height - MINIMAP_OFFSET);
+	minimap->set_offset(Side::SIDE_LEFT, -minimap_size.x - MINIMAP_OFFSET);
+	minimap->set_offset(Side::SIDE_TOP, -minimap_size.y - MINIMAP_OFFSET);
 	minimap->set_offset(Side::SIDE_RIGHT, -MINIMAP_OFFSET);
 	minimap->set_offset(Side::SIDE_BOTTOM, -MINIMAP_OFFSET);
 	minimap->queue_redraw();
@@ -3353,8 +3353,8 @@ GraphEdit::GraphEdit() {
 	minimap->set_custom_minimum_size(Vector2(50, 50));
 	minimap->set_size(minimap_size);
 	minimap->set_anchors_preset(Control::PRESET_BOTTOM_RIGHT);
-	minimap->set_offset(Side::SIDE_LEFT, -minimap_size.width - MINIMAP_OFFSET);
-	minimap->set_offset(Side::SIDE_TOP, -minimap_size.height - MINIMAP_OFFSET);
+	minimap->set_offset(Side::SIDE_LEFT, -minimap_size.x - MINIMAP_OFFSET);
+	minimap->set_offset(Side::SIDE_TOP, -minimap_size.y - MINIMAP_OFFSET);
 	minimap->set_offset(Side::SIDE_RIGHT, -MINIMAP_OFFSET);
 	minimap->set_offset(Side::SIDE_BOTTOM, -MINIMAP_OFFSET);
 	minimap->set_use_parent_material(true);

@@ -1689,15 +1689,15 @@ Error FontFile::_load_bitmap_font(const String &p_path, List<String> *r_image_fi
 						}
 						uv_rect.position.x = (int16_t)f->get_16();
 						uv_rect.position.y = (int16_t)f->get_16();
-						uv_rect.size.width = (int16_t)f->get_16();
-						size.width = uv_rect.size.width;
-						uv_rect.size.height = (int16_t)f->get_16();
-						size.height = uv_rect.size.height;
+						uv_rect.size.x = (int16_t)f->get_16();
+						size.x = uv_rect.size.x;
+						uv_rect.size.y = (int16_t)f->get_16();
+						size.y = uv_rect.size.y;
 						offset.x = (int16_t)f->get_16();
 						offset.y = (int16_t)f->get_16() - ascent;
 						advance.x = (int16_t)f->get_16();
 						if (advance.x < 0) {
-							advance.x = size.width + 1;
+							advance.x = size.x + 1;
 						}
 
 						int texture_idx = f->get_8();
@@ -1990,12 +1990,12 @@ Error FontFile::_load_bitmap_font(const String &p_path, List<String> *r_image_fi
 					uv_rect.position.y = keys["y"].to_int();
 				}
 				if (keys.has("width")) {
-					uv_rect.size.width = keys["width"].to_int();
-					size.width = keys["width"].to_int();
+					uv_rect.size.x = keys["width"].to_int();
+					size.x = keys["width"].to_int();
 				}
 				if (keys.has("height")) {
-					uv_rect.size.height = keys["height"].to_int();
-					size.height = keys["height"].to_int();
+					uv_rect.size.y = keys["height"].to_int();
+					size.y = keys["height"].to_int();
 				}
 				if (keys.has("xoffset")) {
 					offset.x = keys["xoffset"].to_int();
@@ -2010,7 +2010,7 @@ Error FontFile::_load_bitmap_font(const String &p_path, List<String> *r_image_fi
 					advance.x = keys["xadvance"].to_int();
 				}
 				if (advance.x < 0) {
-					advance.x = size.width + 1;
+					advance.x = size.x + 1;
 				}
 				if (keys.has("chnl")) {
 					channel = keys["chnl"].to_int();

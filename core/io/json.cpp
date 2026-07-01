@@ -721,7 +721,7 @@ Variant JSON::_from_native(const Variant &p_variant, bool p_full_objects, int p_
 		} break;
 		case Variant::RECT2: {
 			const Rect2 r = p_variant;
-			Array args = { r.position.x, r.position.y, r.size.width, r.size.height };
+			Array args = { r.position.x, r.position.y, r.size.x, r.size.y };
 			RETURN_ARGS;
 		} break;
 		case Variant::RECT2I: {

@@ -1088,18 +1088,18 @@ void CopyEffects::copy_cubemap_to_dp(RID p_source_rd_texture, RID p_dst_framebuf
 	ERR_FAIL_NULL(material_storage);
 
 	Rect2i screen_rect;
-	float atlas_width = p_dst_size.width / p_rect.size.width;
-	float atlas_height = p_dst_size.height / p_rect.size.height;
+	float atlas_width = p_dst_size.x / p_rect.size.x;
+	float atlas_height = p_dst_size.y / p_rect.size.y;
 	screen_rect.position.x = (int32_t)(Math::round(p_rect.position.x * atlas_width));
 	screen_rect.position.y = (int32_t)(Math::round(p_rect.position.y * atlas_height));
-	screen_rect.size.width = (int32_t)(Math::round(p_dst_size.width));
-	screen_rect.size.height = (int32_t)(Math::round(p_dst_size.height));
+	screen_rect.size.width = (int32_t)(Math::round(p_dst_size.x));
+	screen_rect.size.height = (int32_t)(Math::round(p_dst_size.y));
 
 	CopyToDPPushConstant push_constant;
 	push_constant.z_far = p_z_far;
 	push_constant.z_near = p_z_near;
-	push_constant.texel_size[0] = 1.0f / p_dst_size.width;
-	push_constant.texel_size[1] = 1.0f / p_dst_size.height;
+	push_constant.texel_size[0] = 1.0f / p_dst_size.x;
+	push_constant.texel_size[1] = 1.0f / p_dst_size.y;
 	push_constant.texel_size[0] *= p_dp_flip ? -1.0f : 1.0f; // Encode dp flip as x size sign
 
 	// setup our uniforms

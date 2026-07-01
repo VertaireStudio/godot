@@ -420,7 +420,7 @@ Vector3 Camera3D::project_local_ray_normal(const Point2 &p_pos) const {
 	} else {
 		Projection cm = _get_camera_projection(_near);
 		Vector2 screen_he = cm.get_viewport_half_extents();
-		ray = Vector3(((cpos.x / viewport_size.width) * 2.0 - 1.0) * screen_he.x, ((1.0 - (cpos.y / viewport_size.height)) * 2.0 - 1.0) * screen_he.y, -_near).normalized();
+		ray = Vector3(((cpos.x / viewport_size.x) * 2.0 - 1.0) * screen_he.x, ((1.0 - (cpos.y / viewport_size.y)) * 2.0 - 1.0) * screen_he.y, -_near).normalized();
 	}
 
 	return ray;

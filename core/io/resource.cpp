@@ -124,10 +124,10 @@ void Resource::set_path_cache(const String &p_path) {
 	GDVIRTUAL_CALL(_set_path_cache, p_path);
 }
 
-static thread_local RandomPCG unique_id_gen = RandomPCG(0);
+static thread_local Math::RandomPCG unique_id_gen = Math::RandomPCG(0);
 
 void Resource::seed_scene_unique_id(uint32_t p_seed) {
-	unique_id_gen.seed(p_seed);
+	unique_id_gen.new_from_seed(p_seed);
 }
 
 String Resource::generate_scene_unique_id() {
@@ -143,7 +143,7 @@ String Resource::generate_scene_unique_id() {
 		hash = hash_murmur3_one_32(dt.minute, hash);
 		hash = hash_murmur3_one_32(dt.second, hash);
 		hash = hash_murmur3_one_32(Math::rand(), hash);
-		unique_id_gen.seed(hash);
+		unique_id_gen.new_from_seed(hash);
 	}
 
 	uint32_t random_num = unique_id_gen.rand();

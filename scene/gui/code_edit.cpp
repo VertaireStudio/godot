@@ -127,7 +127,7 @@ void CodeEdit::_notification(int p_what) {
 				int lines = MIN(options_count, theme_cache.code_completion_max_lines);
 				const Size2 icon_area_size(row_height, row_height);
 
-				code_completion_rect.size.width = code_completion_longest_line + theme_cache.code_completion_icon_separation + icon_area_size.width + 2;
+				code_completion_rect.size.width = code_completion_longest_line + theme_cache.code_completion_icon_separation + icon_area_size.x + 2;
 				code_completion_rect.size.height = lines * row_height;
 
 				const Point2 caret_pos = get_caret_draw_pos();
@@ -143,13 +143,13 @@ void CodeEdit::_notification(int p_what) {
 				}
 
 				const bool can_fit_completion_above = min_y > total_height;
-				const bool can_fit_completion_below = max_y <= get_size().height;
+				const bool can_fit_completion_below = max_y <= get_size().y;
 
 				bool should_place_above = !can_fit_completion_below && can_fit_completion_above;
 
 				if (!can_fit_completion_below && !can_fit_completion_above) {
 					const int space_above = caret_pos.y - row_height;
-					const int space_below = get_size().height - caret_pos.y;
+					const int space_below = get_size().y - caret_pos.y;
 					should_place_above = space_above > space_below;
 
 					// Reduce the line count and recalculate heights to better fit the completion popup.
@@ -179,9 +179,9 @@ void CodeEdit::_notification(int p_what) {
 				}
 
 				const int scroll_width = options_count > theme_cache.code_completion_max_lines ? theme_cache.code_completion_scroll_width : 0;
-				const int code_completion_base_width = theme_cache.font->get_string_size(code_completion_base, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).width;
-				if (caret_pos.x - code_completion_base_width + code_completion_rect.size.width + scroll_width > get_size().width) {
-					code_completion_rect.position.x = get_size().width - code_completion_rect.size.width - scroll_width;
+				const int code_completion_base_width = theme_cache.font->get_string_size(code_completion_base, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).x;
+				if (caret_pos.x - code_completion_base_width + code_completion_rect.size.width + scroll_width > get_size().x) {
+					code_completion_rect.position.x = get_size().x - code_completion_rect.size.width - scroll_width;
 				} else {
 					code_completion_rect.position.x = caret_pos.x - code_completion_base_width;
 				}
@@ -294,7 +294,7 @@ void CodeEdit::_notification(int p_what) {
 					int lines = MIN(code_completion_options_count, theme_cache.code_completion_max_lines);
 					const Size2 icon_area_size(row_height, row_height);
 
-					code_completion_rect.size.width = code_completion_longest_line + theme_cache.code_completion_icon_separation + icon_area_size.width + 2;
+					code_completion_rect.size.width = code_completion_longest_line + theme_cache.code_completion_icon_separation + icon_area_size.x + 2;
 					code_completion_rect.size.height = lines * row_height;
 
 					const Point2 caret_pos = get_caret_draw_pos();
@@ -310,13 +310,13 @@ void CodeEdit::_notification(int p_what) {
 					}
 
 					const bool can_fit_completion_above = min_y > total_height;
-					const bool can_fit_completion_below = max_y <= get_size().height;
+					const bool can_fit_completion_below = max_y <= get_size().y;
 
 					bool should_place_above = !can_fit_completion_below && can_fit_completion_above;
 
 					if (!can_fit_completion_below && !can_fit_completion_above) {
 						const int space_above = caret_pos.y - row_height;
-						const int space_below = get_size().height - caret_pos.y;
+						const int space_below = get_size().y - caret_pos.y;
 						should_place_above = space_above > space_below;
 
 						// Reduce the line count and recalculate heights to better fit the completion popup.
@@ -346,9 +346,9 @@ void CodeEdit::_notification(int p_what) {
 					}
 
 					const int scroll_width = code_completion_options_count > theme_cache.code_completion_max_lines ? theme_cache.code_completion_scroll_width : 0;
-					const int code_completion_base_width = theme_cache.font->get_string_size(code_completion_base, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).width;
-					if (caret_pos.x - code_completion_base_width + code_completion_rect.size.width + scroll_width > get_size().width) {
-						code_completion_rect.position.x = get_size().width - code_completion_rect.size.width - scroll_width;
+					const int code_completion_base_width = theme_cache.font->get_string_size(code_completion_base, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).x;
+					if (caret_pos.x - code_completion_base_width + code_completion_rect.size.width + scroll_width > get_size().x) {
+						code_completion_rect.position.x = get_size().x - code_completion_rect.size.width - scroll_width;
 					} else {
 						code_completion_rect.position.x = caret_pos.x - code_completion_base_width;
 					}
@@ -378,12 +378,12 @@ void CodeEdit::_notification(int p_what) {
 
 						/* Draw completion icon if it is valid. */
 						const Ref<Texture2D> &icon = code_completion_options[l].icon;
-						Rect2 icon_area(code_completion_rect.position.x, code_completion_rect.position.y + i * row_height, icon_area_size.width, icon_area_size.height);
+						Rect2 icon_area(code_completion_rect.position.x, code_completion_rect.position.y + i * row_height, icon_area_size.x, icon_area_size.y);
 						if (icon.is_valid()) {
 							Size2 icon_size = icon_area.size * 0.7;
 							icon->draw_rect(ci, Rect2(icon_area.position + (icon_area.size - icon_size) / 2, icon_size));
 						}
-						title_pos.x = icon_area.position.x + icon_area.size.width + theme_cache.code_completion_icon_separation;
+						title_pos.x = icon_area.position.x + icon_area.size.x + theme_cache.code_completion_icon_separation;
 
 						tl->set_width(code_completion_rect.size.width - (icon_area_size.x + theme_cache.code_completion_icon_separation));
 						if (rtl) {
@@ -408,8 +408,8 @@ void CodeEdit::_notification(int p_what) {
 
 						for (int j = 0; j < code_completion_options[l].matches.size(); j++) {
 							Pair<int, int> match_segment = code_completion_options[l].matches[j];
-							int match_offset = theme_cache.font->get_string_size(code_completion_options[l].display.substr(0, match_segment.first), HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).width;
-							int match_len = theme_cache.font->get_string_size(code_completion_options[l].display.substr(match_segment.first, match_segment.second), HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).width;
+							int match_offset = theme_cache.font->get_string_size(code_completion_options[l].display.substr(0, match_segment.first), HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).x;
+							int match_len = theme_cache.font->get_string_size(code_completion_options[l].display.substr(match_segment.first, match_segment.second), HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).x;
 
 							RS::get_singleton()->canvas_item_add_rect(ci, Rect2(match_pos + Point2(match_offset, 0), Size2(match_len, row_height)), theme_cache.code_completion_existing_color);
 						}
@@ -449,7 +449,7 @@ void CodeEdit::_draw_guidelines() {
 
 	Ref<StyleBox> style = is_editable() ? theme_cache.style_normal : theme_cache.style_readonly;
 	const int xmargin_beg = style->get_margin(SIDE_LEFT) + get_total_gutter_width();
-	const int xmargin_end = size.width - style->get_margin(SIDE_RIGHT) - (is_drawing_minimap() ? get_minimap_width() : 0);
+	const int xmargin_end = size.x - style->get_margin(SIDE_RIGHT) - (is_drawing_minimap() ? get_minimap_width() : 0);
 
 	for (int i = 0; i < line_length_guideline_columns.size(); i++) {
 		const int column_pos = theme_cache.font->get_string_size(String("0").repeat((int)line_length_guideline_columns[i]), HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).x;
@@ -457,10 +457,10 @@ void CodeEdit::_draw_guidelines() {
 		if (xoffset > xmargin_beg && xoffset < xmargin_end) {
 			Color guideline_color = (i == 0) ? theme_cache.line_length_guideline_color : theme_cache.line_length_guideline_color * Color(1, 1, 1, 0.6);
 			if (rtl) {
-				RenderingServer::get_singleton()->canvas_item_add_line(ci, Point2(size.width - xoffset, 0), Point2(size.width - xoffset, size.height), guideline_color);
+				RenderingServer::get_singleton()->canvas_item_add_line(ci, Point2(size.x - xoffset, 0), Point2(size.x - xoffset, size.y), guideline_color);
 				continue;
 			}
-			RenderingServer::get_singleton()->canvas_item_add_line(ci, Point2(xoffset, 0), Point2(xoffset, size.height), guideline_color);
+			RenderingServer::get_singleton()->canvas_item_add_line(ci, Point2(xoffset, 0), Point2(xoffset, size.y), guideline_color);
 		}
 	}
 }
@@ -1743,7 +1743,7 @@ void CodeEdit::_line_number_draw_callback(int p_line, int p_gutter, const Rect2 
 	ofs.y += TS->shaped_text_get_ascent(text_rid);
 
 	if (rtl) {
-		ofs.x = p_region.get_end().x - text_size.width;
+		ofs.x = p_region.get_end().x - text_size.x;
 	} else {
 		ofs.x = p_region.position.x;
 	}
@@ -1764,7 +1764,7 @@ void CodeEdit::_clear_line_number_text_cache() {
 }
 
 void CodeEdit::_update_line_number_gutter_width() {
-	set_gutter_width(line_number_gutter, (line_number_digits + 1) * theme_cache.font->get_char_size('0', theme_cache.font_size).width);
+	set_gutter_width(line_number_gutter, (line_number_digits + 1) * theme_cache.font->get_char_size('0', theme_cache.font_size).x);
 }
 
 /* Fold Gutter */
@@ -3798,7 +3798,7 @@ void CodeEdit::_filter_code_completion_candidates_impl() {
 			}
 
 			if (theme_cache.font.is_valid()) {
-				max_width = MAX(max_width, theme_cache.font->get_string_size(option.display, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).width + offset);
+				max_width = MAX(max_width, theme_cache.font->get_string_size(option.display, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).x + offset);
 			}
 			code_completion_options_new.push_back(option);
 		}
@@ -3935,7 +3935,7 @@ void CodeEdit::_filter_code_completion_candidates_impl() {
 			code_completion_options_new.push_back(option);
 
 			if (theme_cache.font.is_valid()) {
-				max_width = MAX(max_width, theme_cache.font->get_string_size(option.display, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).width + offset);
+				max_width = MAX(max_width, theme_cache.font->get_string_size(option.display, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).x + offset);
 			}
 			continue;
 		}
@@ -4012,7 +4012,7 @@ void CodeEdit::_filter_code_completion_candidates_impl() {
 
 			code_completion_options_new.push_back(option);
 			if (theme_cache.font.is_valid()) {
-				max_width = MAX(max_width, theme_cache.font->get_string_size(option.display, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).width + offset);
+				max_width = MAX(max_width, theme_cache.font->get_string_size(option.display, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.font_size).x + offset);
 			}
 		}
 	}

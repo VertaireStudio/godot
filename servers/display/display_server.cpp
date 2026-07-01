@@ -600,7 +600,7 @@ int DisplayServer::get_screen_from_rect(const Rect2 &p_rect) const {
 		r.position = screen_get_position(i);
 		r.size = screen_get_size(i);
 		Rect2 inters = r.intersection(p_rect);
-		int area = inters.size.width * inters.size.height;
+		int area = inters.size.x * inters.size.y;
 		if (area > nearest_area) {
 			pos_screen = i;
 			nearest_area = area;
@@ -2013,8 +2013,8 @@ Ref<Image> DisplayServer::_get_cursor_image_from_resource(const Ref<Resource> &p
 	ERR_FAIL_COND_V(image.is_null(), image);
 
 	Size2 image_size = image->get_size();
-	ERR_FAIL_COND_V_MSG(p_hotspot.x > image_size.width || p_hotspot.y > image_size.height, image, "Hotspot outside cursor image.");
-	ERR_FAIL_COND_V_MSG(image_size.width > 256 || image_size.height > 256, image, "Cursor image too big. Max supported size is 256x256.");
+	ERR_FAIL_COND_V_MSG(p_hotspot.x > image_size.x || p_hotspot.y > image_size.y, image, "Hotspot outside cursor image.");
+	ERR_FAIL_COND_V_MSG(image_size.x > 256 || image_size.y > 256, image, "Cursor image too big. Max supported size is 256x256.");
 
 	if (image->is_compressed()) {
 		image = image->duplicate(true);

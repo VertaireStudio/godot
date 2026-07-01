@@ -416,7 +416,7 @@ void RendererCanvasCull::_cull_canvas_item(Item *p_canvas_item, const Transform2
 		} else {
 			ci->final_clip_rect = p_clip_rect.intersection(global_rect);
 		}
-		if (ci->final_clip_rect.size.width < 0.5 || ci->final_clip_rect.size.height < 0.5) {
+		if (ci->final_clip_rect.size.x < 0.5 || ci->final_clip_rect.size.y < 0.5) {
 			// The clip rect area is 0, so don't draw the item.
 			return;
 		}
@@ -1313,13 +1313,13 @@ void RendererCanvasCull::canvas_item_add_rect(RID p_item, const Rect2 &p_rect, c
 	if (p_antialiased) {
 		float border_size = FEATHER_SIZE;
 
-		const real_t size = MIN(rect_adjusted.size.width, rect_adjusted.size.height);
+		const real_t size = MIN(rect_adjusted.size.x, rect_adjusted.size.y);
 		if (0.0f <= size && size < 1.0f) {
 			border_size *= size;
 		}
 
-		const Vector2 vec_down = Vector2(0.0f, rect_adjusted.size.height);
-		const Vector2 vec_right = Vector2(rect_adjusted.size.width, 0.0f);
+		const Vector2 vec_down = Vector2(0.0f, rect_adjusted.size.y);
+		const Vector2 vec_right = Vector2(rect_adjusted.size.x, 0.0f);
 
 		const Vector2 begin_left = rect_adjusted.position;
 		const Vector2 begin_right = rect_adjusted.position + vec_down;
@@ -1579,7 +1579,7 @@ void RendererCanvasCull::canvas_item_add_texture_rect(RID p_item, const Rect2 &p
 	if (p_tile) {
 		rect->flags |= RendererCanvasRender::CANVAS_RECT_TILE;
 		rect->flags |= RendererCanvasRender::CANVAS_RECT_REGION;
-		rect->source = Rect2(0, 0, Math::abs(p_rect.size.width), Math::abs(p_rect.size.height));
+		rect->source = Rect2(0, 0, Math::abs(p_rect.size.x), Math::abs(p_rect.size.y));
 	}
 
 	if (p_rect.size.x < 0) {

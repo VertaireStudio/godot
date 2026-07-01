@@ -3089,11 +3089,11 @@ void SceneTreeDock::_post_do_create(Node *p_child) {
 	Control *control = Object::cast_to<Control>(p_child);
 	if (control) {
 		Size2 ms = control->get_minimum_size();
-		if (ms.width < 4) {
-			ms.width = 40;
+		if (ms.x < 4) {
+			ms.x = 40;
 		}
-		if (ms.height < 4) {
-			ms.height = 40;
+		if (ms.y < 4) {
+			ms.y = 40;
 		}
 		if (control->is_layout_rtl()) {
 			control->set_position(control->get_position() - Vector2(ms.x, 0));

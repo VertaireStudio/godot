@@ -2150,7 +2150,7 @@ void ThemeClassic::populate_editor_styles(const Ref<EditorTheme> &p_theme, Edito
 		Ref<StyleBoxFlat> inspector_button_style = p_theme->get_stylebox(CoreStringName(normal), SNAME("Button"));
 		Ref<Font> font = p_theme->get_font(SceneStringName(font), SNAME("LineEdit"));
 		int font_size = p_theme->get_font_size(SceneStringName(font_size), SNAME("LineEdit"));
-		p_config.inspector_property_height = inspector_button_style->get_minimum_size().height + font->get_height(font_size);
+		p_config.inspector_property_height = inspector_button_style->get_minimum_size().y + font->get_height(font_size);
 		p_theme->set_constant("inspector_property_height", EditorStringName(Editor), p_config.inspector_property_height);
 
 		// EditorInspectorSection.

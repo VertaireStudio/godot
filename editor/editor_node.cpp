@@ -6940,7 +6940,7 @@ Dictionary EditorNode::drag_resource(const Ref<Resource> &p_res, Control *p_from
 
 	p_from->set_drag_preview(drag_control); // Wait until it enters scene.
 
-	label->set_position(Point2((preview->get_width() - label->get_minimum_size().width) / 2, preview->get_height()));
+	label->set_position(Point2((preview->get_width() - label->get_minimum_size().x) / 2, preview->get_height()));
 
 	Dictionary drag_data;
 	drag_data["type"] = "resource";

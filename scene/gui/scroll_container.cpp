@@ -338,14 +338,14 @@ void ScrollContainer::_update_scrollbar_position() {
 	int rmar = is_layout_rtl() ? margins.position.x : margins.size.x;
 
 	h_scroll->set_anchor_and_offset(SIDE_LEFT, ANCHOR_BEGIN, lmar);
-	h_scroll->set_anchor_and_offset(SIDE_RIGHT, ANCHOR_END, -rmar - vmin.width);
-	h_scroll->set_anchor_and_offset(SIDE_TOP, ANCHOR_END, -hmin.height - margins.size.y);
+	h_scroll->set_anchor_and_offset(SIDE_RIGHT, ANCHOR_END, -rmar - vmin.x);
+	h_scroll->set_anchor_and_offset(SIDE_TOP, ANCHOR_END, -hmin.y - margins.size.y);
 	h_scroll->set_anchor_and_offset(SIDE_BOTTOM, ANCHOR_END, -margins.size.y);
 
-	v_scroll->set_anchor_and_offset(SIDE_LEFT, ANCHOR_END, -vmin.width - rmar);
+	v_scroll->set_anchor_and_offset(SIDE_LEFT, ANCHOR_END, -vmin.x - rmar);
 	v_scroll->set_anchor_and_offset(SIDE_RIGHT, ANCHOR_END, -rmar);
 	v_scroll->set_anchor_and_offset(SIDE_TOP, ANCHOR_BEGIN, margins.position.y);
-	v_scroll->set_anchor_and_offset(SIDE_BOTTOM, ANCHOR_END, -hmin.height - margins.size.y);
+	v_scroll->set_anchor_and_offset(SIDE_BOTTOM, ANCHOR_END, -hmin.y - margins.size.y);
 
 	_updating_scrollbars = false;
 }
@@ -416,15 +416,15 @@ void ScrollContainer::_reposition_children() {
 		Rect2 r = Rect2(-Size2(get_h_scroll(), get_v_scroll()), minsize);
 
 		if (c->get_h_size_flags().has_flag(SIZE_EXPAND)) {
-			r.size.width = MAX(size.width, minsize.width);
-			if (maxsize.width >= 0) {
-				r.size.width = MIN(r.size.width, maxsize.width);
+			r.size.x = MAX(size.x, minsize.x);
+			if (maxsize.x >= 0) {
+				r.size.x = MIN(r.size.x, maxsize.x);
 			}
 		}
 		if (c->get_v_size_flags().has_flag(SIZE_EXPAND)) {
-			r.size.height = MAX(size.height, minsize.height);
-			if (maxsize.height >= 0) {
-				r.size.height = MIN(r.size.height, maxsize.height);
+			r.size.y = MAX(size.y, minsize.y);
+			if (maxsize.y >= 0) {
+				r.size.y = MIN(r.size.y, maxsize.y);
 			}
 		}
 
@@ -548,16 +548,16 @@ void ScrollContainer::_notification(int p_what) {
 				if (Rect2(Point2(), xform.get_scale() * get_size()).grow(scroll_border).has_point(mouse_position)) {
 					Point2 point;
 
-					if ((Math::abs(mouse_position.x) < Math::abs(mouse_position.x - get_size().width)) && (Math::abs(mouse_position.x) < scroll_border)) {
+					if ((Math::abs(mouse_position.x) < Math::abs(mouse_position.x - get_size().x)) && (Math::abs(mouse_position.x) < scroll_border)) {
 						point.x = mouse_position.x - scroll_border;
-					} else if (Math::abs(mouse_position.x - get_size().width) < scroll_border) {
-						point.x = mouse_position.x - (get_size().width - scroll_border);
+					} else if (Math::abs(mouse_position.x - get_size().x) < scroll_border) {
+						point.x = mouse_position.x - (get_size().x - scroll_border);
 					}
 
-					if ((Math::abs(mouse_position.y) < Math::abs(mouse_position.y - get_size().height)) && (Math::abs(mouse_position.y) < scroll_border)) {
+					if ((Math::abs(mouse_position.y) < Math::abs(mouse_position.y - get_size().y)) && (Math::abs(mouse_position.y) < scroll_border)) {
 						point.y = mouse_position.y - scroll_border;
-					} else if (Math::abs(mouse_position.y - get_size().height) < scroll_border) {
-						point.y = mouse_position.y - (get_size().height - scroll_border);
+					} else if (Math::abs(mouse_position.y - get_size().y) < scroll_border) {
+						point.y = mouse_position.y - (get_size().y - scroll_border);
 					}
 
 					point *= scroll_speed * get_process_delta_time();
@@ -645,14 +645,14 @@ void ScrollContainer::_update_scrollbars() {
 	Size2 hmin = h_scroll->get_bound_minimum_size();
 	Size2 vmin = v_scroll->get_bound_minimum_size();
 
-	h_scroll->set_visible(horizontal_scroll_mode == SCROLL_MODE_SHOW_ALWAYS || ((horizontal_scroll_mode == SCROLL_MODE_AUTO || horizontal_scroll_mode == SCROLL_MODE_RESERVE || horizontal_scroll_mode == SCROLL_MODE_MAXIMIZE_FIRST) && largest_child_min_size.width > size.width));
-	v_scroll->set_visible(vertical_scroll_mode == SCROLL_MODE_SHOW_ALWAYS || ((vertical_scroll_mode == SCROLL_MODE_AUTO || vertical_scroll_mode == SCROLL_MODE_RESERVE || vertical_scroll_mode == SCROLL_MODE_MAXIMIZE_FIRST) && largest_child_min_size.height > size.height));
+	h_scroll->set_visible(horizontal_scroll_mode == SCROLL_MODE_SHOW_ALWAYS || ((horizontal_scroll_mode == SCROLL_MODE_AUTO || horizontal_scroll_mode == SCROLL_MODE_RESERVE || horizontal_scroll_mode == SCROLL_MODE_MAXIMIZE_FIRST) && largest_child_min_size.x > size.x));
+	v_scroll->set_visible(vertical_scroll_mode == SCROLL_MODE_SHOW_ALWAYS || ((vertical_scroll_mode == SCROLL_MODE_AUTO || vertical_scroll_mode == SCROLL_MODE_RESERVE || vertical_scroll_mode == SCROLL_MODE_MAXIMIZE_FIRST) && largest_child_min_size.y > size.y));
 
-	h_scroll->set_max(largest_child_min_size.width);
-	h_scroll->set_page(_is_v_scroll_visible() ? size.width - vmin.width : size.width);
+	h_scroll->set_max(largest_child_min_size.x);
+	h_scroll->set_page(_is_v_scroll_visible() ? size.x - vmin.x : size.x);
 
-	v_scroll->set_max(largest_child_min_size.height);
-	v_scroll->set_page(_is_h_scroll_visible() ? size.height - hmin.height : size.height);
+	v_scroll->set_max(largest_child_min_size.y);
+	v_scroll->set_page(_is_h_scroll_visible() ? size.y - hmin.y : size.y);
 
 	// Avoid scrollbar overlapping.
 	_updating_scrollbars = true;
@@ -665,11 +665,11 @@ void ScrollContainer::_update_scroll_hints() {
 	Size2 scroll_size = size - margins.position - margins.size;
 
 	float v_scroll_value = v_scroll->get_value();
-	bool v_scroll_below_max = v_scroll_value < (largest_child_min_size.height - scroll_size.height - 1);
+	bool v_scroll_below_max = v_scroll_value < (largest_child_min_size.y - scroll_size.y - 1);
 	bool show_vertical_hints = v_scroll_value > 1 || v_scroll_below_max;
 
 	float h_scroll_value = h_scroll->get_value();
-	bool h_scroll_below_max = h_scroll_value < (largest_child_min_size.width - scroll_size.width - 1);
+	bool h_scroll_below_max = h_scroll_value < (largest_child_min_size.x - scroll_size.x - 1);
 	bool show_horizontal_hints = h_scroll_value > 1 || h_scroll_below_max;
 
 	bool rtl = is_layout_rtl();

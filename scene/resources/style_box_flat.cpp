@@ -231,8 +231,8 @@ real_t StyleBoxFlat::get_aa_size() const {
 inline void set_inner_corner_radius(const Rect2 style_rect, const Rect2 inner_rect, const real_t corner_radius[4], real_t *inner_corner_radius) {
 	real_t border_left = inner_rect.position.x - style_rect.position.x;
 	real_t border_top = inner_rect.position.y - style_rect.position.y;
-	real_t border_right = style_rect.size.width - inner_rect.size.width - border_left;
-	real_t border_bottom = style_rect.size.height - inner_rect.size.height - border_top;
+	real_t border_right = style_rect.size.x - inner_rect.size.x - border_left;
+	real_t border_bottom = style_rect.size.y - inner_rect.size.y - border_top;
 
 	inner_corner_radius[0] = MAX(corner_radius[0] - MIN(border_top, border_left), 0); // Top left.
 	inner_corner_radius[1] = MAX(corner_radius[1] - MIN(border_top, border_right), 0); // Top right.
@@ -243,8 +243,8 @@ inline void set_inner_corner_radius(const Rect2 style_rect, const Rect2 inner_re
 inline void set_corner_scale(const Rect2 &style_rect, const Rect2 &inner_rect, const real_t corner_radius[4], Point2 *inner_scale) {
 	real_t border_left = inner_rect.position.x - style_rect.position.x;
 	real_t border_top = inner_rect.position.y - style_rect.position.y;
-	real_t border_right = style_rect.size.width - inner_rect.size.width - border_left;
-	real_t border_bottom = style_rect.size.height - inner_rect.size.height - border_top;
+	real_t border_right = style_rect.size.x - inner_rect.size.x - border_left;
+	real_t border_bottom = style_rect.size.y - inner_rect.size.y - border_top;
 
 	// Amount of overflow along an edge.
 	// Ex. SIDE_LEFT edge is the overflow between top_left and bottom_left corners.
@@ -464,7 +464,7 @@ void StyleBoxFlat::draw(RID p_canvas_item, const Rect2 &p_rect) const {
 	}
 
 	Rect2 style_rect = p_rect.grow_individual(expand_margin[SIDE_LEFT], expand_margin[SIDE_TOP], expand_margin[SIDE_RIGHT], expand_margin[SIDE_BOTTOM]);
-	if (Math::is_zero_approx(style_rect.size.width) || Math::is_zero_approx(style_rect.size.height)) {
+	if (Math::is_zero_approx(style_rect.size.x) || Math::is_zero_approx(style_rect.size.y)) {
 		return;
 	}
 
@@ -480,8 +480,8 @@ void StyleBoxFlat::draw(RID p_canvas_item, const Rect2 &p_rect) const {
 	Color border_color_inner = blend_on ? border_color_blend : border_color;
 
 	// Adapt borders (prevent weird overlapping/glitchy drawings).
-	real_t width = MAX(style_rect.size.width, 0);
-	real_t height = MAX(style_rect.size.height, 0);
+	real_t width = MAX(style_rect.size.x, 0);
+	real_t height = MAX(style_rect.size.y, 0);
 	real_t adapted_border[4] = { 1000000.0, 1000000.0, 1000000.0, 1000000.0 };
 	adapt_values(SIDE_TOP, SIDE_BOTTOM, adapted_border, border_width, height, height, height);
 	adapt_values(SIDE_LEFT, SIDE_RIGHT, adapted_border, border_width, width, width, width);
@@ -637,8 +637,8 @@ void StyleBoxFlat::draw(RID p_canvas_item, const Rect2 &p_rect) const {
 	uvs.resize(verts.size());
 	Point2 *uvs_ptr = uvs.ptrw();
 	for (int i = 0; i < verts.size(); i++) {
-		uvs_ptr[i].x = (verts[i].x - uv_rect.position.x) / uv_rect.size.width;
-		uvs_ptr[i].y = (verts[i].y - uv_rect.position.y) / uv_rect.size.height;
+		uvs_ptr[i].x = (verts[i].x - uv_rect.position.x) / uv_rect.size.x;
+		uvs_ptr[i].y = (verts[i].y - uv_rect.position.y) / uv_rect.size.y;
 	}
 
 	// Draw stylebox.

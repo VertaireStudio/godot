@@ -65,8 +65,8 @@ void PortableCompressedTexture2D::_set_data(const Vector<uint8_t> &p_data) {
 	DataFormat data_format = DataFormat(decode_uint16(data + 2));
 	format = Image::Format(decode_uint32(data + 4));
 	uint32_t mipmap_count = decode_uint32(data + 8);
-	size.width = decode_uint32(data + 12);
-	size.height = decode_uint32(data + 16);
+	size.x = decode_uint32(data + 12);
+	size.y = decode_uint32(data + 16);
 	mipmaps = mipmap_count > 1;
 
 	data += 20;
@@ -108,7 +108,7 @@ void PortableCompressedTexture2D::_set_data(const Vector<uint8_t> &p_data) {
 				data_size -= mipsize;
 			}
 
-			image.instantiate(size.width, size.height, mipmaps, format, image_data);
+			image.instantiate(size.x, size.y, mipmaps, format, image_data);
 
 		} break;
 		case COMPRESSION_MODE_BASIS_UNIVERSAL: {
@@ -120,7 +120,7 @@ void PortableCompressedTexture2D::_set_data(const Vector<uint8_t> &p_data) {
 		case COMPRESSION_MODE_ETC2:
 		case COMPRESSION_MODE_BPTC:
 		case COMPRESSION_MODE_ASTC: {
-			image.instantiate(size.width, size.height, mipmaps, format, p_data.slice(20));
+			image.instantiate(size.x, size.y, mipmaps, format, p_data.slice(20));
 		} break;
 	}
 	ERR_FAIL_COND(image.is_null());
@@ -134,7 +134,7 @@ void PortableCompressedTexture2D::_set_data(const Vector<uint8_t> &p_data) {
 
 	image_stored = true;
 	size_override = size;
-	RenderingServer::get_singleton()->texture_set_size_override(texture, size_override.width, size_override.height);
+	RenderingServer::get_singleton()->texture_set_size_override(texture, size_override.x, size_override.y);
 	alpha_cache.unref();
 
 	if (keep_all_compressed_buffers || keep_compressed_buffer) {
@@ -251,11 +251,11 @@ Ref<Image> PortableCompressedTexture2D::get_image() const {
 }
 
 int PortableCompressedTexture2D::get_width() const {
-	return size.width;
+	return size.x;
 }
 
 int PortableCompressedTexture2D::get_height() const {
-	return size.height;
+	return size.y;
 }
 
 RID PortableCompressedTexture2D::get_rid() const {
@@ -271,21 +271,21 @@ bool PortableCompressedTexture2D::has_alpha() const {
 }
 
 void PortableCompressedTexture2D::draw(RID p_canvas_item, const Point2 &p_pos, const Color &p_modulate, bool p_transpose) const {
-	if (size.width == 0 || size.height == 0) {
+	if (size.x == 0 || size.y == 0) {
 		return;
 	}
 	RenderingServer::get_singleton()->canvas_item_add_texture_rect(p_canvas_item, Rect2(p_pos, size), texture, false, p_modulate, p_transpose);
 }
 
 void PortableCompressedTexture2D::draw_rect(RID p_canvas_item, const Rect2 &p_rect, bool p_tile, const Color &p_modulate, bool p_transpose) const {
-	if (size.width == 0 || size.height == 0) {
+	if (size.x == 0 || size.y == 0) {
 		return;
 	}
 	RenderingServer::get_singleton()->canvas_item_add_texture_rect(p_canvas_item, p_rect, texture, p_tile, p_modulate, p_transpose);
 }
 
 void PortableCompressedTexture2D::draw_rect_region(RID p_canvas_item, const Rect2 &p_rect, const Rect2 &p_src_rect, const Color &p_modulate, bool p_transpose, bool p_clip_uv) const {
-	if (size.width == 0 || size.height == 0) {
+	if (size.x == 0 || size.y == 0) {
 		return;
 	}
 	RenderingServer::get_singleton()->canvas_item_add_texture_rect_region(p_canvas_item, p_rect, texture, p_src_rect, p_modulate, p_transpose, p_clip_uv);
@@ -312,8 +312,8 @@ bool PortableCompressedTexture2D::is_pixel_opaque(int p_x, int p_y) const {
 			return true;
 		}
 
-		int x = p_x * aw / size.width;
-		int y = p_y * ah / size.height;
+		int x = p_x * aw / size.x;
+		int y = p_y * ah / size.y;
 
 		x = CLAMP(x, 0, aw - 1);
 		y = CLAMP(y, 0, ah - 1);
@@ -326,7 +326,7 @@ bool PortableCompressedTexture2D::is_pixel_opaque(int p_x, int p_y) const {
 
 void PortableCompressedTexture2D::set_size_override(const Size2 &p_size) {
 	size_override = p_size;
-	RenderingServer::get_singleton()->texture_set_size_override(texture, size_override.width, size_override.height);
+	RenderingServer::get_singleton()->texture_set_size_override(texture, size_override.x, size_override.y);
 }
 
 Size2 PortableCompressedTexture2D::get_size_override() const {

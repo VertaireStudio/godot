@@ -251,44 +251,44 @@ Size2 EditorProperty::get_minimum_size() const {
 	}
 
 	if (!label.is_empty()) {
-		ms.width += theme_cache.font_offset + theme_cache.horizontal_separation;
+		ms.x += theme_cache.font_offset + theme_cache.horizontal_separation;
 	}
 
 	// Always take the revert and pin values into account, since their state can be changed at whim
 	// and we don't want to update the min width every time this happens.
 	{
 		if (!is_read_only()) {
-			ms.width += theme_cache.revert_icon->get_width() + theme_cache.padding + theme_cache.horizontal_separation;
+			ms.x += theme_cache.revert_icon->get_width() + theme_cache.padding + theme_cache.horizontal_separation;
 		}
 
-		ms.width += theme_cache.pin_icon->get_width() + theme_cache.horizontal_separation;
+		ms.x += theme_cache.pin_icon->get_width() + theme_cache.horizontal_separation;
 	}
 
 	if (keying) {
-		ms.width += theme_cache.key_icon->get_width() + theme_cache.padding + theme_cache.horizontal_separation;
+		ms.x += theme_cache.key_icon->get_width() + theme_cache.padding + theme_cache.horizontal_separation;
 	}
 
 	if (deletable) {
-		ms.width += theme_cache.delete_icon->get_width() + theme_cache.padding + theme_cache.horizontal_separation;
+		ms.x += theme_cache.delete_icon->get_width() + theme_cache.padding + theme_cache.horizontal_separation;
 	}
 
 	if (checkable) {
-		ms.width += theme_cache.checked_icon->get_width() + theme_cache.padding + theme_cache.horizontal_separation;
+		ms.x += theme_cache.checked_icon->get_width() + theme_cache.padding + theme_cache.horizontal_separation;
 	}
 
 	Size2 ls = left_container->get_combined_minimum_size();
-	ms.width += ls.x;
-	ms.height = MAX(ms.height, ls.y);
+	ms.x += ls.x;
+	ms.y = MAX(ms.y, ls.y);
 
 	Size2 rs = right_container->get_combined_minimum_size();
-	ms.width += rs.x;
-	ms.height = MAX(ms.height, rs.y);
+	ms.x += rs.x;
+	ms.y = MAX(ms.y, rs.y);
 
 	if (bottom_editor != nullptr && bottom_editor->is_visible()) {
-		ms.height += label.is_empty() ? 0 : _get_v_separation();
+		ms.y += label.is_empty() ? 0 : _get_v_separation();
 		Size2 bems = bottom_editor->get_combined_minimum_size();
-		ms.height += bems.height;
-		ms.width = MAX(ms.width, bems.width);
+		ms.y += bems.y;
+		ms.x = MAX(ms.x, bems.x);
 	}
 
 	return ms;
@@ -357,7 +357,7 @@ void EditorProperty::_notification(int p_what) {
 			bottom_child_rect = Rect2();
 
 			{
-				int child_room = size.width * (1.0 - split_ratio) - name_fixed_size;
+				int child_room = size.x * (1.0 - split_ratio) - name_fixed_size;
 				int separation = theme_cache.horizontal_separation;
 				int height = theme_cache.inspector_property_height;
 				int minw = 0;
@@ -376,25 +376,25 @@ void EditorProperty::_notification(int p_what) {
 
 					Size2 minsize = c->get_combined_minimum_size();
 					if (c != left_container && c != right_container) {
-						minw = MAX(minw, minsize.width);
+						minw = MAX(minw, minsize.x);
 						child_room = MAX(child_room, minw);
 						no_children = false;
 					}
-					height = MAX(height, minsize.height);
+					height = MAX(height, minsize.y);
 				}
 
 				if (no_children) {
-					text_size = size.width;
-					rect = Rect2(size.width - 1, 0, 1, height);
+					text_size = size.x;
+					rect = Rect2(size.x - 1, 0, 1, height);
 				} else if (!draw_label) {
 					text_size = 0;
-					rect = Rect2(1, 0, size.width - 1, height);
+					rect = Rect2(1, 0, size.x - 1, height);
 				} else {
-					text_size = MAX(0, size.width - (child_room + separation));
+					text_size = MAX(0, size.x - (child_room + separation));
 					if (is_layout_rtl()) {
 						rect = Rect2(1, 0, child_room, height);
 					} else {
-						rect = Rect2(size.width - child_room, 0, child_room, height);
+						rect = Rect2(size.x - child_room, 0, child_room, height);
 					}
 				}
 
@@ -407,7 +407,7 @@ void EditorProperty::_notification(int p_what) {
 
 				if (bottom_editor) {
 					int v_offset = label.is_empty() ? 0 : _get_v_separation();
-					bottom_rect = Rect2(0, rect.size.height + v_offset, size.width, bottom_editor->get_combined_minimum_size().height);
+					bottom_rect = Rect2(0, rect.size.y + v_offset, size.x, bottom_editor->get_combined_minimum_size().y);
 				}
 
 				if (keying) {
@@ -493,9 +493,9 @@ void EditorProperty::_notification(int p_what) {
 			Size2 rs = right_container->get_combined_minimum_size();
 			rs.y = MAX(rs.y, rect.size.y);
 			if (is_layout_rtl()) {
-				fit_child_in_rect(right_container, Rect2(0, 0, rs.width, rs.y));
+				fit_child_in_rect(right_container, Rect2(0, 0, rs.x, rs.y));
 			} else {
-				fit_child_in_rect(right_container, Rect2(size.width - rs.width, 0, rs.width, rs.y));
+				fit_child_in_rect(right_container, Rect2(size.x - rs.x, 0, rs.x, rs.y));
 			}
 
 			Size2 ls = left_container->get_combined_minimum_size();
@@ -517,15 +517,15 @@ void EditorProperty::_notification(int p_what) {
 
 			Size2 size = get_size();
 			if (bottom_editor) {
-				size.height = bottom_editor->get_offset(SIDE_TOP) - _get_v_separation();
+				size.y = bottom_editor->get_offset(SIDE_TOP) - _get_v_separation();
 			} else if (label_reference) {
-				size.height = label_reference->get_size().height;
+				size.y = label_reference->get_size().y;
 			}
-			size.height = MAX(size.height, left_container->get_size().height);
+			size.y = MAX(size.y, left_container->get_size().y);
 
 			// Only draw the label if it's not empty.
 			if (label.is_empty()) {
-				size.height = 0;
+				size.y = 0;
 			} else if (sub_inspector_color_level >= 0 && theme_cache.sub_inspector_background[sub_inspector_color_level].is_valid()) {
 				draw_style_box(theme_cache.sub_inspector_background[sub_inspector_color_level], Rect2(Vector2(), size));
 			} else {
@@ -570,11 +570,11 @@ void EditorProperty::_notification(int p_what) {
 					checkbox = theme_cache.unchecked_icon;
 				}
 
-				check_rect = Rect2(ofs, 0, checkbox->get_width() + padding, size.height);
+				check_rect = Rect2(ofs, 0, checkbox->get_width() + padding, size.y);
 
 				Point2 rtl_pos;
 				if (rtl) {
-					rtl_pos = Point2(size.width - check_rect.position.x - (checkbox->get_width() + padding + EDSCALE), check_rect.position.y);
+					rtl_pos = Point2(size.x - check_rect.position.x - (checkbox->get_width() + padding + EDSCALE), check_rect.position.y);
 				}
 
 				Color color2(1, 1, 1);
@@ -590,7 +590,7 @@ void EditorProperty::_notification(int p_what) {
 					}
 				}
 
-				Point2 icon_ofs = (Point2(padding, size.height - checkbox->get_height()) / 2).round();
+				Point2 icon_ofs = (Point2(padding, size.y - checkbox->get_height()) / 2).round();
 				if (rtl) {
 					draw_texture(checkbox, rtl_pos + icon_ofs, color2);
 				} else {
@@ -608,11 +608,11 @@ void EditorProperty::_notification(int p_what) {
 				const Ref<Texture2D> &reload_icon = theme_cache.revert_icon;
 				int rectw = reload_icon->get_width() + half_padding + theme_cache.horizontal_separation;
 				text_limit -= rectw;
-				revert_rect = Rect2(ofs + text_limit, 0, rectw, size.height);
+				revert_rect = Rect2(ofs + text_limit, 0, rectw, size.y);
 
 				Point2 rtl_pos;
 				if (rtl) {
-					rtl_pos = Point2(size.width - revert_rect.position.x - rectw, revert_rect.position.y);
+					rtl_pos = Point2(size.x - revert_rect.position.x - rectw, revert_rect.position.y);
 				}
 
 				Color color2(1, 1, 1);
@@ -628,7 +628,7 @@ void EditorProperty::_notification(int p_what) {
 					}
 				}
 
-				Point2 icon_ofs = (Point2(padding, size.height - reload_icon->get_height()) / 2).round();
+				Point2 icon_ofs = (Point2(padding, size.y - reload_icon->get_height()) / 2).round();
 				if (rtl) {
 					draw_texture(reload_icon, rtl_pos + icon_ofs, color2);
 				} else {
@@ -645,23 +645,23 @@ void EditorProperty::_notification(int p_what) {
 				int margin_w = theme_cache.horizontal_separation;
 				int total_icon_w = margin_w + pinned_icon->get_width();
 				int text_w = font->get_string_size(label, rtl ? HORIZONTAL_ALIGNMENT_RIGHT : HORIZONTAL_ALIGNMENT_LEFT, text_limit - total_icon_w, font_size).x;
-				int y = (size.height - pinned_icon->get_height()) / 2;
+				int y = (size.y - pinned_icon->get_height()) / 2;
 				if (rtl) {
-					draw_texture(pinned_icon, Vector2(size.width - ofs - text_w - total_icon_w, y), color);
+					draw_texture(pinned_icon, Vector2(size.x - ofs - text_w - total_icon_w, y), color);
 				} else {
 					draw_texture(pinned_icon, Vector2(ofs + text_w + margin_w, y), color);
 				}
 				text_limit -= total_icon_w;
 			}
 
-			int v_ofs = (size.height - font->get_height(font_size)) / 2;
+			int v_ofs = (size.y - font->get_height(font_size)) / 2;
 			if (rtl) {
-				draw_string(font, Point2(size.width - ofs - text_limit, v_ofs + font->get_ascent(font_size)), label, HORIZONTAL_ALIGNMENT_RIGHT, text_limit, font_size, color);
+				draw_string(font, Point2(size.x - ofs - text_limit, v_ofs + font->get_ascent(font_size)), label, HORIZONTAL_ALIGNMENT_RIGHT, text_limit, font_size, color);
 			} else {
 				draw_string(font, Point2(ofs, v_ofs + font->get_ascent(font_size)), label, HORIZONTAL_ALIGNMENT_LEFT, text_limit, font_size, color);
 			}
 
-			ofs = size.width;
+			ofs = size.x;
 			ofs -= right_container->get_minimum_size().x;
 
 			if (keying) {
@@ -674,11 +674,11 @@ void EditorProperty::_notification(int p_what) {
 				}
 
 				ofs -= key->get_width() + half_padding + theme_cache.horizontal_separation;
-				keying_rect = Rect2(ofs, 0, key->get_width() + padding, size.height);
+				keying_rect = Rect2(ofs, 0, key->get_width() + padding, size.y);
 
 				Point2 rtl_pos;
 				if (rtl) {
-					rtl_pos = Point2(size.width - keying_rect.position.x - (key->get_width() + padding), keying_rect.position.y);
+					rtl_pos = Point2(size.x - keying_rect.position.x - (key->get_width() + padding), keying_rect.position.y);
 				}
 
 				Color color2(1, 1, 1);
@@ -694,7 +694,7 @@ void EditorProperty::_notification(int p_what) {
 					}
 				}
 
-				Point2 icon_ofs = (Point2(padding, size.height - key->get_height()) / 2).round();
+				Point2 icon_ofs = (Point2(padding, size.y - key->get_height()) / 2).round();
 				if (rtl) {
 					draw_texture(key, rtl_pos + icon_ofs, color2);
 				} else {
@@ -709,11 +709,11 @@ void EditorProperty::_notification(int p_what) {
 				const Ref<Texture2D> &close = theme_cache.delete_icon;
 
 				ofs -= close->get_width() + half_padding + theme_cache.horizontal_separation;
-				delete_rect = Rect2(ofs, 0, close->get_width() + padding, size.height);
+				delete_rect = Rect2(ofs, 0, close->get_width() + padding, size.y);
 
 				Point2 rtl_pos;
 				if (rtl) {
-					rtl_pos = Point2(size.width - delete_rect.position.x - (close->get_width() + padding), delete_rect.position.y);
+					rtl_pos = Point2(size.x - delete_rect.position.x - (close->get_width() + padding), delete_rect.position.y);
 				}
 
 				Color color2(1, 1, 1);
@@ -729,7 +729,7 @@ void EditorProperty::_notification(int p_what) {
 					}
 				}
 
-				Point2 icon_ofs = (Point2(padding, size.height - close->get_height()) / 2).round();
+				Point2 icon_ofs = (Point2(padding, size.y - close->get_height()) / 2).round();
 				if (rtl) {
 					draw_texture(close, rtl_pos + icon_ofs, color2);
 				} else {
@@ -1884,21 +1884,21 @@ void EditorInspectorCategory::_notification(int p_what) {
 			int hs = theme_cache.horizontal_separation;
 			int icon_size = theme_cache.class_icon_size;
 
-			int w = font->get_string_size(label, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).width;
+			int w = font->get_string_size(label, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x;
 			if (icon.is_valid()) {
 				w += hs + icon_size;
 			}
-			w = MIN(w, get_size().width - sb->get_minimum_size().width);
+			w = MIN(w, get_size().x - sb->get_minimum_size().x);
 
-			int ofs = (get_size().width - w) / 2;
+			int ofs = (get_size().x - w) / 2;
 
 			float v_margin_offset = sb->get_content_margin(SIDE_TOP) - sb->get_content_margin(SIDE_BOTTOM);
 
 			if (icon.is_valid()) {
 				Size2 rect_size = Size2(icon_size, icon_size);
-				Point2 rect_pos = Point2(ofs, (get_size().height - icon_size) / 2 + v_margin_offset).round();
+				Point2 rect_pos = Point2(ofs, (get_size().y - icon_size) / 2 + v_margin_offset).round();
 				if (is_layout_rtl()) {
-					rect_pos.x = get_size().width - rect_pos.x - icon_size;
+					rect_pos.x = get_size().x - rect_pos.x - icon_size;
 				}
 				draw_texture_rect(icon, Rect2(rect_pos, rect_size));
 
@@ -1907,7 +1907,7 @@ void EditorInspectorCategory::_notification(int p_what) {
 			}
 
 			if (is_layout_rtl()) {
-				ofs = get_size().width - ofs - w;
+				ofs = get_size().x - ofs - w;
 			}
 
 			// Use TextLine so we have access to accurate font metrics. This way,
@@ -1918,7 +1918,7 @@ void EditorInspectorCategory::_notification(int p_what) {
 			tl->add_string(label, font, font_size);
 			tl->set_width(w);
 			tl->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_LEFT);
-			float text_pos_y = (get_size().height - tl->get_size().height) / 2 + v_margin_offset;
+			float text_pos_y = (get_size().y - tl->get_size().y) / 2 + v_margin_offset;
 			Point2 text_pos = Point2(ofs, text_pos_y).round();
 			tl->draw(get_canvas_item(), text_pos, theme_cache.font_color);
 		} break;
@@ -1966,15 +1966,15 @@ void EditorInspectorCategory::set_doc_class_name(const String &p_name) {
 Size2 EditorInspectorCategory::get_minimum_size() const {
 	Size2 ms;
 	if (theme_cache.bold_font.is_valid()) {
-		ms.height = theme_cache.bold_font->get_height(theme_cache.bold_font_size);
+		ms.y = theme_cache.bold_font->get_height(theme_cache.bold_font_size);
 	}
 	if (icon.is_valid()) {
-		ms.height = MAX(theme_cache.class_icon_size, ms.height);
+		ms.y = MAX(theme_cache.class_icon_size, ms.y);
 	}
-	ms.height += theme_cache.vertical_separation;
+	ms.y += theme_cache.vertical_separation;
 
 	if (theme_cache.background.is_valid()) {
-		ms.height += theme_cache.background->get_content_margin(SIDE_TOP) + theme_cache.background->get_content_margin(SIDE_BOTTOM);
+		ms.y += theme_cache.background->get_content_margin(SIDE_TOP) + theme_cache.background->get_content_margin(SIDE_BOTTOM);
 	}
 
 	return ms;
@@ -2230,7 +2230,7 @@ void EditorInspectorSection::_notification(int p_what) {
 				section_indent += section_indent_style->get_margin(SIDE_LEFT) + section_indent_style->get_margin(SIDE_RIGHT);
 			}
 
-			int header_width = get_size().width - section_indent;
+			int header_width = get_size().x - section_indent;
 			int header_offset_x = 0.0;
 			bool rtl = is_layout_rtl();
 			if (!rtl) {
@@ -2261,7 +2261,7 @@ void EditorInspectorSection::_notification(int p_what) {
 				if (arrow.is_valid()) {
 					Point2 arrow_position;
 					if (rtl) {
-						arrow_position.x = get_size().width - (margin_start + arrow->get_width());
+						arrow_position.x = get_size().x - (margin_start + arrow->get_width());
 					} else {
 						arrow_position.x = margin_start;
 					}
@@ -2283,7 +2283,7 @@ void EditorInspectorSection::_notification(int p_what) {
 				Ref<Texture2D> key = theme_cache.icon_gui_animation_key;
 				if (keying && key.is_valid()) {
 					Point2 key_position;
-					key_position.x = rtl ? margin_end + theme_cache.padding_size / 2 : (get_size().width - key->get_width() - margin_end - theme_cache.padding_size / 2);
+					key_position.x = rtl ? margin_end + theme_cache.padding_size / 2 : (get_size().x - key->get_width() - margin_end - theme_cache.padding_size / 2);
 					keying_rect = Rect2(key_position.x - theme_cache.padding_size / 2, 0, key->get_width() + theme_cache.padding_size, header_height);
 
 					Color key_color(1, 1, 1);
@@ -2297,7 +2297,7 @@ void EditorInspectorSection::_notification(int p_what) {
 					key_position.y = (header_height - key->get_height()) / 2;
 
 					draw_texture(key, key_position, key_color);
-					margin_end += keying_rect.size.width + theme_cache.horizontal_separation;
+					margin_end += keying_rect.size.x + theme_cache.horizontal_separation;
 				} else {
 					keying_rect = Rect2();
 				}
@@ -2311,15 +2311,15 @@ void EditorInspectorSection::_notification(int p_what) {
 					Point2 label_position;
 					if (rtl) {
 						label_position.x = margin_end;
-						checkbox_position.x = margin_end + label_size.width + 2 * EDSCALE;
+						checkbox_position.x = margin_end + label_size.x + 2 * EDSCALE;
 					} else {
-						label_position.x = get_size().width - (margin_end + label_size.width);
+						label_position.x = get_size().x - (margin_end + label_size.x);
 						checkbox_position.x = label_position.x - checkbox->get_width() - 2 * EDSCALE;
 					}
 					checkbox_position.y = (header_height - checkbox->get_height()) / 2;
 					label_position.y = light_font->get_ascent(light_font_size) + (header_height - light_font->get_height(light_font_size)) / 2;
 
-					check_rect = Rect2(checkbox_position.x, 0, checkbox->get_width() + label_size.width + 2 * EDSCALE, header_height);
+					check_rect = Rect2(checkbox_position.x, 0, checkbox->get_width() + label_size.x + 2 * EDSCALE, header_height);
 
 					Color check_font_color = font_color;
 					Color checkbox_color(1, 1, 1);
@@ -2334,7 +2334,7 @@ void EditorInspectorSection::_notification(int p_what) {
 
 					draw_texture(checkbox, checkbox_position, checkbox_color);
 					draw_string(light_font, label_position, checkbox_text, HORIZONTAL_ALIGNMENT_LEFT, -1.0f, light_font_size, check_font_color, TextServer::JUSTIFICATION_NONE);
-					margin_end += label_size.width + checkbox->get_width() + 6 * EDSCALE;
+					margin_end += label_size.x + checkbox->get_width() + 6 * EDSCALE;
 				} else {
 					check_rect = Rect2();
 				}
@@ -2343,7 +2343,7 @@ void EditorInspectorSection::_notification(int p_what) {
 				const Ref<Texture2D> &revert = theme_cache.icon_gui_revert;
 				if (can_revert && revert.is_valid()) {
 					Point2 revert_position;
-					revert_position.x = rtl ? margin_end + theme_cache.padding_size / 2 : (get_size().width - revert->get_width() - margin_end - theme_cache.padding_size / 2);
+					revert_position.x = rtl ? margin_end + theme_cache.padding_size / 2 : (get_size().x - revert->get_width() - margin_end - theme_cache.padding_size / 2);
 					revert_rect = Rect2(revert_position.x - theme_cache.padding_size / 2, 0, revert->get_width() + theme_cache.padding_size, header_height);
 
 					Color revert_color(1, 1, 1);
@@ -2358,12 +2358,12 @@ void EditorInspectorSection::_notification(int p_what) {
 					revert_position.y = (header_height - revert->get_height()) / 2;
 
 					draw_texture(revert, revert_position, revert_color);
-					margin_end += revert_rect.size.width + theme_cache.horizontal_separation;
+					margin_end += revert_rect.size.x + theme_cache.horizontal_separation;
 				} else {
 					revert_rect = Rect2();
 				}
 
-				int available = get_size().width - (margin_start + margin_end);
+				int available = get_size().x - (margin_start + margin_end);
 
 				// - Count of revertable properties.
 				String num_revertable_str;
@@ -2385,7 +2385,7 @@ void EditorInspectorSection::_notification(int p_what) {
 					float text_offset_y = light_font->get_ascent(light_font_size) + (header_height - light_font->get_height(light_font_size)) / 2;
 					Point2 text_offset = Point2(margin_end, text_offset_y).round();
 					if (!rtl) {
-						text_offset.x = get_size().width - (text_offset.x + num_revertable_width);
+						text_offset.x = get_size().x - (text_offset.x + num_revertable_width);
 					}
 					draw_string(light_font, text_offset, num_revertable_str, HORIZONTAL_ALIGNMENT_LEFT, -1.0f, light_font_size, theme_cache.font_disabled_color, TextServer::JUSTIFICATION_NONE);
 					margin_end += num_revertable_width + outer_margin;
@@ -2408,9 +2408,9 @@ void EditorInspectorSection::_notification(int p_what) {
 
 			// Draw section indentation.
 			if (section_indent_style.is_valid() && section_indent > 0) {
-				Rect2 indent_rect = Rect2(Vector2(), Vector2(indent_depth * section_indent_size, get_size().height));
+				Rect2 indent_rect = Rect2(Vector2(), Vector2(indent_depth * section_indent_size, get_size().y));
 				if (rtl) {
-					indent_rect.position.x = get_size().width - section_indent + section_indent_style->get_margin(SIDE_RIGHT);
+					indent_rect.position.x = get_size().x - section_indent + section_indent_style->get_margin(SIDE_RIGHT);
 				} else {
 					indent_rect.position.x = section_indent_style->get_margin(SIDE_LEFT);
 				}
@@ -2468,15 +2468,15 @@ Size2 EditorInspectorSection::get_minimum_size() const {
 	}
 
 	if (theme_cache.font.is_valid()) {
-		ms.height += theme_cache.font->get_height(theme_cache.font_size) + theme_cache.vertical_separation;
-		ms.width += theme_cache.inspector_margin;
+		ms.y += theme_cache.font->get_height(theme_cache.font_size) + theme_cache.vertical_separation;
+		ms.x += theme_cache.inspector_margin;
 	}
 
 	if (indent_depth > 0 && theme_cache.indent_size > 0) {
-		ms.width += indent_depth * theme_cache.indent_size;
+		ms.x += indent_depth * theme_cache.indent_size;
 	}
 	if (indent_depth > 0 && theme_cache.indent_box.is_valid()) {
-		ms.width += theme_cache.indent_box->get_margin(SIDE_LEFT) + theme_cache.indent_box->get_margin(SIDE_RIGHT);
+		ms.x += theme_cache.indent_box->get_margin(SIDE_LEFT) + theme_cache.indent_box->get_margin(SIDE_RIGHT);
 	}
 
 	return ms;
@@ -3370,7 +3370,7 @@ void EditorInspectorArray::_setup() {
 			test += "8";
 			digits_found /= 10;
 		}
-		numbers_min_w = numbers_font->get_string_size(test).width;
+		numbers_min_w = numbers_font->get_string_size(test).x;
 	}
 
 	for (int i = 0; i < (int)array_elements.size(); i++) {

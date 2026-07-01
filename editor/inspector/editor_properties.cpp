@@ -1141,7 +1141,7 @@ Size2 EditorPropertyLayersGrid::get_minimum_size() const {
 
 	// Add extra rows when expanded.
 	if (expanded) {
-		const int bsize = (min_size.height * 80 / 100) / 2;
+		const int bsize = (min_size.y * 80 / 100) / 2;
 		for (int i = 0; i < expansion_rows; ++i) {
 			min_size.y += 2 * (bsize + 1) + 3;
 		}
@@ -1274,7 +1274,7 @@ void EditorPropertyLayersGrid::_notification(int p_what) {
 			int prev_expansion_rows = expansion_rows;
 			expansion_rows = 0;
 
-			const int bsize = (grid_size.height * 80 / 100) / 2;
+			const int bsize = (grid_size.y * 80 / 100) / 2;
 			const int h = bsize * 2 + 1;
 
 			Color color = get_theme_color(read_only ? SNAME("highlight_disabled_color") : SNAME("highlight_color"), EditorStringName(Editor));
@@ -1285,7 +1285,7 @@ void EditorPropertyLayersGrid::_notification(int p_what) {
 			Color text_color_on = get_theme_color(read_only ? SNAME("font_disabled_color") : SNAME("font_hover_color"), EditorStringName(Editor));
 			text_color_on.a *= 0.7;
 
-			const int vofs = (grid_size.height - h) / 2;
+			const int vofs = (grid_size.y - h) / 2;
 
 			uint32_t layer_index = 0;
 
@@ -1337,7 +1337,7 @@ void EditorPropertyLayersGrid::_notification(int p_what) {
 				int block_size_x = layer_group_size * (bsize + 1);
 				block_ofs.x += block_size_x + 3;
 
-				if (block_ofs.x + block_size_x + 12 > grid_size.width) {
+				if (block_ofs.x + block_size_x + 12 > grid_size.x) {
 					// Keep last valid cell position for the expansion icon.
 					if (!flag_rects.is_empty() && (expansion_rows == 0)) {
 						const Rect2 &last_rect = flag_rects[flag_rects.size() - 1];
@@ -1894,7 +1894,7 @@ void EditorPropertyEasing::_draw_easing() {
 			ifl = 1.0 - ifl;
 		}
 
-		points.push_back(Point2(ifl * s.width, h * s.height));
+		points.push_back(Point2(ifl * s.x, h * s.y));
 	}
 
 	easing_draw->draw_polyline(points, line_color, 1.0, true);

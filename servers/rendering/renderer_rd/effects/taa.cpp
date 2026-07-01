@@ -62,12 +62,12 @@ void TAA::resolve(RID p_frame, RID p_temp, RID p_depth, RID p_velocity, RID p_pr
 	float base_variance = 1.1f;
 	float base_variance_min = 0.75f;
 	float base_variance_max = 1.00f;
-	float variance_scale = 1080.0f / p_resolution.height; // 1080p taken as baseline for calculation, as this is most commonly used resolution
+	float variance_scale = 1080.0f / p_resolution.y; // 1080p taken as baseline for calculation, as this is most commonly used resolution
 
 	TAAResolvePushConstant push_constant;
 	memset(&push_constant, 0, sizeof(TAAResolvePushConstant));
-	push_constant.resolution_width = p_resolution.width;
-	push_constant.resolution_height = p_resolution.height;
+	push_constant.resolution_width = p_resolution.x;
+	push_constant.resolution_height = p_resolution.y;
 	push_constant.disocclusion_threshold = 2.5f; // If velocity changes by less than this amount of texels we can retain the accumulation buffer.
 	push_constant.variance_dynamic = CLAMP(base_variance * variance_scale, base_variance_min, base_variance_max); // Variance dynamically scales based on resolution
 
@@ -83,7 +83,7 @@ void TAA::resolve(RID p_frame, RID p_temp, RID p_depth, RID p_velocity, RID p_pr
 
 	RD::get_singleton()->compute_list_bind_uniform_set(compute_list, uniform_set_cache->get_cache(shader, 0, u_frame_source, u_depth, u_velocity, u_prev_velocity, u_history, u_frame_dest), 0);
 	RD::get_singleton()->compute_list_set_push_constant(compute_list, &push_constant, sizeof(TAAResolvePushConstant));
-	RD::get_singleton()->compute_list_dispatch_threads(compute_list, p_resolution.width, p_resolution.height, 1);
+	RD::get_singleton()->compute_list_dispatch_threads(compute_list, p_resolution.x, p_resolution.y, 1);
 	RD::get_singleton()->compute_list_end();
 }
 

@@ -129,7 +129,7 @@ bool FileSystemList::edit_selected() {
 			if (get_h_scroll_bar()->is_visible()) {
 				rect.position.x -= get_h_scroll_bar()->get_value();
 			}
-			ofs = Vector2(0, Math::floor((MAX(line_editor->get_minimum_size().height, rect.size.height) - rect.size.height) / 2));
+			ofs = Vector2(0, Math::floor((MAX(line_editor->get_minimum_size().y, rect.size.y) - rect.size.y) / 2));
 			popup_rect.position = rect.position - ofs;
 			popup_rect.size = rect.size;
 
@@ -154,7 +154,7 @@ bool FileSystemList::edit_selected() {
 			break;
 	}
 	if (is_layout_rtl()) {
-		popup_rect.position.x = get_size().width - popup_rect.position.x - popup_rect.size.x;
+		popup_rect.position.x = get_size().x - popup_rect.position.x - popup_rect.size.x;
 	}
 	popup_rect.position += get_screen_position();
 

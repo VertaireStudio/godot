@@ -829,15 +829,15 @@ PackedVector3Array OpenXRInterface::get_play_area() const {
 
 	if (openxr_api != nullptr && openxr_api->is_initialized()) {
 		Size2 extents = openxr_api->get_play_space_bounds();
-		if (extents.width != 0.0 && extents.height != 0.0) {
+		if (extents.x != 0.0 && extents.y != 0.0) {
 			Transform3D reference_frame = xr_server->get_reference_frame();
 
 			for (int i = 0; i < 4; i++) {
 				Vector3 coord = sides[i];
 
 				// Scale it up.
-				coord.x *= extents.width;
-				coord.z *= extents.height;
+				coord.x *= extents.x;
+				coord.z *= extents.y;
 
 				// Now apply our reference.
 				Vector3 out = reference_frame.xform(coord);

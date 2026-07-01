@@ -65,8 +65,8 @@ Size2 OptionButton::get_minimum_size() const {
 		const Size2 arrow_size = theme_cache.arrow_icon->get_size();
 
 		Size2 content_size = minsize - padding;
-		content_size.width += arrow_size.width + MAX(0, theme_cache.h_separation);
-		content_size.height = MAX(content_size.height, arrow_size.height);
+		content_size.x += arrow_size.x + MAX(0, theme_cache.h_separation);
+		content_size.y = MAX(content_size.y, arrow_size.y);
 
 		minsize = content_size + padding;
 	}
@@ -129,9 +129,9 @@ void OptionButton::_notification(int p_what) {
 
 			Point2 ofs;
 			if (is_layout_rtl()) {
-				ofs = Point2(theme_cache.arrow_margin, int(Math::abs((size.height - theme_cache.arrow_icon->get_height()) / 2)));
+				ofs = Point2(theme_cache.arrow_margin, int(Math::abs((size.y - theme_cache.arrow_icon->get_height()) / 2)));
 			} else {
-				ofs = Point2(size.width - theme_cache.arrow_icon->get_width() - theme_cache.arrow_margin, int(Math::abs((size.height - theme_cache.arrow_icon->get_height()) / 2)));
+				ofs = Point2(size.x - theme_cache.arrow_icon->get_width() - theme_cache.arrow_margin, int(Math::abs((size.y - theme_cache.arrow_icon->get_height()) / 2)));
 			}
 			theme_cache.arrow_icon->draw(ci, ofs, clr);
 		} break;
@@ -576,12 +576,12 @@ void OptionButton::show_popup() {
 	}
 
 	Rect2 rect = get_screen_rect();
-	rect.position.y += rect.size.height;
+	rect.position.y += rect.size.y;
 	if (get_viewport()->is_embedding_subwindows() && popup->get_force_native()) {
 		Transform2D xform = get_viewport()->get_popup_base_transform_native();
 		rect = xform.xform(rect);
 	}
-	rect.size.height = 0;
+	rect.size.y = 0;
 	popup->set_min_size(Size2(0, 0));
 	popup->popup(rect);
 }

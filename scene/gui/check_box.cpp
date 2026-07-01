@@ -65,14 +65,14 @@ Size2 CheckBox::get_icon_size() const {
 Size2 CheckBox::get_minimum_size() const {
 	Size2 minsize = Button::get_minimum_size();
 	const Size2 tex_size = get_icon_size();
-	if (tex_size.width > 0 || tex_size.height > 0) {
+	if (tex_size.x > 0 || tex_size.y > 0) {
 		const Size2 padding = _get_largest_stylebox_size();
 		Size2 content_size = minsize - padding;
-		if (content_size.width > 0 && tex_size.width > 0) {
-			content_size.width += MAX(0, theme_cache.h_separation);
+		if (content_size.x > 0 && tex_size.x > 0) {
+			content_size.x += MAX(0, theme_cache.h_separation);
 		}
-		content_size.width += tex_size.width;
-		content_size.height = MAX(content_size.height, tex_size.height);
+		content_size.x += tex_size.x;
+		content_size.y = MAX(content_size.y, tex_size.y);
 
 		minsize = content_size + padding;
 	}
@@ -98,9 +98,9 @@ void CheckBox::_notification(int p_what) {
 		case NOTIFICATION_TRANSLATION_CHANGED: {
 			if (is_layout_rtl()) {
 				_set_internal_margin(SIDE_LEFT, 0.f);
-				_set_internal_margin(SIDE_RIGHT, get_icon_size().width);
+				_set_internal_margin(SIDE_RIGHT, get_icon_size().x);
 			} else {
-				_set_internal_margin(SIDE_LEFT, get_icon_size().width);
+				_set_internal_margin(SIDE_LEFT, get_icon_size().x);
 				_set_internal_margin(SIDE_RIGHT, 0.f);
 			}
 		} break;
@@ -131,11 +131,11 @@ void CheckBox::_notification(int p_what) {
 
 			Vector2 ofs;
 			if (is_layout_rtl()) {
-				ofs.x = get_size().x - theme_cache.normal_style->get_margin(SIDE_RIGHT) - get_icon_size().width;
+				ofs.x = get_size().x - theme_cache.normal_style->get_margin(SIDE_RIGHT) - get_icon_size().x;
 			} else {
 				ofs.x = theme_cache.normal_style->get_margin(SIDE_LEFT);
 			}
-			ofs.y = int((get_size().height - get_icon_size().height) / 2) + theme_cache.check_v_offset;
+			ofs.y = int((get_size().y - get_icon_size().y) / 2) + theme_cache.check_v_offset;
 
 			if (is_pressed()) {
 				on_tex->draw_rect(ci, Rect2(ofs, _fit_icon_size(on_tex->get_size())), false, theme_cache.checkbox_checked_color);
@@ -175,9 +175,9 @@ CheckBox::CheckBox(const String &p_text) :
 	set_text_alignment(HORIZONTAL_ALIGNMENT_LEFT);
 
 	if (is_layout_rtl()) {
-		_set_internal_margin(SIDE_RIGHT, get_icon_size().width);
+		_set_internal_margin(SIDE_RIGHT, get_icon_size().x);
 	} else {
-		_set_internal_margin(SIDE_LEFT, get_icon_size().width);
+		_set_internal_margin(SIDE_LEFT, get_icon_size().x);
 	}
 }
 

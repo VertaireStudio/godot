@@ -136,8 +136,8 @@ void Polygon2DEditor::_notification(int p_what) {
 			// Avoid scrollbar overlapping.
 			Size2 hmin = hscroll->get_combined_minimum_size();
 			Size2 vmin = vscroll->get_combined_minimum_size();
-			hscroll->set_anchor_and_offset(SIDE_RIGHT, ANCHOR_END, -vmin.width);
-			vscroll->set_anchor_and_offset(SIDE_BOTTOM, ANCHOR_END, -hmin.height);
+			hscroll->set_anchor_and_offset(SIDE_RIGHT, ANCHOR_END, -vmin.x);
+			vscroll->set_anchor_and_offset(SIDE_BOTTOM, ANCHOR_END, -hmin.y);
 			[[fallthrough]];
 		}
 		case NOTIFICATION_THEME_CHANGED: {
@@ -1112,26 +1112,26 @@ void Polygon2DEditor::_canvas_draw() {
 		int last_cell = 0;
 
 		if (snap_step.x != 0) {
-			for (int i = 0; i < s.width; i++) {
+			for (int i = 0; i < s.x; i++) {
 				int cell = Math::fast_ftoi(Math::floor((mtx.affine_inverse().xform(Vector2(i, 0)).x - snap_offset.x) / snap_step.x));
 				if (i == 0) {
 					last_cell = cell;
 				}
 				if (last_cell != cell) {
-					canvas->draw_line(Point2(i, 0), Point2(i, s.height), grid_color, Math::round(EDSCALE));
+					canvas->draw_line(Point2(i, 0), Point2(i, s.y), grid_color, Math::round(EDSCALE));
 				}
 				last_cell = cell;
 			}
 		}
 
 		if (snap_step.y != 0) {
-			for (int i = 0; i < s.height; i++) {
+			for (int i = 0; i < s.y; i++) {
 				int cell = Math::fast_ftoi(Math::floor((mtx.affine_inverse().xform(Vector2(0, i)).y - snap_offset.y) / snap_step.y));
 				if (i == 0) {
 					last_cell = cell;
 				}
 				if (last_cell != cell) {
-					canvas->draw_line(Point2(0, i), Point2(s.width, i), grid_color, Math::round(EDSCALE));
+					canvas->draw_line(Point2(0, i), Point2(s.x, i), grid_color, Math::round(EDSCALE));
 				}
 				last_cell = cell;
 			}

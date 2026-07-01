@@ -381,7 +381,7 @@ void ViewportRotationControl::_draw_axis(const Axis2D &p_axis) {
 		const Ref<Font> &font = get_theme_font(SNAME("rotation_control"), EditorStringName(EditorFonts));
 		const int font_size = get_theme_font_size(SNAME("rotation_control_size"), EditorStringName(EditorFonts));
 		const Size2 char_size = font->get_char_size(axis_name[0], font_size);
-		const Vector2 char_offset = Vector2(-char_size.width / 2.0, char_size.height * 0.25);
+		const Vector2 char_offset = Vector2(-char_size.x / 2.0, char_size.y * 0.25);
 		draw_char(font, p_axis.screen_point + char_offset, axis_name, font_size, c_positive_axis);
 	} else {
 		// Draw an outline around the negative axes.
@@ -396,7 +396,7 @@ void ViewportRotationControl::_draw_axis(const Axis2D &p_axis) {
 		const float font_ascent = font->get_ascent(font_size);
 		const float font_descent = font->get_descent(font_size);
 		const float string_height = font_ascent + font_descent;
-		const Vector2 offset(-string_size.width / 2.0, string_height * 0.25);
+		const Vector2 offset(-string_size.x / 2.0, string_height * 0.25);
 		draw_string(font, p_axis.screen_point + offset, axis_name, HORIZONTAL_ALIGNMENT_LEFT, -1.0f, font_size, c_negative_axis);
 	}
 }
@@ -1224,7 +1224,7 @@ Vector3 Node3DEditorViewport::_get_screen_to_space(const Vector3 &p_vector3) {
 	camera_transform.basis.rotate(Vector3(0, 1, 0), -view_3d_controller->cursor.y_rot);
 	camera_transform.translate_local(0, 0, view_3d_controller->cursor.distance);
 
-	return camera_transform.xform(Vector3(((p_vector3.x / get_size().width) * 2.0 - 1.0) * screen_he.x, ((1.0 - (p_vector3.y / get_size().height)) * 2.0 - 1.0) * screen_he.y, -(get_znear() + p_vector3.z)));
+	return camera_transform.xform(Vector3(((p_vector3.x / get_size().x) * 2.0 - 1.0) * screen_he.x, ((1.0 - (p_vector3.y / get_size().y)) * 2.0 - 1.0) * screen_he.y, -(get_znear() + p_vector3.z)));
 }
 
 Vector<Plane> Node3DEditorViewport::_build_screen_frustum(const Point2 &p_min, const Point2 &p_max) {
@@ -4266,15 +4266,15 @@ void Node3DEditorViewport::_draw() {
 
 		switch (previewing->get_keep_aspect_mode()) {
 			case Camera3D::KEEP_WIDTH: {
-				draw_rect.size = Size2(s.width, s.width / aspect);
+				draw_rect.size = Size2(s.x, s.x / aspect);
 				draw_rect.position.x = 0;
-				draw_rect.position.y = (s.height - draw_rect.size.y) * 0.5;
+				draw_rect.position.y = (s.y - draw_rect.size.y) * 0.5;
 
 			} break;
 			case Camera3D::KEEP_HEIGHT: {
-				draw_rect.size = Size2(s.height * aspect, s.height);
+				draw_rect.size = Size2(s.y * aspect, s.y);
 				draw_rect.position.y = 0;
-				draw_rect.position.x = (s.width - draw_rect.size.x) * 0.5;
+				draw_rect.position.x = (s.x - draw_rect.size.x) * 0.5;
 
 			} break;
 		}
@@ -4781,13 +4781,13 @@ void Node3DEditorViewport::_sync_cursor_from_transform(const Transform3D &p_tran
 void Node3DEditorViewport::_update_centered_labels() {
 	if (cinema_label->is_visible()) {
 		cinema_label->reset_size();
-		float cinema_half_width = cinema_label->get_size().width / 2.0f;
+		float cinema_half_width = cinema_label->get_size().x / 2.0f;
 		cinema_label->set_anchor_and_offset(SIDE_LEFT, 0.5f, -cinema_half_width);
 	}
 
 	if (locked_label->is_visible()) {
 		locked_label->reset_size();
-		float locked_half_width = locked_label->get_size().width / 2.0f;
+		float locked_half_width = locked_label->get_size().x / 2.0f;
 		locked_label->set_anchor_and_offset(SIDE_LEFT, 0.5f, -locked_half_width);
 	}
 }
@@ -5060,7 +5060,7 @@ void Node3DEditorViewport::update_transform_gizmo_view() {
 	const int viewport_base_height = 400 * MAX(1, EDSCALE);
 	gizmo_scale =
 			(gizmo_size / Math::abs(dd)) * MAX(1, EDSCALE) *
-			MIN(viewport_base_height, subviewport_container->get_size().height) / viewport_base_height;
+			MIN(viewport_base_height, subviewport_container->get_size().y) / viewport_base_height;
 	Vector3 scale = Vector3(1, 1, 1) * gizmo_scale;
 
 	// If the determinant is zero, we should disable the gizmo from being rendered,
@@ -9558,7 +9558,7 @@ void Node3DEditor::shortcut_input(const Ref<InputEvent> &p_event) {
 
 void Node3DEditor::_sun_environ_settings_pressed() {
 	Vector2 pos = sun_environ_settings->get_screen_position() + sun_environ_settings->get_size();
-	sun_environ_popup->set_position(pos - Vector2(sun_environ_popup->get_contents_minimum_size().width / 2, 0));
+	sun_environ_popup->set_position(pos - Vector2(sun_environ_popup->get_contents_minimum_size().x / 2, 0));
 	sun_environ_popup->reset_size();
 	sun_environ_popup->popup();
 	// Grabbing the focus is required for Shift modifier checking to be functional

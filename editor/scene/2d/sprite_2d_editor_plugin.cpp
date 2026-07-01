@@ -568,8 +568,8 @@ void Sprite2DEditor::_notification(int p_what) {
 			// Avoid scrollbar overlapping.
 			Size2 hmin = h_scroll->get_combined_minimum_size();
 			Size2 vmin = v_scroll->get_combined_minimum_size();
-			h_scroll->set_anchor_and_offset(SIDE_RIGHT, ANCHOR_END, -vmin.width);
-			v_scroll->set_anchor_and_offset(SIDE_BOTTOM, ANCHOR_END, -hmin.height);
+			h_scroll->set_anchor_and_offset(SIDE_RIGHT, ANCHOR_END, -vmin.x);
+			v_scroll->set_anchor_and_offset(SIDE_BOTTOM, ANCHOR_END, -hmin.y);
 			[[fallthrough]];
 		}
 		case EditorSettings::NOTIFICATION_EDITOR_SETTINGS_CHANGED: {

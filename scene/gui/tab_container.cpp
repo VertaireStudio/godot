@@ -48,7 +48,7 @@ TabContainer::CachedTab &TabContainer::get_pending_tab(int p_idx) const {
 int TabContainer::_get_tab_height() const {
 	int height = 0;
 	if (tabs_visible && get_tab_count() > 0) {
-		height = tab_bar->get_minimum_size().height + theme_cache.tabbar_style->get_margin(SIDE_TOP) + theme_cache.tabbar_style->get_margin(SIDE_BOTTOM);
+		height = tab_bar->get_minimum_size().y + theme_cache.tabbar_style->get_margin(SIDE_TOP) + theme_cache.tabbar_style->get_margin(SIDE_BOTTOM);
 	}
 
 	return height;
@@ -158,16 +158,16 @@ void TabContainer::_notification(int p_what) {
 
 			// Draw only the tab area if the header is hidden.
 			if (!tabs_visible) {
-				theme_cache.panel_style->draw(canvas, Rect2(0, 0, size.width, size.height));
+				theme_cache.panel_style->draw(canvas, Rect2(0, 0, size.x, size.y));
 				return;
 			}
 			int header_height = _get_tab_height();
-			int header_voffset = int(tabs_position == POSITION_BOTTOM) * (size.height - header_height);
+			int header_voffset = int(tabs_position == POSITION_BOTTOM) * (size.y - header_height);
 
 			// Draw background for the tabbar.
-			theme_cache.tabbar_style->draw(canvas, Rect2(0, header_voffset, size.width, header_height));
+			theme_cache.tabbar_style->draw(canvas, Rect2(0, header_voffset, size.x, header_height));
 			// Draw the background for the tab's content.
-			theme_cache.panel_style->draw(canvas, Rect2(0, int(tabs_position == POSITION_TOP) * header_height, size.width, size.height - header_height));
+			theme_cache.panel_style->draw(canvas, Rect2(0, int(tabs_position == POSITION_TOP) * header_height, size.x, size.y - header_height));
 		} break;
 
 		case NOTIFICATION_VISIBILITY_CHANGED: {
@@ -356,10 +356,10 @@ void TabContainer::_update_margins() {
 
 			int first_tab_pos = tab_bar->get_tab_rect(0).position.x;
 			Rect2 last_tab_rect = tab_bar->get_tab_rect(get_tab_count() - 1);
-			int total_tabs_width = left_margin + right_margin + last_tab_rect.position.x - first_tab_pos + last_tab_rect.size.width;
+			int total_tabs_width = left_margin + right_margin + last_tab_rect.position.x - first_tab_pos + last_tab_rect.size.x;
 
 			// Calculate if all the tabs would still fit if the margin was present.
-			if (get_clip_tabs() && (tab_bar->get_offset_buttons_visible() || (get_tab_count() > 1 && (total_tabs_width + theme_cache.side_margin) > get_size().width))) {
+			if (get_clip_tabs() && (tab_bar->get_offset_buttons_visible() || (get_tab_count() > 1 && (total_tabs_width + theme_cache.side_margin) > get_size().x))) {
 				internal_container->set_offset(SIDE_RIGHT, -right_margin);
 			} else {
 				internal_container->set_offset(SIDE_RIGHT, -right_margin - theme_cache.side_margin);
@@ -996,16 +996,16 @@ Size2 TabContainer::_get_minimum_size(bool p_use_desired_sizes) const {
 
 	if (tabs_visible) {
 		ms = p_use_desired_sizes ? tab_bar->get_bound_desired_size() : tab_bar->get_minimum_size();
-		ms.width += theme_cache.tabbar_style->get_margin(SIDE_LEFT) + theme_cache.tabbar_style->get_margin(SIDE_RIGHT);
-		ms.height += theme_cache.tabbar_style->get_margin(SIDE_TOP) + theme_cache.tabbar_style->get_margin(SIDE_BOTTOM);
+		ms.x += theme_cache.tabbar_style->get_margin(SIDE_LEFT) + theme_cache.tabbar_style->get_margin(SIDE_RIGHT);
+		ms.y += theme_cache.tabbar_style->get_margin(SIDE_TOP) + theme_cache.tabbar_style->get_margin(SIDE_BOTTOM);
 
 		if (get_popup()) {
-			ms.width += p_use_desired_sizes ? popup_button->get_bound_desired_size().x : popup_button->get_minimum_size().x;
+			ms.x += p_use_desired_sizes ? popup_button->get_bound_desired_size().x : popup_button->get_minimum_size().x;
 		}
 
 		if (theme_cache.side_margin > 0 && get_tab_alignment() != TabBar::ALIGNMENT_CENTER &&
 				(get_tab_alignment() != TabBar::ALIGNMENT_RIGHT || !get_popup())) {
-			ms.width += theme_cache.side_margin;
+			ms.x += theme_cache.side_margin;
 		}
 	}
 
@@ -1021,12 +1021,12 @@ Size2 TabContainer::_get_minimum_size(bool p_use_desired_sizes) const {
 		Size2 cms = p_use_desired_sizes ? c->get_bound_desired_size() : c->get_bound_minimum_size();
 		largest_child_min_size = largest_child_min_size.max(cms);
 	}
-	ms.height += largest_child_min_size.height;
+	ms.y += largest_child_min_size.y;
 
 	Size2 panel_ms = theme_cache.panel_style->get_minimum_size();
 
-	ms.width = MAX(ms.width, largest_child_min_size.width + panel_ms.width);
-	ms.height += panel_ms.height;
+	ms.x = MAX(ms.x, largest_child_min_size.x + panel_ms.x);
+	ms.y += panel_ms.y;
 
 	return ms;
 }
@@ -1044,10 +1044,10 @@ Size2 TabContainer::get_inner_combined_maximum_size() const {
 
 	if (tabs_visible && tab_bar) {
 		Size2 tab_bar_ms = tab_bar->get_minimum_size();
-		ms.height -= tab_bar_ms.height;
+		ms.y -= tab_bar_ms.y;
 
 		if (theme_cache.tabbar_style.is_valid()) {
-			ms.height -= theme_cache.tabbar_style->get_margin(SIDE_TOP) + theme_cache.tabbar_style->get_margin(SIDE_BOTTOM);
+			ms.y -= theme_cache.tabbar_style->get_margin(SIDE_TOP) + theme_cache.tabbar_style->get_margin(SIDE_BOTTOM);
 		}
 	}
 
@@ -1065,20 +1065,20 @@ void TabContainer::_maximum_size_changed() {
 
 	Size2 ms = get_combined_maximum_size();
 	if (theme_cache.tabbar_style.is_valid()) {
-		if (ms.width >= 0) {
-			ms.width -= theme_cache.tabbar_style->get_margin(SIDE_LEFT) + theme_cache.tabbar_style->get_margin(SIDE_RIGHT);
+		if (ms.x >= 0) {
+			ms.x -= theme_cache.tabbar_style->get_margin(SIDE_LEFT) + theme_cache.tabbar_style->get_margin(SIDE_RIGHT);
 			if (get_popup() && popup_button) {
-				ms.width -= popup_button->get_minimum_size().x;
+				ms.x -= popup_button->get_minimum_size().x;
 			}
 			if (theme_cache.side_margin > 0 && get_tab_alignment() != TabBar::ALIGNMENT_CENTER &&
 					(get_tab_alignment() != TabBar::ALIGNMENT_RIGHT || !get_popup())) {
-				ms.width -= theme_cache.side_margin;
+				ms.x -= theme_cache.side_margin;
 			}
-			ms.width = MAX(ms.width, 0);
+			ms.x = MAX(ms.x, 0);
 		}
-		if (ms.height >= 0) {
-			ms.height -= theme_cache.tabbar_style->get_margin(SIDE_TOP) + theme_cache.tabbar_style->get_margin(SIDE_BOTTOM);
-			ms.height = MAX(ms.height, 0);
+		if (ms.y >= 0) {
+			ms.y -= theme_cache.tabbar_style->get_margin(SIDE_TOP) + theme_cache.tabbar_style->get_margin(SIDE_BOTTOM);
+			ms.y = MAX(ms.y, 0);
 		}
 	}
 	internal_container->set_parent_maximum_size_cache(Size2(-1, -1));

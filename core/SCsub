@@ -27,7 +27,6 @@ thirdparty_misc_sources = [
     "r128.c",
     "smaz.c",
     # C++ sources
-    "pcg.cpp",
     "polypartition.cpp",
     "smolv.cpp",
 ]

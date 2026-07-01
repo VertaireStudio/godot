@@ -3931,7 +3931,7 @@ void ThemeEditor::_preview_tabs_resized() {
 		if (preview_tabs->is_layout_rtl()) {
 			add_preview_button->set_rect(Rect2(Point2(last_tab.position.x - add_button_size.x - hsep, last_tab.position.y), add_button_size));
 		} else {
-			add_preview_button->set_rect(Rect2(Point2(last_tab.position.x + last_tab.size.width + hsep, last_tab.position.y), add_button_size));
+			add_preview_button->set_rect(Rect2(Point2(last_tab.position.x + last_tab.size.x + hsep, last_tab.position.y), add_button_size));
 		}
 	}
 }

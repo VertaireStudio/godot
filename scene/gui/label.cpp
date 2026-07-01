@@ -145,12 +145,12 @@ void Label::_shape() const {
 	const String &lang = language.is_empty() ? _get_locale() : language;
 
 	Ref<StyleBox> style = theme_cache.normal_style;
-	int width = (get_size().width - style->get_minimum_size().width);
+	int width = (get_size().x - style->get_minimum_size().x);
 	float combined_maximum_width = get_combined_maximum_size().x;
 	bool wrap_with_max_width = autowrap_mode != TextServer::AUTOWRAP_OFF && combined_maximum_width > 0;
 	int maximum_width = -1;
 	if (wrap_with_max_width) {
-		maximum_width = int(combined_maximum_width - style->get_minimum_size().width);
+		maximum_width = int(combined_maximum_width - style->get_minimum_size().x);
 		if (maximum_width <= 0) {
 			maximum_width = 1;
 		}
@@ -262,17 +262,17 @@ void Label::_shape() const {
 
 	int line_index = 0;
 	if (autowrap_mode == TextServer::AUTOWRAP_OFF || wrap_with_max_width) {
-		minsize.width = 0.0f;
+		minsize.x = 0.0f;
 	}
 	for (Paragraph &para : paragraphs) {
 		if (autowrap_mode == TextServer::AUTOWRAP_OFF) {
 			for (const RID &line_rid : para.lines_rid) {
-				if (minsize.width < TS->shaped_text_get_size(line_rid).x) {
-					minsize.width = TS->shaped_text_get_size(line_rid).x;
+				if (minsize.x < TS->shaped_text_get_size(line_rid).x) {
+					minsize.x = TS->shaped_text_get_size(line_rid).x;
 				}
 			}
 		} else if (wrap_with_max_width) {
-			minsize.width = MAX(minsize.width, TS->shaped_text_get_size(para.text_rid).x);
+			minsize.x = MAX(minsize.x, TS->shaped_text_get_size(para.text_rid).x);
 		}
 
 		if (para.lines_dirty) {
@@ -353,7 +353,7 @@ void Label::_shape() const {
 		line_index += para.lines_rid.size();
 	}
 	if (wrap_with_max_width && maximum_width > 0) {
-		minsize.width = MIN(minsize.width, maximum_width);
+		minsize.x = MIN(minsize.x, maximum_width);
 	}
 
 	_update_visible();
@@ -376,7 +376,7 @@ void Label::_update_visible() const {
 		lines_visible = max_lines_visible;
 	}
 
-	minsize.height = 0;
+	minsize.y = 0;
 	int last_line = MIN(total_line_count, lines_visible + lines_skipped);
 
 	int line_index = 0;
@@ -397,15 +397,15 @@ void Label::_update_visible() const {
 					asc += diff / 2;
 					dsc += diff - (diff / 2);
 				}
-				minsize.height += asc + dsc + line_spacing;
+				minsize.y += asc + dsc + line_spacing;
 			}
-			minsize.height += paragraph_spacing;
+			minsize.y += paragraph_spacing;
 			line_index += para.lines_rid.size();
 		}
 	}
 
-	if (minsize.height > 0) {
-		minsize.height -= (line_spacing + paragraph_spacing);
+	if (minsize.y > 0) {
+		minsize.y -= (line_spacing + paragraph_spacing);
 	}
 }
 
@@ -509,26 +509,26 @@ Rect2 Label::_get_line_rect(int p_para, int p_line) const {
 	switch (horizontal_alignment) {
 		case HORIZONTAL_ALIGNMENT_FILL:
 			if (rtl && autowrap_mode != TextServer::AUTOWRAP_OFF) {
-				offset.x = int(size.width - style->get_margin(SIDE_RIGHT) - line_size.width);
+				offset.x = int(size.x - style->get_margin(SIDE_RIGHT) - line_size.x);
 			} else {
 				offset.x = style->get_offset().x;
 			}
 			break;
 		case HORIZONTAL_ALIGNMENT_LEFT: {
 			if (rtl_layout) {
-				offset.x = int(size.width - style->get_margin(SIDE_RIGHT) - line_size.width);
+				offset.x = int(size.x - style->get_margin(SIDE_RIGHT) - line_size.x);
 			} else {
 				offset.x = style->get_offset().x;
 			}
 		} break;
 		case HORIZONTAL_ALIGNMENT_CENTER: {
-			offset.x = int(size.width - line_size.width) / 2;
+			offset.x = int(size.x - line_size.x) / 2;
 		} break;
 		case HORIZONTAL_ALIGNMENT_RIGHT: {
 			if (rtl_layout) {
 				offset.x = style->get_offset().x;
 			} else {
-				offset.x = int(size.width - style->get_margin(SIDE_RIGHT) - line_size.width);
+				offset.x = int(size.x - style->get_margin(SIDE_RIGHT) - line_size.x);
 			}
 		} break;
 	}
@@ -565,7 +565,7 @@ int Label::get_layout_data(Vector2 &r_offset, int &r_last_line, int &r_line_spac
 					dsc += diff - (diff / 2);
 				}
 				total_h += asc + dsc + line_spacing;
-				if (total_h > Math::ceil(get_size().height - style->get_minimum_size().height + line_spacing)) {
+				if (total_h > Math::ceil(get_size().y - style->get_minimum_size().y + line_spacing)) {
 					break;
 				}
 				lines_visible++;
@@ -647,7 +647,7 @@ PackedStringArray Label::get_configuration_warnings() const {
 	// but for now we have to warn about this impossible to resolve combination.
 	// See GH-83546.
 	if (is_inside_tree() && get_tree()->get_edited_scene_root() != this) {
-		if (autowrap_mode != TextServer::AUTOWRAP_OFF && get_combined_maximum_size().width <= 0) {
+		if (autowrap_mode != TextServer::AUTOWRAP_OFF && get_combined_maximum_size().x <= 0) {
 			warnings.push_back(RTR("Labels with autowrapping enabled must have a positive custom maximum width configured to work correctly."));
 		}
 	}
@@ -996,20 +996,20 @@ Size2 Label::get_minimum_size() const {
 	const Ref<Font> &font = (settings.is_valid() && settings->get_font().is_valid()) ? settings->get_font() : theme_cache.font;
 	int font_size = settings.is_valid() ? settings->get_font_size() : theme_cache.font_size;
 
-	min_size.height = MAX(min_size.height, font->get_height(font_size));
+	min_size.y = MAX(min_size.y, font->get_height(font_size));
 
 	Size2 min_style = theme_cache.normal_style->get_minimum_size();
 	if (autowrap_mode != TextServer::AUTOWRAP_OFF) {
 		if (!clip && overrun_behavior != TextServer::OVERRUN_NO_TRIMMING && max_lines_visible > 0) {
 			int line_spacing = settings.is_valid() ? settings->get_line_spacing() : theme_cache.line_spacing;
-			min_size.height = MIN(min_size.height, (font->get_height(font_size) + line_spacing) * max_lines_visible);
+			min_size.y = MIN(min_size.y, (font->get_height(font_size) + line_spacing) * max_lines_visible);
 		} else if (clip || overrun_behavior != TextServer::OVERRUN_NO_TRIMMING) {
-			min_size.height = 1;
+			min_size.y = 1;
 		}
-		return Size2(1, min_size.height) + min_style;
+		return Size2(1, min_size.y) + min_style;
 	} else {
 		if (clip || overrun_behavior != TextServer::OVERRUN_NO_TRIMMING) {
-			min_size.width = 1;
+			min_size.x = 1;
 		}
 		return min_size + min_style;
 	}
@@ -1017,14 +1017,14 @@ Size2 Label::get_minimum_size() const {
 
 Size2 Label::get_desired_size() const {
 	Size2 combined_max = get_combined_maximum_size();
-	if (combined_max.width < 0) {
+	if (combined_max.x < 0) {
 		return Size2();
 	}
 
 	_ensure_shaped();
 	Size2 min_style = theme_cache.normal_style->get_minimum_size();
 	Size2 content_size = minsize + min_style;
-	content_size.width = MIN(content_size.width, int(combined_max.width));
+	content_size.x = MIN(content_size.x, int(combined_max.x));
 
 	return content_size;
 }
@@ -1076,7 +1076,7 @@ int Label::get_visible_line_count() const {
 					dsc += diff - (diff / 2);
 				}
 				total_h += asc + dsc + line_spacing;
-				if (total_h > Math::ceil(get_size().height - style->get_minimum_size().height + line_spacing)) {
+				if (total_h > Math::ceil(get_size().y - style->get_minimum_size().y + line_spacing)) {
 					break;
 				}
 				lines_visible++;

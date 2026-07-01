@@ -87,17 +87,17 @@ Vector<uint8_t> _webp_packer(const Ref<Image> &p_image, float p_quality, bool p_
 	config.quality = p_quality;
 	config.use_sharp_yuv = 1;
 	pic.use_argb = 1;
-	pic.width = s.width;
-	pic.height = s.height;
+	pic.width = s.x;
+	pic.height = s.y;
 	pic.writer = WebPMemoryWrite;
 	pic.custom_ptr = &wrt;
 	WebPMemoryWriterInit(&wrt);
 
 	bool success_import = false;
 	if (img->get_format() == Image::FORMAT_RGB8) {
-		success_import = WebPPictureImportRGB(&pic, r, 3 * s.width);
+		success_import = WebPPictureImportRGB(&pic, r, 3 * s.x);
 	} else {
-		success_import = WebPPictureImportRGBA(&pic, r, 4 * s.width);
+		success_import = WebPPictureImportRGBA(&pic, r, 4 * s.x);
 	}
 	bool success_encode = false;
 	if (success_import) {

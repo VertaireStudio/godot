@@ -72,7 +72,7 @@ void Slider::gui_input(const Ref<InputEvent> &p_event) {
 
 				double grab_width = theme_cache.center_grabber ? 0.0 : (double)grabber->get_width();
 				double grab_height = theme_cache.center_grabber ? 0.0 : (double)grabber->get_height();
-				double max = orientation == VERTICAL ? get_size().height - grab_height : get_size().width - grab_width;
+				double max = orientation == VERTICAL ? get_size().y - grab_height : get_size().x - grab_width;
 				set_block_signals(true);
 				if (orientation == VERTICAL) {
 					set_as_ratio(1 - (((double)grab.pos - (grab_height / 2.0)) / max));
@@ -299,7 +299,7 @@ void Slider::_notification(int p_what) {
 			}
 
 			if (orientation == VERTICAL) {
-				int widget_width = style->get_minimum_size().width;
+				int widget_width = style->get_minimum_size().x;
 				double areasize = size.height - (theme_cache.center_grabber ? 0 : grabber->get_height());
 				int grabber_shift = theme_cache.center_grabber ? grabber->get_height() / 2 : 0;
 				style->draw(ci, Rect2i(Point2i(size.width / 2 - widget_width / 2, 0), Size2i(widget_width, size.height)));
@@ -329,8 +329,8 @@ void Slider::_notification(int p_what) {
 				}
 				grabber->draw(ci, Point2i(size.width / 2 - grabber->get_width() / 2 + theme_cache.grabber_offset, size.height - ratio * areasize - grabber->get_height() + grabber_shift));
 			} else {
-				int widget_height = style->get_minimum_size().height;
-				double areasize = size.width - (theme_cache.center_grabber ? 0 : grabber->get_size().width);
+				int widget_height = style->get_minimum_size().y;
+				double areasize = size.width - (theme_cache.center_grabber ? 0 : grabber->get_size().x);
 				int grabber_shift = theme_cache.center_grabber ? -grabber->get_width() / 2 : 0;
 				bool rtl = is_layout_rtl();
 

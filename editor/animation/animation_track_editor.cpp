@@ -1292,7 +1292,7 @@ void AnimationTimelineEdit::_zoom_changed(double) {
 	double zoom_pivot = 0; // Point on timeline to stay fixed.
 	double zoom_pivot_delta = 0; // Delta seconds from left-most point on timeline to zoom pivot.
 
-	int timeline_width_pixels = get_size().width - get_buttons_width() - get_name_limit();
+	int timeline_width_pixels = get_size().x - get_buttons_width() - get_name_limit();
 	double timeline_width_seconds = timeline_width_pixels / last_zoom_scale; // Length (in seconds) of visible part of timeline before zoom.
 	double updated_timeline_width_seconds = timeline_width_pixels / get_zoom_scale(); // Length after zoom.
 	double updated_timeline_half_width = updated_timeline_width_seconds / 2.0;
@@ -1447,10 +1447,10 @@ int AnimationTimelineEdit::get_buttons_width() const {
 int AnimationTimelineEdit::get_name_limit() const {
 	Ref<Texture2D> hsize_icon = get_editor_theme_icon(SNAME("Hsize"));
 
-	int filter_track_width = filter_track->is_visible() ? filter_track->get_custom_minimum_size().width : 0;
-	int limit = MAX(name_limit, add_track->get_minimum_size().width + hsize_icon->get_width() + filter_track_width + 16 * EDSCALE);
+	int filter_track_width = filter_track->is_visible() ? filter_track->get_custom_minimum_size().x : 0;
+	int limit = MAX(name_limit, add_track->get_minimum_size().x + hsize_icon->get_width() + filter_track_width + 16 * EDSCALE);
 
-	limit = MIN(limit, get_size().width - get_buttons_width() - 1);
+	limit = MIN(limit, get_size().x - get_buttons_width() - 1);
 
 	return limit;
 }
@@ -1461,7 +1461,7 @@ void AnimationTimelineEdit::_notification(int p_what) {
 			add_track->set_button_icon(get_editor_theme_icon(SNAME("Add")));
 			loop->set_button_icon(get_editor_theme_icon(SNAME("Loop")));
 			time_icon->set_texture(get_editor_theme_icon(SNAME("Time")));
-			time_icon->set_custom_minimum_size(Size2((get_editor_theme_icon(SNAME("Time"))->get_size().width + 16) * EDSCALE, 0));
+			time_icon->set_custom_minimum_size(Size2((get_editor_theme_icon(SNAME("Time"))->get_size().x + 16) * EDSCALE, 0));
 			filter_track->set_right_icon(get_editor_theme_icon(SNAME("Search")));
 
 			add_track->get_popup()->clear();
@@ -1490,8 +1490,8 @@ void AnimationTimelineEdit::_notification(int p_what) {
 		} break;
 
 		case NOTIFICATION_RESIZED: {
-			len_hb->set_position(Vector2(get_size().width - get_buttons_width(), 0));
-			len_hb->set_size(Size2(get_buttons_width(), get_size().height));
+			len_hb->set_position(Vector2(get_size().x - get_buttons_width(), 0));
+			len_hb->set_size(Size2(get_buttons_width(), get_size().y));
 			int hsize_icon_width = get_editor_theme_icon(SNAME("Hsize"))->get_width();
 			add_track_hb->set_size(Size2(name_limit - ((hsize_icon_width + 16) * EDSCALE), 0));
 		} break;
@@ -1520,9 +1520,9 @@ void AnimationTimelineEdit::_notification(int p_what) {
 			const int text_primary_margin = get_theme_constant(SNAME("text_primary_margin"), SNAME("AnimationTimelineEdit"));
 			const int text_secondary_margin = get_theme_constant(SNAME("text_secondary_margin"), SNAME("AnimationTimelineEdit"));
 
-			int zoomw = get_size().width - get_buttons_width() - get_name_limit();
+			int zoomw = get_size().x - get_buttons_width() - get_name_limit();
 			float scale = get_zoom_scale();
-			int h = get_size().height;
+			int h = get_size().y;
 
 			float l = animation->get_length();
 			if (l <= 0) {
@@ -1530,7 +1530,7 @@ void AnimationTimelineEdit::_notification(int p_what) {
 			}
 
 			Ref<Texture2D> hsize_icon = get_editor_theme_icon(SNAME("Hsize"));
-			hsize_rect = Rect2(get_name_limit() - hsize_icon->get_width() - 8 * EDSCALE, (get_size().height - hsize_icon->get_height()) / 2, hsize_icon->get_width(), hsize_icon->get_height());
+			hsize_rect = Rect2(get_name_limit() - hsize_icon->get_width() - 8 * EDSCALE, (get_size().y - hsize_icon->get_height()) / 2, hsize_icon->get_width(), hsize_icon->get_height());
 			draw_texture(hsize_icon, hsize_rect.position);
 
 			{
@@ -1607,10 +1607,10 @@ void AnimationTimelineEdit::_notification(int p_what) {
 			int decimals = 2;
 			bool step_found = false;
 
-			const float period_width = font->get_char_size('.', font_size).width;
-			float max_digit_width = font->get_char_size('0', font_size).width;
+			const float period_width = font->get_char_size('.', font_size).x;
+			float max_digit_width = font->get_char_size('0', font_size).x;
 			for (int i = 1; i <= 9; i++) {
-				const float digit_width = font->get_char_size('0' + i, font_size).width;
+				const float digit_width = font->get_char_size('0' + i, font_size).x;
 				max_digit_width = MAX(digit_width, max_digit_width);
 			}
 			const int max_sc = int(Math::ceil(zoomw / scale));
@@ -1699,9 +1699,9 @@ void AnimationTimelineEdit::_notification(int p_what) {
 				}
 			}
 
-			draw_line(Vector2(0, get_size().height), get_size(), h_line_color, Math::round(EDSCALE));
+			draw_line(Vector2(0, get_size().y), get_size(), h_line_color, Math::round(EDSCALE));
 
-			int px = get_name_limit() + end_px - timeline_resize_rect.size.width * 0.5;
+			int px = get_name_limit() + end_px - timeline_resize_rect.size.x * 0.5;
 			timeline_resize_rect.position.x = px;
 			if (px >= get_name_limit() && px < zoomw + get_buttons_width()) {
 				draw_texture(get_editor_theme_icon(SNAME("TimelineHandle")), Point2(timeline_resize_rect.position.x, 0));
@@ -1748,8 +1748,8 @@ Size2 AnimationTimelineEdit::get_minimum_size() const {
 	Size2 ms = filter_track->get_minimum_size();
 	const Ref<Font> font = get_theme_font(SceneStringName(font), SNAME("Label"));
 	const int font_size = get_theme_font_size(SceneStringName(font_size), SNAME("Label"));
-	ms.height = MAX(ms.height, font->get_height(font_size));
-	ms.width = get_buttons_width() + add_track->get_minimum_size().width + get_editor_theme_icon(SNAME("Hsize"))->get_width() + 2 + 8 * EDSCALE;
+	ms.y = MAX(ms.y, font->get_height(font_size));
+	ms.x = get_buttons_width() + add_track->get_minimum_size().x + get_editor_theme_icon(SNAME("Hsize"))->get_width() + 2 + 8 * EDSCALE;
 	return ms;
 }
 
@@ -1781,7 +1781,7 @@ void AnimationTimelineEdit::auto_fit() {
 	}
 
 	float anim_length = anim_end - anim_start;
-	int timeline_width_pixels = get_size().width - get_buttons_width() - get_name_limit();
+	int timeline_width_pixels = get_size().x - get_buttons_width() - get_name_limit();
 
 	// I want a little buffer at the end... (5% looks nice and we should keep some space for the bezier handles)
 	timeline_width_pixels *= 0.95;
@@ -1891,7 +1891,7 @@ void AnimationTimelineEdit::_play_position_draw() {
 	float scale = get_zoom_scale();
 	int px = (-get_value() + play_position_pos) * scale + get_name_limit();
 
-	if (px >= get_name_limit() && px < (play_position->get_size().width - get_buttons_width())) {
+	if (px >= get_name_limit() && px < (play_position->get_size().x - get_buttons_width())) {
 		int h = editor->box_selection_container->get_global_position().y - get_global_position().y;
 		Color color = get_theme_color(SNAME("accent_color"), EditorStringName(Editor));
 
@@ -1931,7 +1931,7 @@ void AnimationTimelineEdit::gui_input(const Ref<InputEvent> &p_event) {
 		if (!resizing_timeline && !dragging_hsize && mb->is_pressed() && mb->get_button_index() == MouseButton::LEFT) {
 			if (timeline_resize_rect.has_point(mb->get_position())) {
 				resizing_timeline = true;
-				timeline_resize_from = timeline_resize_rect.position.x + timeline_resize_rect.size.width / 2 - mb->get_position().x;
+				timeline_resize_from = timeline_resize_rect.position.x + timeline_resize_rect.size.x / 2 - mb->get_position().x;
 				timeline_resize_at = animation->get_length();
 			} else if (hsize_rect.has_point(mb->get_position())) {
 				dragging_hsize = true;
@@ -1941,7 +1941,7 @@ void AnimationTimelineEdit::gui_input(const Ref<InputEvent> &p_event) {
 		}
 
 		if (!resizing_timeline && !panner->is_panning() && mb->is_pressed() && mb->get_button_index() == MouseButton::LEFT &&
-				mb->get_position().x > get_name_limit() && mb->get_position().x < (get_size().width - get_buttons_width())) {
+				mb->get_position().x > get_name_limit() && mb->get_position().x < (get_size().x - get_buttons_width())) {
 			int x = mb->get_position().x - get_name_limit();
 
 			float ofs = x / get_zoom_scale() + get_value();
@@ -2170,15 +2170,15 @@ void AnimationTrackEdit::_notification(int p_what) {
 				draw_style_box(stylebox_focus, Rect2(Point2(1 * EDSCALE, 0), get_size() - Size2(1 * EDSCALE, 0)));
 			}
 
-			int limit_end = get_size().width - timeline->get_buttons_width();
+			int limit_end = get_size().x - timeline->get_buttons_width();
 
 			// Unavailable timeline.
 
 			{
 				int px = (animation->get_length() - timeline->get_value()) * timeline->get_zoom_scale() + timeline->get_name_limit();
 				px = MAX(px, timeline->get_name_limit());
-				Rect2 rect = Rect2(px, 0, limit_end - px, get_size().height);
-				if (rect.size.width > 0) {
+				Rect2 rect = Rect2(px, 0, limit_end - px, get_size().y);
+				if (rect.size.x > 0) {
 					draw_rect(rect, Color(0, 0, 0, 0.2));
 				}
 			}
@@ -2201,12 +2201,12 @@ void AnimationTrackEdit::_notification(int p_what) {
 
 				int ofs = in_group ? outer_margin : 0;
 
-				check_rect = Rect2(Point2(ofs, (get_size().height - check->get_height()) / 2).round(), check->get_size());
+				check_rect = Rect2(Point2(ofs, (get_size().y - check->get_height()) / 2).round(), check->get_size());
 				draw_texture(check, check_rect.position);
 				ofs += check->get_width() + h_separation;
 
 				Ref<Texture2D> key_type_icon = _get_key_type_icon();
-				draw_texture(key_type_icon, Point2(ofs, (get_size().height - key_type_icon->get_height()) / 2).round());
+				draw_texture(key_type_icon, Point2(ofs, (get_size().y - key_type_icon->get_height()) / 2).round());
 				ofs += key_type_icon->get_width() + h_separation;
 
 				NodePath anim_path = animation->track_get_path(track);
@@ -2243,7 +2243,7 @@ void AnimationTrackEdit::_notification(int p_what) {
 					Ref<Texture2D> icon = EditorNode::get_singleton()->get_object_icon(node);
 					const Vector2 icon_size = Vector2(1, 1) * get_theme_constant(SNAME("class_icon_size"), EditorStringName(Editor));
 
-					icon_rect = Rect2(Point2(ofs, (get_size().height - check->get_height()) / 2).round(), icon_size);
+					icon_rect = Rect2(Point2(ofs, (get_size().y - check->get_height()) / 2).round(), icon_size);
 					draw_texture_rect(icon, icon_rect);
 					icon_cache = icon;
 
@@ -2259,13 +2259,13 @@ void AnimationTrackEdit::_notification(int p_what) {
 
 				path_cache = text;
 
-				path_rect = Rect2(ofs, 0, limit - ofs - h_separation, get_size().height);
+				path_rect = Rect2(ofs, 0, limit - ofs - h_separation, get_size().y);
 
-				Vector2 string_pos = Point2(ofs, (get_size().height - font_to_use->get_height(font_size_to_use)) / 2 + font_to_use->get_ascent(font_size_to_use));
+				Vector2 string_pos = Point2(ofs, (get_size().y - font_to_use->get_height(font_size_to_use)) / 2 + font_to_use->get_ascent(font_size_to_use));
 				string_pos = string_pos.floor();
 				draw_string(font_to_use, string_pos, text, HORIZONTAL_ALIGNMENT_LEFT, limit - ofs - h_separation, font_size_to_use, text_color);
 
-				draw_line(Point2(limit, 0), Point2(limit, get_size().height), h_line_color, Math::round(EDSCALE));
+				draw_line(Point2(limit, 0), Point2(limit, get_size().y), h_line_color, Math::round(EDSCALE));
 			}
 
 			// Marker sections.
@@ -2296,7 +2296,7 @@ void AnimationTrackEdit::_notification(int p_what) {
 						end_ofs = MIN(end_ofs, limit_end);
 						Rect2 rect;
 						rect.set_position(Vector2(start_ofs, 0));
-						rect.set_size(Vector2(end_ofs - start_ofs, get_size().height));
+						rect.set_size(Vector2(end_ofs - start_ofs, get_size().y));
 
 						draw_rect(rect, Color(1, 0.1, 0.1, 0.2));
 					}
@@ -2319,7 +2319,7 @@ void AnimationTrackEdit::_notification(int p_what) {
 						if (offset >= timeline->get_name_limit() && offset < limit_end) {
 							Color marker_color = animation->get_marker_color(marker);
 							marker_color.a = 0.2;
-							draw_line(Point2(offset, 0), Point2(offset, get_size().height), marker_color, Math::round(EDSCALE));
+							draw_line(Point2(offset, 0), Point2(offset, get_size().y), marker_color, Math::round(EDSCALE));
 						}
 					}
 				}
@@ -2396,7 +2396,7 @@ void AnimationTrackEdit::_notification(int p_what) {
 
 				const Ref<Texture2D> down_icon = get_theme_icon(SNAME("select_arrow"), SNAME("Tree"));
 
-				draw_line(Point2(ofs, 0), Point2(ofs, get_size().height), h_line_color, Math::round(EDSCALE));
+				draw_line(Point2(ofs, 0), Point2(ofs, get_size().y), h_line_color, Math::round(EDSCALE));
 
 				ofs += h_separation;
 				{
@@ -2413,7 +2413,7 @@ void AnimationTrackEdit::_notification(int p_what) {
 					Ref<Texture2D> update_icon = cont_icon[update_mode];
 
 					update_mode_rect.position.x = ofs;
-					update_mode_rect.position.y = Math::round((get_size().height - update_icon->get_height()) / 2);
+					update_mode_rect.position.y = Math::round((get_size().y - update_icon->get_height()) / 2);
 					update_mode_rect.size = update_icon->get_size();
 
 					if (!animation->track_is_compressed(track) && animation->track_get_type(track) == Animation::TYPE_VALUE) {
@@ -2426,14 +2426,14 @@ void AnimationTrackEdit::_notification(int p_what) {
 					}
 					// Make it easier to click.
 					update_mode_rect.position.y = 0;
-					update_mode_rect.size.y = get_size().height;
+					update_mode_rect.size.y = get_size().y;
 
 					ofs += update_icon->get_width() + h_separation / 2;
 					update_mode_rect.size.x += h_separation / 2;
 
 					if (!read_only) {
 						if (animation->track_get_type(track) == Animation::TYPE_VALUE || animation->track_get_type(track) == Animation::TYPE_AUDIO) {
-							draw_texture(down_icon, Vector2(ofs, (get_size().height - down_icon->get_height()) / 2).round());
+							draw_texture(down_icon, Vector2(ofs, (get_size().y - down_icon->get_height()) / 2).round());
 							update_mode_rect.size.x += down_icon->get_width();
 						} else if (animation->track_get_type(track) == Animation::TYPE_BEZIER) {
 							update_mode_rect.size.x += down_icon->get_width();
@@ -2446,7 +2446,7 @@ void AnimationTrackEdit::_notification(int p_what) {
 					}
 
 					ofs += down_icon->get_width();
-					draw_line(Point2(ofs + h_separation * 0.5, 0), Point2(ofs + h_separation * 0.5, get_size().height), h_line_color, Math::round(EDSCALE));
+					draw_line(Point2(ofs + h_separation * 0.5, 0), Point2(ofs + h_separation * 0.5, get_size().y), h_line_color, Math::round(EDSCALE));
 					ofs += h_separation;
 				}
 
@@ -2458,7 +2458,7 @@ void AnimationTrackEdit::_notification(int p_what) {
 					Ref<Texture2D> icon = interp_icon[interp_mode];
 
 					interp_mode_rect.position.x = ofs;
-					interp_mode_rect.position.y = Math::round((get_size().height - icon->get_height()) / 2);
+					interp_mode_rect.position.y = Math::round((get_size().y - icon->get_height()) / 2);
 					interp_mode_rect.size = icon->get_size();
 
 					if (!animation->track_is_compressed(track) && (animation->track_get_type(track) == Animation::TYPE_VALUE || animation->track_get_type(track) == Animation::TYPE_BLEND_SHAPE || animation->track_get_type(track) == Animation::TYPE_POSITION_3D || animation->track_get_type(track) == Animation::TYPE_SCALE_3D || animation->track_get_type(track) == Animation::TYPE_ROTATION_3D)) {
@@ -2466,20 +2466,20 @@ void AnimationTrackEdit::_notification(int p_what) {
 					}
 					// Make it easier to click.
 					interp_mode_rect.position.y = 0;
-					interp_mode_rect.size.y = get_size().height;
+					interp_mode_rect.size.y = get_size().y;
 
 					ofs += icon->get_width() + h_separation / 2;
 					interp_mode_rect.size.x += h_separation / 2;
 
 					if (!read_only && !animation->track_is_compressed(track) && (animation->track_get_type(track) == Animation::TYPE_VALUE || animation->track_get_type(track) == Animation::TYPE_BLEND_SHAPE || animation->track_get_type(track) == Animation::TYPE_POSITION_3D || animation->track_get_type(track) == Animation::TYPE_SCALE_3D || animation->track_get_type(track) == Animation::TYPE_ROTATION_3D)) {
-						draw_texture(down_icon, Vector2(ofs, (get_size().height - down_icon->get_height()) / 2).round());
+						draw_texture(down_icon, Vector2(ofs, (get_size().y - down_icon->get_height()) / 2).round());
 						interp_mode_rect.size.x += down_icon->get_width();
 					} else {
 						interp_mode_rect = Rect2();
 					}
 
 					ofs += down_icon->get_width();
-					draw_line(Point2(ofs + h_separation * 0.5, 0), Point2(ofs + h_separation * 0.5, get_size().height), h_line_color, Math::round(EDSCALE));
+					draw_line(Point2(ofs + h_separation * 0.5, 0), Point2(ofs + h_separation * 0.5, get_size().y), h_line_color, Math::round(EDSCALE));
 					ofs += h_separation;
 				}
 
@@ -2491,7 +2491,7 @@ void AnimationTrackEdit::_notification(int p_what) {
 					Ref<Texture2D> icon = wrap_icon[loop_wrap ? 1 : 0];
 
 					loop_wrap_rect.position.x = ofs;
-					loop_wrap_rect.position.y = Math::round((get_size().height - icon->get_height()) / 2);
+					loop_wrap_rect.position.y = Math::round((get_size().y - icon->get_height()) / 2);
 					loop_wrap_rect.size = icon->get_size();
 
 					if (!animation->track_is_compressed(track) && (animation->track_get_type(track) == Animation::TYPE_VALUE || animation->track_get_type(track) == Animation::TYPE_BLEND_SHAPE || animation->track_get_type(track) == Animation::TYPE_POSITION_3D || animation->track_get_type(track) == Animation::TYPE_SCALE_3D || animation->track_get_type(track) == Animation::TYPE_ROTATION_3D)) {
@@ -2499,20 +2499,20 @@ void AnimationTrackEdit::_notification(int p_what) {
 					}
 
 					loop_wrap_rect.position.y = 0;
-					loop_wrap_rect.size.y = get_size().height;
+					loop_wrap_rect.size.y = get_size().y;
 
 					ofs += icon->get_width() + h_separation / 2;
 					loop_wrap_rect.size.x += h_separation / 2;
 
 					if (!read_only && !animation->track_is_compressed(track) && (animation->track_get_type(track) == Animation::TYPE_VALUE || animation->track_get_type(track) == Animation::TYPE_BLEND_SHAPE || animation->track_get_type(track) == Animation::TYPE_POSITION_3D || animation->track_get_type(track) == Animation::TYPE_SCALE_3D || animation->track_get_type(track) == Animation::TYPE_ROTATION_3D)) {
-						draw_texture(down_icon, Vector2(ofs, (get_size().height - down_icon->get_height()) / 2).round());
+						draw_texture(down_icon, Vector2(ofs, (get_size().y - down_icon->get_height()) / 2).round());
 						loop_wrap_rect.size.x += down_icon->get_width();
 					} else {
 						loop_wrap_rect = Rect2();
 					}
 
 					ofs += down_icon->get_width();
-					draw_line(Point2(ofs + h_separation * 0.5, 0), Point2(ofs + h_separation * 0.5, get_size().height), h_line_color, Math::round(EDSCALE));
+					draw_line(Point2(ofs + h_separation * 0.5, 0), Point2(ofs + h_separation * 0.5, get_size().y), h_line_color, Math::round(EDSCALE));
 					ofs += h_separation;
 				}
 
@@ -2521,8 +2521,8 @@ void AnimationTrackEdit::_notification(int p_what) {
 
 					Ref<Texture2D> icon = get_editor_theme_icon(animation->track_is_compressed(track) ? SNAME("Lock") : SNAME("Remove"));
 
-					remove_rect.position.x = ofs + ((get_size().width - ofs) - icon->get_width()) - outer_margin;
-					remove_rect.position.y = Math::round((get_size().height - icon->get_height()) / 2);
+					remove_rect.position.x = ofs + ((get_size().x - ofs) - icon->get_width()) - outer_margin;
+					remove_rect.position.y = Math::round((get_size().y - icon->get_height()) / 2);
 					remove_rect.size = icon->get_size();
 
 					if (read_only) {
@@ -2534,17 +2534,17 @@ void AnimationTrackEdit::_notification(int p_what) {
 			}
 
 			if (in_group) {
-				draw_line(Vector2(timeline->get_name_limit(), get_size().height), get_size(), h_line_color, Math::round(EDSCALE));
+				draw_line(Vector2(timeline->get_name_limit(), get_size().y), get_size(), h_line_color, Math::round(EDSCALE));
 			} else {
-				draw_line(Vector2(0, get_size().height), get_size(), h_line_color, Math::round(EDSCALE));
+				draw_line(Vector2(0, get_size().y), get_size(), h_line_color, Math::round(EDSCALE));
 			}
 
 			if (dropping_at != 0) {
 				Color drop_color = get_theme_color(SNAME("accent_color"), EditorStringName(Editor));
 				if (dropping_at < 0) {
-					draw_line(Vector2(0, 0), Vector2(get_size().width, 0), drop_color, Math::round(EDSCALE));
+					draw_line(Vector2(0, 0), Vector2(get_size().x, 0), drop_color, Math::round(EDSCALE));
 				} else {
-					draw_line(Vector2(0, get_size().height), get_size(), drop_color, Math::round(EDSCALE));
+					draw_line(Vector2(0, get_size().y), get_size(), drop_color, Math::round(EDSCALE));
 				}
 			}
 		} break;
@@ -2577,7 +2577,7 @@ Rect2 AnimationTrackEdit::get_key_rect(int p_index, float p_pixels_sec) {
 	if (animation.is_null()) {
 		return Rect2();
 	}
-	Rect2 rect = Rect2(-type_icon->get_width() / 2, 0, type_icon->get_width(), get_size().height);
+	Rect2 rect = Rect2(-type_icon->get_width() / 2, 0, type_icon->get_width(), get_size().y);
 
 	// Make it a big easier to click.
 	rect.position.x -= rect.size.x * 0.5;
@@ -2609,7 +2609,7 @@ void AnimationTrackEdit::draw_key_link(int p_index_from, int p_index_to, float p
 	int from_x = MAX(p_x, p_clip_left);
 	int to_x = MIN(p_next_x, p_clip_right);
 
-	draw_line(Point2(from_x + 1, get_size().height / 2), Point2(to_x, get_size().height / 2), color, Math::round(2 * EDSCALE));
+	draw_line(Point2(from_x + 1, get_size().y / 2), Point2(to_x, get_size().y / 2), color, Math::round(2 * EDSCALE));
 }
 
 void AnimationTrackEdit::draw_key(int p_index, float p_pixels_sec, int p_x, bool p_selected, int p_clip_left, int p_clip_right) {
@@ -2637,7 +2637,7 @@ void AnimationTrackEdit::draw_key(int p_index, float p_pixels_sec, int p_x, bool
 		}
 	}
 
-	Vector2 ofs(p_x - icon_to_draw->get_width() / 2, (get_size().height - icon_to_draw->get_height()) / 2);
+	Vector2 ofs(p_x - icon_to_draw->get_width() / 2, (get_size().y - icon_to_draw->get_height()) / 2);
 
 	if (animation->track_get_type(track) == Animation::TYPE_METHOD) {
 		bool use_monospace_font = EDITOR_GET("interface/theme/use_monospace_font_for_editor_symbols");
@@ -2674,7 +2674,7 @@ void AnimationTrackEdit::draw_key(int p_index, float p_pixels_sec, int p_x, bool
 		int limit = editor->is_function_name_pressed() ? 0 : MAX(0, p_clip_right - p_x - icon_to_draw->get_width() * 2);
 
 		if (limit > 0) {
-			draw_string(font, Vector2(p_x + icon_to_draw->get_width(), int(get_size().height - font->get_height(font_size)) / 2 + font->get_ascent(font_size)), text, HORIZONTAL_ALIGNMENT_LEFT, limit, font_size, color);
+			draw_string(font, Vector2(p_x + icon_to_draw->get_width(), int(get_size().y - font->get_height(font_size)) / 2 + font->get_ascent(font_size)), text, HORIZONTAL_ALIGNMENT_LEFT, limit, font_size, color);
 		}
 	}
 
@@ -2690,7 +2690,7 @@ void AnimationTrackEdit::draw_key(int p_index, float p_pixels_sec, int p_x, bool
 // Helper.
 void AnimationTrackEdit::draw_rect_clipped(const Rect2 &p_rect, const Color &p_color, bool p_filled) {
 	int clip_left = timeline->get_name_limit();
-	int clip_right = get_size().width - timeline->get_buttons_width();
+	int clip_right = get_size().x - timeline->get_buttons_width();
 
 	if (p_rect.position.x > clip_right) {
 		return;
@@ -2698,7 +2698,7 @@ void AnimationTrackEdit::draw_rect_clipped(const Rect2 &p_rect, const Color &p_c
 	if (p_rect.position.x + p_rect.size.x < clip_left) {
 		return;
 	}
-	Rect2 clip = Rect2(clip_left, 0, clip_right - clip_left, get_size().height);
+	Rect2 clip = Rect2(clip_left, 0, clip_right - clip_left, get_size().y);
 	draw_rect(clip.intersection(p_rect), p_color, p_filled);
 }
 
@@ -2710,7 +2710,7 @@ void AnimationTrackEdit::draw_fg(int p_clip_left, int p_clip_right) {
 
 void AnimationTrackEdit::draw_texture_region_clipped(const Ref<Texture2D> &p_texture, const Rect2 &p_rect, const Rect2 &p_region) {
 	int clip_left = timeline->get_name_limit();
-	int clip_right = get_size().width - timeline->get_buttons_width();
+	int clip_right = get_size().x - timeline->get_buttons_width();
 
 	// Clip left and right.
 	if (clip_left > p_rect.position.x + p_rect.size.x) {
@@ -2800,11 +2800,11 @@ void AnimationTrackEdit::_play_position_draw() {
 	}
 
 	float scale = timeline->get_zoom_scale();
-	int h = get_size().height;
+	int h = get_size().y;
 
 	int px = (-timeline->get_value() + play_position_pos) * scale + timeline->get_name_limit();
 
-	if (px >= timeline->get_name_limit() && px < (get_size().width - timeline->get_buttons_width())) {
+	if (px >= timeline->get_name_limit() && px < (get_size().x - timeline->get_buttons_width())) {
 		Color color = get_theme_color(SNAME("accent_color"), EditorStringName(Editor));
 		play_position->draw_line(Point2(px, 0), Point2(px, h), color, Math::round(2 * EDSCALE));
 	}
@@ -2917,7 +2917,7 @@ String AnimationTrackEdit::get_tooltip(const Point2 &p_pos) const {
 	}
 
 	int limit = timeline->get_name_limit();
-	int limit_end = get_size().width - timeline->get_buttons_width();
+	int limit_end = get_size().x - timeline->get_buttons_width();
 	// Left Border including space occupied by keyframes on t=0.
 	int limit_start_hitbox = limit - type_icon->get_width();
 
@@ -3150,7 +3150,7 @@ void AnimationTrackEdit::gui_input(const Ref<InputEvent> &p_event) {
 				moving_selection_attempt = false;
 				moving_selection = false;
 
-				Vector2 popup_pos = get_screen_position() + update_mode_rect.position + Vector2(0, update_mode_rect.size.height);
+				Vector2 popup_pos = get_screen_position() + update_mode_rect.position + Vector2(0, update_mode_rect.size.y);
 				menu->set_position(popup_pos);
 				menu->popup();
 				accept_event();
@@ -3199,7 +3199,7 @@ void AnimationTrackEdit::gui_input(const Ref<InputEvent> &p_event) {
 				moving_selection_attempt = false;
 				moving_selection = false;
 
-				Vector2 popup_pos = get_screen_position() + interp_mode_rect.position + Vector2(0, interp_mode_rect.size.height);
+				Vector2 popup_pos = get_screen_position() + interp_mode_rect.position + Vector2(0, interp_mode_rect.size.y);
 				menu->set_position(popup_pos);
 				menu->popup();
 				accept_event();
@@ -3219,7 +3219,7 @@ void AnimationTrackEdit::gui_input(const Ref<InputEvent> &p_event) {
 				moving_selection_attempt = false;
 				moving_selection = false;
 
-				Vector2 popup_pos = get_screen_position() + loop_wrap_rect.position + Vector2(0, loop_wrap_rect.size.height);
+				Vector2 popup_pos = get_screen_position() + loop_wrap_rect.position + Vector2(0, loop_wrap_rect.size.y);
 				menu->set_position(popup_pos);
 				menu->popup();
 				accept_event();
@@ -3244,7 +3244,7 @@ void AnimationTrackEdit::gui_input(const Ref<InputEvent> &p_event) {
 
 	if (!moving_selection && mb.is_valid() && mb->is_pressed() && mb->get_button_index() == MouseButton::RIGHT) {
 		Point2 pos = mb->get_position();
-		if (pos.x >= timeline->get_name_limit() && pos.x <= get_size().width - timeline->get_buttons_width()) {
+		if (pos.x >= timeline->get_name_limit() && pos.x <= get_size().x - timeline->get_buttons_width()) {
 			// Can do something with menu too! show insert key.
 			float offset = (pos.x - timeline->get_name_limit()) / timeline->get_zoom_scale();
 			if (!read_only) {
@@ -3316,7 +3316,7 @@ void AnimationTrackEdit::gui_input(const Ref<InputEvent> &p_event) {
 		if (!animation->track_is_compressed(track)) {
 			const float scale = timeline->get_zoom_scale();
 			const int limit = timeline->get_name_limit();
-			const int limit_end = get_size().width - timeline->get_buttons_width();
+			const int limit_end = get_size().x - timeline->get_buttons_width();
 			// Left Border including space occupied by keyframes on t=0.
 			const int limit_start_hitbox = limit - type_icon->get_width();
 			const Point2 pos = mm->get_position();
@@ -3385,7 +3385,7 @@ bool AnimationTrackEdit::_try_select_at_ui_pos(const Point2 &p_pos, bool p_aggre
 	if (!animation->track_is_compressed(track)) { // Selecting compressed keyframes for editing is not possible.
 		float scale = timeline->get_zoom_scale();
 		int limit = timeline->get_name_limit();
-		int limit_end = get_size().width - timeline->get_buttons_width();
+		int limit_end = get_size().x - timeline->get_buttons_width();
 		// Left Border including space occupied by keyframes on t=0.
 		int limit_start_hitbox = limit - type_icon->get_width();
 
@@ -3541,7 +3541,7 @@ bool AnimationTrackEdit::can_drop_data(const Point2 &p_point, const Variant &p_d
 		}
 	}
 
-	if (p_point.y < get_size().height / 2) {
+	if (p_point.y < get_size().y / 2) {
 		dropping_at = -1;
 	} else {
 		dropping_at = 1;
@@ -3732,7 +3732,7 @@ void AnimationTrackEdit::append_to_selection(const Rect2 &p_box, bool p_deselect
 	}
 	// Left Border including space occupied by keyframes on t=0.
 	int limit_start_hitbox = timeline->get_name_limit() - type_icon->get_width();
-	Rect2 select_rect(limit_start_hitbox, 0, get_size().width - timeline->get_name_limit() - timeline->get_buttons_width(), get_size().height);
+	Rect2 select_rect(limit_start_hitbox, 0, get_size().x - timeline->get_name_limit() - timeline->get_buttons_width(), get_size().y);
 	select_rect = select_rect.intersection(p_box);
 
 	// Select should happen in the opposite order of drawing for more accurate overlap select.
@@ -3841,19 +3841,19 @@ void AnimationTrackEditGroup::_notification(int p_what) {
 				// Draw hover feedback for AnimationTrackEditGroup.
 				// Add a limit to just show hover over portion with text.
 				int limit = timeline->get_name_limit();
-				draw_style_box(stylebox_hover, Rect2(Point2(1 * EDSCALE, 0), Size2(limit - 1 * EDSCALE, get_size().height)));
+				draw_style_box(stylebox_hover, Rect2(Point2(1 * EDSCALE, 0), Size2(limit - 1 * EDSCALE, get_size().y)));
 			}
 
 			int limit = timeline->get_name_limit();
-			int limit_end = get_size().width - timeline->get_buttons_width();
+			int limit_end = get_size().x - timeline->get_buttons_width();
 
 			// Unavailable timeline.
 
 			{
 				int px = (editor->get_current_animation()->get_length() - timeline->get_value()) * timeline->get_zoom_scale() + timeline->get_name_limit();
 				px = MAX(px, timeline->get_name_limit());
-				Rect2 rect = Rect2(px, 0, limit_end - px, get_size().height);
-				if (rect.size.width > 0) {
+				Rect2 rect = Rect2(px, 0, limit_end - px, get_size().y);
+				if (rect.size.x > 0) {
 					draw_rect(rect, Color(0, 0, 0, 0.2));
 				}
 			}
@@ -3886,7 +3886,7 @@ void AnimationTrackEditGroup::_notification(int p_what) {
 						end_ofs = MIN(end_ofs, limit_end);
 						Rect2 rect;
 						rect.set_position(Vector2(start_ofs, 0));
-						rect.set_size(Vector2(end_ofs - start_ofs, get_size().height));
+						rect.set_size(Vector2(end_ofs - start_ofs, get_size().y));
 
 						draw_rect(rect, Color(1, 0.1, 0.1, 0.2));
 					}
@@ -3909,32 +3909,32 @@ void AnimationTrackEditGroup::_notification(int p_what) {
 						if (offset >= timeline->get_name_limit() && offset < limit_end) {
 							Color marker_color = editor->get_current_animation()->get_marker_color(marker);
 							marker_color.a = 0.2;
-							draw_line(Point2(offset, 0), Point2(offset, get_size().height), marker_color, Math::round(EDSCALE));
+							draw_line(Point2(offset, 0), Point2(offset, get_size().y), marker_color, Math::round(EDSCALE));
 						}
 					}
 				}
 			}
 
-			draw_line(Point2(), Point2(get_size().width, 0), h_line_color, Math::round(EDSCALE));
-			draw_line(Point2(timeline->get_name_limit(), 0), Point2(timeline->get_name_limit(), get_size().height), v_line_color, Math::round(EDSCALE));
-			draw_line(Point2(get_size().width - timeline->get_buttons_width(), 0), Point2(get_size().width - timeline->get_buttons_width(), get_size().height), v_line_color, Math::round(EDSCALE));
+			draw_line(Point2(), Point2(get_size().x, 0), h_line_color, Math::round(EDSCALE));
+			draw_line(Point2(timeline->get_name_limit(), 0), Point2(timeline->get_name_limit(), get_size().y), v_line_color, Math::round(EDSCALE));
+			draw_line(Point2(get_size().x - timeline->get_buttons_width(), 0), Point2(get_size().x - timeline->get_buttons_width(), get_size().y), v_line_color, Math::round(EDSCALE));
 
 			int ofs = stylebox_header->get_margin(SIDE_LEFT);
 			bool is_group_folded = editor->get_current_animation()->editor_is_group_folded(node_name);
 			Ref<Texture2D> fold_icon = get_theme_icon(is_group_folded ? SNAME("arrow_collapsed") : SNAME("arrow"), SNAME("Tree"));
 			Size2 fold_icon_size = fold_icon->get_size();
-			draw_texture_rect(fold_icon, Rect2(Point2(ofs, (get_size().height - fold_icon_size.y) / 2 + v_margin_offset).round(), fold_icon_size));
+			draw_texture_rect(fold_icon, Rect2(Point2(ofs, (get_size().y - fold_icon_size.y) / 2 + v_margin_offset).round(), fold_icon_size));
 
 			ofs += h_separation + fold_icon_size.x;
-			draw_texture_rect(icon, Rect2(Point2(ofs, (get_size().height - icon_size.y) / 2 + v_margin_offset).round(), icon_size));
+			draw_texture_rect(icon, Rect2(Point2(ofs, (get_size().y - icon_size.y) / 2 + v_margin_offset).round(), icon_size));
 
 			ofs += h_separation + icon_size.x;
-			draw_string(font, Point2(ofs, (get_size().height - font->get_height(font_size)) / 2 + font->get_ascent(font_size) + v_margin_offset).round(), node_name, HORIZONTAL_ALIGNMENT_LEFT, timeline->get_name_limit() - ofs, font_size, color);
+			draw_string(font, Point2(ofs, (get_size().y - font->get_height(font_size)) / 2 + font->get_ascent(font_size) + v_margin_offset).round(), node_name, HORIZONTAL_ALIGNMENT_LEFT, timeline->get_name_limit() - ofs, font_size, color);
 
 			int px = (-timeline->get_value() + timeline->get_play_position()) * timeline->get_zoom_scale() + timeline->get_name_limit();
 			if (px >= timeline->get_name_limit() && px < limit_end) {
 				const Color accent = get_theme_color(SNAME("accent_color"), EditorStringName(Editor));
-				draw_line(Point2(px, 0), Point2(px, get_size().height), accent, Math::round(2 * EDSCALE));
+				draw_line(Point2(px, 0), Point2(px, get_size().y), accent, Math::round(2 * EDSCALE));
 			}
 
 			if (is_group_folded) {
@@ -3945,11 +3945,11 @@ void AnimationTrackEditGroup::_notification(int p_what) {
 						float key_time_offset = editor->get_current_animation()->track_get_key_time(track, i) - timeline->get_value();
 						int key_screen_pos = int(key_time_offset * timeline->get_zoom_scale() + limit);
 						int key_limit_left = timeline->get_name_limit();
-						int key_limit_right = get_size().width - timeline->get_buttons_width();
+						int key_limit_right = get_size().x - timeline->get_buttons_width();
 						if (key_screen_pos >= key_limit_left && key_screen_pos <= key_limit_right) {
 							draw_texture(
 									key_type_icon,
-									Vector2(key_screen_pos - key_type_icon->get_width() / 2, (get_size().height - key_type_icon->get_height()) / 2),
+									Vector2(key_screen_pos - key_type_icon->get_width() / 2, (get_size().y - key_type_icon->get_height()) / 2),
 									Color(1, 1, 1, 0.3));
 						}
 					}
@@ -3977,8 +3977,8 @@ void AnimationTrackEditGroup::gui_input(const Ref<InputEvent> &p_event) {
 		int left_ofs = get_theme_stylebox(SNAME("header"), SNAME("AnimationTrackEditGroup"))->get_margin(SIDE_LEFT);
 		bool is_group_folded = editor->get_current_animation()->editor_is_group_folded(node_name);
 		Ref<Texture2D> fold_icon = get_theme_icon(is_group_folded ? SNAME("arrow_collapsed") : SNAME("arrow"), SNAME("Tree"));
-		int fold_icon_width = fold_icon->get_size().width;
-		Rect2 fold_area_rect = Rect2(0, 0, left_ofs + fold_icon_width, get_size().height);
+		int fold_icon_width = fold_icon->get_size().x;
+		Rect2 fold_area_rect = Rect2(0, 0, left_ofs + fold_icon_width, get_size().y);
 
 		if (fold_area_rect.has_point(pos)) {
 			bool current_group_folded = !editor->get_current_animation()->editor_is_group_folded(node_name);
@@ -4000,7 +4000,7 @@ void AnimationTrackEditGroup::gui_input(const Ref<InputEvent> &p_event) {
 
 			queue_redraw();
 		} else {
-			Rect2 node_name_rect = Rect2(0, 0, timeline->get_name_limit(), get_size().height);
+			Rect2 node_name_rect = Rect2(0, 0, timeline->get_name_limit(), get_size().y);
 			if (node_name_rect.has_point(pos)) {
 				EditorSelection *editor_selection = EditorNode::get_singleton()->get_editor_selection();
 				editor_selection->clear();
@@ -4014,7 +4014,7 @@ void AnimationTrackEditGroup::gui_input(const Ref<InputEvent> &p_event) {
 	Ref<InputEventMouseMotion> mm = p_event;
 	if (mm.is_valid()) {
 		Point2 pos = mm->get_position();
-		Rect2 node_name_rect = Rect2(0, 0, timeline->get_name_limit(), get_size().height);
+		Rect2 node_name_rect = Rect2(0, 0, timeline->get_name_limit(), get_size().y);
 
 		bool was_hovered = hovered;
 		hovered = node_name_rect.has_point(pos);
@@ -7985,7 +7985,7 @@ void AnimationTrackEditor::_update_timeline_margins() {
 
 	// Prevent the timeline cursor from misaligning with the tracks on the right-to-left layout.
 	if (scroll->get_v_scroll_bar()->is_visible() && is_layout_rtl()) {
-		margin_left += scroll->get_v_scroll_bar()->get_minimum_size().width;
+		margin_left += scroll->get_v_scroll_bar()->get_minimum_size().x;
 	}
 
 	timeline_mc->add_theme_constant_override(SNAME("margin_left"), margin_left);
@@ -8861,15 +8861,15 @@ void AnimationMarkerEdit::_play_position_draw() {
 	float scale = timeline->get_zoom_scale();
 	int px = (play_position_pos - timeline->get_value()) * scale + timeline->get_name_limit();
 
-	if (px >= timeline->get_name_limit() && px < (get_size().width - timeline->get_buttons_width())) {
+	if (px >= timeline->get_name_limit() && px < (get_size().x - timeline->get_buttons_width())) {
 		Color color = get_theme_color(SNAME("accent_color"), EditorStringName(Editor));
-		play_position->draw_line(Point2(px, 0), Point2(px, get_size().height), color, Math::round(2 * EDSCALE));
+		play_position->draw_line(Point2(px, 0), Point2(px, get_size().y), color, Math::round(2 * EDSCALE));
 	}
 }
 
 bool AnimationMarkerEdit::_try_select_at_ui_pos(const Point2 &p_pos, bool p_aggregate, bool p_deselectable) {
 	int limit = timeline->get_name_limit();
-	int limit_end = get_size().width - timeline->get_buttons_width();
+	int limit_end = get_size().x - timeline->get_buttons_width();
 	// Left Border including space occupied by keyframes on t=0.
 	int limit_start_hitbox = limit - type_icon->get_width();
 
@@ -8943,7 +8943,7 @@ bool AnimationMarkerEdit::_try_select_at_ui_pos(const Point2 &p_pos, bool p_aggr
 
 bool AnimationMarkerEdit::_is_ui_pos_in_current_section(const Point2 &p_pos) {
 	int limit = timeline->get_name_limit();
-	int limit_end = get_size().width - timeline->get_buttons_width();
+	int limit_end = get_size().x - timeline->get_buttons_width();
 
 	if (p_pos.x >= limit && p_pos.x <= limit_end) {
 		PackedStringArray section = get_selected_section();
@@ -9048,7 +9048,7 @@ void AnimationMarkerEdit::_notification(int p_what) {
 			}
 
 			int limit = timeline->get_name_limit();
-			int limit_end = get_size().width - timeline->get_buttons_width();
+			int limit_end = get_size().x - timeline->get_buttons_width();
 			float scale = timeline->get_zoom_scale();
 
 			Ref<Font> font = get_theme_font(SceneStringName(font), SNAME("Label"));
@@ -9080,7 +9080,7 @@ void AnimationMarkerEdit::_notification(int p_what) {
 						end_ofs = MIN(end_ofs, limit_end);
 						Rect2 rect;
 						rect.set_position(Vector2(start_ofs, 0));
-						rect.set_size(Vector2(end_ofs - start_ofs, get_size().height));
+						rect.set_size(Vector2(end_ofs - start_ofs, get_size().y));
 
 						draw_rect(rect, Color(1, 0.1, 0.1, 0.2));
 					}
@@ -9089,7 +9089,7 @@ void AnimationMarkerEdit::_notification(int p_what) {
 
 			// KEYFRAMES //
 
-			draw_bg(limit, get_size().width - timeline->get_buttons_width());
+			draw_bg(limit, get_size().x - timeline->get_buttons_width());
 
 			{
 				PackedStringArray names = animation->get_marker_names();
@@ -9108,7 +9108,7 @@ void AnimationMarkerEdit::_notification(int p_what) {
 					const int font_size = 12 * EDSCALE;
 					Size2 string_size = font->get_string_size(name, HORIZONTAL_ALIGNMENT_LEFT, -1.0, font_size);
 					if (int(offset) <= limit_end && int(offset) >= limit && should_show_all_marker_names) {
-						float bottom = get_size().height + string_size.y - font->get_descent(font_size);
+						float bottom = get_size().y + string_size.y - font->get_descent(font_size);
 						float extrusion = MAX(0, offset + string_size.x - limit_end); // How much the string would extrude outside limit_end if unadjusted.
 						Color marker_color = animation->get_marker_color(name);
 						float margin = 4 * EDSCALE;
@@ -9176,7 +9176,7 @@ void AnimationMarkerEdit::gui_input(const Ref<InputEvent> &p_event) {
 	// Check if moving markers or resizing the timeline first, so they can be canceled instead.
 	if (!moving_selection && !timeline->resizing_timeline && mb.is_valid() && mb->is_pressed() && mb->get_button_index() == MouseButton::RIGHT) {
 		Point2 pos = mb->get_position();
-		if (pos.x >= timeline->get_name_limit() && pos.x <= get_size().width - timeline->get_buttons_width()) {
+		if (pos.x >= timeline->get_name_limit() && pos.x <= get_size().x - timeline->get_buttons_width()) {
 			// Can do something with menu too! show insert key.
 			float offset = (pos.x - timeline->get_name_limit()) / timeline->get_zoom_scale();
 			if (!read_only) {
@@ -9252,7 +9252,7 @@ void AnimationMarkerEdit::gui_input(const Ref<InputEvent> &p_event) {
 		// Hovering compressed keyframes for editing is not possible.
 		const float scale = timeline->get_zoom_scale();
 		const int limit = timeline->get_name_limit();
-		const int limit_end = get_size().width - timeline->get_buttons_width();
+		const int limit_end = get_size().x - timeline->get_buttons_width();
 		// Left Border including space occupied by keyframes on t=0.
 		const int limit_start_hitbox = limit - type_icon->get_width();
 		const Point2 pos = mm->get_position();
@@ -9325,7 +9325,7 @@ String AnimationMarkerEdit::get_tooltip(const Point2 &p_pos) const {
 	}
 
 	int limit = timeline->get_name_limit();
-	int limit_end = get_size().width - timeline->get_buttons_width();
+	int limit_end = get_size().x - timeline->get_buttons_width();
 	// Left Border including space occupied by keyframes on t=0.
 	int limit_start_hitbox = limit - type_icon->get_width();
 
@@ -9381,7 +9381,7 @@ Rect2 AnimationMarkerEdit::get_key_rect(float p_pixels_sec) const {
 		return Rect2();
 	}
 
-	Rect2 rect = Rect2(-type_icon->get_width() / 2, get_size().height - type_icon->get_size().height, type_icon->get_width(), type_icon->get_size().height);
+	Rect2 rect = Rect2(-type_icon->get_width() / 2, get_size().y - type_icon->get_size().y, type_icon->get_width(), type_icon->get_size().y);
 
 	// Make it a big easier to click.
 	rect.position.x -= rect.size.x * 0.5;
@@ -9432,7 +9432,7 @@ void AnimationMarkerEdit::draw_key(const StringName &p_name, float p_pixels_sec,
 
 	Ref<Texture2D> icon_to_draw = p_selected ? selected_icon : type_icon;
 
-	Vector2 ofs(p_x - icon_to_draw->get_width() / 2, int(get_size().height - icon_to_draw->get_height()));
+	Vector2 ofs(p_x - icon_to_draw->get_width() / 2, int(get_size().y - icon_to_draw->get_height()));
 
 	// Don't apply custom marker color when the key is selected.
 	Color marker_color = p_selected ? Color(1, 1, 1) : animation->get_marker_color(p_name);
