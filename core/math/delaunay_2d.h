@@ -93,7 +93,7 @@ public:
 			rect.expand_to(p_points[i]);
 		}
 
-		real_t delta_max = MAX(rect.size.x, rect.size.y);
+		real_t delta_max = MAX(rect.size.width, rect.size.height);
 		Vector2 center = rect.get_center();
 
 		// Construct a bounding triangle around the rectangle.

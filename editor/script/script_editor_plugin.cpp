@@ -3612,7 +3612,7 @@ void ScriptEditor::_calculate_script_name_button_size() {
 }
 
 void ScriptEditor::_calculate_script_name_button_ratio() {
-	const float total_width = script_name_button_hbox->get_size().x;
+	const float total_width = script_name_button_hbox->get_size().width;
 	if (total_width <= 0) {
 		return;
 	}

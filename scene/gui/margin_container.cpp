@@ -45,8 +45,8 @@ Size2 MarginContainer::get_minimum_size() const {
 		max = max.max(s);
 	}
 
-	max.x += (theme_cache.margin_left + theme_cache.margin_right);
-	max.y += (theme_cache.margin_top + theme_cache.margin_bottom);
+	max.width += (theme_cache.margin_left + theme_cache.margin_right);
+	max.height += (theme_cache.margin_top + theme_cache.margin_bottom);
 
 	return max;
 }
@@ -64,8 +64,8 @@ Size2 MarginContainer::get_desired_size() const {
 		ds = ds.max(s);
 	}
 
-	ds.x += (theme_cache.margin_left + theme_cache.margin_right);
-	ds.y += (theme_cache.margin_top + theme_cache.margin_bottom);
+	ds.width += (theme_cache.margin_left + theme_cache.margin_right);
+	ds.height += (theme_cache.margin_top + theme_cache.margin_bottom);
 
 	return ds;
 }
@@ -73,8 +73,8 @@ Size2 MarginContainer::get_desired_size() const {
 Size2 MarginContainer::get_inner_combined_maximum_size() const {
 	Size2 ms = Container::get_inner_combined_maximum_size();
 
-	ms.x -= (theme_cache.margin_left + theme_cache.margin_right);
-	ms.y -= (theme_cache.margin_top + theme_cache.margin_bottom);
+	ms.width -= (theme_cache.margin_left + theme_cache.margin_right);
+	ms.height -= (theme_cache.margin_top + theme_cache.margin_bottom);
 
 	return ms;
 }
@@ -125,8 +125,8 @@ void MarginContainer::_notification(int p_what) {
 					continue;
 				}
 
-				int w = s.x - theme_cache.margin_left - theme_cache.margin_right;
-				int h = s.y - theme_cache.margin_top - theme_cache.margin_bottom;
+				int w = s.width - theme_cache.margin_left - theme_cache.margin_right;
+				int h = s.height - theme_cache.margin_top - theme_cache.margin_bottom;
 				fit_child_in_rect(c, Rect2(theme_cache.margin_left, theme_cache.margin_top, w, h));
 			}
 		} break;

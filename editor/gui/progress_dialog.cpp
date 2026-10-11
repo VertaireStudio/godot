@@ -166,7 +166,7 @@ void ProgressDialog::_popup() {
 	}
 
 	Size2 ms = main->get_combined_minimum_size();
-	ms.x = MAX(500 * EDSCALE, ms.x);
+	ms.width = MAX(500 * EDSCALE, ms.width);
 	ms += main_border_size;
 
 	center_panel->set_custom_minimum_size(ms);

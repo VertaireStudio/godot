@@ -47,7 +47,7 @@ struct [[nodiscard]] Rect2 {
 	const Vector2 &get_size() const { return size; }
 	void set_size(const Vector2 &p_size) { size = p_size; }
 
-	real_t get_area() const { return size.x * size.y; }
+	real_t get_area() const { return size.width * size.height; }
 
 	_FORCE_INLINE_ Vector2 get_center() const { return position + (size * 0.5f); }
 
@@ -58,29 +58,29 @@ struct [[nodiscard]] Rect2 {
 		}
 #endif
 		if (p_include_borders) {
-			if (position.x > (p_rect.position.x + p_rect.size.x)) {
+			if (position.x > (p_rect.position.x + p_rect.size.width)) {
 				return false;
 			}
-			if ((position.x + size.x) < p_rect.position.x) {
+			if ((position.x + size.width) < p_rect.position.x) {
 				return false;
 			}
-			if (position.y > (p_rect.position.y + p_rect.size.y)) {
+			if (position.y > (p_rect.position.y + p_rect.size.height)) {
 				return false;
 			}
-			if ((position.y + size.y) < p_rect.position.y) {
+			if ((position.y + size.height) < p_rect.position.y) {
 				return false;
 			}
 		} else {
-			if (position.x >= (p_rect.position.x + p_rect.size.x)) {
+			if (position.x >= (p_rect.position.x + p_rect.size.width)) {
 				return false;
 			}
-			if ((position.x + size.x) <= p_rect.position.x) {
+			if ((position.x + size.width) <= p_rect.position.x) {
 				return false;
 			}
-			if (position.y >= (p_rect.position.y + p_rect.size.y)) {
+			if (position.y >= (p_rect.position.y + p_rect.size.height)) {
 				return false;
 			}
-			if ((position.y + size.y) <= p_rect.position.y) {
+			if ((position.y + size.height) <= p_rect.position.y) {
 				return false;
 			}
 		}
@@ -218,8 +218,8 @@ struct [[nodiscard]] Rect2 {
 	inline void grow_by(real_t p_amount) {
 		position.x -= p_amount;
 		position.y -= p_amount;
-		size.x += p_amount * 2;
-		size.y += p_amount * 2;
+		size.width += p_amount * 2;
+		size.height += p_amount * 2;
 	}
 
 	inline Rect2 grow_side(Side p_side, real_t p_amount) const {
@@ -239,8 +239,8 @@ struct [[nodiscard]] Rect2 {
 		Rect2 g = *this;
 		g.position.x -= p_left;
 		g.position.y -= p_top;
-		g.size.x += p_left + p_right;
-		g.size.y += p_top + p_bottom;
+		g.size.width += p_left + p_right;
+		g.size.height += p_top + p_bottom;
 
 		return g;
 	}

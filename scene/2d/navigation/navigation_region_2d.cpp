@@ -31,6 +31,7 @@
 #include "navigation_region_2d.h"
 
 #include "core/config/engine.h"
+#include "core/math/random_pcg.h"
 #include "core/object/callable_mp.h"
 #include "core/object/class_db.h"
 #include "scene/main/scene_tree.h"
@@ -527,7 +528,7 @@ void NavigationRegion2D::_update_debug_mesh() {
 		line_vertex_array.resize(line_count);
 	}
 
-	Math::RandomPCG rand;
+	RandomPCG rand;
 	Color polygon_color = debug_face_color;
 
 	int face_vertex_index = 0;

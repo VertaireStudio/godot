@@ -380,7 +380,7 @@ bool Sprite2D::is_pixel_opaque(const Point2 &p_point) const {
 		return false;
 	}
 
-	if (texture->get_size().x == 0 || texture->get_size().y == 0) {
+	if (texture->get_size().width == 0 || texture->get_size().height == 0) {
 		return false;
 	}
 
@@ -408,16 +408,16 @@ bool Sprite2D::is_pixel_opaque(const Point2 &p_point) const {
 		int mirror_x = 0;
 		int mirror_y = 0;
 		if (is_mirrored_repeat) {
-			mirror_x = (int)(q.x / texture->get_size().x);
-			mirror_y = (int)(q.y / texture->get_size().y);
+			mirror_x = (int)(q.x / texture->get_size().width);
+			mirror_y = (int)(q.y / texture->get_size().height);
 		}
-		q.x = Math::fmod(q.x, texture->get_size().x);
-		q.y = Math::fmod(q.y, texture->get_size().y);
+		q.x = Math::fmod(q.x, texture->get_size().width);
+		q.y = Math::fmod(q.y, texture->get_size().height);
 		if (mirror_x % 2 == 1) {
-			q.x = texture->get_size().x - q.x - 1;
+			q.x = texture->get_size().width - q.x - 1;
 		}
 		if (mirror_y % 2 == 1) {
-			q.y = texture->get_size().y - q.y - 1;
+			q.y = texture->get_size().height - q.y - 1;
 		}
 	} else {
 		q = q.min(texture->get_size() - Vector2(1, 1));

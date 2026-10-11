@@ -47,10 +47,10 @@ uint64_t ExternalTexture::get_external_texture_id() const {
 }
 
 void ExternalTexture::set_size(const Size2 &p_size) {
-	if (p_size.x > 0 && p_size.y > 0 && p_size != size) {
+	if (p_size.width > 0 && p_size.height > 0 && p_size != size) {
 		size = p_size;
 		_ensure_created();
-		RenderingServer::get_singleton()->texture_external_update(texture, size.x, size.y, external_buffer);
+		RenderingServer::get_singleton()->texture_external_update(texture, size.width, size.height, external_buffer);
 		emit_changed();
 	}
 }
@@ -63,16 +63,16 @@ void ExternalTexture::set_external_buffer_id(uint64_t p_external_buffer) {
 	if (p_external_buffer != external_buffer) {
 		external_buffer = p_external_buffer;
 		_ensure_created();
-		RenderingServer::get_singleton()->texture_external_update(texture, size.x, size.y, external_buffer);
+		RenderingServer::get_singleton()->texture_external_update(texture, size.width, size.height, external_buffer);
 	}
 }
 
 int ExternalTexture::get_width() const {
-	return size.x;
+	return size.width;
 }
 
 int ExternalTexture::get_height() const {
-	return size.y;
+	return size.height;
 }
 
 bool ExternalTexture::has_alpha() const {
@@ -92,7 +92,7 @@ void ExternalTexture::_ensure_created() const {
 		return;
 	}
 
-	RID new_texture = RenderingServer::get_singleton()->texture_external_create(size.x, size.y);
+	RID new_texture = RenderingServer::get_singleton()->texture_external_create(size.width, size.height);
 	if (using_placeholder) {
 		DEV_ASSERT(texture.is_valid());
 		RenderingServer::get_singleton()->texture_replace(texture, new_texture);

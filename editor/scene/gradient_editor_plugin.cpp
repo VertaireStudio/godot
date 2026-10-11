@@ -78,7 +78,7 @@ int GradientEdit::_predict_insertion_index(float p_offset) {
 }
 
 int GradientEdit::_get_gradient_rect_width() const {
-	return get_size().x - get_size().y - draw_spacing - handle_width;
+	return get_size().width - get_size().height - draw_spacing - handle_width;
 }
 
 void GradientEdit::_show_color_picker() {

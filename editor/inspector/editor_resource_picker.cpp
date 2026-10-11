@@ -289,7 +289,7 @@ void EditorResourcePicker::_update_menu() {
 
 	Rect2 gt = edit_button->get_screen_rect();
 	edit_menu->reset_size();
-	int ms = edit_menu->get_contents_minimum_size().x;
+	int ms = edit_menu->get_contents_minimum_size().width;
 	Vector2 popup_pos = gt.get_end() - Vector2(ms, 0);
 	edit_menu->set_position(popup_pos);
 	edit_menu->popup();
@@ -1703,7 +1703,7 @@ void EditorAudioStreamPicker::_preview_draw() {
 	Rect2 rect(Point2(), size);
 
 	if (audio_stream->get_length() > 0 && size.width > 0) {
-		rect.size.y *= 0.5;
+		rect.size.height *= 0.5;
 
 		Ref<AudioStreamPreview> preview = AudioStreamPreviewGenerator::get_singleton()->generate_preview(audio_stream);
 		float preview_len = preview->get_length();
@@ -1734,10 +1734,10 @@ void EditorAudioStreamPicker::_preview_draw() {
 				if (x == 0) {
 					continue; // Because some may always return 0, ignore offset 0.
 				}
-				stream_preview_rect->draw_rect(Rect2i(x, 0, 2, rect.size.y), accent);
+				stream_preview_rect->draw_rect(Rect2i(x, 0, 2, rect.size.height), accent);
 			}
 		}
-		rect.position.y += rect.size.y;
+		rect.position.y += rect.size.height;
 	}
 
 	Ref<Texture2D> icon;
@@ -1760,11 +1760,11 @@ void EditorAudioStreamPicker::_preview_draw() {
 		text = audio_stream->get_class().replace_first("AudioStream", "");
 	}
 
-	stream_preview_rect->draw_texture(icon, Point2i(EDSCALE * 4, rect.position.y + (rect.size.y - icon->get_height()) / 2), icon_modulate);
+	stream_preview_rect->draw_texture(icon, Point2i(EDSCALE * 4, rect.position.y + (rect.size.height - icon->get_height()) / 2), icon_modulate);
 
 	float text_width = size.width - 4 * EDSCALE - icon->get_width();
 	if (text_width > 0) {
-		stream_preview_rect->draw_string(font, Point2i(EDSCALE * 4 + icon->get_width(), rect.position.y + font->get_ascent(font_size) + (rect.size.y - font->get_height(font_size)) / 2), text, HORIZONTAL_ALIGNMENT_CENTER, text_width, font_size, get_theme_color(SceneStringName(font_color), EditorStringName(Editor)));
+		stream_preview_rect->draw_string(font, Point2i(EDSCALE * 4 + icon->get_width(), rect.position.y + font->get_ascent(font_size) + (rect.size.height - font->get_height(font_size)) / 2), text, HORIZONTAL_ALIGNMENT_CENTER, text_width, font_size, get_theme_color(SceneStringName(font_color), EditorStringName(Editor)));
 	}
 }
 

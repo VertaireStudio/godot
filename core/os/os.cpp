@@ -244,16 +244,16 @@ uint64_t OS::get_embedded_pck_offset() const {
 // Default boot screen rect scale mode is "Keep Aspect Centered"
 Rect2 OS::calculate_boot_screen_rect(const Size2 &p_window_size, const Size2 &p_imgrect_size) const {
 	Rect2 screenrect;
-	if (p_window_size.x > p_window_size.y) {
+	if (p_window_size.width > p_window_size.height) {
 		// Scale horizontally.
-		screenrect.size.y = p_window_size.y;
-		screenrect.size.x = p_imgrect_size.x * p_window_size.y / p_imgrect_size.y;
-		screenrect.position.x = (p_window_size.x - screenrect.size.x) / 2;
+		screenrect.size.y = p_window_size.height;
+		screenrect.size.x = p_imgrect_size.x * p_window_size.height / p_imgrect_size.y;
+		screenrect.position.x = (p_window_size.width - screenrect.size.x) / 2;
 	} else {
 		// Scale vertically.
-		screenrect.size.x = p_window_size.x;
-		screenrect.size.y = p_imgrect_size.y * p_window_size.x / p_imgrect_size.x;
-		screenrect.position.y = (p_window_size.y - screenrect.size.y) / 2;
+		screenrect.size.x = p_window_size.width;
+		screenrect.size.y = p_imgrect_size.y * p_window_size.width / p_imgrect_size.x;
+		screenrect.position.y = (p_window_size.height - screenrect.size.y) / 2;
 	}
 	return screenrect;
 }

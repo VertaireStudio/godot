@@ -1849,21 +1849,21 @@ bool CanvasItemEditor::_gui_input_resize(const Ref<InputEvent> &p_event) {
 					};
 
 					DragType resize_drag = DRAG_NONE;
-					real_t radius = (select_handle->get_size().x / 2) * 1.5;
+					real_t radius = (select_handle->get_size().width / 2) * 1.5;
 
 					for (int i = 0; i < 4; i++) {
 						int prev = (i + 3) % 4;
 						int next = (i + 1) % 4;
 
 						Vector2 ofs = ((endpoints[i] - endpoints[prev]).normalized() + ((endpoints[i] - endpoints[next]).normalized())).normalized();
-						ofs *= (select_handle->get_size().x / 2);
+						ofs *= (select_handle->get_size().width / 2);
 						ofs += endpoints[i];
 						if (ofs.distance_to(b->get_position()) < radius) {
 							resize_drag = dragger[i * 2];
 						}
 
 						ofs = (endpoints[i] + endpoints[next]) / 2;
-						ofs += (endpoints[next] - endpoints[i]).orthogonal().normalized() * (select_handle->get_size().x / 2);
+						ofs += (endpoints[next] - endpoints[i]).orthogonal().normalized() * (select_handle->get_size().width / 2);
 						if (ofs.distance_to(b->get_position()) < radius) {
 							resize_drag = dragger[i * 2 + 1];
 						}
@@ -3361,7 +3361,7 @@ void CanvasItemEditor::_draw_grid() {
 		int last_cell = 0;
 
 		if (grid_step.x != 0) {
-			for (int i = 0; i < viewport_size.x; i++) {
+			for (int i = 0; i < viewport_size.width; i++) {
 				const int cell =
 						Math::fast_ftoi(Math::floor((xform.xform(Vector2(i, 0)).x - real_grid_offset.x) / (grid_step.x * Math::pow(2.0, grid_step_multiplier))));
 
@@ -3377,14 +3377,14 @@ void CanvasItemEditor::_draw_grid() {
 						grid_color = cell % primary_grid_step.x == 0 ? primary_grid_color : secondary_grid_color;
 					}
 
-					viewport->draw_line(Point2(i, 0), Point2(i, viewport_size.y), grid_color, Math::round(EDSCALE));
+					viewport->draw_line(Point2(i, 0), Point2(i, viewport_size.height), grid_color, Math::round(EDSCALE));
 				}
 				last_cell = cell;
 			}
 		}
 
 		if (grid_step.y != 0) {
-			for (int i = 0; i < viewport_size.y; i++) {
+			for (int i = 0; i < viewport_size.height; i++) {
 				const int cell =
 						Math::fast_ftoi(Math::floor((xform.xform(Vector2(0, i)).y - real_grid_offset.y) / (grid_step.y * Math::pow(2.0, grid_step_multiplier))));
 
@@ -3400,7 +3400,7 @@ void CanvasItemEditor::_draw_grid() {
 						grid_color = cell % primary_grid_step.y == 0 ? primary_grid_color : secondary_grid_color;
 					}
 
-					viewport->draw_line(Point2(0, i), Point2(viewport_size.x, i), grid_color, Math::round(EDSCALE));
+					viewport->draw_line(Point2(0, i), Point2(viewport_size.width, i), grid_color, Math::round(EDSCALE));
 				}
 				last_cell = cell;
 			}
@@ -3683,17 +3683,17 @@ void CanvasItemEditor::_draw_control_helpers(Control *control) {
 
 		Rect2 parent_rect = control->get_parent_anchorable_rect();
 
-		node_pos_in_parent[0] = control->get_anchor(SIDE_LEFT) * parent_rect.size.x + control->get_offset(SIDE_LEFT) + parent_rect.position.x;
-		node_pos_in_parent[1] = control->get_anchor(SIDE_TOP) * parent_rect.size.y + control->get_offset(SIDE_TOP) + parent_rect.position.y;
-		node_pos_in_parent[2] = control->get_anchor(SIDE_RIGHT) * parent_rect.size.x + control->get_offset(SIDE_RIGHT) + parent_rect.position.x;
-		node_pos_in_parent[3] = control->get_anchor(SIDE_BOTTOM) * parent_rect.size.y + control->get_offset(SIDE_BOTTOM) + parent_rect.position.y;
+		node_pos_in_parent[0] = control->get_anchor(SIDE_LEFT) * parent_rect.size.width + control->get_offset(SIDE_LEFT) + parent_rect.position.x;
+		node_pos_in_parent[1] = control->get_anchor(SIDE_TOP) * parent_rect.size.height + control->get_offset(SIDE_TOP) + parent_rect.position.y;
+		node_pos_in_parent[2] = control->get_anchor(SIDE_RIGHT) * parent_rect.size.width + control->get_offset(SIDE_RIGHT) + parent_rect.position.x;
+		node_pos_in_parent[3] = control->get_anchor(SIDE_BOTTOM) * parent_rect.size.height + control->get_offset(SIDE_BOTTOM) + parent_rect.position.y;
 
 		Point2 start, end;
 		switch (drag_type) {
 			case DRAG_LEFT:
 			case DRAG_TOP_LEFT:
 			case DRAG_BOTTOM_LEFT:
-				_draw_margin_at_position(control->get_size().x, parent_transform.xform(Vector2((node_pos_in_parent[0] + node_pos_in_parent[2]) / 2, node_pos_in_parent[3])) + Vector2(0, 5), SIDE_BOTTOM);
+				_draw_margin_at_position(control->get_size().width, parent_transform.xform(Vector2((node_pos_in_parent[0] + node_pos_in_parent[2]) / 2, node_pos_in_parent[3])) + Vector2(0, 5), SIDE_BOTTOM);
 				[[fallthrough]];
 			case DRAG_MOVE:
 				start = Vector2(node_pos_in_parent[0], Math::lerp(node_pos_in_parent[1], node_pos_in_parent[3], ratio));
@@ -3708,7 +3708,7 @@ void CanvasItemEditor::_draw_control_helpers(Control *control) {
 			case DRAG_RIGHT:
 			case DRAG_TOP_RIGHT:
 			case DRAG_BOTTOM_RIGHT:
-				_draw_margin_at_position(control->get_size().x, parent_transform.xform(Vector2((node_pos_in_parent[0] + node_pos_in_parent[2]) / 2, node_pos_in_parent[3])) + Vector2(0, 5), SIDE_BOTTOM);
+				_draw_margin_at_position(control->get_size().width, parent_transform.xform(Vector2((node_pos_in_parent[0] + node_pos_in_parent[2]) / 2, node_pos_in_parent[3])) + Vector2(0, 5), SIDE_BOTTOM);
 				[[fallthrough]];
 			case DRAG_MOVE:
 				start = Vector2(node_pos_in_parent[2], Math::lerp(node_pos_in_parent[3], node_pos_in_parent[1], ratio));
@@ -3723,7 +3723,7 @@ void CanvasItemEditor::_draw_control_helpers(Control *control) {
 			case DRAG_TOP:
 			case DRAG_TOP_LEFT:
 			case DRAG_TOP_RIGHT:
-				_draw_margin_at_position(control->get_size().y, parent_transform.xform(Vector2(node_pos_in_parent[2], (node_pos_in_parent[1] + node_pos_in_parent[3]) / 2)) + Vector2(5, 0), SIDE_RIGHT);
+				_draw_margin_at_position(control->get_size().height, parent_transform.xform(Vector2(node_pos_in_parent[2], (node_pos_in_parent[1] + node_pos_in_parent[3]) / 2)) + Vector2(5, 0), SIDE_RIGHT);
 				[[fallthrough]];
 			case DRAG_MOVE:
 				start = Vector2(Math::lerp(node_pos_in_parent[0], node_pos_in_parent[2], ratio), node_pos_in_parent[1]);
@@ -3738,7 +3738,7 @@ void CanvasItemEditor::_draw_control_helpers(Control *control) {
 			case DRAG_BOTTOM:
 			case DRAG_BOTTOM_LEFT:
 			case DRAG_BOTTOM_RIGHT:
-				_draw_margin_at_position(control->get_size().y, parent_transform.xform(Vector2(node_pos_in_parent[2], (node_pos_in_parent[1] + node_pos_in_parent[3]) / 2) + Vector2(5, 0)), SIDE_RIGHT);
+				_draw_margin_at_position(control->get_size().height, parent_transform.xform(Vector2(node_pos_in_parent[2], (node_pos_in_parent[1] + node_pos_in_parent[3]) / 2) + Vector2(5, 0)), SIDE_RIGHT);
 				[[fallthrough]];
 			case DRAG_MOVE:
 				start = Vector2(Math::lerp(node_pos_in_parent[2], node_pos_in_parent[0], ratio), node_pos_in_parent[3]);
@@ -3880,12 +3880,12 @@ void CanvasItemEditor::_draw_selection() {
 					int next = (i + 1) % 4;
 
 					Vector2 ofs = ((endpoints[i] - endpoints[prev]).normalized() + ((endpoints[i] - endpoints[next]).normalized())).normalized();
-					ofs *= Math::SQRT2 * (select_handle->get_size().x / 2);
+					ofs *= Math::SQRT2 * (select_handle->get_size().width / 2);
 
 					select_handle->draw(vp_ci, (endpoints[i] + ofs - (select_handle->get_size() / 2)).floor());
 
 					ofs = (endpoints[i] + endpoints[next]) / 2;
-					ofs += (endpoints[next] - endpoints[i]).orthogonal().normalized() * (select_handle->get_size().x / 2);
+					ofs += (endpoints[next] - endpoints[i]).orthogonal().normalized() * (select_handle->get_size().width / 2);
 
 					select_handle->draw(vp_ci, (ofs - (select_handle->get_size() / 2)).floor());
 				}
@@ -4075,9 +4075,9 @@ void CanvasItemEditor::_draw_axis() {
 
 		Vector2 screen_endpoints[4] = {
 			transform.xform(Vector2(0, 0)),
-			transform.xform(Vector2(screen_size.x, 0)),
-			transform.xform(Vector2(screen_size.x, screen_size.y)),
-			transform.xform(Vector2(0, screen_size.y))
+			transform.xform(Vector2(screen_size.width, 0)),
+			transform.xform(Vector2(screen_size.width, screen_size.height)),
+			transform.xform(Vector2(0, screen_size.height))
 		};
 
 		for (int i = 0; i < 4; i++) {
@@ -4574,7 +4574,7 @@ void CanvasItemEditor::_update_scrollbars() {
 
 	// Get the visible frame.
 	Size2 screen_rect = Size2(GLOBAL_GET("display/window/size/viewport_width"), GLOBAL_GET("display/window/size/viewport_height"));
-	Rect2 local_rect = Rect2(Point2(), viewport->get_size() - Size2(vmin.x, hmin.y));
+	Rect2 local_rect = Rect2(Point2(), viewport->get_size() - Size2(vmin.width, hmin.height));
 
 	// Calculate scrollable area.
 	Rect2 canvas_item_rect = Rect2(Point2(), screen_rect);
@@ -4591,7 +4591,7 @@ void CanvasItemEditor::_update_scrollbars() {
 	const Point2 begin = canvas_item_rect.position;
 	const Point2 end = canvas_item_rect.position + canvas_item_rect.size - local_rect.size / zoom;
 
-	if (canvas_item_rect.size.y <= (local_rect.size.y / zoom)) {
+	if (canvas_item_rect.size.height <= (local_rect.size.y / zoom)) {
 		v_scroll->hide();
 	} else {
 		v_scroll->show();
@@ -4600,7 +4600,7 @@ void CanvasItemEditor::_update_scrollbars() {
 		v_scroll->set_page(screen_rect.y);
 	}
 
-	if (canvas_item_rect.size.x <= (local_rect.size.x / zoom)) {
+	if (canvas_item_rect.size.width <= (local_rect.size.x / zoom)) {
 		h_scroll->hide();
 	} else {
 		h_scroll->show();
@@ -4612,13 +4612,13 @@ void CanvasItemEditor::_update_scrollbars() {
 	// Move and resize the scrollbars, avoiding overlap.
 	if (is_layout_rtl()) {
 		v_scroll->set_begin(Point2(0, (show_rulers) ? ruler_width_scaled : 0));
-		v_scroll->set_end(Point2(vmin.x, size.y - (h_scroll->is_visible() ? hmin.y : 0)));
+		v_scroll->set_end(Point2(vmin.width, size.height - (h_scroll->is_visible() ? hmin.height : 0)));
 	} else {
-		v_scroll->set_begin(Point2(size.x - vmin.x, (show_rulers) ? ruler_width_scaled : 0));
-		v_scroll->set_end(Point2(size.x, size.y - (h_scroll->is_visible() ? hmin.y : 0)));
+		v_scroll->set_begin(Point2(size.width - vmin.width, (show_rulers) ? ruler_width_scaled : 0));
+		v_scroll->set_end(Point2(size.width, size.height - (h_scroll->is_visible() ? hmin.height : 0)));
 	}
-	h_scroll->set_begin(Point2((show_rulers) ? ruler_width_scaled : 0, size.y - hmin.y));
-	h_scroll->set_end(Point2(size.x - (v_scroll->is_visible() ? vmin.x : 0), size.y));
+	h_scroll->set_begin(Point2((show_rulers) ? ruler_width_scaled : 0, size.height - hmin.height));
+	h_scroll->set_end(Point2(size.width - (v_scroll->is_visible() ? vmin.width : 0), size.height));
 
 	// Calculate scrollable area.
 	v_scroll->set_value(view_offset.y);
@@ -6248,7 +6248,7 @@ void CanvasItemEditorViewport::_create_preview(const Vector<String> &files) cons
 			Sprite2D *sprite = memnew(Sprite2D);
 			sprite->set_texture(get_editor_theme_icon(SNAME("AudioStreamPlayer2D")));
 			sprite->set_modulate(Color(1, 1, 1, 0.7f));
-			sprite->set_position(Vector2(0, -sprite->get_texture()->get_size().y) * EDSCALE);
+			sprite->set_position(Vector2(0, -sprite->get_texture()->get_size().height) * EDSCALE);
 			preview_node->add_child(sprite);
 			add_preview = true;
 		}
@@ -6333,9 +6333,9 @@ void CanvasItemEditorViewport::_create_texture_node(Node *p_parent, Node *p_chil
 		Size2 texture_size = texture->get_size();
 		Vector<Vector2> list = {
 			Vector2(0, 0),
-			Vector2(texture_size.x, 0),
-			Vector2(texture_size.x, texture_size.y),
-			Vector2(0, texture_size.y)
+			Vector2(texture_size.width, 0),
+			Vector2(texture_size.width, texture_size.height),
+			Vector2(0, texture_size.height)
 		};
 		undo_redo->add_do_property(p_child, "polygon", list);
 	}

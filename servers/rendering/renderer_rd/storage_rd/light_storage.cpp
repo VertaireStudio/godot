@@ -1113,14 +1113,14 @@ void LightStorage::update_light_buffers(RenderDataRD *p_render_data, const Paged
 
 			if (type == RSE::LIGHT_SPOT) {
 				light_data.projector_rect[0] = rect.position.x;
-				light_data.projector_rect[1] = rect.position.y + rect.size.y; //flip because shadow is flipped
-				light_data.projector_rect[2] = rect.size.x;
-				light_data.projector_rect[3] = -rect.size.y;
+				light_data.projector_rect[1] = rect.position.y + rect.size.height; //flip because shadow is flipped
+				light_data.projector_rect[2] = rect.size.width;
+				light_data.projector_rect[3] = -rect.size.height;
 			} else {
 				light_data.projector_rect[0] = rect.position.x;
 				light_data.projector_rect[1] = rect.position.y;
-				light_data.projector_rect[2] = rect.size.x;
-				light_data.projector_rect[3] = rect.size.y * 0.5; //used by dp, so needs to be half
+				light_data.projector_rect[2] = rect.size.width;
+				light_data.projector_rect[3] = rect.size.height * 0.5; //used by dp, so needs to be half
 			}
 		} else {
 			light_data.projector_rect[0] = 0;
@@ -1134,8 +1134,8 @@ void LightStorage::update_light_buffers(RenderDataRD *p_render_data, const Paged
 			Rect2 rect = texture_storage->area_light_atlas_get_texture_rect(area_texture);
 			light_data.projector_rect[0] = rect.position.x;
 			light_data.projector_rect[1] = rect.position.y;
-			light_data.projector_rect[2] = rect.size.x;
-			light_data.projector_rect[3] = rect.size.y;
+			light_data.projector_rect[2] = rect.size.width;
+			light_data.projector_rect[3] = rect.size.height;
 			Size2i texture_size = (rect.size * texture_storage->area_light_atlas_get_size()).ceil();
 			light_data.cos_spot_angle = MIN(Math::floor(Math::log2(MAX(MIN(texture_size.x, texture_size.y), 1.0f))), texture_storage->area_light_atlas_get_mipmaps()) - 1.0f; // max mipmaps
 		}
@@ -1175,8 +1175,8 @@ void LightStorage::update_light_buffers(RenderDataRD *p_render_data, const Paged
 
 			light_data.atlas_rect[0] = rect.position.x;
 			light_data.atlas_rect[1] = rect.position.y;
-			light_data.atlas_rect[2] = rect.size.x;
-			light_data.atlas_rect[3] = rect.size.y;
+			light_data.atlas_rect[2] = rect.size.width;
+			light_data.atlas_rect[3] = rect.size.height;
 
 			light_data.soft_shadow_scale = light->param[RSE::LIGHT_PARAM_SHADOW_BLUR];
 
@@ -1194,8 +1194,8 @@ void LightStorage::update_light_buffers(RenderDataRD *p_render_data, const Paged
 					light_data.soft_shadow_scale *= RendererSceneRenderRD::get_singleton()->shadows_quality_radius_get(); // Only use quality radius for PCF
 				}
 
-				light_data.direction[0] = omni_offset.x * float(rect.size.x);
-				light_data.direction[1] = omni_offset.y * float(rect.size.y);
+				light_data.direction[0] = omni_offset.x * float(rect.size.width);
+				light_data.direction[1] = omni_offset.y * float(rect.size.height);
 			} else if (type == RSE::LIGHT_AREA) {
 				Transform3D proj = (inverse_transform * light_transform).inverse();
 
@@ -1224,7 +1224,7 @@ void LightStorage::update_light_buffers(RenderDataRD *p_render_data, const Paged
 					// Only enable PCSS-like soft shadows if blurring is enabled.
 					// Otherwise, performance would decrease with no visual difference.
 					float half_np = cm.get_z_near() * Math::tan(Math::deg_to_rad(spot_angle));
-					light_data.soft_shadow_size = (size * 0.5 / radius) / (half_np / cm.get_z_near()) * rect.size.x;
+					light_data.soft_shadow_size = (size * 0.5 / radius) / (half_np / cm.get_z_near()) * rect.size.width;
 				} else {
 					light_data.soft_shadow_size = 0.0;
 					light_data.soft_shadow_scale *= RendererSceneRenderRD::get_singleton()->shadows_quality_radius_get(); // Only use quality radius for PCF

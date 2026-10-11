@@ -207,10 +207,10 @@ Rect2 RichTextLabel::_get_text_rect() {
 }
 
 int RichTextLabel::_get_wrap_width(const Rect2 &p_text_rect) const {
-	int wrap_width = p_text_rect.get_size().x;
+	int wrap_width = p_text_rect.get_size().width;
 	float combined_maximum_width = get_combined_maximum_size().x;
 	if (autowrap_mode != TextServer::AUTOWRAP_OFF && combined_maximum_width > 0.0) {
-		int maximum_width = int(combined_maximum_width - theme_cache.normal_style->get_minimum_size().x);
+		int maximum_width = int(combined_maximum_width - theme_cache.normal_style->get_minimum_size().width);
 		if (maximum_width <= 0) {
 			maximum_width = 1;
 		}
@@ -538,7 +538,7 @@ float RichTextLabel::_resize_line(ItemFrame *p_frame, int p_line, const Ref<Font
 		l.text_buf->tab_align(tab_stops);
 	} else if (tab_size > 0) { // Align inline tabs.
 		Vector<float> tabs;
-		tabs.push_back(MAX(1, tab_size * (p_base_font->get_char_size(' ', p_base_font_size).x + p_base_font->get_spacing(TextServer::SPACING_SPACE))));
+		tabs.push_back(MAX(1, tab_size * (p_base_font->get_char_size(' ', p_base_font_size).width + p_base_font->get_spacing(TextServer::SPACING_SPACE))));
 		l.text_buf->tab_align(tabs);
 	}
 
@@ -548,7 +548,7 @@ float RichTextLabel::_resize_line(ItemFrame *p_frame, int p_line, const Ref<Font
 			l.text_buf_disp->tab_align(tab_stops);
 		} else if (tab_size > 0) { // Align inline tabs.
 			Vector<float> tabs;
-			tabs.push_back(tab_size * p_base_font->get_char_size(' ', p_base_font_size).x);
+			tabs.push_back(tab_size * p_base_font->get_char_size(' ', p_base_font_size).width);
 			l.text_buf_disp->tab_align(tabs);
 		}
 	}
@@ -561,7 +561,7 @@ float RichTextLabel::_resize_line(ItemFrame *p_frame, int p_line, const Ref<Font
 				Size2 img_size = img->size;
 				if (img->width_unit == IMAGE_UNIT_PERCENT || img->height_unit == IMAGE_UNIT_PERCENT || img->width_unit == IMAGE_UNIT_EM || img->height_unit == IMAGE_UNIT_EM) {
 					Size2 new_size = _get_item_image_final_size(img, p_width, p_base_font_size);
-					img_size = _get_image_size(img->image, new_size.x, new_size.y, img->region);
+					img_size = _get_image_size(img->image, new_size.width, new_size.height, img->region);
 					l.text_buf->resize_object(it->rid, img_size, img->inline_align);
 					if (l.text_buf_disp.is_valid() && l.text_buf_disp->has_object(it->rid)) {
 						l.text_buf_disp->resize_object(it->rid, img_size, img->inline_align);
@@ -707,7 +707,7 @@ float RichTextLabel::_shape_line(ItemFrame *p_frame, int p_line, const Ref<Font>
 		l.text_buf->tab_align(tab_stops);
 	} else if (tab_size > 0) { // Align inline tabs.
 		Vector<float> tabs;
-		tabs.push_back(MAX(1, tab_size * (p_base_font->get_char_size(' ', p_base_font_size).x + p_base_font->get_spacing(TextServer::SPACING_SPACE))));
+		tabs.push_back(MAX(1, tab_size * (p_base_font->get_char_size(' ', p_base_font_size).width + p_base_font->get_spacing(TextServer::SPACING_SPACE))));
 		l.text_buf->tab_align(tabs);
 	}
 
@@ -789,7 +789,7 @@ float RichTextLabel::_shape_line(ItemFrame *p_frame, int p_line, const Ref<Font>
 				Size2 img_size = img->size;
 				if (img->width_unit == IMAGE_UNIT_PERCENT || img->height_unit == IMAGE_UNIT_PERCENT || img->width_unit == IMAGE_UNIT_EM || img->height_unit == IMAGE_UNIT_EM) {
 					Size2 new_size = _get_item_image_final_size(img, p_width, p_base_font_size);
-					img_size = _get_image_size(img->image, new_size.x, new_size.y, img->region);
+					img_size = _get_image_size(img->image, new_size.width, new_size.height, img->region);
 				}
 				l.text_buf->add_object(it->rid, img_size, img->inline_align, 1);
 				txt += String::chr(0xfffc);
@@ -918,15 +918,15 @@ Size2 RichTextLabel::_get_item_image_final_size(ItemImage *p_img, float p_orig_w
 	ItemFontSize *font_size_it = _find_font_size(p_img);
 
 	if (p_img->width_unit == IMAGE_UNIT_PERCENT) {
-		new_size.x = p_orig_width * p_img->rq_size.x / 100.f;
+		new_size.width = p_orig_width * p_img->rq_size.width / 100.f;
 	} else if (p_img->width_unit == IMAGE_UNIT_EM) {
-		new_size.x = (font_size_it ? font_size_it->font_size : p_base_font_size) * p_img->rq_size.x;
+		new_size.width = (font_size_it ? font_size_it->font_size : p_base_font_size) * p_img->rq_size.width;
 	}
 
 	if (p_img->height_unit == IMAGE_UNIT_PERCENT) {
-		new_size.y = p_orig_width * p_img->rq_size.y / 100.f;
+		new_size.height = p_orig_width * p_img->rq_size.height / 100.f;
 	} else if (p_img->height_unit == IMAGE_UNIT_EM) {
-		new_size.y = (font_size_it ? font_size_it->font_size : p_base_font_size) * p_img->rq_size.y;
+		new_size.height = (font_size_it ? font_size_it->font_size : p_base_font_size) * p_img->rq_size.height;
 	}
 	return new_size;
 }
@@ -1127,7 +1127,7 @@ int RichTextLabel::_draw_line(ItemFrame *p_frame, int p_line, const Vector2 &p_o
 			off.y += (theme_cache.line_separation + p_vsep);
 		}
 
-		if (p_ofs.y + off.y >= ctrl_size.y - v_limit) {
+		if (p_ofs.y + off.y >= ctrl_size.height - v_limit) {
 			break;
 		}
 
@@ -1288,7 +1288,7 @@ int RichTextLabel::_draw_line(ItemFrame *p_frame, int p_line, const Vector2 &p_o
 										Vector2 coff = frame->lines[0].offset - frame->padding.position;
 										coff.x -= frame->lines[0].indent;
 										if (rtl) {
-											coff.x = rect.size.x - table->columns[col].width - coff.x;
+											coff.x = rect.size.width - table->columns[col].width - coff.x;
 										}
 
 										const Point2 cell_ofs = table_ofs + coff;
@@ -1834,7 +1834,7 @@ void RichTextLabel::_find_click(ItemFrame *p_frame, const Point2i &p_click, Item
 	}
 
 	Point2 ofs = text_rect.get_position() + Vector2(0, vbegin + main->lines[from_line].offset.y - vofs);
-	while (ofs.y < size.y && from_line < to_line) {
+	while (ofs.y < size.height && from_line < to_line) {
 		MutexLock lock(main->lines[from_line].text_buf->get_mutex());
 		_find_click_in_line(p_frame, from_line, ofs, text_rect.size.x, vsep, p_click, r_click_frame, r_click_line, r_click_item, r_click_char, false, p_meta);
 		ofs.y += main->lines[from_line].text_buf->get_size().y + main->lines[from_line].text_buf->get_line_count() * (theme_cache.line_separation + vsep) + (theme_cache.paragraph_separation);
@@ -1942,7 +1942,7 @@ float RichTextLabel::_find_click_in_line(ItemFrame *p_frame, int p_line, const V
 								if (frame->lines.size() != 0 && row < row_count) {
 									Vector2 coff = frame->lines[0].offset;
 									if (rtl) {
-										coff.x = rect.size.x - table->columns[col].width - coff.x;
+										coff.x = rect.size.width - table->columns[col].width - coff.x;
 									}
 									Rect2 crect = Rect2(rect.position + coff - frame->padding.position - Vector2(theme_cache.table_h_separation * 0.5, theme_cache.table_h_separation * 0.5).floor(), Size2(table->columns[col].width + theme_cache.table_h_separation, table->rows[row] + theme_cache.table_v_separation) + frame->padding.position + frame->padding.size);
 									if (col == col_count - 1) {
@@ -2104,12 +2104,12 @@ float RichTextLabel::_find_click_in_line(ItemFrame *p_frame, int p_line, const V
 						font_size = font_size_it->font_size;
 					}
 					if (rtl) {
-						stop += MAX(1, tab_size * (font->get_char_size(' ', font_size).x + font->get_spacing(TextServer::SPACING_SPACE)));
+						stop += MAX(1, tab_size * (font->get_char_size(' ', font_size).width + font->get_spacing(TextServer::SPACING_SPACE)));
 						if (stop > p_click.x) {
 							break;
 						}
 					} else {
-						stop -= MAX(1, tab_size * (font->get_char_size(' ', font_size).x + font->get_spacing(TextServer::SPACING_SPACE)));
+						stop -= MAX(1, tab_size * (font->get_char_size(' ', font_size).width + font->get_spacing(TextServer::SPACING_SPACE)));
 						if (stop < p_click.x) {
 							break;
 						}
@@ -2424,7 +2424,7 @@ void RichTextLabel::_accessibility_update_line(RID p_id, ItemFrame *p_frame, int
 									Vector2 coff = frame->lines[0].offset;
 									coff.x -= frame->lines[0].indent;
 									if (rtl) {
-										coff.x = rect.size.x - table->columns[col].width - coff.x;
+										coff.x = rect.size.width - table->columns[col].width - coff.x;
 									}
 									ae_rect = Rect2(p_ofs + rect.position + off + coff - frame->padding.position - Vector2(h_separation * 0.5, v_separation * 0.5).floor(), Size2(table->columns[col].width + h_separation + frame->padding.position.x + frame->padding.size.x, table->rows[row]));
 									AccessibilityServer::get_singleton()->update_set_bounds(cell_ae, ae_rect);
@@ -2550,7 +2550,7 @@ RID RichTextLabel::get_focused_accessibility_element() const {
 }
 
 void RichTextLabel::_prepare_scroll_anchor() {
-	scroll_w = vscroll->get_bound_minimum_size().x;
+	scroll_w = vscroll->get_bound_minimum_size().width;
 	vscroll->set_anchor_and_offset(SIDE_LEFT, ANCHOR_END, -scroll_w);
 }
 
@@ -2754,20 +2754,20 @@ void RichTextLabel::_notification(int p_what) {
 			} else {
 				// Draw loading progress bar.
 				if ((progress_delay > 0) && (OS::get_singleton()->get_ticks_msec() - loading_started >= (uint64_t)progress_delay)) {
-					Vector2 p_size = Vector2(size.x - (theme_cache.normal_style->get_offset().x + vscroll->get_bound_minimum_size().x) * 2, vscroll->get_bound_minimum_size().x);
-					Vector2 p_pos = Vector2(theme_cache.normal_style->get_offset().x, size.y - theme_cache.normal_style->get_offset().y - vscroll->get_bound_minimum_size().x);
+					Vector2 p_size = Vector2(size.width - (theme_cache.normal_style->get_offset().x + vscroll->get_bound_minimum_size().width) * 2, vscroll->get_bound_minimum_size().width);
+					Vector2 p_pos = Vector2(theme_cache.normal_style->get_offset().x, size.height - theme_cache.normal_style->get_offset().y - vscroll->get_bound_minimum_size().width);
 
 					draw_style_box(theme_cache.progress_bg_style, Rect2(p_pos, p_size));
 
 					bool right_to_left = is_layout_rtl();
 					double r = loaded.load();
-					int mp = theme_cache.progress_fg_style->get_minimum_size().x;
-					int p = std::round(r * (p_size.x - mp));
+					int mp = theme_cache.progress_fg_style->get_minimum_size().width;
+					int p = std::round(r * (p_size.width - mp));
 					if (right_to_left) {
-						int p_remaining = std::round((1.0 - r) * (p_size.x - mp));
-						draw_style_box(theme_cache.progress_fg_style, Rect2(p_pos + Point2(p_remaining, 0), Size2(p + theme_cache.progress_fg_style->get_minimum_size().x, p_size.y)));
+						int p_remaining = std::round((1.0 - r) * (p_size.width - mp));
+						draw_style_box(theme_cache.progress_fg_style, Rect2(p_pos + Point2(p_remaining, 0), Size2(p + theme_cache.progress_fg_style->get_minimum_size().width, p_size.height)));
 					} else {
-						draw_style_box(theme_cache.progress_fg_style, Rect2(p_pos, Size2(p + theme_cache.progress_fg_style->get_minimum_size().x, p_size.y)));
+						draw_style_box(theme_cache.progress_fg_style, Rect2(p_pos, Size2(p + theme_cache.progress_fg_style->get_minimum_size().width, p_size.height)));
 					}
 				}
 			}
@@ -2827,7 +2827,7 @@ void RichTextLabel::_notification(int p_what) {
 			// New cache draw.
 			Point2 ofs = text_rect.get_position() + Vector2(0, vbegin + main->lines[from_line].offset.y - vofs);
 			int processed_glyphs = 0;
-			while (ofs.y < size.y - v_limit && from_line < to_line) {
+			while (ofs.y < size.height - v_limit && from_line < to_line) {
 				MutexLock lock(main->lines[from_line].text_buf->get_mutex());
 
 				int drawn_lines = _draw_line(main, from_line, ofs, text_rect.size.x, vsep, theme_cache.default_color, theme_cache.outline_size, theme_cache.font_outline_color, theme_cache.font_shadow_color, theme_cache.shadow_outline_size, shadow_ofs, processed_glyphs);
@@ -3664,7 +3664,7 @@ int RichTextLabel::_find_margin(Item *p_item, const Ref<Font> &p_base_font, int 
 				font_size = font_size_it->font_size;
 			}
 			if (tab_size > 0) {
-				margin += MAX(1, tab_size * (font->get_char_size(' ', font_size).x + font->get_spacing(TextServer::SPACING_SPACE)));
+				margin += MAX(1, tab_size * (font->get_char_size(' ', font_size).width + font->get_spacing(TextServer::SPACING_SPACE)));
 			}
 
 		} else if (item->type == ITEM_LIST) {
@@ -3685,7 +3685,7 @@ int RichTextLabel::_find_margin(Item *p_item, const Ref<Font> &p_base_font, int 
 				font_size = font_size_it->font_size;
 			}
 			if (tab_size > 0) {
-				margin += MAX(1, tab_size * (font->get_char_size(' ', font_size).x + font->get_spacing(TextServer::SPACING_SPACE)));
+				margin += MAX(1, tab_size * (font->get_char_size(' ', font_size).width + font->get_spacing(TextServer::SPACING_SPACE)));
 			}
 		}
 
@@ -4038,7 +4038,7 @@ _FORCE_INLINE_ float RichTextLabel::_update_scroll_exceeds(float p_total_height,
 	updating_scroll = true;
 
 	float total_height = p_total_height;
-	bool exceeds = scroll_active && p_total_height > p_ctrl_height && p_width > vscroll->get_bound_minimum_size().x;
+	bool exceeds = scroll_active && p_total_height > p_ctrl_height && p_width > vscroll->get_bound_minimum_size().width;
 	if (exceeds != scroll_visible) {
 		if (exceeds) {
 			scroll_visible = true;
@@ -4080,7 +4080,7 @@ bool RichTextLabel::_validate_line_caches() {
 		Rect2 text_rect = _get_text_rect();
 		int wrap_width = _get_wrap_width(text_rect);
 
-		float ctrl_height = get_size().y;
+		float ctrl_height = get_size().height;
 
 		// Update fonts.
 		float old_scroll = vscroll->get_value();
@@ -4108,7 +4108,7 @@ bool RichTextLabel::_validate_line_caches() {
 		float total_height = (fi == 0) ? 0 : _calculate_line_vertical_offset(main->lines[fi - 1]);
 		for (int i = fi; i < (int)main->lines.size(); i++) {
 			total_height = _resize_line(main, i, theme_cache.normal_font, theme_cache.normal_font_size, wrap_width - scroll_w, total_height);
-			total_height = _update_scroll_exceeds(total_height, ctrl_height, wrap_width, i, old_scroll, text_rect.size.y);
+			total_height = _update_scroll_exceeds(total_height, ctrl_height, wrap_width, i, old_scroll, text_rect.size.height);
 			main->first_resized_line.store(i);
 		}
 
@@ -4157,7 +4157,7 @@ void RichTextLabel::_process_line_caches() {
 	Rect2 text_rect = _get_text_rect();
 	int wrap_width = _get_wrap_width(text_rect);
 
-	float ctrl_height = get_size().y;
+	float ctrl_height = get_size().height;
 	int fi = main->first_invalid_line.load();
 	int total_chars = main->lines[fi].char_offset;
 	float old_scroll = vscroll->get_value();
@@ -4185,7 +4185,7 @@ void RichTextLabel::_process_line_caches() {
 
 		for (int i = sr; i < fi; i++) {
 			total_height = _resize_line(main, i, theme_cache.normal_font, theme_cache.normal_font_size, wrap_width - scroll_w, total_height);
-			total_height = _update_scroll_exceeds(total_height, ctrl_height, wrap_width, i, old_scroll, text_rect.size.y);
+			total_height = _update_scroll_exceeds(total_height, ctrl_height, wrap_width, i, old_scroll, text_rect.size.height);
 
 			main->first_resized_line.store(i);
 
@@ -4199,7 +4199,7 @@ void RichTextLabel::_process_line_caches() {
 	total_height = (fi == 0) ? 0 : _calculate_line_vertical_offset(main->lines[fi - 1]);
 	for (int i = fi; i < (int)main->lines.size(); i++) {
 		total_height = _shape_line(main, i, theme_cache.normal_font, theme_cache.normal_font_size, wrap_width - scroll_w, total_height, &total_chars);
-		total_height = _update_scroll_exceeds(total_height, ctrl_height, wrap_width, i, old_scroll, text_rect.size.y);
+		total_height = _update_scroll_exceeds(total_height, ctrl_height, wrap_width, i, old_scroll, text_rect.size.height);
 
 		main->first_invalid_line.store(i);
 		main->first_resized_line.store(i);
@@ -4234,7 +4234,7 @@ void RichTextLabel::_texture_changed(RID p_item) {
 	Item *it = items.get_or_null(p_item);
 	if (it && it->type == ITEM_IMAGE) {
 		ItemImage *img = reinterpret_cast<ItemImage *>(it);
-		Size2 new_size = _get_image_size(img->image, img->rq_size.x, img->rq_size.y, img->region);
+		Size2 new_size = _get_image_size(img->image, img->rq_size.width, img->rq_size.height, img->region);
 		if (img->size != new_size) {
 			main->first_invalid_line.store(0);
 			img->size = new_size;
@@ -4357,27 +4357,27 @@ Size2 RichTextLabel::_get_image_size(const Ref<Texture2D> &p_image, float p_widt
 	Size2 ret;
 	if (p_width > 0) {
 		// custom width
-		ret.x = p_width;
+		ret.width = p_width;
 		if (p_height > 0) {
 			// custom height
-			ret.y = p_height;
+			ret.height = p_height;
 		} else {
 			// calculate height to keep aspect ratio
 			if (p_region.has_area()) {
-				ret.y = p_region.get_size().y * p_width / p_region.get_size().x;
+				ret.height = p_region.get_size().height * p_width / p_region.get_size().width;
 			} else {
-				ret.y = p_image->get_height() * p_width / p_image->get_width();
+				ret.height = p_image->get_height() * p_width / p_image->get_width();
 			}
 		}
 	} else {
 		if (p_height > 0) {
 			// custom height
-			ret.y = p_height;
+			ret.height = p_height;
 			// calculate width to keep aspect ratio
 			if (p_region.has_area()) {
-				ret.x = p_region.get_size().x * p_height / p_region.get_size().y;
+				ret.width = p_region.get_size().width * p_height / p_region.get_size().height;
 			} else {
-				ret.x = p_image->get_width() * p_height / p_image->get_height();
+				ret.width = p_image->get_width() * p_height / p_image->get_height();
 			}
 		} else {
 			if (p_region.has_area()) {
@@ -4546,17 +4546,17 @@ void RichTextLabel::update_image(const Variant &p_key, BitField<ImageUpdateMask>
 				}
 				if (p_mask & UPDATE_SIZE) {
 					if (p_width > 0) {
-						item->rq_size.x = p_width;
+						item->rq_size.width = p_width;
 					}
 					if (p_height > 0) {
-						item->rq_size.y = p_height;
+						item->rq_size.height = p_height;
 					}
 				}
 				if ((p_mask & UPDATE_SIZE) || (p_mask & UPDATE_REGION) || (p_mask & UPDATE_TEXTURE)) {
 					ERR_FAIL_COND(item->image.is_null());
 					ERR_FAIL_COND(item->image->get_width() == 0);
 					ERR_FAIL_COND(item->image->get_height() == 0);
-					Size2 new_size = _get_image_size(item->image, item->rq_size.x, item->rq_size.y, item->region);
+					Size2 new_size = _get_image_size(item->image, item->rq_size.width, item->rq_size.height, item->region);
 					if (item->size != new_size) {
 						reshape = true;
 						item->size = new_size;
@@ -7659,7 +7659,7 @@ void RichTextLabel::set_visible_ratio(float p_ratio) {
 			float total_height = (first_invalid == 0) ? 0 : _calculate_line_vertical_offset(main->lines[first_invalid - 1]);
 			if (first_invalid < to_line) {
 				int total_chars = main->lines[first_invalid].char_offset;
-				total_height = _shape_line(main, first_invalid, theme_cache.normal_font, theme_cache.normal_font_size, text_rect.get_size().x - scroll_w, total_height, &total_chars);
+				total_height = _shape_line(main, first_invalid, theme_cache.normal_font, theme_cache.normal_font_size, text_rect.get_size().width - scroll_w, total_height, &total_chars);
 			}
 			if (first_invalid != second_invalid) {
 				for (int i = first_invalid + 1; i < second_invalid; i++) {
@@ -7668,7 +7668,7 @@ void RichTextLabel::set_visible_ratio(float p_ratio) {
 				}
 				if (second_invalid < to_line) {
 					int total_chars = main->lines[second_invalid].char_offset;
-					total_height = _shape_line(main, second_invalid, theme_cache.normal_font, theme_cache.normal_font_size, text_rect.get_size().x - scroll_w, total_height, &total_chars);
+					total_height = _shape_line(main, second_invalid, theme_cache.normal_font, theme_cache.normal_font_size, text_rect.get_size().width - scroll_w, total_height, &total_chars);
 				}
 			}
 			for (int i = second_invalid + 1; i < to_line; i++) {
@@ -8165,7 +8165,7 @@ void RichTextLabel::set_visible_characters(int p_visible) {
 			float total_height = (first_invalid == 0) ? 0 : _calculate_line_vertical_offset(main->lines[first_invalid - 1]);
 			if (first_invalid < to_line) {
 				int total_chars = main->lines[first_invalid].char_offset;
-				total_height = _shape_line(main, first_invalid, theme_cache.normal_font, theme_cache.normal_font_size, text_rect.get_size().x - scroll_w, total_height, &total_chars);
+				total_height = _shape_line(main, first_invalid, theme_cache.normal_font, theme_cache.normal_font_size, text_rect.get_size().width - scroll_w, total_height, &total_chars);
 			}
 			if (first_invalid != second_invalid) {
 				for (int i = first_invalid + 1; i < second_invalid; i++) {
@@ -8174,7 +8174,7 @@ void RichTextLabel::set_visible_characters(int p_visible) {
 				}
 				if (second_invalid < to_line) {
 					int total_chars = main->lines[second_invalid].char_offset;
-					total_height = _shape_line(main, second_invalid, theme_cache.normal_font, theme_cache.normal_font_size, text_rect.get_size().x - scroll_w, total_height, &total_chars);
+					total_height = _shape_line(main, second_invalid, theme_cache.normal_font, theme_cache.normal_font_size, text_rect.get_size().width - scroll_w, total_height, &total_chars);
 				}
 			}
 			for (int i = second_invalid + 1; i < to_line; i++) {
@@ -8295,7 +8295,7 @@ Size2 RichTextLabel::get_minimum_size() const {
 			natural_width = MAX(natural_width, int(Math::ceil(main->lines[i].offset.x + main->lines[i].text_buf->get_non_wrapped_size().x)));
 		}
 
-		int maximum_width = int(get_combined_maximum_size().x - sb_min_size.x);
+		int maximum_width = int(get_combined_maximum_size().x - sb_min_size.width);
 		if (maximum_width <= 0) {
 			maximum_width = 1;
 		}
@@ -8303,7 +8303,7 @@ Size2 RichTextLabel::get_minimum_size() const {
 	}
 
 	return sb_min_size +
-			((autowrap_mode != TextServer::AUTOWRAP_OFF) ? Size2(wrap_with_max_width ? MAX(1, min_size.x) : 1, min_size.y) : min_size);
+			((autowrap_mode != TextServer::AUTOWRAP_OFF) ? Size2(wrap_with_max_width ? MAX(1, min_size.x) : 1, min_size.height) : min_size);
 }
 
 // Context menu.

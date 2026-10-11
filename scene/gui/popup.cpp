@@ -289,8 +289,8 @@ Size2 PopupPanel::_get_contents_minimum_size() const {
 	}
 
 	// Take shadows into account.
-	ms.x += panel->get_offset(SIDE_LEFT) - panel->get_offset(SIDE_RIGHT);
-	ms.y += panel->get_offset(SIDE_TOP) - panel->get_offset(SIDE_BOTTOM);
+	ms.width += panel->get_offset(SIDE_LEFT) - panel->get_offset(SIDE_RIGHT);
+	ms.height += panel->get_offset(SIDE_TOP) - panel->get_offset(SIDE_BOTTOM);
 
 	return ms + theme_cache.panel_style->get_minimum_size();
 }
@@ -353,8 +353,8 @@ void PopupPanel::_update_child_rects() const {
 
 	Vector2 csize = Vector2(get_size()) / get_content_scale_factor() - theme_cache.panel_style->get_minimum_size();
 	// Trim shadows.
-	csize.x -= panel->get_offset(SIDE_LEFT) - panel->get_offset(SIDE_RIGHT);
-	csize.y -= panel->get_offset(SIDE_TOP) - panel->get_offset(SIDE_BOTTOM);
+	csize.width -= panel->get_offset(SIDE_LEFT) - panel->get_offset(SIDE_RIGHT);
+	csize.height -= panel->get_offset(SIDE_TOP) - panel->get_offset(SIDE_BOTTOM);
 
 	for (int i = 0; i < get_child_count(); i++) {
 		Control *c = Object::cast_to<Control>(get_child(i));

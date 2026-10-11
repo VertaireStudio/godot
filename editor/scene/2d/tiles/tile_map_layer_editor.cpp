@@ -32,6 +32,7 @@
 
 #include "core/input/input.h"
 #include "core/math/geometry_2d.h"
+#include "core/math/random_pcg.h"
 #include "core/object/callable_mp.h"
 #include "core/object/class_db.h"
 #include "core/os/keyboard.h"
@@ -4331,7 +4332,7 @@ void TileMapLayerEditor::_draw_overlay() {
 				if (!source || !source->has_tile(tile_atlas_coords) || !source->has_alternative_tile(tile_atlas_coords, tile_alternative_tile)) {
 					// Generate a random color from the hashed identifier of the tiles.
 					Array to_hash = { tile_source_id, tile_atlas_coords, tile_alternative_tile };
-					uint32_t hash = Math::RandomPCG(to_hash.hash()).rand();
+					uint32_t hash = RandomPCG(to_hash.hash()).rand();
 
 					Color color;
 					color = color.from_hsv(
@@ -4364,8 +4365,8 @@ void TileMapLayerEditor::_draw_overlay() {
 		Size2 screen_size = custom_overlay->get_size();
 		Rect2i screen_rect;
 		screen_rect.position = tile_set->local_to_map(xform_inv.xform(Vector2()));
-		screen_rect.expand_to(tile_set->local_to_map(xform_inv.xform(Vector2(0, screen_size.y))));
-		screen_rect.expand_to(tile_set->local_to_map(xform_inv.xform(Vector2(screen_size.x, 0))));
+		screen_rect.expand_to(tile_set->local_to_map(xform_inv.xform(Vector2(0, screen_size.height))));
+		screen_rect.expand_to(tile_set->local_to_map(xform_inv.xform(Vector2(screen_size.width, 0))));
 		screen_rect.expand_to(tile_set->local_to_map(xform_inv.xform(screen_size)));
 		screen_rect = screen_rect.grow(1);
 

@@ -33,6 +33,7 @@
 #include "core/config/engine.h"
 #include "core/io/marshalls.h"
 #include "core/math/geometry_2d.h"
+#include "core/math/random_pcg.h"
 #include "core/object/callable_mp.h"
 #include "core/object/class_db.h"
 #include "core/templates/a_hash_map.h"
@@ -381,7 +382,7 @@ void TileMapLayer::_rendering_update(bool p_force_cleanup) {
 					real_t random_animation_offset = 0.0;
 					if (atlas_source->get_tile_animation_mode(cell_data.cell.get_atlas_coords()) != TileSetAtlasSource::TILE_ANIMATION_MODE_DEFAULT) {
 						Array to_hash = { local_tile_pos, get_instance_id() }; // Use instance id as a random hash
-						random_animation_offset = Math::RandomPCG(to_hash.hash()).randf();
+						random_animation_offset = RandomPCG(to_hash.hash()).randf();
 					}
 
 					// Drawing the tile in the canvas item.
@@ -728,7 +729,7 @@ void TileMapLayer::_rendering_draw_cell_debug(const RID &p_canvas_item, const Ve
 				if (atlas_source->get_runtime_texture().is_null() || c.get_atlas_coords().x >= grid_size.x || c.get_atlas_coords().y >= grid_size.y) {
 					// Generate a random color from the hashed values of the tiles.
 					Array to_hash = { c.source_id, c.get_atlas_coords(), c.alternative_tile };
-					uint32_t hash = Math::RandomPCG(to_hash.hash()).rand();
+					uint32_t hash = RandomPCG(to_hash.hash()).rand();
 
 					Color color;
 					color = color.from_hsv(
@@ -1111,8 +1112,8 @@ void TileMapLayer::_physics_draw_quadrant_debug(const RID &p_canvas_item, DebugQ
 
 	const Color &debug_collision_color = get_tree()->get_debug_collisions_color();
 
-	Math::RandomPCG rand;
-	rand.new_from_seed(hash_murmur3_one_real(r_debug_quadrant.quadrant_coords.y, hash_murmur3_one_real(r_debug_quadrant.quadrant_coords.x)));
+	RandomPCG rand;
+	rand.seed(hash_murmur3_one_real(r_debug_quadrant.quadrant_coords.y, hash_murmur3_one_real(r_debug_quadrant.quadrant_coords.x)));
 
 	// Create a mesh.
 	if (!r_debug_quadrant.physics_mesh.is_valid()) {
@@ -1495,7 +1496,7 @@ void TileMapLayer::_navigation_draw_cell_debug(const RID &p_canvas_item, const V
 	Color debug_face_color = ns2d->get_debug_navigation_geometry_face_color();
 	Color debug_edge_color = ns2d->get_debug_navigation_geometry_edge_color();
 
-	Math::RandomPCG rand;
+	RandomPCG rand;
 
 	const TileMapCell &c = r_cell_data.cell;
 
@@ -1687,7 +1688,7 @@ void TileMapLayer::_scenes_draw_cell_debug(const RID &p_canvas_item, const Vecto
 			if (scenes_collection_source->get_scene_tile_scene(c.alternative_tile).is_null() || scenes_collection_source->get_scene_tile_display_placeholder(c.alternative_tile)) {
 				// Generate a random color from the hashed values of the tiles.
 				Array to_hash = { c.source_id, c.alternative_tile };
-				uint32_t hash = Math::RandomPCG(to_hash.hash()).rand();
+				uint32_t hash = RandomPCG(to_hash.hash()).rand();
 
 				Color color;
 				color = color.from_hsv(

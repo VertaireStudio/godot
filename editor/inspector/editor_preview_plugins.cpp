@@ -935,7 +935,7 @@ Ref<Texture2D> EditorGradientPreviewPlugin::generate(const Ref<Resource> &p_from
 	if (gradient.is_valid()) {
 		Ref<GradientTexture1D> ptex;
 		ptex.instantiate();
-		ptex->set_width(p_size.x * GRADIENT_PREVIEW_TEXTURE_SCALE_FACTOR * EDSCALE);
+		ptex->set_width(p_size.width * GRADIENT_PREVIEW_TEXTURE_SCALE_FACTOR * EDSCALE);
 		ptex->set_gradient(gradient);
 		return ImageTexture::create_from_image(ptex->get_image());
 	}

@@ -167,8 +167,8 @@ void EditorVisualProfiler::_item_collapsed(TreeItem *p_item) {
 }
 
 void EditorVisualProfiler::_update_plot() {
-	const int w = graph->get_size().x + 1; // `+1` is to prevent from crashing when visual profiler is auto started.
-	const int h = graph->get_size().y + 1;
+	const int w = graph->get_size().width + 1; // `+1` is to prevent from crashing when visual profiler is auto started.
+	const int h = graph->get_size().height + 1;
 
 	bool reset_texture = false;
 
@@ -530,7 +530,7 @@ void EditorVisualProfiler::_graph_tex_draw() {
 	}
 
 	graph->draw_string(font, Vector2(font->get_string_size("X", HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x, font->get_ascent(font_size) + 2), "CPU: " + cpu_name, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, color * Color(1, 1, 1, 0.75));
-	graph->draw_string(font, Vector2(font->get_string_size("X", HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x + graph_size.x / 2, font->get_ascent(font_size) + 2), "GPU: " + gpu_name, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, color * Color(1, 1, 1, 0.75));
+	graph->draw_string(font, Vector2(font->get_string_size("X", HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x + graph_size.width / 2, font->get_ascent(font_size) + 2), "GPU: " + gpu_name, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, color * Color(1, 1, 1, 0.75));
 }
 
 void EditorVisualProfiler::_graph_tex_mouse_exit() {
@@ -559,7 +559,7 @@ void EditorVisualProfiler::_graph_tex_input(const Ref<InputEvent> &p_ev) {
 	if (
 			(mb.is_valid() && mb->get_button_index() == MouseButton::LEFT && mb->is_pressed()) ||
 			(mm.is_valid())) {
-		int half_w = graph->get_size().x / 2;
+		int half_w = graph->get_size().width / 2;
 		int x = me->get_position().x;
 		if (x > half_w) {
 			x -= half_w;
@@ -628,11 +628,11 @@ void EditorVisualProfiler::_graph_tex_input(const Ref<InputEvent> &p_ev) {
 				frame_delay->start();
 			}
 
-			bool touched_cpu = me->get_position().x < graph->get_size().x * 0.5;
+			bool touched_cpu = me->get_position().x < graph->get_size().width * 0.5;
 
 			const Metric::Area *areas = frame_metrics[metric].areas.ptr();
 			int area_count = frame_metrics[metric].areas.size();
-			float posy = (1.0 - (me->get_position().y / graph->get_size().y)) * (touched_cpu ? graph_height_cpu : graph_height_gpu);
+			float posy = (1.0 - (me->get_position().y / graph->get_size().height)) * (touched_cpu ? graph_height_cpu : graph_height_gpu);
 			int last_valid = -1;
 			bool found = false;
 			for (int i = 0; i < area_count - 1; i++) {

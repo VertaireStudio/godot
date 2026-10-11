@@ -76,14 +76,14 @@ void GridContainer::_resort() {
 			row_minh[row] = ms.height;
 		}
 
-		int max_width = int(max_size.x) >= 0 ? int(max_size.x) : (combined_max_size.width >= 0 ? combined_max_size.width : size.width);
+		int max_width = int(max_size.width) >= 0 ? int(max_size.width) : (combined_max_size.width >= 0 ? combined_max_size.width : size.width);
 		if (col_maxw.has(col)) {
 			col_maxw[col] = MAX(col_maxw[col], max_width);
 		} else {
 			col_maxw[col] = max_width;
 		}
 
-		int max_height = int(max_size.y) >= 0 ? int(max_size.y) : (combined_max_size.height >= 0 ? combined_max_size.height : size.height);
+		int max_height = int(max_size.height) >= 0 ? int(max_size.height) : (combined_max_size.height >= 0 ? combined_max_size.height : size.height);
 		if (row_maxh.has(row)) {
 			row_maxh[row] = MAX(row_maxh[row], max_height);
 		} else {
@@ -122,17 +122,17 @@ void GridContainer::_resort() {
 	Size2 remaining_space = get_size();
 	for (const KeyValue<int, int> &E : col_minw) {
 		if (!col_expanded.has(E.key)) {
-			remaining_space.x -= E.value;
+			remaining_space.width -= E.value;
 		}
 	}
 
 	for (const KeyValue<int, int> &E : row_minh) {
 		if (!row_expanded.has(E.key)) {
-			remaining_space.y -= E.value;
+			remaining_space.height -= E.value;
 		}
 	}
-	remaining_space.y -= theme_cache.v_separation * MAX(max_row - 1, 0);
-	remaining_space.x -= theme_cache.h_separation * MAX(max_col - 1, 0);
+	remaining_space.height -= theme_cache.v_separation * MAX(max_row - 1, 0);
+	remaining_space.width -= theme_cache.h_separation * MAX(max_col - 1, 0);
 
 	bool can_fit = false;
 	while (!can_fit && col_expanded.size() > 0) {
@@ -143,7 +143,7 @@ void GridContainer::_resort() {
 			if (col_minw[E] > col_minw[max_index]) {
 				max_index = E;
 			}
-			if (can_fit && (remaining_space.x / col_expanded.size()) < col_minw[E]) {
+			if (can_fit && (remaining_space.width / col_expanded.size()) < col_minw[E]) {
 				can_fit = false;
 			}
 		}
@@ -151,7 +151,7 @@ void GridContainer::_resort() {
 		// If not, the column with maximum minwidth is not expanded.
 		if (!can_fit) {
 			col_expanded.erase(max_index);
-			remaining_space.x -= col_minw[max_index];
+			remaining_space.width -= col_minw[max_index];
 			col_fixed_size[max_index] = col_minw[max_index];
 		}
 	}
@@ -165,7 +165,7 @@ void GridContainer::_resort() {
 			if (row_minh[E] > row_minh[max_index]) {
 				max_index = E;
 			}
-			if (can_fit && (remaining_space.y / row_expanded.size()) < row_minh[E]) {
+			if (can_fit && (remaining_space.height / row_expanded.size()) < row_minh[E]) {
 				can_fit = false;
 			}
 		}
@@ -173,7 +173,7 @@ void GridContainer::_resort() {
 		// If not, the row with maximum minheight is not expanded.
 		if (!can_fit) {
 			row_expanded.erase(max_index);
-			remaining_space.y -= row_minh[max_index];
+			remaining_space.height -= row_minh[max_index];
 			row_fixed_size[max_index] = row_minh[max_index];
 		}
 	}
@@ -183,7 +183,7 @@ void GridContainer::_resort() {
 		max_fit = true;
 		int capped_col = -1;
 		for (const int &E : col_expanded) {
-			if (col_maxw.has(E) && (remaining_space.x / col_expanded.size()) > col_maxw[E]) {
+			if (col_maxw.has(E) && (remaining_space.width / col_expanded.size()) > col_maxw[E]) {
 				capped_col = E;
 				max_fit = false;
 				break;
@@ -192,7 +192,7 @@ void GridContainer::_resort() {
 
 		if (capped_col >= 0) {
 			col_expanded.erase(capped_col);
-			remaining_space.x -= col_maxw[capped_col];
+			remaining_space.width -= col_maxw[capped_col];
 			col_fixed_size[capped_col] = col_maxw[capped_col];
 		}
 	}
@@ -202,7 +202,7 @@ void GridContainer::_resort() {
 		max_fit = true;
 		int capped_row = -1;
 		for (const int &E : row_expanded) {
-			if (row_maxh.has(E) && (remaining_space.y / row_expanded.size()) > row_maxh[E]) {
+			if (row_maxh.has(E) && (remaining_space.height / row_expanded.size()) > row_maxh[E]) {
 				capped_row = E;
 				max_fit = false;
 				break;
@@ -211,7 +211,7 @@ void GridContainer::_resort() {
 
 		if (capped_row >= 0) {
 			row_expanded.erase(capped_row);
-			remaining_space.y -= row_maxh[capped_row];
+			remaining_space.height -= row_maxh[capped_row];
 			row_fixed_size[capped_row] = row_maxh[capped_row];
 		}
 	}
@@ -220,15 +220,15 @@ void GridContainer::_resort() {
 	int col_remaining_pixel = 0;
 	int col_expand = 0;
 	if (col_expanded.size() > 0) {
-		col_expand = remaining_space.x / col_expanded.size();
-		col_remaining_pixel = remaining_space.x - col_expanded.size() * col_expand;
+		col_expand = remaining_space.width / col_expanded.size();
+		col_remaining_pixel = remaining_space.width - col_expanded.size() * col_expand;
 	}
 
 	int row_remaining_pixel = 0;
 	int row_expand = 0;
 	if (row_expanded.size() > 0) {
-		row_expand = remaining_space.y / row_expanded.size();
-		row_remaining_pixel = remaining_space.y - row_expanded.size() * row_expand;
+		row_expand = remaining_space.height / row_expanded.size();
+		row_remaining_pixel = remaining_space.height - row_expanded.size() * row_expand;
 	}
 
 	bool rtl = is_layout_rtl();
@@ -272,7 +272,7 @@ void GridContainer::_resort() {
 
 		if (col == 0) {
 			if (rtl) {
-				col_ofs = get_size().x;
+				col_ofs = get_size().width;
 			} else {
 				col_ofs = 0;
 			}
@@ -300,32 +300,32 @@ void GridContainer::_resort() {
 
 		if (is_propagating_maximum_size()) {
 			Size2 ms = combined_max_size;
-			if (ms.x >= 0) {
-				ms.x -= accumulated_width;
-				ms.x = MAX(ms.x, 0);
+			if (ms.width >= 0) {
+				ms.width -= accumulated_width;
+				ms.width = MAX(ms.width, 0);
 			}
-			if (ms.y >= 0) {
-				ms.y -= accumulated_height;
-				ms.y = MAX(ms.y, 0);
+			if (ms.height >= 0) {
+				ms.height -= accumulated_height;
+				ms.height = MAX(ms.height, 0);
 			}
 			c->set_parent_maximum_size_cache(ms);
 		}
 
 		if (rtl) {
-			Point2 p(col_ofs - s.x, row_ofs);
+			Point2 p(col_ofs - s.width, row_ofs);
 			fit_child_in_rect(c, Rect2(p, s));
-			col_ofs -= s.x + theme_cache.h_separation;
+			col_ofs -= s.width + theme_cache.h_separation;
 		} else {
 			Point2 p(col_ofs, row_ofs);
 			fit_child_in_rect(c, Rect2(p, s));
-			col_ofs += s.x + theme_cache.h_separation;
+			col_ofs += s.width + theme_cache.h_separation;
 		}
 
 		if (col == columns - 1) {
-			accumulated_height += s.y + theme_cache.v_separation;
+			accumulated_height += s.height + theme_cache.v_separation;
 			accumulated_width = 0;
 		} else {
-			accumulated_width += s.x + theme_cache.h_separation;
+			accumulated_width += s.width + theme_cache.h_separation;
 		}
 	}
 }
@@ -414,15 +414,15 @@ Size2 GridContainer::_get_minimum_size(bool p_use_desired_sizes) const {
 	Size2 ms;
 
 	for (const KeyValue<int, int> &E : col_minw) {
-		ms.x += E.value;
+		ms.width += E.value;
 	}
 
 	for (const KeyValue<int, int> &E : row_minh) {
-		ms.y += E.value;
+		ms.height += E.value;
 	}
 
-	ms.y += theme_cache.v_separation * max_row;
-	ms.x += theme_cache.h_separation * max_col;
+	ms.height += theme_cache.v_separation * max_row;
+	ms.width += theme_cache.h_separation * max_col;
 
 	return ms;
 }

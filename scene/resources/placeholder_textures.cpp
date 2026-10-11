@@ -39,11 +39,11 @@ void PlaceholderTexture2D::set_size(Size2 p_size) {
 }
 
 int PlaceholderTexture2D::get_width() const {
-	return size.x;
+	return size.width;
 }
 
 int PlaceholderTexture2D::get_height() const {
-	return size.y;
+	return size.height;
 }
 
 bool PlaceholderTexture2D::has_alpha() const {

@@ -648,7 +648,7 @@ void ScenePaint2DEditor::_edit_properties_toggled(bool p_pressed) {
 
 void ScenePaint2DEditor::_advanced_settings_pressed() {
 	Vector2 pos = advanced_settings_button->get_screen_position() + advanced_settings_button->get_size();
-	advanced_settings_popup->set_position(pos - Vector2(advanced_settings_popup->get_contents_minimum_size().x / 2, 0));
+	advanced_settings_popup->set_position(pos - Vector2(advanced_settings_popup->get_contents_minimum_size().width / 2, 0));
 	advanced_settings_popup->reset_size();
 	advanced_settings_popup->popup();
 	advanced_settings_popup->grab_focus();

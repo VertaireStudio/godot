@@ -326,10 +326,10 @@ void FlowContainer::_resort() {
 
 		Rect2 child_rect = Rect2(ofs, child_size);
 		if (reverse_fill && !vertical) {
-			child_rect.position.y = get_rect().size.y - child_rect.position.y - child_rect.size.y;
+			child_rect.position.y = get_rect().size.y - child_rect.position.y - child_rect.size.height;
 		}
 		if ((rtl && !vertical) || ((rtl != reverse_fill) && vertical)) {
-			child_rect.position.x = get_rect().size.x - child_rect.position.x - child_rect.size.x;
+			child_rect.position.x = get_rect().size.x - child_rect.position.x - child_rect.size.width;
 		}
 
 		fit_child_in_rect(child, child_rect);

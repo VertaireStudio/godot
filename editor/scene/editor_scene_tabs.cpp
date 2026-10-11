@@ -138,7 +138,7 @@ void EditorSceneTabs::_scene_tab_input(const Ref<InputEvent> &p_input) {
 				tab_buttons = get_theme_icon(SNAME("increment"), SNAME("TabBar"))->get_width() + get_theme_icon(SNAME("decrement"), SNAME("TabBar"))->get_width();
 			}
 
-			if ((is_layout_rtl() && mb->get_position().x > tab_buttons) || (!is_layout_rtl() && mb->get_position().x < scene_tabs->get_size().x - tab_buttons)) {
+			if ((is_layout_rtl() && mb->get_position().x > tab_buttons) || (!is_layout_rtl() && mb->get_position().x < scene_tabs->get_size().width - tab_buttons)) {
 				EditorNode::get_singleton()->trigger_menu_option(EditorNode::SCENE_NEW_SCENE, true);
 			}
 		} else if (mb->get_button_index() == MouseButton::RIGHT && mb->is_pressed()) {
@@ -379,7 +379,7 @@ void EditorSceneTabs::_scene_tabs_resized() {
 		if (scene_tabs->is_layout_rtl()) {
 			scene_tab_add->set_rect(Rect2(Point2(last_tab.position.x - add_button_size.x - hsep, last_tab.position.y), add_button_size));
 		} else {
-			scene_tab_add->set_rect(Rect2(Point2(last_tab.position.x + last_tab.size.x + hsep, last_tab.position.y), add_button_size));
+			scene_tab_add->set_rect(Rect2(Point2(last_tab.position.x + last_tab.size.width + hsep, last_tab.position.y), add_button_size));
 		}
 	}
 }
@@ -390,7 +390,7 @@ void EditorSceneTabs::_tab_preview_done(const String &p_path, const Ref<Texture2
 
 		Rect2 rect = scene_tabs->get_tab_rect(p_tab);
 		rect.position += scene_tabs->get_global_position();
-		tab_preview_panel->set_global_position(rect.position + Vector2(0, rect.size.y));
+		tab_preview_panel->set_global_position(rect.position + Vector2(0, rect.size.height));
 		tab_preview_panel->show();
 	}
 }

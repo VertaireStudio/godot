@@ -30,6 +30,7 @@
 
 #pragma once
 
+#include "core/math/random_pcg.h"
 #include "core/os/thread.h"
 #include "editor/docks/editor_dock.h"
 #include "editor/scene/2d/tiles/tile_atlas_view.h"
@@ -181,7 +182,7 @@ private:
 
 	RBSet<TileMapCell> tile_set_selection;
 
-	Math::RandomPCG pattern_rng;
+	RandomPCG pattern_rng;
 	uint64_t rng_base_state = 0;
 
 	void _update_selection_pattern_from_tilemap_selection();

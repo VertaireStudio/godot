@@ -178,7 +178,7 @@ VSRerouteNode::VSRerouteNode() {
 	add_child(slot_area);
 
 	// Lay the input and output ports on top of each other to create the illusion of a single port.
-	add_theme_constant_override("port_h_offset", size.x / 2);
+	add_theme_constant_override("port_h_offset", size.width / 2);
 }
 
 void VSRerouteNode::set_icon_opacity(float p_opacity) {
@@ -810,7 +810,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 	Ref<StyleBoxFlat> graph_node_stylebox = graph->get_theme_stylebox(SceneStringName(panel), "GraphNode");
 	int port_preview_size = EDITOR_GET("editors/visual_editors/visual_shader/port_preview_size");
 	if (!is_frame && !is_reroute) {
-		node->set_custom_minimum_size(Size2((Math::ceil(graph_node_stylebox->get_minimum_size().x) + port_preview_size) * EDSCALE, 0));
+		node->set_custom_minimum_size(Size2((Math::ceil(graph_node_stylebox->get_minimum_size().width) + port_preview_size) * EDSCALE, 0));
 	}
 
 	Ref<VisualShaderNodeParticleEmit> emit = vsnode;
@@ -3412,17 +3412,17 @@ void VisualShaderEditor::_edit_port_default_input(Object *p_button, int p_node, 
 	switch (value.get_type()) {
 		case Variant::VECTOR3:
 		case Variant::BASIS:
-			popup_pref_size.x = 320;
+			popup_pref_size.width = 320;
 			break;
 		case Variant::VECTOR4:
 		case Variant::PLANE:
 		case Variant::TRANSFORM2D:
 		case Variant::TRANSFORM3D:
 		case Variant::PROJECTION:
-			popup_pref_size.x = 480;
+			popup_pref_size.width = 480;
 			break;
 		default:
-			popup_pref_size.x = 180;
+			popup_pref_size.width = 180;
 			break;
 	}
 	property_editor_popup->set_min_size(popup_pref_size * EDSCALE);
@@ -3436,7 +3436,7 @@ void VisualShaderEditor::_edit_port_default_input(Object *p_button, int p_node, 
 
 	Button *button = Object::cast_to<Button>(p_button);
 	if (button) {
-		property_editor_popup->set_position(button->get_screen_position() + Vector2(0, button->get_size().y) * graph->get_zoom());
+		property_editor_popup->set_position(button->get_screen_position() + Vector2(0, button->get_size().height) * graph->get_zoom());
 	}
 	property_editor_popup->reset_size();
 	if (button) {
@@ -8461,9 +8461,9 @@ void VisualShaderNodePortPreview::_notification(int p_what) {
 		case NOTIFICATION_DRAW: {
 			Vector<Vector2> points = {
 				Vector2(),
-				Vector2(get_size().x, 0),
+				Vector2(get_size().width, 0),
 				get_size(),
-				Vector2(0, get_size().y)
+				Vector2(0, get_size().height)
 			};
 
 			Vector<Vector2> uvs = {

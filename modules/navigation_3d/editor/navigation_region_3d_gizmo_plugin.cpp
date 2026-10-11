@@ -160,7 +160,7 @@ void NavigationRegion3DGizmoPlugin::redraw(EditorNode3DGizmo *p_gizmo) {
 	face_mesh_array[Mesh::ARRAY_VERTEX] = face_vertex_array;
 
 	// if enabled add vertex colors to colorize each face individually
-	Math::RandomPCG rand;
+	RandomPCG rand;
 	bool enabled_geometry_face_random_color = NavigationServer3D::get_singleton()->get_debug_navigation_enable_geometry_face_random_color();
 	if (enabled_geometry_face_random_color) {
 		Color debug_navigation_geometry_face_color = NavigationServer3D::get_singleton()->get_debug_navigation_geometry_face_color();

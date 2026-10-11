@@ -1441,7 +1441,7 @@ Vector3 RuntimeNodeSelect::_get_screen_to_space(const Vector3 &p_vector3) {
 	real_t znear = camera->get_near();
 	Projection cm = Projection::create_perspective(camera->get_fov(), size.aspect(), znear + p_vector3.z, camera->get_far());
 	Vector2 screen_he = cm.get_viewport_half_extents();
-	return camera_transform.xform(Vector3(((p_vector3.x / size.x) * 2.0 - 1.0) * screen_he.x, ((1.0 - (p_vector3.y / size.y)) * 2.0 - 1.0) * screen_he.y, -(znear + p_vector3.z)));
+	return camera_transform.xform(Vector3(((p_vector3.x / size.width) * 2.0 - 1.0) * screen_he.x, ((1.0 - (p_vector3.y / size.height)) * 2.0 - 1.0) * screen_he.y, -(znear + p_vector3.z)));
 }
 
 void RuntimeNodeSelect::_fov_scaled() {

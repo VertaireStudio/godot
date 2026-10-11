@@ -166,49 +166,49 @@ inline Rect2 get_splash_stretched_screen_rect(const Size2 &p_image_size, const S
 			screenrect.position = ((p_window_size - screenrect.size) / 2.0).floor();
 		} break;
 		case RSE::SPLASH_STRETCH_MODE_KEEP: {
-			if (p_window_size.x > p_window_size.y) {
+			if (p_window_size.width > p_window_size.height) {
 				// Scale horizontally.
-				screenrect.size.y = p_window_size.y;
-				screenrect.size.x = imgsize.x * p_window_size.y / imgsize.y;
-				screenrect.position.x = (p_window_size.x - screenrect.size.x) / 2;
+				screenrect.size.y = p_window_size.height;
+				screenrect.size.x = imgsize.width * p_window_size.height / imgsize.height;
+				screenrect.position.x = (p_window_size.width - screenrect.size.x) / 2;
 			} else {
 				// Scale vertically.
-				screenrect.size.x = p_window_size.x;
-				screenrect.size.y = imgsize.y * p_window_size.x / imgsize.x;
-				screenrect.position.y = (p_window_size.y - screenrect.size.y) / 2;
+				screenrect.size.x = p_window_size.width;
+				screenrect.size.y = imgsize.height * p_window_size.width / imgsize.width;
+				screenrect.position.y = (p_window_size.height - screenrect.size.y) / 2;
 			}
 		} break;
 		case RSE::SPLASH_STRETCH_MODE_KEEP_WIDTH: {
 			// Scale vertically.
-			screenrect.size.x = p_window_size.x;
-			screenrect.size.y = imgsize.y * p_window_size.x / imgsize.x;
-			screenrect.position.y = (p_window_size.y - screenrect.size.y) / 2;
+			screenrect.size.x = p_window_size.width;
+			screenrect.size.y = imgsize.height * p_window_size.width / imgsize.width;
+			screenrect.position.y = (p_window_size.height - screenrect.size.y) / 2;
 		} break;
 		case RSE::SPLASH_STRETCH_MODE_KEEP_HEIGHT: {
 			// Scale horizontally.
-			screenrect.size.y = p_window_size.y;
-			screenrect.size.x = imgsize.x * p_window_size.y / imgsize.y;
-			screenrect.position.x = (p_window_size.x - screenrect.size.x) / 2;
+			screenrect.size.y = p_window_size.height;
+			screenrect.size.x = imgsize.width * p_window_size.height / imgsize.height;
+			screenrect.position.x = (p_window_size.width - screenrect.size.x) / 2;
 		} break;
 		case RSE::SPLASH_STRETCH_MODE_COVER: {
-			double window_aspect = (double)p_window_size.x / p_window_size.y;
-			double img_aspect = imgsize.x / imgsize.y;
+			double window_aspect = (double)p_window_size.width / p_window_size.height;
+			double img_aspect = imgsize.width / imgsize.height;
 
 			if (window_aspect > img_aspect) {
 				// Scale vertically.
-				screenrect.size.x = p_window_size.x;
-				screenrect.size.y = imgsize.y * p_window_size.x / imgsize.x;
-				screenrect.position.y = (p_window_size.y - screenrect.size.y) / 2;
+				screenrect.size.x = p_window_size.width;
+				screenrect.size.y = imgsize.height * p_window_size.width / imgsize.width;
+				screenrect.position.y = (p_window_size.height - screenrect.size.y) / 2;
 			} else {
 				// Scale horizontally.
-				screenrect.size.y = p_window_size.y;
-				screenrect.size.x = imgsize.x * p_window_size.y / imgsize.y;
-				screenrect.position.x = (p_window_size.x - screenrect.size.x) / 2;
+				screenrect.size.y = p_window_size.height;
+				screenrect.size.x = imgsize.width * p_window_size.height / imgsize.height;
+				screenrect.position.x = (p_window_size.width - screenrect.size.x) / 2;
 			}
 		} break;
 		case RSE::SPLASH_STRETCH_MODE_IGNORE: {
-			screenrect.size.x = p_window_size.x;
-			screenrect.size.y = p_window_size.y;
+			screenrect.size.x = p_window_size.width;
+			screenrect.size.y = p_window_size.height;
 		} break;
 	}
 	return screenrect;

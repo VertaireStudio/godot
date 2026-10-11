@@ -205,10 +205,10 @@ void GradientTexture2DEdit::_draw() {
 		const Color line_color = Color(0.5, 0.5, 0.5, 0.5);
 
 		for (int idx = 0; idx < snap_count + 1; idx++) {
-			float x = float(idx * size.x) / snap_count;
-			float y = float(idx * size.y) / snap_count;
-			draw_line(Point2(x, 0), Point2(x, size.y), line_color);
-			draw_line(Point2(0, y), Point2(size.x, y), line_color);
+			float x = float(idx * size.width) / snap_count;
+			float y = float(idx * size.height) / snap_count;
+			draw_line(Point2(x, 0), Point2(x, size.height), line_color);
+			draw_line(Point2(0, y), Point2(size.width, y), line_color);
 		}
 	}
 

@@ -119,30 +119,30 @@ void Container::fit_child_in_rect(RequiredParam<Control> rp_child, const Rect2 &
 	BitField<SizeFlags> v_size_flags = p_child->get_v_size_flags();
 
 	if (!h_size_flags.has_flag(SIZE_FILL)) {
-		float final_width = minsize.x;
-		final_width = MAX(MIN(desired_size.x, r.size.x), final_width);
-		if (maxsize.x >= 0) {
-			final_width = MIN(final_width, maxsize.x);
+		float final_width = minsize.width;
+		final_width = MAX(MIN(desired_size.width, r.size.width), final_width);
+		if (maxsize.width >= 0) {
+			final_width = MIN(final_width, maxsize.width);
 		}
 		r.size.x = final_width;
 		if (h_size_flags.has_flag(SIZE_SHRINK_END)) {
-			r.position.x += rtl ? 0 : (p_rect.size.x - final_width);
+			r.position.x += rtl ? 0 : (p_rect.size.width - final_width);
 		} else if (h_size_flags.has_flag(SIZE_SHRINK_CENTER)) {
 			r.position.x += Math::floor((p_rect.size.x - final_width) / 2);
 		} else {
-			r.position.x += rtl ? (p_rect.size.x - final_width) : 0;
+			r.position.x += rtl ? (p_rect.size.width - final_width) : 0;
 		}
 	}
 
 	if (!v_size_flags.has_flag(SIZE_FILL)) {
 		float final_height = minsize.y;
 		final_height = MAX(MIN(desired_size.y, r.size.y), final_height);
-		if (maxsize.y >= 0) {
-			final_height = MIN(final_height, maxsize.y);
+		if (maxsize.height >= 0) {
+			final_height = MIN(final_height, maxsize.height);
 		}
 		r.size.y = final_height;
 		if (v_size_flags.has_flag(SIZE_SHRINK_END)) {
-			r.position.y += p_rect.size.y - final_height;
+			r.position.y += p_rect.size.height - final_height;
 		} else if (v_size_flags.has_flag(SIZE_SHRINK_CENTER)) {
 			r.position.y += Math::floor((p_rect.size.y - final_height) / 2);
 		}

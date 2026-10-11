@@ -900,7 +900,7 @@ ColorPicker::PickerShapeType ColorPicker::get_picker_shape() const {
 }
 
 inline int ColorPicker::_get_preset_size() {
-	return (int(get_minimum_size().x) - (preset_container->get_h_separation() * (PRESET_COLUMN_COUNT - 1))) / PRESET_COLUMN_COUNT;
+	return (int(get_minimum_size().width) - (preset_container->get_h_separation() * (PRESET_COLUMN_COUNT - 1))) / PRESET_COLUMN_COUNT;
 }
 
 void ColorPicker::_add_preset_button(int p_size, const Color &p_color) {
@@ -1362,7 +1362,7 @@ void ColorPicker::_sample_input(const Ref<InputEvent> &p_event) {
 
 	const Ref<InputEventMouseButton> mb = p_event;
 	if (mb.is_valid() && mb->is_pressed() && mb->get_button_index() == MouseButton::LEFT) {
-		const Rect2 rect_old = Rect2(Point2(), Size2(sample->get_size().x * 0.5, sample->get_size().y * 0.95));
+		const Rect2 rect_old = Rect2(Point2(), Size2(sample->get_size().width * 0.5, sample->get_size().height * 0.95));
 		if (rect_old.has_point(mb->get_position())) {
 			// Revert to the old color when left-clicking the old color sample.
 			set_pick_color(old_color);
@@ -1385,10 +1385,10 @@ void ColorPicker::_sample_draw() {
 	Rect2 rect_old;
 
 	if (display_old_color) {
-		rect_new = Rect2(Point2(sample->get_size().x * 0.5, 0), Size2(sample->get_size().x * 0.5, sample->get_size().y * 0.95));
+		rect_new = Rect2(Point2(sample->get_size().width * 0.5, 0), Size2(sample->get_size().width * 0.5, sample->get_size().height * 0.95));
 
 		// Draw both old and new colors for easier comparison (only if spawned from a ColorPickerButton).
-		rect_old = Rect2(Point2(), Size2(sample->get_size().x * 0.5, sample->get_size().y * 0.95));
+		rect_old = Rect2(Point2(), Size2(sample->get_size().width * 0.5, sample->get_size().height * 0.95));
 
 		if (old_color.a < 1.0) {
 			sample->draw_texture_rect(theme_cache.sample_bg, rect_old, true);
@@ -1413,7 +1413,7 @@ void ColorPicker::_sample_draw() {
 			sample->draw_texture(theme_cache.overbright_indicator, Point2());
 		}
 	} else {
-		rect_new = Rect2(Point2(), Size2(sample->get_size().x, sample->get_size().y * 0.95));
+		rect_new = Rect2(Point2(), Size2(sample->get_size().width, sample->get_size().height * 0.95));
 	}
 
 	if (color.a < 1.0) {
@@ -1429,7 +1429,7 @@ void ColorPicker::_sample_draw() {
 
 	if (is_color_overbright(color)) {
 		// Draw an indicator to denote that the new color is "overbright" and can't be displayed accurately in the preview.
-		sample->draw_texture(theme_cache.overbright_indicator, Point2(sample->get_size().x * 0.5, 0));
+		sample->draw_texture(theme_cache.overbright_indicator, Point2(sample->get_size().width * 0.5, 0));
 	}
 }
 

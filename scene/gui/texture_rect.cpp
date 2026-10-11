@@ -65,28 +65,28 @@ void TextureRect::_notification(int p_what) {
 				case STRETCH_KEEP_ASPECT_CENTERED:
 				case STRETCH_KEEP_ASPECT: {
 					size = get_size();
-					int tex_width = texture->get_width() * size.y / texture->get_height();
-					int tex_height = size.y;
+					int tex_width = texture->get_width() * size.height / texture->get_height();
+					int tex_height = size.height;
 
-					if (tex_width > size.x) {
-						tex_width = size.x;
+					if (tex_width > size.width) {
+						tex_width = size.width;
 						tex_height = texture->get_height() * tex_width / texture->get_width();
 					}
 
 					if (stretch_mode == STRETCH_KEEP_ASPECT_CENTERED) {
-						offset.x += (size.x - tex_width) / 2;
-						offset.y += (size.y - tex_height) / 2;
+						offset.x += (size.width - tex_width) / 2;
+						offset.y += (size.height - tex_height) / 2;
 					}
 
-					size.x = tex_width;
-					size.y = tex_height;
+					size.width = tex_width;
+					size.height = tex_height;
 				} break;
 				case STRETCH_KEEP_ASPECT_COVERED: {
 					size = get_size();
 
 					Size2 tex_size = texture->get_size();
-					Size2 scale_size(size.x / tex_size.x, size.y / tex_size.y);
-					float scale = scale_size.x > scale_size.y ? scale_size.x : scale_size.y;
+					Size2 scale_size(size.width / tex_size.width, size.height / tex_size.height);
+					float scale = scale_size.width > scale_size.height ? scale_size.width : scale_size.height;
 					Size2 scaled_tex_size = tex_size * scale;
 
 					region.position = ((scaled_tex_size - size) / scale).abs() / 2.0f;
@@ -94,8 +94,8 @@ void TextureRect::_notification(int p_what) {
 				} break;
 			}
 
-			size.x *= hflip ? -1.0f : 1.0f;
-			size.y *= vflip ? -1.0f : 1.0f;
+			size.width *= hflip ? -1.0f : 1.0f;
+			size.height *= vflip ? -1.0f : 1.0f;
 
 			if (region.has_area()) {
 				draw_texture_rect_region(texture, Rect2(offset, size), region);

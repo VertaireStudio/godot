@@ -869,8 +869,8 @@ void ProjectManager::_update_project_buttons() {
 
 void ProjectManager::_open_options_popup() {
 	Rect2 rect = open_btn_container->get_screen_rect();
-	rect.position.y += rect.size.y;
-	open_options_popup->set_size(Size2(rect.size.x, 0));
+	rect.position.y += rect.size.height;
+	open_options_popup->set_size(Size2(rect.size.width, 0));
 	open_options_popup->set_position(rect.position);
 
 	open_options_popup->popup();

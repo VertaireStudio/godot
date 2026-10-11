@@ -2705,7 +2705,7 @@ void RendererSceneCull::render_camera(const Ref<RenderSceneBuffers> &p_render_bu
 			case Camera::ORTHOGONAL: {
 				projection.set_orthogonal(
 						camera->size,
-						p_viewport_size.x / (float)p_viewport_size.y,
+						p_viewport_size.width / (float)p_viewport_size.height,
 						camera->znear,
 						camera->zfar,
 						camera->vaspect);
@@ -2714,7 +2714,7 @@ void RendererSceneCull::render_camera(const Ref<RenderSceneBuffers> &p_render_bu
 			case Camera::PERSPECTIVE: {
 				projection.set_perspective(
 						camera->fov,
-						p_viewport_size.x / (float)p_viewport_size.y,
+						p_viewport_size.width / (float)p_viewport_size.height,
 						camera->znear,
 						camera->zfar,
 						camera->vaspect);
@@ -2723,7 +2723,7 @@ void RendererSceneCull::render_camera(const Ref<RenderSceneBuffers> &p_render_bu
 			case Camera::FRUSTUM: {
 				projection.set_frustum(
 						camera->size,
-						p_viewport_size.x / (float)p_viewport_size.y,
+						p_viewport_size.width / (float)p_viewport_size.height,
 						camera->offset,
 						camera->znear,
 						camera->zfar,
@@ -2744,7 +2744,7 @@ void RendererSceneCull::render_camera(const Ref<RenderSceneBuffers> &p_render_bu
 		uint32_t view_count = p_xr_interface->get_view_count();
 		ERR_FAIL_COND_MSG(view_count == 0 || view_count > RendererSceneRender::MAX_RENDER_VIEWS, "Requested view count is not supported");
 
-		float aspect = p_viewport_size.x / (float)p_viewport_size.y;
+		float aspect = p_viewport_size.width / (float)p_viewport_size.height;
 
 		Transform3D world_origin = xr_server->get_world_origin();
 

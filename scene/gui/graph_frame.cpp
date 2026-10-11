@@ -107,9 +107,9 @@ void GraphFrame::_notification(int p_what) {
 
 			Rect2 titlebar_rect(Point2(), titlebar_hbox->get_bound_minimum_size() + sb_titlebar->get_minimum_size());
 			Size2 body_size = get_size();
-			titlebar_rect.size.x = body_size.x;
-			body_size.y -= titlebar_rect.size.y;
-			Rect2 body_rect(Point2(0, titlebar_rect.size.y), body_size);
+			titlebar_rect.size.width = body_size.width;
+			body_size.y -= titlebar_rect.size.height;
+			Rect2 body_rect(Point2(0, titlebar_rect.size.height), body_size);
 
 			// Draw body stylebox.
 			if (tint_color_enabled) {
@@ -149,7 +149,7 @@ void GraphFrame::_resort() {
 	Ref<StyleBox> sb_titlebar = theme_cache.titlebar;
 
 	// Resort titlebar first.
-	Size2 titlebar_size = Size2(get_size().x, titlebar_hbox->get_size().y);
+	Size2 titlebar_size = Size2(get_size().width, titlebar_hbox->get_size().height);
 	titlebar_size -= sb_titlebar->get_minimum_size();
 	Rect2 titlebar_rect = Rect2(sb_titlebar->get_offset(), titlebar_size);
 
@@ -158,8 +158,8 @@ void GraphFrame::_resort() {
 	// After resort the children of the titlebar container may have changed their height (e.g. Label autowrap).
 	Size2i titlebar_min_size = titlebar_hbox->get_bound_minimum_size();
 
-	Size2 size = get_size() - sb_panel->get_minimum_size() - Size2(0, titlebar_min_size.height + sb_titlebar->get_minimum_size().y);
-	Point2 offset = Point2(sb_panel->get_margin(SIDE_LEFT), sb_panel->get_margin(SIDE_TOP) + titlebar_min_size.height + sb_titlebar->get_minimum_size().y);
+	Size2 size = get_size() - sb_panel->get_minimum_size() - Size2(0, titlebar_min_size.height + sb_titlebar->get_minimum_size().height);
+	Point2 offset = Point2(sb_panel->get_margin(SIDE_LEFT), sb_panel->get_margin(SIDE_TOP) + titlebar_min_size.height + sb_titlebar->get_minimum_size().height);
 
 	for (int i = 0; i < get_child_count(false); i++) {
 		Control *child = as_sortable_control(get_child(i, false));
@@ -307,13 +307,13 @@ bool GraphFrame::has_point(const Point2 &p_point) const {
 	}
 
 	// For grabbing on the titlebar.
-	int titlebar_height = titlebar_hbox->get_bound_minimum_size().y + sb_titlebar->get_minimum_size().y;
-	if (Rect2(0, 0, get_size().x, titlebar_height).has_point(p_point)) {
+	int titlebar_height = titlebar_hbox->get_bound_minimum_size().height + sb_titlebar->get_minimum_size().height;
+	if (Rect2(0, 0, get_size().width, titlebar_height).has_point(p_point)) {
 		return true;
 	}
 
 	// Allow grabbing on all sides of the frame.
-	Rect2 frame_rect = Rect2(0, 0, get_size().x, get_size().y);
+	Rect2 frame_rect = Rect2(0, 0, get_size().width, get_size().height);
 	Rect2 no_drag_rect = frame_rect.grow(-drag_margin);
 
 	if (frame_rect.has_point(p_point) && !no_drag_rect.has_point(p_point)) {
@@ -336,13 +336,13 @@ Size2 GraphFrame::_get_minimum_size(bool p_use_desired_sizes) const {
 		}
 
 		Size2i size = p_use_desired_sizes ? child->get_bound_desired_size() : child->get_bound_minimum_size();
-		size.width += sb_panel->get_minimum_size().x;
+		size.width += sb_panel->get_minimum_size().width;
 
 		minsize.x = MAX(minsize.x, size.x);
 		minsize.y += MAX(minsize.y, size.y);
 	}
 
-	minsize.y += sb_panel->get_minimum_size().y;
+	minsize.height += sb_panel->get_minimum_size().height;
 
 	return minsize;
 }

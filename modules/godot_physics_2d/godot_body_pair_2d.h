@@ -63,8 +63,7 @@ class GodotBodyPair2D : public GodotConstraint2D {
 		real_t acc_tangent_impulse = 0.0; // accumulated tangent impulse (Pt)
 		real_t acc_bias_impulse = 0.0; // accumulated normal impulse for position bias (Pnb)
 		real_t acc_bias_impulse_center_of_mass = 0.0; // accumulated normal impulse for position bias applied to com
-		real_t mass_normal = 0.0;
-		real_t mass_tangent = 0.0;
+		real_t mass_normal, mass_tangent = 0.0;
 		real_t bias = 0.0;
 
 		real_t depth = 0.0;

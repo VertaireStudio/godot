@@ -303,7 +303,7 @@ void EditorAssetLibraryItemDescription::set_image(int p_type, int p_index, const
 				}
 
 				Button *button = preview_images[i].button;
-				float button_texture_height = button->get_size().y - button->get_theme_stylebox(CoreStringName(normal), SNAME("Button"))->get_minimum_size().y;
+				float button_texture_height = button->get_size().height - button->get_theme_stylebox(CoreStringName(normal), SNAME("Button"))->get_minimum_size().height;
 				float scale_ratio = button_texture_height / p_image->get_height();
 				button->set_custom_minimum_size(Size2(p_image->get_width() * scale_ratio * EDSCALE, 0));
 
@@ -352,7 +352,7 @@ void EditorAssetLibraryItemDescription::_notification(int p_what) {
 		} break;
 
 		case NOTIFICATION_READY: {
-			int width = zoom_button->get_size().x;
+			int width = zoom_button->get_size().width;
 			previous_preview->set_custom_minimum_size(Size2(width, 100 * EDSCALE));
 			next_preview->set_custom_minimum_size(Size2(width, 100 * EDSCALE));
 		} break;
@@ -573,7 +573,7 @@ void EditorAssetLibraryItemDescription::add_preview(int p_id, bool p_video, cons
 	new_preview.button->set_expand_icon(true);
 	new_preview.button->set_toggle_mode(!p_video);
 	new_preview.button->set_theme_type_variation(SNAME("ThumbnailButton"));
-	new_preview.button->set_custom_minimum_size(Size2(preview_hb->get_size().y, 0));
+	new_preview.button->set_custom_minimum_size(Size2(preview_hb->get_size().height, 0));
 	preview_hb->add_child(new_preview.button);
 	new_preview.button->connect(SceneStringName(pressed), callable_mp(this, &EditorAssetLibraryItemDescription::preview_click).bind(p_id));
 
@@ -830,7 +830,7 @@ void EditorAssetLibraryItemDownload::_notification(int p_what) {
 			Ref<StyleBoxFlat> button_style = get_theme_stylebox(CoreStringName(normal), SNAME("Button"));
 			Ref<Font> font = get_theme_font(SceneStringName(font), SNAME("Button"));
 			int font_size = get_theme_font_size(SceneStringName(font_size), SNAME("Button"));
-			int button_height = button_style->get_minimum_size().y + font->get_height(font_size);
+			int button_height = button_style->get_minimum_size().height + font->get_height(font_size);
 			progress_hbox->set_custom_minimum_size(Size2(0, button_height));
 		} break;
 

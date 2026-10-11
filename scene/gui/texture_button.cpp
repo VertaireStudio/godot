@@ -195,25 +195,25 @@ void TextureButton::_notification(int p_what) {
 					case STRETCH_KEEP_ASPECT_CENTERED:
 					case STRETCH_KEEP_ASPECT: {
 						Size2 _size = get_size();
-						float tex_width = texdraw_size.x * _size.y / texdraw_size.y;
-						float tex_height = _size.y;
+						float tex_width = texdraw_size.width * _size.height / texdraw_size.height;
+						float tex_height = _size.height;
 
-						if (tex_width > _size.x) {
-							tex_width = _size.x;
-							tex_height = texdraw_size.y * tex_width / texdraw_size.x;
+						if (tex_width > _size.width) {
+							tex_width = _size.width;
+							tex_height = texdraw_size.height * tex_width / texdraw_size.width;
 						}
 
 						if (stretch_mode == STRETCH_KEEP_ASPECT_CENTERED) {
-							ofs.x = (_size.x - tex_width) / 2;
-							ofs.y = (_size.y - tex_height) / 2;
+							ofs.x = (_size.width - tex_width) / 2;
+							ofs.y = (_size.height - tex_height) / 2;
 						}
-						size.x = tex_width;
-						size.y = tex_height;
+						size.width = tex_width;
+						size.height = tex_height;
 					} break;
 					case STRETCH_KEEP_ASPECT_COVERED: {
 						size = get_size();
 						Size2 scale_size = size / texdraw_size;
-						float scale = scale_size.x > scale_size.y ? scale_size.x : scale_size.y;
+						float scale = scale_size.width > scale_size.height ? scale_size.width : scale_size.height;
 						Size2 scaled_tex_size = texdraw_size * scale;
 						Point2 ofs2 = ((scaled_tex_size - size) / scale).abs() / 2.0f;
 						_texture_region = Rect2(ofs2, size / scale);
@@ -222,8 +222,8 @@ void TextureButton::_notification(int p_what) {
 
 				_position_rect = Rect2(ofs, size);
 
-				size.x *= hflip ? -1.0f : 1.0f;
-				size.y *= vflip ? -1.0f : 1.0f;
+				size.width *= hflip ? -1.0f : 1.0f;
+				size.height *= vflip ? -1.0f : 1.0f;
 
 				if (draw_focus_only) {
 					// Do nothing, we only needed to calculate the rectangle.

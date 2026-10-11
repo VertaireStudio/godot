@@ -76,7 +76,7 @@ void AudioStreamEditor::_notification(int p_what) {
 
 void AudioStreamEditor::_draw_preview() {
 	Size2 size = get_size();
-	int width = size.x;
+	int width = size.width;
 	if (width <= 0) {
 		return; // No points to draw.
 	}
@@ -90,8 +90,8 @@ void AudioStreamEditor::_draw_preview() {
 	points.resize(width * 2);
 
 	for (int i = 0; i < width; i++) {
-		float ofs = i * preview_len / size.x;
-		float ofs_n = (i + 1) * preview_len / size.x;
+		float ofs = i * preview_len / size.width;
+		float ofs_n = (i + 1) * preview_len / size.width;
 		float max = preview->get_max(ofs, ofs_n) * 0.5 + 0.5;
 		float min = preview->get_min(ofs, ofs_n) * 0.5 + 0.5;
 
@@ -158,10 +158,10 @@ void AudioStreamEditor::_draw_indicator() {
 
 	Rect2 rect = _preview->get_rect();
 	float len = stream->get_length();
-	float ofs_x = _current / len * rect.size.x;
+	float ofs_x = _current / len * rect.size.width;
 	const Color col = get_theme_color(SNAME("accent_color"), EditorStringName(Editor));
 	Ref<Texture2D> icon = get_editor_theme_icon(SNAME("TimelineIndicator"));
-	_indicator->draw_line(Point2(ofs_x, 0), Point2(ofs_x, rect.size.y), col, Math::round(2 * EDSCALE));
+	_indicator->draw_line(Point2(ofs_x, 0), Point2(ofs_x, rect.size.height), col, Math::round(2 * EDSCALE));
 	_indicator->draw_texture(
 			icon,
 			Point2(ofs_x - icon->get_width() * 0.5, 0),

@@ -636,7 +636,7 @@ void GPUParticles2D::_notification(int p_what) {
 				PackedInt32Array indices;
 
 				int total_segments = trail_sections * trail_section_subdivisions;
-				real_t depth = size.y * trail_sections;
+				real_t depth = size.height * trail_sections;
 
 				for (int j = 0; j <= total_segments; j++) {
 					real_t v = j;
@@ -648,7 +648,7 @@ void GPUParticles2D::_notification(int p_what) {
 					int bone = j / trail_section_subdivisions;
 					real_t blend = 1.0 - real_t(j % trail_section_subdivisions) / real_t(trail_section_subdivisions);
 
-					real_t s = size.x;
+					real_t s = size.width;
 
 					points.push_back(Vector2(-s * 0.5, 0));
 					points.push_back(Vector2(+s * 0.5, 0));

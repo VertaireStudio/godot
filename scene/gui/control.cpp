@@ -2173,48 +2173,48 @@ void Control::_size_changed() {
 	Size2 maximum_size = get_combined_maximum_size();
 	Size2 minimum_size = get_combined_minimum_size();
 
-	if (minimum_size.x > new_size_cache.x) {
+	if (minimum_size.width > new_size_cache.width) {
 		if (data.h_grow == GROW_DIRECTION_BEGIN) {
-			new_pos_cache.x += new_size_cache.x - minimum_size.x;
+			new_pos_cache.x += new_size_cache.width - minimum_size.width;
 		} else if (data.h_grow == GROW_DIRECTION_BOTH) {
-			new_pos_cache.x += 0.5 * (new_size_cache.x - minimum_size.x);
+			new_pos_cache.x += 0.5 * (new_size_cache.width - minimum_size.width);
 		}
 
-		new_size_cache.x = minimum_size.x;
+		new_size_cache.width = minimum_size.width;
 	}
 
-	if (maximum_size.x >= 0 && maximum_size.x < new_size_cache.x) {
+	if (maximum_size.width >= 0 && maximum_size.width < new_size_cache.width) {
 		if (data.h_grow == GROW_DIRECTION_BEGIN) {
-			new_pos_cache.x += new_size_cache.x - maximum_size.x;
+			new_pos_cache.x += new_size_cache.width - maximum_size.width;
 		} else if (data.h_grow == GROW_DIRECTION_BOTH) {
-			new_pos_cache.x += 0.5 * (new_size_cache.x - maximum_size.x);
+			new_pos_cache.x += 0.5 * (new_size_cache.width - maximum_size.width);
 		}
 
-		new_size_cache.x = maximum_size.x;
+		new_size_cache.width = maximum_size.width;
 	}
 
 	if (is_layout_rtl()) {
 		new_pos_cache.x = parent_rect.size.x + 2 * parent_rect.position.x - new_pos_cache.x - new_size_cache.x;
 	}
 
-	if (minimum_size.y > new_size_cache.y) {
+	if (minimum_size.height > new_size_cache.height) {
 		if (data.v_grow == GROW_DIRECTION_BEGIN) {
-			new_pos_cache.y += new_size_cache.y - minimum_size.y;
+			new_pos_cache.y += new_size_cache.height - minimum_size.height;
 		} else if (data.v_grow == GROW_DIRECTION_BOTH) {
-			new_pos_cache.y += 0.5 * (new_size_cache.y - minimum_size.y);
+			new_pos_cache.y += 0.5 * (new_size_cache.height - minimum_size.height);
 		}
 
-		new_size_cache.y = minimum_size.y;
+		new_size_cache.height = minimum_size.height;
 	}
 
-	if (maximum_size.y >= 0 && maximum_size.y < new_size_cache.y) {
+	if (maximum_size.height >= 0 && maximum_size.height < new_size_cache.height) {
 		if (data.v_grow == GROW_DIRECTION_BEGIN) {
-			new_pos_cache.y += new_size_cache.y - maximum_size.y;
+			new_pos_cache.y += new_size_cache.height - maximum_size.height;
 		} else if (data.v_grow == GROW_DIRECTION_BOTH) {
-			new_pos_cache.y += 0.5 * (new_size_cache.y - maximum_size.y);
+			new_pos_cache.y += 0.5 * (new_size_cache.height - maximum_size.height);
 		}
 
-		new_size_cache.y = maximum_size.y;
+		new_size_cache.height = maximum_size.height;
 	}
 
 	bool pos_changed = new_pos_cache != data.pos_cache;

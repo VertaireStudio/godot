@@ -3822,7 +3822,7 @@ Error EditorExportPlatformAndroid::export_project_helper(const Ref<EditorExportP
 			user_data.pd.path = "assets.sparsepck";
 			user_data.pd.use_sparse_pck = true;
 			if (p_preset->get_enc_directory()) {
-				Math::RandomPCG rng = Math::RandomPCG(p_preset->get_seed());
+				RandomPCG rng = RandomPCG(p_preset->get_seed());
 				for (int i = 0; i < 32; i++) {
 					user_data.pd.salt += String::chr(1 + rng.rand() % 254);
 				}
@@ -4334,7 +4334,7 @@ Error EditorExportPlatformAndroid::export_project_helper(const Ref<EditorExportP
 		ed.pd.path = "assets.sparsepck";
 		ed.pd.use_sparse_pck = true;
 		if (p_preset->get_enc_directory()) {
-			Math::RandomPCG rng = Math::RandomPCG(p_preset->get_seed());
+			RandomPCG rng = RandomPCG(p_preset->get_seed());
 			for (int i = 0; i < 32; i++) {
 				ed.pd.salt += String::chr(1 + rng.rand() % 254);
 			}

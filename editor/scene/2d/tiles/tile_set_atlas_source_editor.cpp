@@ -947,17 +947,17 @@ void TileSetAtlasSourceEditor::_tile_data_editor_dropdown_button_draw() {
 
 	Point2 ofs;
 	if (is_layout_rtl()) {
-		ofs = Point2(get_theme_constant(SNAME("arrow_margin"), SNAME("OptionButton")), int(Math::abs((size.y - arrow->get_height()) / 2)));
+		ofs = Point2(get_theme_constant(SNAME("arrow_margin"), SNAME("OptionButton")), int(Math::abs((size.height - arrow->get_height()) / 2)));
 	} else {
-		ofs = Point2(size.x - arrow->get_width() - get_theme_constant(SNAME("arrow_margin"), SNAME("OptionButton")), int(Math::abs((size.y - arrow->get_height()) / 2)));
+		ofs = Point2(size.width - arrow->get_width() - get_theme_constant(SNAME("arrow_margin"), SNAME("OptionButton")), int(Math::abs((size.height - arrow->get_height()) / 2)));
 	}
 	arrow->draw(ci, ofs, clr);
 }
 
 void TileSetAtlasSourceEditor::_tile_data_editor_dropdown_button_pressed() {
 	Size2 size = tile_data_editor_dropdown_button->get_size();
-	tile_data_editors_popup->set_position(tile_data_editor_dropdown_button->get_screen_position() + Size2(0, size.y * get_global_transform().get_scale().y));
-	tile_data_editors_popup->set_size(Size2(size.x, 0));
+	tile_data_editors_popup->set_position(tile_data_editor_dropdown_button->get_screen_position() + Size2(0, size.height * get_global_transform().get_scale().y));
+	tile_data_editors_popup->set_size(Size2(size.width, 0));
 	tile_data_editors_popup->popup();
 }
 

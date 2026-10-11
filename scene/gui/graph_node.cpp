@@ -160,7 +160,7 @@ void GraphNode::_resort() {
 	Ref<StyleBox> sb_titlebar = theme_cache.titlebar;
 
 	// Resort titlebar first.
-	Size2 titlebar_size = Size2(new_size.x, titlebar_hbox->get_size().y);
+	Size2 titlebar_size = Size2(new_size.width, titlebar_hbox->get_size().height);
 	titlebar_size -= sb_titlebar->get_minimum_size();
 	Rect2 titlebar_rect = Rect2(sb_titlebar->get_offset(), titlebar_size);
 	fit_child_in_rect(titlebar_hbox, titlebar_rect);
@@ -191,7 +191,7 @@ void GraphNode::_resort() {
 
 		_MinSizeCache msc;
 		msc.min_size = size.height;
-		msc.max_size = max_size.y >= 0 ? int(max_size.y) + (slot_table[i].draw_stylebox ? sb_slot->get_minimum_size().y : 0) : -1;
+		msc.max_size = max_size.height >= 0 ? int(max_size.height) + (slot_table[i].draw_stylebox ? sb_slot->get_minimum_size().height : 0) : -1;
 		if (msc.max_size >= 0 && msc.max_size < msc.min_size) {
 			msc.min_size = msc.max_size;
 		}
@@ -211,13 +211,13 @@ void GraphNode::_resort() {
 		selected_slot = -1;
 	}
 
-	int stretch_max = new_size.y - (children_count - 1) * separation;
+	int stretch_max = new_size.height - (children_count - 1) * separation;
 	int stretch_diff = stretch_max - stretch_min;
 
 	// Avoid negative stretch space.
 	stretch_diff = MAX(stretch_diff, 0);
 
-	available_stretch_space += stretch_diff - sb_panel->get_margin(SIDE_BOTTOM) - sb_panel->get_margin(SIDE_TOP) - titlebar_min_size.height - sb_titlebar->get_minimum_size().y;
+	available_stretch_space += stretch_diff - sb_panel->get_margin(SIDE_BOTTOM) - sb_panel->get_margin(SIDE_TOP) - titlebar_min_size.height - sb_titlebar->get_minimum_size().height;
 
 	// Second pass, discard elements that can't be stretched, this will run while stretchable elements exist.
 
@@ -268,10 +268,10 @@ void GraphNode::_resort() {
 
 	// Final pass, draw and stretch elements.
 
-	int ofs_y = sb_panel->get_margin(SIDE_TOP) + titlebar_min_size.height + sb_titlebar->get_minimum_size().y;
+	int ofs_y = sb_panel->get_margin(SIDE_TOP) + titlebar_min_size.height + sb_titlebar->get_minimum_size().height;
 
 	slot_y_cache.clear();
-	int width = new_size.x - sb_panel->get_minimum_size().x;
+	int width = new_size.width - sb_panel->get_minimum_size().width;
 	int valid_children_idx = 0;
 	for (int i = 0; i < get_child_count(false); i++) {
 		Control *child = as_sortable_control(get_child(i, false));
@@ -290,7 +290,7 @@ void GraphNode::_resort() {
 
 		// Adjust so the last valid child always fits perfect, compensating for numerical imprecision.
 		if (msc.will_stretch && valid_children_idx == children_count - 1) {
-			to_y_pos = new_size.y - sb_panel->get_margin(SIDE_BOTTOM);
+			to_y_pos = new_size.height - sb_panel->get_margin(SIDE_BOTTOM);
 		}
 
 		int height = to_y_pos - from_y_pos;
@@ -299,7 +299,7 @@ void GraphNode::_resort() {
 		Rect2 rect(margin, from_y_pos, final_width, height);
 		fit_child_in_rect(child, rect);
 
-		slot_y_cache.push_back(child->get_rect().position.y + child->get_rect().size.y * 0.5);
+		slot_y_cache.push_back(child->get_rect().position.y + child->get_rect().size.height * 0.5);
 
 		ofs_y = to_y_pos;
 		valid_children_idx++;
@@ -655,9 +655,9 @@ void GraphNode::_notification(int p_what) {
 
 			Rect2 titlebar_rect(Point2(), titlebar_hbox->get_size() + sb_titlebar->get_minimum_size());
 			Size2 body_size = get_size();
-			titlebar_rect.size.x = body_size.x;
-			body_size.y -= titlebar_rect.size.y;
-			Rect2 body_rect(0, titlebar_rect.size.y, body_size.x, body_size.y);
+			titlebar_rect.size.width = body_size.width;
+			body_size.height -= titlebar_rect.size.height;
+			Rect2 body_rect(0, titlebar_rect.size.height, body_size.width, body_size.height);
 
 			// Draw body (slots area) stylebox.
 			draw_style_box(sb_to_draw_panel, body_rect);
@@ -665,7 +665,7 @@ void GraphNode::_notification(int p_what) {
 			// Draw title bar stylebox above.
 			draw_style_box(sb_to_draw_titlebar, titlebar_rect);
 
-			int width = get_size().x - sb_panel->get_minimum_size().x;
+			int width = get_size().width - sb_panel->get_minimum_size().x;
 
 			// Take the HboxContainer child into account.
 			if (get_child_count(false) > 0) {
@@ -710,7 +710,7 @@ void GraphNode::_notification(int p_what) {
 						if (child && child->is_visible_in_tree()) {
 							Rect2 child_rect = child->get_rect();
 							child_rect.position.x = sb_panel->get_margin(SIDE_LEFT);
-							child_rect.size.x = width;
+							child_rect.size.width = width;
 							draw_style_box(sb_slot, child_rect);
 						}
 					}
@@ -1011,20 +1011,20 @@ Size2 GraphNode::_get_minimum_size(bool p_use_desired_sizes) const {
 		}
 
 		Size2i size = p_use_desired_sizes ? child->get_bound_desired_size() : child->get_bound_minimum_size();
-		size.width += sb_panel->get_minimum_size().x;
+		size.width += sb_panel->get_minimum_size().width;
 		if (slot_table.has(i)) {
 			size += slot_table[i].draw_stylebox ? sb_slot->get_minimum_size() : Size2();
 		}
 
-		minsize.y += size.height;
-		minsize.x = MAX(minsize.x, size.width);
+		minsize.height += size.height;
+		minsize.width = MAX(minsize.width, size.width);
 
 		if (i > 0) {
-			minsize.y += separation;
+			minsize.height += separation;
 		}
 	}
 
-	minsize.y += sb_panel->get_minimum_size().y;
+	minsize.height += sb_panel->get_minimum_size().height;
 
 	return minsize;
 }
@@ -1042,7 +1042,7 @@ void GraphNode::_port_pos_update() {
 	int separation = theme_cache.separation;
 
 	// This helps to immediately achieve the initial y "original point" of the slots, which the sum of the titlebar height and the top margin of the panel.
-	int vertical_ofs = titlebar_hbox->get_size().y + theme_cache.titlebar->get_minimum_size().y + theme_cache.panel->get_margin(SIDE_TOP);
+	int vertical_ofs = titlebar_hbox->get_size().height + theme_cache.titlebar->get_minimum_size().height + theme_cache.panel->get_margin(SIDE_TOP);
 
 	left_port_cache.clear();
 	right_port_cache.clear();
@@ -1064,9 +1064,9 @@ void GraphNode::_port_pos_update() {
 
 			// Check if it is using resort layout (e.g. Shader Graph nodes slots).
 			if (slot_y_cache.is_empty()) {
-				port_y = vertical_ofs + size.y * 0.5; // The y centor is calculated from the widget position.
+				port_y = vertical_ofs + size.height * 0.5; // The y centor is calculated from the widget position.
 			} else {
-				port_y = child->get_position().y + size.y * 0.5; // The y centor is calculated from the class object position.
+				port_y = child->get_position().y + size.height * 0.5; // The y centor is calculated from the class object position.
 			}
 
 			if (slot.enable_left) {
@@ -1074,11 +1074,11 @@ void GraphNode::_port_pos_update() {
 				left_port_cache.push_back(port_cache_left);
 			}
 			if (slot.enable_right) {
-				PortCache port_cache_right{ Point2i(get_size().x - edgeofs, port_y), slot_count, slot.type_right, slot.color_right };
+				PortCache port_cache_right{ Point2i(get_size().width - edgeofs, port_y), slot_count, slot.type_right, slot.color_right };
 				right_port_cache.push_back(port_cache_right);
 			}
 		}
-		vertical_ofs += size.y + separation; // Add the height of the child and the separation to the vertical offset.
+		vertical_ofs += size.height + separation; // Add the height of the child and the separation to the vertical offset.
 		slot_count++; // Go to the next slot
 	}
 

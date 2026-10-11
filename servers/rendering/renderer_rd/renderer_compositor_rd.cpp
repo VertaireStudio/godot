@@ -90,16 +90,16 @@ void RendererCompositorRD::blit_render_targets_to_screen(DisplayServerEnums::Win
 		blit.push_constant.rotation_sin = Math::sin(screen_rotation);
 		// Swap width and height when the orientation is not the native one.
 		if (screen_rotation_degrees % 180 != 0) {
-			SWAP(screen_size.x, screen_size.y);
+			SWAP(screen_size.width, screen_size.height);
 		}
 		blit.push_constant.src_rect[0] = p_render_targets[i].src_rect.position.x;
 		blit.push_constant.src_rect[1] = p_render_targets[i].src_rect.position.y;
-		blit.push_constant.src_rect[2] = p_render_targets[i].src_rect.size.x;
-		blit.push_constant.src_rect[3] = p_render_targets[i].src_rect.size.y;
-		blit.push_constant.dst_rect[0] = p_render_targets[i].dst_rect.position.x / screen_size.x;
-		blit.push_constant.dst_rect[1] = p_render_targets[i].dst_rect.position.y / screen_size.y;
-		blit.push_constant.dst_rect[2] = p_render_targets[i].dst_rect.size.width / screen_size.x;
-		blit.push_constant.dst_rect[3] = p_render_targets[i].dst_rect.size.height / screen_size.y;
+		blit.push_constant.src_rect[2] = p_render_targets[i].src_rect.size.width;
+		blit.push_constant.src_rect[3] = p_render_targets[i].src_rect.size.height;
+		blit.push_constant.dst_rect[0] = p_render_targets[i].dst_rect.position.x / screen_size.width;
+		blit.push_constant.dst_rect[1] = p_render_targets[i].dst_rect.position.y / screen_size.height;
+		blit.push_constant.dst_rect[2] = p_render_targets[i].dst_rect.size.width / screen_size.width;
+		blit.push_constant.dst_rect[3] = p_render_targets[i].dst_rect.size.height / screen_size.height;
 		blit.push_constant.layer = p_render_targets[i].multi_view.layer;
 		blit.push_constant.eye_center[0] = p_render_targets[i].lens_distortion.eye_center.x;
 		blit.push_constant.eye_center[1] = p_render_targets[i].lens_distortion.eye_center.y;
@@ -284,8 +284,8 @@ void RendererCompositorRD::set_boot_image_with_stretch(const Ref<Image> &p_image
 	blit.push_constant.src_rect[3] = 1.0;
 	blit.push_constant.dst_rect[0] = screenrect.position.x;
 	blit.push_constant.dst_rect[1] = screenrect.position.y;
-	blit.push_constant.dst_rect[2] = screenrect.size.x;
-	blit.push_constant.dst_rect[3] = screenrect.size.y;
+	blit.push_constant.dst_rect[2] = screenrect.size.width;
+	blit.push_constant.dst_rect[3] = screenrect.size.height;
 	blit.push_constant.layer = 0;
 	blit.push_constant.eye_center[0] = 0;
 	blit.push_constant.eye_center[1] = 0;

@@ -329,7 +329,7 @@ void EditorToaster::_draw_progress(Control *panel) {
 
 		Size2 size = panel->get_size();
 		Size2 progress = size;
-		progress.x *= MIN(1, Math::remap(toasts[panel].remaining_time, 0, toasts[panel].duration, 0, 2));
+		progress.width *= MIN(1, Math::remap(toasts[panel].remaining_time, 0, toasts[panel].duration, 0, 2));
 		if (is_layout_rtl()) {
 			panel->draw_style_box(stylebox, Rect2(size - progress, progress));
 		} else {

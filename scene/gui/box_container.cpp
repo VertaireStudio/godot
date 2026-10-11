@@ -47,7 +47,7 @@ void BoxContainer::_resort() {
 
 	Size2i new_size = get_size();
 	Size2 combined_max_size = get_combined_maximum_size();
-	bool propagating_max_size = vertical ? is_propagating_maximum_size() && combined_max_size.y >= 0 : is_propagating_maximum_size() && combined_max_size.x >= 0;
+	bool propagating_max_size = vertical ? is_propagating_maximum_size() && combined_max_size.height >= 0 : is_propagating_maximum_size() && combined_max_size.width >= 0;
 
 	bool rtl = is_layout_rtl();
 
@@ -114,9 +114,9 @@ void BoxContainer::_resort() {
 
 	if (propagating_max_size) {
 		if (vertical) {
-			stretch_avail = MIN(stretch_avail, combined_max_size.y);
+			stretch_avail = MIN(stretch_avail, combined_max_size.height);
 		} else {
-			stretch_avail = MIN(stretch_avail, combined_max_size.x);
+			stretch_avail = MIN(stretch_avail, combined_max_size.width);
 		}
 	}
 
@@ -274,9 +274,9 @@ void BoxContainer::_resort() {
 
 		if (propagating_max_size) {
 			if (vertical) {
-				c->set_parent_maximum_size_cache(Size2(combined_max_size.x, MAX(combined_max_size.y - accumulated_size, 0)));
+				c->set_parent_maximum_size_cache(Size2(combined_max_size.width, MAX(combined_max_size.height - accumulated_size, 0)));
 			} else {
-				c->set_parent_maximum_size_cache(Size2(MAX(combined_max_size.x - accumulated_size, 0), combined_max_size.y));
+				c->set_parent_maximum_size_cache(Size2(MAX(combined_max_size.width - accumulated_size, 0), combined_max_size.height));
 			}
 		}
 

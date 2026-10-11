@@ -31,6 +31,7 @@
 #include "tile_data_editors.h"
 
 #include "core/math/geometry_2d.h"
+#include "core/math/random_pcg.h"
 #include "core/object/callable_mp.h"
 #include "core/object/class_db.h"
 #include "core/os/keyboard.h"
@@ -3036,7 +3037,7 @@ void TileDataNavigationEditor::draw_over_tile(CanvasItem *p_canvas_item, Transfo
 			color = selection_color;
 		}
 
-		Math::RandomPCG rand;
+		RandomPCG rand;
 		for (int i = 0; i < nav_polygon->get_polygon_count(); i++) {
 			// An array of vertices for this polygon.
 			Vector<int> polygon = nav_polygon->get_polygon(i);

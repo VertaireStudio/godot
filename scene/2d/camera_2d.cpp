@@ -204,16 +204,11 @@ Transform2D Camera2D::get_camera_transform() {
 			ret_camera_pos = smoothed_camera_pos;
 			//camera_pos=camera_pos*(1.0-position_smoothing_speed)+new_camera_pos*position_smoothing_speed;
 		} else {
-			// VERTAIRE: ret_camera_pos = smoothed_camera_pos = camera_pos;
-			ret_camera_pos = camera_pos;
-			smoothed_camera_pos = camera_pos;
+			ret_camera_pos = smoothed_camera_pos = camera_pos;
 		}
 
 	} else {
-		// VERTAIRE: ret_camera_pos = smoothed_camera_pos = camera_pos = new_camera_pos;
-		ret_camera_pos = new_camera_pos;
-		smoothed_camera_pos = new_camera_pos;
-		camera_pos = new_camera_pos;
+		ret_camera_pos = smoothed_camera_pos = camera_pos = new_camera_pos;
 		first = false;
 	}
 
@@ -409,9 +404,9 @@ void Camera2D::_notification(int p_what) {
 
 				Vector2 screen_endpoints[4] = {
 					inv_camera_transform.xform(Vector2(0, 0)),
-					inv_camera_transform.xform(Vector2(screen_size.x, 0)),
-					inv_camera_transform.xform(Vector2(screen_size.x, screen_size.y)),
-					inv_camera_transform.xform(Vector2(0, screen_size.y))
+					inv_camera_transform.xform(Vector2(screen_size.width, 0)),
+					inv_camera_transform.xform(Vector2(screen_size.width, screen_size.height)),
+					inv_camera_transform.xform(Vector2(0, screen_size.height))
 				};
 
 				Transform2D inv_transform = get_global_transform().affine_inverse(); // Undo global space.
@@ -443,10 +438,10 @@ void Camera2D::_notification(int p_what) {
 				Size2 screen_size = _get_camera_screen_size();
 
 				Vector2 margin_endpoints[4] = {
-					inv_camera_transform.xform(Vector2((screen_size.x / 2) - ((screen_size.x / 2) * drag_margin[SIDE_LEFT]), (screen_size.y / 2) - ((screen_size.y / 2) * drag_margin[SIDE_TOP]))),
-					inv_camera_transform.xform(Vector2((screen_size.x / 2) + ((screen_size.x / 2) * drag_margin[SIDE_RIGHT]), (screen_size.y / 2) - ((screen_size.y / 2) * drag_margin[SIDE_TOP]))),
-					inv_camera_transform.xform(Vector2((screen_size.x / 2) + ((screen_size.x / 2) * drag_margin[SIDE_RIGHT]), (screen_size.y / 2) + ((screen_size.y / 2) * drag_margin[SIDE_BOTTOM]))),
-					inv_camera_transform.xform(Vector2((screen_size.x / 2) - ((screen_size.x / 2) * drag_margin[SIDE_LEFT]), (screen_size.y / 2) + ((screen_size.y / 2) * drag_margin[SIDE_BOTTOM])))
+					inv_camera_transform.xform(Vector2((screen_size.width / 2) - ((screen_size.width / 2) * drag_margin[SIDE_LEFT]), (screen_size.height / 2) - ((screen_size.height / 2) * drag_margin[SIDE_TOP]))),
+					inv_camera_transform.xform(Vector2((screen_size.width / 2) + ((screen_size.width / 2) * drag_margin[SIDE_RIGHT]), (screen_size.height / 2) - ((screen_size.height / 2) * drag_margin[SIDE_TOP]))),
+					inv_camera_transform.xform(Vector2((screen_size.width / 2) + ((screen_size.width / 2) * drag_margin[SIDE_RIGHT]), (screen_size.height / 2) + ((screen_size.height / 2) * drag_margin[SIDE_BOTTOM]))),
+					inv_camera_transform.xform(Vector2((screen_size.width / 2) - ((screen_size.width / 2) * drag_margin[SIDE_LEFT]), (screen_size.height / 2) + ((screen_size.height / 2) * drag_margin[SIDE_BOTTOM])))
 				};
 
 				Transform2D inv_transform = get_global_transform().affine_inverse(); // Undo global space.

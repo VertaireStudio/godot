@@ -40,18 +40,11 @@ inline constexpr double SQRT3 = 1.7320508075688772935274463415059;
 inline constexpr double SQRT12 = 0.7071067811865475244008443621048490;
 inline constexpr double SQRT13 = 0.57735026918962576450914878050196;
 inline constexpr double LN2 = 0.6931471805599453094172321215;
+inline constexpr double TAU = 6.2831853071795864769252867666;
 inline constexpr double PI = 3.1415926535897932384626433833;
-inline constexpr double PI_RAD = PI / 180.0;
-inline constexpr double PI_DEG = 180.0 / PI;
-inline constexpr double TAU = PI * 2.0;
-inline constexpr double PI_HALF = PI / 2.0;
 inline constexpr double E = 2.7182818284590452353602874714;
 inline constexpr double INF = std::numeric_limits<double>::infinity();
-inline constexpr float FLOAT_INF = std::numeric_limits<float>::infinity();
 inline constexpr double NaN = std::numeric_limits<double>::quiet_NaN();
-inline constexpr float FLOAT_NaN = std::numeric_limits<float>::quiet_NaN();
-inline constexpr double DOUBLE_MAX = std::numeric_limits<double>::max();
-inline constexpr float FLOAT_MAX = std::numeric_limits<float>::max();
 } // namespace Math
 
 #define CMP_EPSILON 0.00001

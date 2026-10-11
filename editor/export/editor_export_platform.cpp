@@ -44,6 +44,7 @@
 #include "core/io/resource_saver.h"
 #include "core/io/resource_uid.h"
 #include "core/io/zip_io.h"
+#include "core/math/random_pcg.h"
 #include "core/object/class_db.h"
 #include "core/os/os.h"
 #include "core/os/shared_object.h"
@@ -402,7 +403,7 @@ Error EditorExportPlatform::_encrypt_and_store_data(Ref<FileAccess> p_fd, const 
 				seed = ((seed << 5) + seed) ^ ptr[i];
 			}
 
-			Math::RandomPCG rng = Math::RandomPCG(seed);
+			RandomPCG rng = RandomPCG(seed);
 			iv.resize(16);
 			for (int i = 0; i < 16; i++) {
 				iv.write[i] = rng.rand() % 256;
@@ -2238,7 +2239,7 @@ bool EditorExportPlatform::_encrypt_and_store_directory(Ref<FileAccess> p_fd, Pa
 				seed = ((seed << 5) + seed) ^ p_pack_data.file_ofs[i].size;
 			}
 
-			Math::RandomPCG rng = Math::RandomPCG(seed);
+			RandomPCG rng = RandomPCG(seed);
 			iv.resize(16);
 			for (int i = 0; i < 16; i++) {
 				iv.write[i] = rng.rand() % 256;

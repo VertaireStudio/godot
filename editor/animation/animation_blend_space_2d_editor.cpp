@@ -549,17 +549,17 @@ void AnimationNodeBlendSpace2DEditor::_blend_space_draw() {
 	const Size2 s = blend_space_draw->get_size() - ofs * 2; // Inner size, for coordinate math.
 
 	if (blend_space->get_min_space().y <= 0 && blend_space->get_max_space().y >= 0) {
-		int y = (blend_space->get_max_space().y / (blend_space->get_max_space().y - blend_space->get_min_space().y)) * s.y;
+		int y = (blend_space->get_max_space().y / (blend_space->get_max_space().y - blend_space->get_min_space().y)) * s.height;
 		blend_space_draw->draw_line(ofs + Point2(0, y), ofs + Point2(5 * EDSCALE, y), linecolor, Math::round(EDSCALE));
 		blend_space_draw->draw_string(font, ofs + Point2(4 * EDSCALE, y - font->get_height(font_size) + font->get_ascent(font_size)), "0", HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, linecolor);
-		blend_space_draw->draw_line(ofs + Point2(5 * EDSCALE, y), ofs + Point2(s.x, y), linecolor_soft, Math::round(EDSCALE));
+		blend_space_draw->draw_line(ofs + Point2(5 * EDSCALE, y), ofs + Point2(s.width, y), linecolor_soft, Math::round(EDSCALE));
 	}
 
 	if (blend_space->get_min_space().x <= 0 && blend_space->get_max_space().x >= 0) {
-		int x = (-blend_space->get_min_space().x / (blend_space->get_max_space().x - blend_space->get_min_space().x)) * s.x;
-		blend_space_draw->draw_line(ofs + Point2(x, s.y - 1), ofs + Point2(x, s.y - 5 * EDSCALE), linecolor, Math::round(EDSCALE));
-		blend_space_draw->draw_string(font, ofs + Point2(x + 4 * EDSCALE, s.y - font->get_height(font_size) + font->get_ascent(font_size)), "0", HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, linecolor);
-		blend_space_draw->draw_line(ofs + Point2(x, s.y - 5 * EDSCALE), ofs + Point2(x, 0), linecolor_soft, Math::round(EDSCALE));
+		int x = (-blend_space->get_min_space().x / (blend_space->get_max_space().x - blend_space->get_min_space().x)) * s.width;
+		blend_space_draw->draw_line(ofs + Point2(x, s.height - 1), ofs + Point2(x, s.height - 5 * EDSCALE), linecolor, Math::round(EDSCALE));
+		blend_space_draw->draw_string(font, ofs + Point2(x + 4 * EDSCALE, s.height - font->get_height(font_size) + font->get_ascent(font_size)), "0", HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, linecolor);
+		blend_space_draw->draw_line(ofs + Point2(x, s.height - 5 * EDSCALE), ofs + Point2(x, 0), linecolor_soft, Math::round(EDSCALE));
 	}
 
 	if (snap->is_pressed()) {
@@ -572,7 +572,7 @@ void AnimationNodeBlendSpace2DEditor::_blend_space_draw() {
 				int idx = int(v / blend_space->get_snap().x);
 
 				if (i > 0 && prev_idx != idx) {
-					blend_space_draw->draw_line(ofs + Point2(i, 0), ofs + Point2(i, s.y), linecolor_soft, Math::round(EDSCALE));
+					blend_space_draw->draw_line(ofs + Point2(i, 0), ofs + Point2(i, s.height), linecolor_soft, Math::round(EDSCALE));
 				}
 
 				prev_idx = idx;
@@ -586,7 +586,7 @@ void AnimationNodeBlendSpace2DEditor::_blend_space_draw() {
 				int idx = int(v / blend_space->get_snap().y);
 
 				if (i > 0 && prev_idx != idx) {
-					blend_space_draw->draw_line(ofs + Point2(0, i), ofs + Point2(s.x, i), linecolor_soft, Math::round(EDSCALE));
+					blend_space_draw->draw_line(ofs + Point2(0, i), ofs + Point2(s.width, i), linecolor_soft, Math::round(EDSCALE));
 				}
 
 				prev_idx = idx;
@@ -611,7 +611,7 @@ void AnimationNodeBlendSpace2DEditor::_blend_space_draw() {
 			}
 			point = (point - blend_space->get_min_space()) / (blend_space->get_max_space() - blend_space->get_min_space());
 			point *= s;
-			point.y = s.y - point.y;
+			point.y = s.height - point.y;
 			bl_points.write[j] = ofs + point;
 		}
 
@@ -649,7 +649,7 @@ void AnimationNodeBlendSpace2DEditor::_blend_space_draw() {
 
 		point = (point - blend_space->get_min_space()) / (blend_space->get_max_space() - blend_space->get_min_space());
 		point *= s;
-		point.y = s.y - point.y;
+		point.y = s.height - point.y;
 
 		points.push_back(ofs + point);
 
@@ -666,13 +666,13 @@ void AnimationNodeBlendSpace2DEditor::_blend_space_draw() {
 		Vector2 gui_point = (ofs + point - icon->get_size() / 2).floor();
 		blend_space_draw->draw_texture(is_key_valid ? (i == selected_point ? icon_selected : icon) : icon_invalid, gui_point);
 
-		if (point.x >= 0.0 && point.x <= s.x && point.y >= 0.0 && point.y <= s.y && editing_point != i) {
+		if (point.x >= 0.0 && point.x <= s.width && point.y >= 0.0 && point.y <= s.height && editing_point != i) {
 			String name_text = show_indices ? itos(i) : String(blend_space->get_blend_point_name(i));
 			Vector2 text_size = font->get_string_size(name_text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size);
 
 			float half_icon_h = icon->get_size().y / 2.0;
 			float above_pos_y = (ofs.y + point.y) - half_icon_h - 4 * EDSCALE;
-			float text_x = CLAMP((ofs.x + point.x) - text_size.x / 2.0, ofs.x, ofs.x + s.x - text_size.x);
+			float text_x = CLAMP((ofs.x + point.x) - text_size.x / 2.0, ofs.x, ofs.x + s.width - text_size.x);
 			float text_y = above_pos_y >= (ofs.y + text_size.y) ? above_pos_y : (ofs.y + point.y) + half_icon_h + font->get_ascent(font_size);
 			Vector2 text_pos = Vector2(text_x, text_y);
 
@@ -693,7 +693,7 @@ void AnimationNodeBlendSpace2DEditor::_blend_space_draw() {
 			Vector2 point = blend_space->get_blend_point_position(making_triangle[i]);
 			point = (point - blend_space->get_min_space()) / (blend_space->get_max_space() - blend_space->get_min_space());
 			point *= s;
-			point.y = s.y - point.y;
+			point.y = s.height - point.y;
 			bl_points.push_back(ofs + point);
 		}
 
@@ -719,14 +719,14 @@ void AnimationNodeBlendSpace2DEditor::_blend_space_draw() {
 
 		point = (point - blend_space->get_min_space()) / (blend_space->get_max_space() - blend_space->get_min_space());
 		point *= s;
-		point.y = s.y - point.y;
+		point.y = s.height - point.y;
 		point += ofs;
 
 		if (blend_space->get_triangle_count()) {
 			Vector2 closest = blend_space->get_closest_point(blend_pos);
 			closest = (closest - blend_space->get_min_space()) / (blend_space->get_max_space() - blend_space->get_min_space());
 			closest *= s;
-			closest.y = s.y - closest.y;
+			closest.y = s.height - closest.y;
 			closest += ofs;
 
 			Color lcol = color;
@@ -1124,7 +1124,7 @@ void AnimationNodeBlendSpace2DEditor::_start_inline_edit(int p_point) {
 		const Size2 s = blend_space_draw->get_size() - Vector2(pm * 2, pm * 2);
 
 		float editor_x = inline_editor_point_x - editor_width / 2.0;
-		editor_x = CLAMP(editor_x, pm, pm + s.x - editor_width);
+		editor_x = CLAMP(editor_x, pm, pm + s.width - editor_width);
 
 		inline_editor->set_position(Vector2(editor_x, text_rect.position.y - 1 * EDSCALE));
 	}
@@ -1181,7 +1181,7 @@ void AnimationNodeBlendSpace2DEditor::_inline_editor_text_changed(const String &
 	const Size2 s = blend_space_draw->get_size() - Vector2(pm * 2, pm * 2);
 
 	float editor_x = inline_editor_point_x - editor_size.x / 2.0;
-	editor_x = CLAMP(editor_x, pm, pm + s.x - editor_size.x);
+	editor_x = CLAMP(editor_x, pm, pm + s.width - editor_size.x);
 
 	inline_editor->set_position(Vector2(editor_x, inline_editor->get_position().y));
 }

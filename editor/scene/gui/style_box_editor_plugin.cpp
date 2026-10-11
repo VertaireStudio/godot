@@ -86,19 +86,19 @@ void StyleBoxPreview::_redraw() {
 			const Color dark_color = Color(0, 0, 0, 0.4);
 			const Color bright_color = Color(1, 1, 1, 0.8);
 			int x_left = drawing_rect.position.x + sbt->get_margin(SIDE_LEFT);
-			int x_right = drawing_rect.position.x + drawing_rect.size.x - sbt->get_margin(SIDE_RIGHT);
+			int x_right = drawing_rect.position.x + drawing_rect.size.width - sbt->get_margin(SIDE_RIGHT);
 			int y_top = drawing_rect.position.y + sbt->get_margin(SIDE_TOP);
-			int y_bottom = drawing_rect.position.y + drawing_rect.size.y - sbt->get_margin(SIDE_BOTTOM);
+			int y_bottom = drawing_rect.position.y + drawing_rect.size.height - sbt->get_margin(SIDE_BOTTOM);
 
-			draw_line(Point2(x_left + 2, 0), Point2(x_left + 2, get_size().y), dark_color);
-			draw_line(Point2(x_right + 1, 0), Point2(x_right + 1, get_size().y), dark_color);
-			draw_line(Point2(0, y_top + 2), Point2(get_size().x, y_top + 2), dark_color);
-			draw_line(Point2(0, y_bottom + 1), Point2(get_size().x, y_bottom + 1), dark_color);
+			draw_line(Point2(x_left + 2, 0), Point2(x_left + 2, get_size().height), dark_color);
+			draw_line(Point2(x_right + 1, 0), Point2(x_right + 1, get_size().height), dark_color);
+			draw_line(Point2(0, y_top + 2), Point2(get_size().width, y_top + 2), dark_color);
+			draw_line(Point2(0, y_bottom + 1), Point2(get_size().width, y_bottom + 1), dark_color);
 
-			draw_line(Point2(x_left + 1, 0), Point2(x_left + 1, get_size().y), bright_color);
-			draw_line(Point2(x_right, 0), Point2(x_right, get_size().y), bright_color);
-			draw_line(Point2(0, y_top + 1), Point2(get_size().x, y_top + 1), bright_color);
-			draw_line(Point2(0, y_bottom), Point2(get_size().x, y_bottom), bright_color);
+			draw_line(Point2(x_left + 1, 0), Point2(x_left + 1, get_size().height), bright_color);
+			draw_line(Point2(x_right, 0), Point2(x_right, get_size().height), bright_color);
+			draw_line(Point2(0, y_top + 1), Point2(get_size().width, y_top + 1), bright_color);
+			draw_line(Point2(0, y_bottom), Point2(get_size().width, y_bottom), bright_color);
 		}
 	}
 }

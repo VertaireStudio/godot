@@ -497,9 +497,7 @@ void AnimationNodeStateMachineEditor::_state_machine_gui_input(const Ref<InputEv
 	// Start box selecting
 	if (mb.is_valid() && mb->is_pressed() && mb->get_button_index() == MouseButton::LEFT && tool_select->is_pressed()) {
 		box_selecting = true;
-		// VERTAIRE - box_selecting_from = box_selecting_to = state_machine_draw->get_local_mouse_position();
-		box_selecting_from = state_machine_draw->get_local_mouse_position();
-		box_selecting_to = state_machine_draw->get_local_mouse_position();
+		box_selecting_from = box_selecting_to = state_machine_draw->get_local_mouse_position();
 		box_selecting_rect = Rect2(box_selecting_from.min(box_selecting_to), (box_selecting_from - box_selecting_to).abs());
 
 		if (mb->is_command_or_control_pressed() || mb->is_shift_pressed()) {
@@ -1248,19 +1246,19 @@ void AnimationNodeStateMachineEditor::_state_machine_draw() {
 	//pre pass nodes so we know the rectangles
 	for (const StringName &E : nodes) {
 		String name = E;
-		int name_string_size = theme_cache.node_title_font->get_string_size(name, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.node_title_font_size).x;
+		int name_string_size = theme_cache.node_title_font->get_string_size(name, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.node_title_font_size).width;
 
 		Ref<AnimationNode> anode = state_machine->get_node(name);
 		bool needs_editor = AnimationTreeEditor::get_singleton()->can_edit(anode);
 		bool is_selected = selected_nodes.has(name);
 
 		Size2 s = (is_selected ? theme_cache.node_frame_selected : theme_cache.node_frame)->get_minimum_size();
-		s.x += name_string_size;
-		s.y += MAX(theme_cache.node_title_font->get_height(theme_cache.node_title_font_size), theme_cache.play_node->get_height());
-		s.x += sep + theme_cache.play_node->get_width();
+		s.width += name_string_size;
+		s.height += MAX(theme_cache.node_title_font->get_height(theme_cache.node_title_font_size), theme_cache.play_node->get_height());
+		s.width += sep + theme_cache.play_node->get_width();
 
 		if (needs_editor) {
-			s.x += sep + theme_cache.edit_node->get_width();
+			s.width += sep + theme_cache.edit_node->get_width();
 		}
 
 		Vector2 offset;
@@ -1461,7 +1459,7 @@ void AnimationNodeStateMachineEditor::_state_machine_draw() {
 	//draw actual nodes
 	for (int i = 0; i < node_rects.size(); i++) {
 		String name = node_rects[i].node_name;
-		int name_string_size = theme_cache.node_title_font->get_string_size(name, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.node_title_font_size).x;
+		int name_string_size = theme_cache.node_title_font->get_string_size(name, HORIZONTAL_ALIGNMENT_LEFT, -1, theme_cache.node_title_font_size).width;
 
 		Ref<AnimationNode> anode = state_machine->get_node(name);
 		bool needs_editor = AnimationTreeEditor::get_singleton()->can_edit(anode);
@@ -1469,7 +1467,7 @@ void AnimationNodeStateMachineEditor::_state_machine_draw() {
 
 		NodeRect &nr = node_rects.write[i];
 		Vector2 offset = nr.node.position;
-		int h = nr.node.size.y;
+		int h = nr.node.size.height;
 
 		float opacity = 1.0;
 		if (selected_transition_from != StringName() && selected_transition_to != StringName()) {

@@ -34,24 +34,24 @@
 #include "core/object/class_db.h"
 
 int AtlasTexture::get_width() const {
-	if (rounded_region.size.x == 0) {
+	if (rounded_region.size.width == 0) {
 		if (atlas.is_valid()) {
 			return atlas->get_width();
 		}
 		return 1;
 	} else {
-		return rounded_region.size.x + margin.size.x;
+		return rounded_region.size.width + margin.size.width;
 	}
 }
 
 int AtlasTexture::get_height() const {
-	if (rounded_region.size.y == 0) {
+	if (rounded_region.size.height == 0) {
 		if (atlas.is_valid()) {
 			return atlas->get_height();
 		}
 		return 1;
 	} else {
-		return rounded_region.size.y + margin.size.y;
+		return rounded_region.size.height + margin.size.height;
 	}
 }
 
@@ -129,11 +129,11 @@ bool AtlasTexture::has_filter_clip() const {
 Rect2 AtlasTexture::_get_region_rect() const {
 	Rect2 rc = rounded_region;
 	if (atlas.is_valid()) {
-		if (rc.size.x == 0) {
-			rc.size.x = atlas->get_width();
+		if (rc.size.width == 0) {
+			rc.size.width = atlas->get_width();
 		}
-		if (rc.size.y == 0) {
-			rc.size.y = atlas->get_height();
+		if (rc.size.height == 0) {
+			rc.size.height = atlas->get_height();
 		}
 	}
 	return rc;

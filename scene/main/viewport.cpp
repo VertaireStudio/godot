@@ -156,7 +156,7 @@ int ViewportTexture::get_width() const {
 	if (vp->is_sub_viewport()) {
 		return vp->size.width;
 	}
-	return vp->size.width * vp->get_stretch_transform().get_scale().x;
+	return vp->size.width * vp->get_stretch_transform().get_scale().width;
 }
 
 int ViewportTexture::get_height() const {
@@ -167,7 +167,7 @@ int ViewportTexture::get_height() const {
 	if (vp->is_sub_viewport()) {
 		return vp->size.height;
 	}
-	return vp->size.height * vp->get_stretch_transform().get_scale().y;
+	return vp->size.height * vp->get_stretch_transform().get_scale().height;
 }
 
 Size2 ViewportTexture::get_size() const {
@@ -179,7 +179,7 @@ Size2 ViewportTexture::get_size() const {
 		return vp->size;
 	}
 	Size2 scale = vp->get_stretch_transform().get_scale();
-	return Size2(vp->size.width * scale.x, vp->size.height * scale.y).ceil();
+	return Size2(vp->size.width * scale.width, vp->size.height * scale.height).ceil();
 }
 
 RID ViewportTexture::get_rid() const {
@@ -1133,7 +1133,7 @@ float Viewport::get_oversampling_override() const {
 bool Viewport::_set_size(const Size2i &p_size, const int p_view_count, const Size2 &p_size_2d_override, bool p_allocated) {
 	Transform2D stretch_transform_new = Transform2D();
 	float new_font_oversampling = 1.0;
-	if (is_size_2d_override_stretch_enabled() && p_size_2d_override.x > 0 && p_size_2d_override.y > 0) {
+	if (is_size_2d_override_stretch_enabled() && p_size_2d_override.width > 0 && p_size_2d_override.height > 0) {
 		Size2 scale = Size2(p_size) / p_size_2d_override;
 		stretch_transform_new.scale(scale);
 

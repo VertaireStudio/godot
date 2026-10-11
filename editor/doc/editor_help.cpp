@@ -394,8 +394,8 @@ void EditorHelp::_class_desc_input(const Ref<InputEvent> &p_input) {
 void EditorHelp::_class_desc_resized(bool p_force_update_theme) {
 	// Add extra horizontal margins for better readability.
 	// The margins increase as the width of the editor help container increases.
-	real_t char_width = theme_cache.doc_code_font->get_char_size('x', theme_cache.doc_code_font_size).x;
-	const int new_display_margin = MAX(30 * EDSCALE, get_parent_anchorable_rect().size.x - char_width * 120 * EDSCALE) * 0.5;
+	real_t char_width = theme_cache.doc_code_font->get_char_size('x', theme_cache.doc_code_font_size).width;
+	const int new_display_margin = MAX(30 * EDSCALE, get_parent_anchorable_rect().size.width - char_width * 120 * EDSCALE) * 0.5;
 	if (display_margin != new_display_margin || p_force_update_theme) {
 		display_margin = new_display_margin;
 

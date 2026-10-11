@@ -646,8 +646,8 @@ void RendererCanvasRenderRD::canvas_render_items(RID p_to_render_target, Item *p
 				Rect2 atlas_rect = RendererRD::TextureStorage::get_singleton()->decal_atlas_get_texture_rect(clight->texture);
 				state.light_uniforms[index].atlas_rect[0] = atlas_rect.position.x;
 				state.light_uniforms[index].atlas_rect[1] = atlas_rect.position.y;
-				state.light_uniforms[index].atlas_rect[2] = atlas_rect.size.x;
-				state.light_uniforms[index].atlas_rect[3] = atlas_rect.size.y;
+				state.light_uniforms[index].atlas_rect[2] = atlas_rect.size.width;
+				state.light_uniforms[index].atlas_rect[3] = atlas_rect.size.height;
 
 			} else {
 				state.light_uniforms[index].atlas_rect[0] = 0;
@@ -709,8 +709,8 @@ void RendererCanvasRenderRD::canvas_render_items(RID p_to_render_target, Item *p
 
 		Vector2 canvas_scale = p_canvas_transform.get_scale();
 
-		state_buffer.sdf_to_screen[0] = render_target_size.x / canvas_scale.x;
-		state_buffer.sdf_to_screen[1] = render_target_size.y / canvas_scale.y;
+		state_buffer.sdf_to_screen[0] = render_target_size.width / canvas_scale.x;
+		state_buffer.sdf_to_screen[1] = render_target_size.height / canvas_scale.y;
 
 		state_buffer.screen_to_sdf[0] = 1.0 / state_buffer.sdf_to_screen[0];
 		state_buffer.screen_to_sdf[1] = 1.0 / state_buffer.sdf_to_screen[1];
@@ -718,10 +718,10 @@ void RendererCanvasRenderRD::canvas_render_items(RID p_to_render_target, Item *p
 		Rect2 sdf_rect = texture_storage->render_target_get_sdf_rect(p_to_render_target);
 		Rect2 sdf_tex_rect(sdf_rect.position / canvas_scale, sdf_rect.size / canvas_scale);
 
-		state_buffer.sdf_to_tex[0] = 1.0 / sdf_tex_rect.size.x;
-		state_buffer.sdf_to_tex[1] = 1.0 / sdf_tex_rect.size.y;
-		state_buffer.sdf_to_tex[2] = -sdf_tex_rect.position.x / sdf_tex_rect.size.x;
-		state_buffer.sdf_to_tex[3] = -sdf_tex_rect.position.y / sdf_tex_rect.size.y;
+		state_buffer.sdf_to_tex[0] = 1.0 / sdf_tex_rect.size.width;
+		state_buffer.sdf_to_tex[1] = 1.0 / sdf_tex_rect.size.height;
+		state_buffer.sdf_to_tex[2] = -sdf_tex_rect.position.x / sdf_tex_rect.size.width;
+		state_buffer.sdf_to_tex[3] = -sdf_tex_rect.position.y / sdf_tex_rect.size.height;
 
 		//print_line("w: " + itos(ssize.width) + " s: " + rtos(canvas_scale));
 		state_buffer.tex_to_sdf = 1.0 / ((canvas_scale.x + canvas_scale.y) * 0.5);
@@ -2474,13 +2474,13 @@ void RendererCanvasRenderRD::_record_item_commands(const Item *p_item, RenderTar
 					src_rect = (rect->flags & CANVAS_RECT_REGION) ? Rect2(rect->source.position * tex_info->texpixel_size, rect->source.size * tex_info->texpixel_size) : Rect2(0, 0, 1, 1);
 					dst_rect = Rect2(rect->rect.position, rect->rect.size);
 
-					if (dst_rect.size.x < 0) {
-						dst_rect.position.x += dst_rect.size.x;
-						dst_rect.size.x *= -1;
+					if (dst_rect.size.width < 0) {
+						dst_rect.position.x += dst_rect.size.width;
+						dst_rect.size.width *= -1;
 					}
-					if (dst_rect.size.y < 0) {
-						dst_rect.position.y += dst_rect.size.y;
-						dst_rect.size.y *= -1;
+					if (dst_rect.size.height < 0) {
+						dst_rect.position.y += dst_rect.size.height;
+						dst_rect.size.height *= -1;
 					}
 
 					if (rect->flags & CANVAS_RECT_FLIP_H) {
@@ -2502,13 +2502,13 @@ void RendererCanvasRenderRD::_record_item_commands(const Item *p_item, RenderTar
 				} else {
 					dst_rect = Rect2(rect->rect.position, rect->rect.size);
 
-					if (dst_rect.size.x < 0) {
-						dst_rect.position.x += dst_rect.size.x;
-						dst_rect.size.x *= -1;
+					if (dst_rect.size.width < 0) {
+						dst_rect.position.x += dst_rect.size.width;
+						dst_rect.size.width *= -1;
 					}
-					if (dst_rect.size.y < 0) {
-						dst_rect.position.y += dst_rect.size.y;
-						dst_rect.size.y *= -1;
+					if (dst_rect.size.height < 0) {
+						dst_rect.position.y += dst_rect.size.height;
+						dst_rect.size.height *= -1;
 					}
 
 					src_rect = Rect2(0, 0, 1, 1);
@@ -2521,13 +2521,13 @@ void RendererCanvasRenderRD::_record_item_commands(const Item *p_item, RenderTar
 
 				instance_data->src_rect[0] = src_rect.position.x;
 				instance_data->src_rect[1] = src_rect.position.y;
-				instance_data->src_rect[2] = src_rect.size.x;
-				instance_data->src_rect[3] = src_rect.size.y;
+				instance_data->src_rect[2] = src_rect.size.width;
+				instance_data->src_rect[3] = src_rect.size.height;
 
 				instance_data->dst_rect[0] = dst_rect.position.x;
 				instance_data->dst_rect[1] = dst_rect.position.y;
-				instance_data->dst_rect[2] = dst_rect.size.x;
-				instance_data->dst_rect[3] = dst_rect.size.y;
+				instance_data->dst_rect[2] = dst_rect.size.width;
+				instance_data->dst_rect[3] = dst_rect.size.height;
 
 				_add_to_batch(r_batch_broken, r_current_batch);
 			} break;
@@ -2565,14 +2565,14 @@ void RendererCanvasRenderRD::_record_item_commands(const Item *p_item, RenderTar
 				Rect2 dst_rect(np->rect.position.x, np->rect.position.y, np->rect.size.x, np->rect.size.y);
 
 				if (np->texture.is_valid() && np->source != Rect2()) {
-					src_rect = Rect2(np->source.position.x * tex_info->texpixel_size.x, np->source.position.y * tex_info->texpixel_size.y, np->source.size.x * tex_info->texpixel_size.x, np->source.size.y * tex_info->texpixel_size.y);
-					instance_data->ninepatch_pixel_size[0] = 1.0 / np->source.size.x;
-					instance_data->ninepatch_pixel_size[1] = 1.0 / np->source.size.y;
+					src_rect = Rect2(np->source.position.x * tex_info->texpixel_size.width, np->source.position.y * tex_info->texpixel_size.height, np->source.size.x * tex_info->texpixel_size.width, np->source.size.y * tex_info->texpixel_size.height);
+					instance_data->ninepatch_pixel_size[0] = 1.0 / np->source.size.width;
+					instance_data->ninepatch_pixel_size[1] = 1.0 / np->source.size.height;
 				} else {
 					src_rect = Rect2(0, 0, 1, 1);
 					// Set the default ninepatch pixel size to the full texture size.
-					instance_data->ninepatch_pixel_size[0] = tex_info->texpixel_size.x;
-					instance_data->ninepatch_pixel_size[1] = tex_info->texpixel_size.y;
+					instance_data->ninepatch_pixel_size[0] = tex_info->texpixel_size.width;
+					instance_data->ninepatch_pixel_size[1] = tex_info->texpixel_size.height;
 				}
 
 				Color modulated = np->color * base_color;
@@ -2587,13 +2587,13 @@ void RendererCanvasRenderRD::_record_item_commands(const Item *p_item, RenderTar
 
 				instance_data->src_rect[0] = src_rect.position.x;
 				instance_data->src_rect[1] = src_rect.position.y;
-				instance_data->src_rect[2] = src_rect.size.x;
-				instance_data->src_rect[3] = src_rect.size.y;
+				instance_data->src_rect[2] = src_rect.size.width;
+				instance_data->src_rect[3] = src_rect.size.height;
 
 				instance_data->dst_rect[0] = dst_rect.position.x;
 				instance_data->dst_rect[1] = dst_rect.position.y;
-				instance_data->dst_rect[2] = dst_rect.size.x;
-				instance_data->dst_rect[3] = dst_rect.size.y;
+				instance_data->dst_rect[2] = dst_rect.size.width;
+				instance_data->dst_rect[3] = dst_rect.size.height;
 
 				instance_data->flags |= int(np->axis_x) << INSTANCE_FLAGS_NINEPATCH_H_MODE_SHIFT;
 				instance_data->flags |= int(np->axis_y) << INSTANCE_FLAGS_NINEPATCH_V_MODE_SHIFT;
@@ -2834,7 +2834,7 @@ void RendererCanvasRenderRD::_record_item_commands(const Item *p_item, RenderTar
 						{
 							Rect2 sdf_rect = texture_storage->render_target_get_sdf_rect(p_render_target.render_target);
 
-							to_screen.size = Vector2(1.0 / sdf_rect.size.x, 1.0 / sdf_rect.size.y);
+							to_screen.size = Vector2(1.0 / sdf_rect.size.width, 1.0 / sdf_rect.size.height);
 							to_screen.position = -sdf_rect.position * to_screen.size;
 						}
 
@@ -2940,13 +2940,13 @@ void RendererCanvasRenderRD::_record_item_commands(const Item *p_item, RenderTar
 		Rect2 dst_rect;
 
 		dst_rect = p_item->rect;
-		if (dst_rect.size.x < 0) {
-			dst_rect.position.x += dst_rect.size.x;
-			dst_rect.size.x *= -1;
+		if (dst_rect.size.width < 0) {
+			dst_rect.position.x += dst_rect.size.width;
+			dst_rect.size.width *= -1;
 		}
-		if (dst_rect.size.y < 0) {
-			dst_rect.position.y += dst_rect.size.y;
-			dst_rect.size.y *= -1;
+		if (dst_rect.size.height < 0) {
+			dst_rect.position.y += dst_rect.size.height;
+			dst_rect.size.height *= -1;
 		}
 
 		src_rect = Rect2(0, 0, 1, 1);
@@ -2958,13 +2958,13 @@ void RendererCanvasRenderRD::_record_item_commands(const Item *p_item, RenderTar
 
 		instance_data->src_rect[0] = src_rect.position.x;
 		instance_data->src_rect[1] = src_rect.position.y;
-		instance_data->src_rect[2] = src_rect.size.x;
-		instance_data->src_rect[3] = src_rect.size.y;
+		instance_data->src_rect[2] = src_rect.size.width;
+		instance_data->src_rect[3] = src_rect.size.height;
 
 		instance_data->dst_rect[0] = dst_rect.position.x;
 		instance_data->dst_rect[1] = dst_rect.position.y;
-		instance_data->dst_rect[2] = dst_rect.size.x;
-		instance_data->dst_rect[3] = dst_rect.size.y;
+		instance_data->dst_rect[2] = dst_rect.size.width;
+		instance_data->dst_rect[3] = dst_rect.size.height;
 
 		_add_to_batch(r_batch_broken, r_current_batch);
 

@@ -243,7 +243,7 @@ Projection Projection::flipped_y() const {
 	return proj;
 }
 
-Projection Projection::jitter_offseted(const Vector2 &p_offset) const {
+Projection Projection ::jitter_offseted(const Vector2 &p_offset) const {
 	Projection proj = *this;
 	proj.add_jitter_offset(p_offset);
 	return proj;
@@ -830,12 +830,12 @@ void Projection::set_light_bias() {
 void Projection::set_light_atlas_rect(const Rect2 &p_rect) {
 	real_t *m = &columns[0][0];
 
-	m[0] = p_rect.size.x;
+	m[0] = p_rect.size.width;
 	m[1] = 0.0;
 	m[2] = 0.0;
 	m[3] = 0.0;
 	m[4] = 0.0;
-	m[5] = p_rect.size.y;
+	m[5] = p_rect.size.height;
 	m[6] = 0.0;
 	m[7] = 0.0;
 	m[8] = 0.0;

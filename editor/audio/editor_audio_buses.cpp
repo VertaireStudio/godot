@@ -184,17 +184,17 @@ void EditorAudioBus::_notification(int p_what) {
 				channel[i].vu_r->set_value(_scaled_db_to_normalized_volume(channel[i].peak_r));
 
 				if (!channel[i].indicator_fall_l) {
-					channel[i].peak_indicator_l->set_position(Point2(0.0, MIN(channel[i].peak_indicator_l->get_position().y, peak_indicator_range - channel[i].vu_l->get_value() * peak_indicator_range)));
+					channel[i].peak_indicator_l->set_position(Point2(0.0, MIN(channel[i].peak_indicator_l->get_position().height, peak_indicator_range - channel[i].vu_l->get_value() * peak_indicator_range)));
 				} else {
-					channel[i].peak_indicator_l->set_position(Point2(0.0, MIN(peak_indicator_range, channel[i].peak_indicator_l->get_position().y + get_process_delta_time() * 60.0)));
+					channel[i].peak_indicator_l->set_position(Point2(0.0, MIN(peak_indicator_range, channel[i].peak_indicator_l->get_position().height + get_process_delta_time() * 60.0)));
 				}
 				if (!channel[i].indicator_fall_r) {
-					channel[i].peak_indicator_r->set_position(Point2(0.0, MIN(channel[i].peak_indicator_r->get_position().y, peak_indicator_range - channel[i].vu_r->get_value() * peak_indicator_range)));
+					channel[i].peak_indicator_r->set_position(Point2(0.0, MIN(channel[i].peak_indicator_r->get_position().height, peak_indicator_range - channel[i].vu_r->get_value() * peak_indicator_range)));
 				} else {
-					channel[i].peak_indicator_r->set_position(Point2(0.0, MIN(peak_indicator_range, channel[i].peak_indicator_r->get_position().y + get_process_delta_time() * 60.0)));
+					channel[i].peak_indicator_r->set_position(Point2(0.0, MIN(peak_indicator_range, channel[i].peak_indicator_r->get_position().height + get_process_delta_time() * 60.0)));
 				}
 
-				double normalized_peak_indicator = (channel[i].peak_indicator_l->get_position().y - peak_indicator_range) / -peak_indicator_range;
+				double normalized_peak_indicator = (channel[i].peak_indicator_l->get_position().height - peak_indicator_range) / -peak_indicator_range;
 
 				if (channel[i].vu_l->get_value() > normalized_peak_indicator || Math::is_equal_approx(channel[i].vu_l->get_value(), normalized_peak_indicator, 0.01)) {
 					if (!channel[i].peak_timer_l->is_paused() || channel[i].indicator_fall_l) {
@@ -208,7 +208,7 @@ void EditorAudioBus::_notification(int p_what) {
 
 				peak_indicator_stylebox_l->set_bg_color(active_gradient->get_color_at_offset(normalized_peak_indicator));
 
-				normalized_peak_indicator = (channel[i].peak_indicator_r->get_position().y - peak_indicator_range) / -peak_indicator_range;
+				normalized_peak_indicator = (channel[i].peak_indicator_r->get_position().height - peak_indicator_range) / -peak_indicator_range;
 
 				if (channel[i].vu_r->get_value() > normalized_peak_indicator || Math::is_equal_approx(channel[i].vu_r->get_value(), normalized_peak_indicator, 0.01)) {
 					if (!channel[i].peak_timer_r->is_paused() || channel[i].indicator_fall_r) {
@@ -235,10 +235,10 @@ void EditorAudioBus::_notification(int p_what) {
 				}
 
 				if (!activity_found) {
-					if (channel[i].peak_indicator_l->get_position().y > (peak_indicator_range - 2.0) && channel[i].peak_indicator_l->is_visible()) {
+					if (channel[i].peak_indicator_l->get_position().height > (peak_indicator_range - 2.0) && channel[i].peak_indicator_l->is_visible()) {
 						channel[i].peak_indicator_l->hide();
 					}
-					if (channel[i].peak_indicator_r->get_position().y > (peak_indicator_range - 2.0) && channel[i].peak_indicator_r->is_visible()) {
+					if (channel[i].peak_indicator_r->get_position().height > (peak_indicator_range - 2.0) && channel[i].peak_indicator_r->is_visible()) {
 						channel[i].peak_indicator_r->hide();
 					}
 				} else {
@@ -530,10 +530,10 @@ void EditorAudioBus::_hide_value_preview() {
 
 void EditorAudioBus::_enable_indicator_fall() {
 	for (int i = 0; i < cc; i++) {
-		if (channel[i].peak_timer_l->get_time_left() <= 0.0 && !channel[i].indicator_fall_l && Math::snapped(channel[i].peak_indicator_l->get_position().y, 0.0001) < peak_indicator_range) {
+		if (channel[i].peak_timer_l->get_time_left() <= 0.0 && !channel[i].indicator_fall_l && Math::snapped(channel[i].peak_indicator_l->get_position().height, 0.0001) < peak_indicator_range) {
 			channel[i].indicator_fall_l = true;
 		}
-		if (channel[i].peak_timer_r->get_time_left() <= 0.0 && !channel[i].indicator_fall_r && Math::snapped(channel[i].peak_indicator_r->get_position().y, 0.0001) < peak_indicator_range) {
+		if (channel[i].peak_timer_r->get_time_left() <= 0.0 && !channel[i].indicator_fall_r && Math::snapped(channel[i].peak_indicator_r->get_position().height, 0.0001) < peak_indicator_range) {
 			channel[i].indicator_fall_r = true;
 		}
 	}

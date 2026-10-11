@@ -296,7 +296,7 @@ void AudioStreamInteractiveTransitionEditor::edit(Object *p_obj) {
 			name = audio_stream_interactive->get_clip_name(i);
 		}
 
-		int min_w = header_font->get_string_size(name + "XX").x;
+		int min_w = header_font->get_string_size(name + "XX").width;
 		tree->set_column_custom_minimum_width(cell_index, min_w);
 		max_w = MAX(max_w, min_w);
 

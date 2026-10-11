@@ -90,24 +90,24 @@ void TextureRegionEditor::_texture_overlay_draw() {
 
 		if (snap_step.x != 0) {
 			if (snap_separation.x == 0) {
-				for (int i = 0; i < s.x; i++) {
+				for (int i = 0; i < s.width; i++) {
 					int cell = Math::fast_ftoi(Math::floor((mtx.affine_inverse().xform(Vector2(i, 0)).x - snap_offset.x) / snap_step.x));
 					if (i == 0) {
 						last_cell = cell;
 					}
 					if (last_cell != cell) {
-						texture_overlay->draw_line(Point2(i, 0), Point2(i, s.y), grid_color);
+						texture_overlay->draw_line(Point2(i, 0), Point2(i, s.height), grid_color);
 					}
 					last_cell = cell;
 				}
 			} else {
-				for (int i = 0; i < s.x + snap_separation.x; i++) {
+				for (int i = 0; i < s.width + snap_separation.x; i++) {
 					int cell = Math::fast_ftoi(Math::floor((mtx.affine_inverse().xform(Vector2(i, 0)).x - snap_offset.x) / (snap_step.x + snap_separation.x)));
 					if (i == 0) {
 						last_cell = cell;
 					}
 					if (last_cell != cell) {
-						texture_overlay->draw_rect(Rect2(i - snap_separation.x * draw_zoom, 0, snap_separation.x * draw_zoom, s.y), grid_color);
+						texture_overlay->draw_rect(Rect2(i - snap_separation.x * draw_zoom, 0, snap_separation.x * draw_zoom, s.height), grid_color);
 					}
 					last_cell = cell;
 				}
@@ -116,24 +116,24 @@ void TextureRegionEditor::_texture_overlay_draw() {
 
 		if (snap_step.y != 0) {
 			if (snap_separation.y == 0) {
-				for (int i = 0; i < s.y; i++) {
+				for (int i = 0; i < s.height; i++) {
 					int cell = Math::fast_ftoi(Math::floor((mtx.affine_inverse().xform(Vector2(0, i)).y - snap_offset.y) / snap_step.y));
 					if (i == 0) {
 						last_cell = cell;
 					}
 					if (last_cell != cell) {
-						texture_overlay->draw_line(Point2(0, i), Point2(s.x, i), grid_color);
+						texture_overlay->draw_line(Point2(0, i), Point2(s.width, i), grid_color);
 					}
 					last_cell = cell;
 				}
 			} else {
-				for (int i = 0; i < s.y + snap_separation.y; i++) {
+				for (int i = 0; i < s.height + snap_separation.y; i++) {
 					int cell = Math::fast_ftoi(Math::floor((mtx.affine_inverse().xform(Vector2(0, i)).y - snap_offset.y) / (snap_step.y + snap_separation.y)));
 					if (i == 0) {
 						last_cell = cell;
 					}
 					if (last_cell != cell) {
-						texture_overlay->draw_rect(Rect2(0, i - snap_separation.y * draw_zoom, s.x, snap_separation.y * draw_zoom), grid_color);
+						texture_overlay->draw_rect(Rect2(0, i - snap_separation.y * draw_zoom, s.width, snap_separation.y * draw_zoom), grid_color);
 					}
 					last_cell = cell;
 				}
@@ -175,7 +175,7 @@ void TextureRegionEditor::_texture_overlay_draw() {
 		int next = (i + 1) % 4;
 
 		Vector2 ofs = ((endpoints[i] - endpoints[prev]).normalized() + ((endpoints[i] - endpoints[next]).normalized())).normalized();
-		ofs *= Math::SQRT2 * (select_handle->get_size().x / 2);
+		ofs *= Math::SQRT2 * (select_handle->get_size().width / 2);
 
 		texture_overlay->draw_line(endpoints[i] - draw_ofs * draw_zoom, endpoints[next] - draw_ofs * draw_zoom, color, 2);
 
@@ -184,7 +184,7 @@ void TextureRegionEditor::_texture_overlay_draw() {
 		}
 
 		ofs = (endpoints[next] - endpoints[i]) / 2;
-		ofs += (endpoints[next] - endpoints[i]).orthogonal().normalized() * (select_handle->get_size().x / 2);
+		ofs += (endpoints[next] - endpoints[i]).orthogonal().normalized() * (select_handle->get_size().width / 2);
 
 		if (snap_mode != SNAP_AUTOSLICE) {
 			texture_overlay->draw_texture(select_handle, (endpoints[i] + ofs - (select_handle->get_size() / 2)).floor() - draw_ofs * draw_zoom);
@@ -224,8 +224,8 @@ void TextureRegionEditor::_texture_overlay_draw() {
 	Size2 vmin = vscroll->get_combined_minimum_size();
 
 	// Avoid scrollbar overlapping.
-	hscroll->set_anchor_and_offset(SIDE_RIGHT, Control::ANCHOR_END, vscroll->is_visible() ? -vmin.x : 0);
-	vscroll->set_anchor_and_offset(SIDE_BOTTOM, Control::ANCHOR_END, hscroll->is_visible() ? -hmin.y : 0);
+	hscroll->set_anchor_and_offset(SIDE_RIGHT, Control::ANCHOR_END, vscroll->is_visible() ? -vmin.width : 0);
+	vscroll->set_anchor_and_offset(SIDE_BOTTOM, Control::ANCHOR_END, hscroll->is_visible() ? -hmin.height : 0);
 
 	updating_scroll = false;
 

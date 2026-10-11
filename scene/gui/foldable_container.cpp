@@ -51,7 +51,7 @@ Size2 FoldableContainer::get_minimum_size() const {
 	}
 	ms += theme_cache.panel_style->get_minimum_size();
 
-	return Size2(MAX(ms.x, title_minimum_size.x), ms.y + title_minimum_size.y);
+	return Size2(MAX(ms.width, title_minimum_size.width), ms.height + title_minimum_size.height);
 }
 
 Size2 FoldableContainer::get_desired_size() const {
@@ -71,7 +71,7 @@ Size2 FoldableContainer::get_desired_size() const {
 	}
 	ds += theme_cache.panel_style->get_minimum_size();
 
-	return Size2(MAX(ds.x, title_minimum_size.x), ds.y + title_minimum_size.y);
+	return Size2(MAX(ds.width, title_minimum_size.width), ds.height + title_minimum_size.height);
 }
 
 Size2 FoldableContainer::get_inner_combined_maximum_size() const {
@@ -280,7 +280,7 @@ void FoldableContainer::gui_input(const Ref<InputEvent> &p_event) {
 }
 
 String FoldableContainer::get_tooltip(const Point2 &p_pos) const {
-	if (Rect2(0, (title_position == POSITION_TOP) ? 0 : get_size().y - title_minimum_size.y, get_size().x, title_minimum_size.y).has_point(p_pos)) {
+	if (Rect2(0, (title_position == POSITION_TOP) ? 0 : get_size().height - title_minimum_size.height, get_size().width, title_minimum_size.height).has_point(p_pos)) {
 		return Control::get_tooltip(p_pos);
 	}
 	return String();
@@ -312,18 +312,18 @@ void FoldableContainer::_notification(int p_what) {
 			_draw_flippable_stylebox(title_style, title_rect);
 
 			Size2 title_ms = title_style->get_minimum_size();
-			int title_text_width = size.x - title_ms.x;
+			int title_text_width = size.width - title_ms.width;
 
 			int title_style_ofs = (title_position == POSITION_TOP) ? title_style->get_margin(SIDE_TOP) : title_style->get_margin(SIDE_BOTTOM);
 			Point2 title_text_pos(title_style->get_margin(SIDE_LEFT), title_style_ofs);
-			title_text_pos.y += MAX((title_minimum_size.y - title_ms.y - text_buf->get_size().y) * 0.5, 0);
+			title_text_pos.y += MAX((title_minimum_size.height - title_ms.height - text_buf->get_size().height) * 0.5, 0);
 
 			title_text_width -= icon->get_width() + h_separation + title_controls_width;
-			Point2 icon_pos(0, MAX((title_minimum_size.y - title_ms.y - icon->get_height()) * 0.5, 0) + title_style_ofs);
+			Point2 icon_pos(0, MAX((title_minimum_size.height - title_ms.height - icon->get_height()) * 0.5, 0) + title_style_ofs);
 
 			bool rtl = is_layout_rtl();
 			if (rtl) {
-				icon_pos.x = size.x - title_style->get_margin(SIDE_RIGHT) - icon->get_width();
+				icon_pos.x = size.width - title_style->get_margin(SIDE_RIGHT) - icon->get_width();
 				title_text_pos.x += title_controls_width;
 			} else {
 				icon_pos.x = title_style->get_margin(SIDE_LEFT);
@@ -346,8 +346,8 @@ void FoldableContainer::_notification(int p_what) {
 
 			if (!folded) {
 				Rect2 panel_rect(
-						Point2(0, (title_position == POSITION_TOP) ? title_minimum_size.y : 0),
-						Size2(size.x, size.y - title_minimum_size.y));
+						Point2(0, (title_position == POSITION_TOP) ? title_minimum_size.height : 0),
+						Size2(size.width, size.height - title_minimum_size.height));
 				_draw_flippable_stylebox(theme_cache.panel_style, panel_rect);
 			}
 
@@ -466,7 +466,7 @@ Ref<Texture2D> FoldableContainer::_get_title_icon() const {
 }
 
 Rect2 FoldableContainer::_get_title_rect() const {
-	return Rect2(0, (title_position == POSITION_TOP) ? 0 : (get_size().y - title_minimum_size.y), get_size().x, title_minimum_size.y);
+	return Rect2(0, (title_position == POSITION_TOP) ? 0 : (get_size().height - title_minimum_size.height), get_size().width, title_minimum_size.height);
 }
 
 void FoldableContainer::_update_title_min_size() const {
@@ -476,17 +476,17 @@ void FoldableContainer::_update_title_min_size() const {
 	int h_separation = _get_h_separation();
 
 	title_minimum_size = title_ms;
-	title_minimum_size.x += icon->get_width();
+	title_minimum_size.width += icon->get_width();
 
 	if (!title.is_empty()) {
-		title_minimum_size.x += h_separation;
+		title_minimum_size.width += h_separation;
 		Size2 text_size = text_buf->get_size();
-		title_minimum_size.y += MAX(text_size.y, icon->get_height());
+		title_minimum_size.height += MAX(text_size.height, icon->get_height());
 		if (overrun_behavior == TextServer::OverrunBehavior::OVERRUN_NO_TRIMMING) {
-			title_minimum_size.x += text_size.x;
+			title_minimum_size.width += text_size.width;
 		}
 	} else {
-		title_minimum_size.y += icon->get_height();
+		title_minimum_size.height += icon->get_height();
 	}
 
 	if (!title_controls.is_empty()) {
@@ -498,14 +498,14 @@ void FoldableContainer::_update_title_min_size() const {
 				continue;
 			}
 			Vector2 size = control->get_bound_minimum_size();
-			title_minimum_size.x += size.x;
-			controls_height = MAX(controls_height, size.y);
+			title_minimum_size.width += size.width;
+			controls_height = MAX(controls_height, size.height);
 			visible_controls++;
 		}
 		if (visible_controls > 0) {
-			title_minimum_size.x += h_separation * visible_controls;
+			title_minimum_size.width += h_separation * visible_controls;
 		}
-		title_minimum_size.y = MAX(title_minimum_size.y, title_ms.y + controls_height);
+		title_minimum_size.height = MAX(title_minimum_size.height, title_ms.height + controls_height);
 	}
 }
 
@@ -554,7 +554,7 @@ void FoldableContainer::_update_group() {
 void FoldableContainer::_draw_flippable_stylebox(const Ref<StyleBox> p_stylebox, const Rect2 &p_rect) {
 	if (title_position == POSITION_BOTTOM) {
 		Rect2 rect(-p_rect.position, p_rect.size);
-		draw_set_transform(Point2(0.0, p_stylebox->get_draw_rect(rect).size.y), 0.0, Size2(1.0, -1.0));
+		draw_set_transform(Point2(0.0, p_stylebox->get_draw_rect(rect).size.height), 0.0, Size2(1.0, -1.0));
 		p_stylebox->draw(get_canvas_item(), rect);
 		draw_set_transform_matrix(Transform2D());
 	} else {
