@@ -396,3 +396,7 @@ $RECYCLE.BIN/
 *.msp
 *.lnk
 *.generated.props
+/cmake-build
+__pycache__/
+/build
+/build-debug
