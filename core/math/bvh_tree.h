@@ -38,11 +38,11 @@
 // to a simpler tree.
 // Note that MAX_CHILDREN should be fixed at 2 for now.
 
-#include "core/math/aabb.h"
-#include "core/math/bvh_abb.h"
-#include "core/math/vector3.h"
-#include "core/templates/local_vector.h"
-#include "core/templates/pooled_list.h"
+#include "aabb.h"
+#include "bvh_abb.h"
+#include "vector3.h"
+#include "../templates/local_vector.h"
+#include "../templates/pooled_list.h"
 
 #define BVHABB_CLASS BVH_ABB<BOUNDS, POINT>
 

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/crypto/crypto.h"
-#include "core/io/stream_peer.h"
+#include "../crypto/crypto.h"
+#include "stream_peer.h"
 
 class StreamPeerTLS : public StreamPeer {
 	GDCLASS(StreamPeerTLS, StreamPeer);

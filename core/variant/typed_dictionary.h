@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/variant/type_info.h"
+#include "type_info.h"
 
 template <typename K, typename V>
 class _WARN_UNUSED_ TypedDictionary : public Dictionary {

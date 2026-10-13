@@ -32,9 +32,9 @@
 
 #ifdef TOOLS_ENABLED
 
-#include "core/error/error_list.h"
-#include "core/string/ustring.h"
-#include "core/variant/dictionary.h"
+#include "../error/error_list.h"
+#include "../string/ustring.h"
+#include "../variant/dictionary.h"
 
 class GDExtensionAPIDump {
 public:

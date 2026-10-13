@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/math/math_defs.h"
-#include "core/object/ref_counted.h"
-#include "core/typedefs.h"
-#include "core/variant/variant.h"
+#include "../math/math_defs.h"
+#include "../object/ref_counted.h"
+#include "../typedefs.h"
+#include "../variant/variant.h"
 
 // uintr_t is only for pairing with real_t, and we only need it in here.
 #ifdef REAL_T_IS_DOUBLE

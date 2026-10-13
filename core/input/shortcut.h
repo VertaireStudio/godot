@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/input/input_event.h"
-#include "core/io/resource.h"
+#include "input_event.h"
+#include "../io/resource.h"
 
 class Shortcut : public Resource {
 	GDCLASS(Shortcut, Resource);

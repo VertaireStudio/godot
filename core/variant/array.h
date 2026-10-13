@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/templates/span.h"
-#include "core/typedefs.h"
-#include "core/variant/variant_deep_duplicate.h"
+#include "../templates/span.h"
+#include "../typedefs.h"
+#include "variant_deep_duplicate.h"
 
 #include <climits>
 #include <initializer_list>

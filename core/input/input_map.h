@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/input/input_event.h"
-#include "core/object/object.h"
-#include "core/templates/hash_map.h"
+#include "input_event.h"
+#include "../object/object.h"
+#include "../templates/hash_map.h"
 
 template <typename T>
 class TypedArray;

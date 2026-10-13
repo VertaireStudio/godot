@@ -30,13 +30,13 @@
 
 #pragma once
 
-#include "core/object/method_bind.h"
-#include "core/object/method_bind_common.h"
-#include "core/object/object.h"
-#include "core/os/rw_lock.h"
-#include "core/string/print_string.h"
-#include "core/templates/a_hash_map.h"
-#include "core/templates/hash_set.h"
+#include "method_bind.h"
+#include "method_bind_common.h"
+#include "object.h"
+#include "../os/rw_lock.h"
+#include "../string/print_string.h"
+#include "../templates/a_hash_map.h"
+#include "../templates/hash_set.h"
 
 #include <type_traits>
 
@@ -56,7 +56,7 @@ inline constexpr bool is_class_enabled_v = is_class_enabled<T>::value;
 
 #define GD_IS_CLASS_ENABLED(m_class) is_class_enabled_v<m_class>
 
-#include "core/disabled_classes.gen.h" // IWYU pragma: keep.
+#include "../disabled_classes.gen.h" // IWYU pragma: keep.
 
 #define DEFVAL(m_defval) (m_defval)
 #define DEFVAL_ARRAY DEFVAL(ClassDB::default_array_arg)

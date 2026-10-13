@@ -34,11 +34,11 @@ STATIC_ASSERT_INCOMPLETE_TYPE(class, Array);
 STATIC_ASSERT_INCOMPLETE_TYPE(class, Object);
 STATIC_ASSERT_INCOMPLETE_TYPE(class, String);
 
-#include "core/templates/hash_map.h"
-#include "core/templates/safe_refcount.h"
-#include "core/variant/container_type_validate.h"
-#include "core/variant/variant.h"
-#include "core/variant/variant_internal.h"
+#include "../templates/hash_map.h"
+#include "../templates/safe_refcount.h"
+#include "container_type_validate.h"
+#include "variant.h"
+#include "variant_internal.h"
 
 struct DictionaryPrivate {
 	SafeRefCount refcount;

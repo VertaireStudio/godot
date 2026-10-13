@@ -30,8 +30,8 @@
 
 #include "quick_hull.h"
 
-#include "core/templates/hash_map.h"
-#include "core/templates/hash_set.h"
+#include "../templates/hash_map.h"
+#include "../templates/hash_set.h"
 
 uint32_t QuickHull::debug_stop_after = 0xFFFFFFFF;
 

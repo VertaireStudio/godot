@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/os/memory.h"
-#include "core/string/print_string.h" // IWYU pragma: keep. `WARN_VERBOSE` macro.
-#include "core/templates/hashfuncs.h"
-#include "core/templates/pair.h"
-#include "core/templates/sort_list.h"
+#include "../os/memory.h"
+#include "../string/print_string.h" // IWYU pragma: keep. `WARN_VERBOSE` macro.
+#include "hashfuncs.h"
+#include "pair.h"
+#include "sort_list.h"
 
 #include <initializer_list>
 

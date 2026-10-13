@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/extension/gdextension.h"
-#include "core/variant/native_ptr.h"
+#include "gdextension.h"
+#include "../variant/native_ptr.h"
 
 GDVIRTUAL_NATIVE_PTR(GDExtensionInitializationFunction)
 

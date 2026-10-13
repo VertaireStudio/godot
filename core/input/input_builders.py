@@ -8,9 +8,9 @@ import methods
 def make_default_controller_mappings(target, source, env):
     with methods.generated_wrapper(str(target[0])) as file:
         file.write("""\
-#include "core/input/default_controller_mappings.h"
+#include "default_controller_mappings.h"
 
-#include "core/typedefs.h"
+#include "../typedefs.h"
 
 """)
 

@@ -30,7 +30,7 @@
 
 #include "a_hash_map.h"
 
-#include "core/variant/variant.h"
+#include "../variant/variant.h"
 
 // Explicit instantiation.
 template class AHashMap<int, int>;

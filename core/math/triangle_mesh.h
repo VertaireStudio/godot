@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/math/face3.h"
-#include "core/object/ref_counted.h"
+#include "face3.h"
+#include "../object/ref_counted.h"
 
 class TriangleMesh : public RefCounted {
 	GDCLASS(TriangleMesh, RefCounted);

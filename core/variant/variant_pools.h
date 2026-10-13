@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/math/math_defs.h"
-#include "core/os/memory.h"
+#include "../math/math_defs.h"
+#include "../os/memory.h"
 
 namespace VariantPools {
 inline constexpr size_t BUCKET_SMALL = 2 * 3 * sizeof(real_t);

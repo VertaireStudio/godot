@@ -30,19 +30,19 @@
 
 #include "remote_debugger.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/debugger/debugger_marshalls.h"
-#include "core/debugger/engine_debugger.h"
-#include "core/debugger/engine_profiler.h"
-#include "core/debugger/script_debugger.h"
-#include "core/input/input.h"
-#include "core/io/resource_loader.h"
-#include "core/math/expression.h"
-#include "core/object/class_db.h"
-#include "core/object/script_language.h"
-#include "core/os/os.h"
-#include "servers/display/display_server.h"
+#include "../config/engine.h"
+#include "../config/project_settings.h"
+#include "debugger_marshalls.h"
+#include "engine_debugger.h"
+#include "engine_profiler.h"
+#include "script_debugger.h"
+#include "../input/input.h"
+#include "../io/resource_loader.h"
+#include "../math/expression.h"
+#include "../object/class_db.h"
+#include "../object/script_language.h"
+#include "../os/os.h"
+#include "../../servers/display/display_server.h"
 
 class RemoteDebugger::PerformanceProfiler : public EngineProfiler {
 	Object *performance = nullptr;

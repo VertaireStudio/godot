@@ -30,13 +30,13 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/string/ustring.h"
-#include "core/templates/hash_map.h"
-#include "core/templates/vector.h"
-#include "core/variant/array.h"
-#include "core/variant/dictionary.h"
-#include "core/variant/typed_array.h"
+#include "../object/ref_counted.h"
+#include "ustring.h"
+#include "../templates/hash_map.h"
+#include "../templates/vector.h"
+#include "../variant/array.h"
+#include "../variant/dictionary.h"
+#include "../variant/typed_array.h"
 
 class RegExMatch : public RefCounted {
 	GDCLASS(RegExMatch, RefCounted);

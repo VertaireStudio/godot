@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/io/ip_address.h"
-#include "core/io/net_socket.h"
-#include "core/io/packet_peer.h"
+#include "ip_address.h"
+#include "net_socket.h"
+#include "packet_peer.h"
 
 class UDPServer;
 

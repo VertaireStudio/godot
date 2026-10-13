@@ -30,12 +30,12 @@
 
 #include "core_constants.h"
 
-#include "core/input/input_enums.h"
-#include "core/object/method_bind_common.h" // IWYU pragma: keep. For `VARIANT_BITFIELD_CAST(MethodFlags)`.
-#include "core/os/keyboard.h"
-#include "core/variant/type_info.h"
-#include "core/variant/variant.h"
-#include "core/variant/variant_caster.h"
+#include "input/input_enums.h"
+#include "object/method_bind_common.h" // IWYU pragma: keep. For `VARIANT_BITFIELD_CAST(MethodFlags)`.
+#include "os/keyboard.h"
+#include "variant/type_info.h"
+#include "variant/variant.h"
+#include "variant/variant_caster.h"
 
 struct _CoreConstant {
 #ifdef DEBUG_ENABLED

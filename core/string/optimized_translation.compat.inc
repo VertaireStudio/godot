@@ -32,7 +32,7 @@
 
 #include "optimized_translation.h"
 
-#include "core/object/class_db.h"
+#include "../object/class_db.h"
 
 void OptimizedTranslation::_generate_bind_compat_119563(const Ref<Translation> &p_from) {
 	generate(p_from);

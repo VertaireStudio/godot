@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/crypto/crypto.h"
-#include "core/io/stream_peer.h"
-#include "core/object/ref_counted.h"
+#include "../crypto/crypto.h"
+#include "stream_peer.h"
+#include "../object/ref_counted.h"
 
 class HTTPClient : public RefCounted {
 	GDCLASS(HTTPClient, RefCounted);

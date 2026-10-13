@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/templates/lru.h"
+#include "../object/ref_counted.h"
+#include "../templates/lru.h"
 
 class Expression;
 

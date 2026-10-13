@@ -30,7 +30,7 @@
 
 #include "tcp_server.h"
 
-#include "core/object/class_db.h"
+#include "../object/class_db.h"
 
 void TCPServer::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("listen", "port", "bind_address"), &TCPServer::listen, DEFVAL("*"));

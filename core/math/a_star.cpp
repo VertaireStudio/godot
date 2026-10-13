@@ -31,8 +31,8 @@
 #include "a_star.h"
 #include "a_star.compat.inc"
 
-#include "core/math/geometry_3d.h"
-#include "core/object/class_db.h"
+#include "geometry_3d.h"
+#include "../object/class_db.h"
 
 int64_t AStar3D::get_available_point_id() const {
 	if (points.has(last_free_id)) {

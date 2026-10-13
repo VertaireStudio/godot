@@ -30,8 +30,8 @@
 
 #include "vector3i.h"
 
-#include "core/math/vector3.h"
-#include "core/string/ustring.h"
+#include "vector3.h"
+#include "../string/ustring.h"
 
 Vector3i::Axis Vector3i::min_axis_index() const {
 	return x < y ? (x < z ? Vector3i::AXIS_X : Vector3i::AXIS_Z) : (y < z ? Vector3i::AXIS_Y : Vector3i::AXIS_Z);

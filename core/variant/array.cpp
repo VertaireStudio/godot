@@ -34,13 +34,13 @@ STATIC_ASSERT_INCOMPLETE_TYPE(class, Dictionary);
 STATIC_ASSERT_INCOMPLETE_TYPE(class, Object);
 STATIC_ASSERT_INCOMPLETE_TYPE(class, String);
 
-#include "core/math/math_funcs.h"
-#include "core/object/script_language.h"
-#include "core/templates/hashfuncs.h"
-#include "core/templates/vector.h"
-#include "core/variant/callable.h"
-#include "core/variant/container_type_validate.h"
-#include "core/variant/dictionary.h"
+#include "../math/math_funcs.h"
+#include "../object/script_language.h"
+#include "../templates/hashfuncs.h"
+#include "../templates/vector.h"
+#include "callable.h"
+#include "container_type_validate.h"
+#include "dictionary.h"
 
 struct ArrayPrivate {
 	SafeRefCount refcount;

@@ -30,13 +30,13 @@
 
 #include "variant.h"
 
-#include "core/debugger/engine_debugger.h"
-#include "core/io/json.h"
-#include "core/io/resource.h"
-#include "core/math/math_funcs.h"
-#include "core/object/gdtype.h"
-#include "core/variant/variant_parser.h"
-#include "core/variant/variant_pools.h"
+#include "../debugger/engine_debugger.h"
+#include "../io/json.h"
+#include "../io/resource.h"
+#include "../math/math_funcs.h"
+#include "../object/gdtype.h"
+#include "variant_parser.h"
+#include "variant_pools.h"
 
 // Caution: These GDTypes are work-in-progress and may not be feature complete.
 // Do not use them without consulting the core team.

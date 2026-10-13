@@ -30,18 +30,18 @@
 
 #pragma once
 
-#include "core/extension/gdextension_interface.gen.h"
-#include "core/object/gdtype.h"
-#include "core/object/method_info.h"
-#include "core/object/object_id.h"
-#include "core/object/property_info.h"
-#include "core/os/mutex.h"
-#include "core/os/spin_lock.h"
-#include "core/templates/hash_map.h"
-#include "core/templates/hash_set.h"
-#include "core/templates/list.h"
-#include "core/templates/safe_refcount.h"
-#include "core/variant/variant.h"
+#include "../extension/gdextension_interface.gen.h"
+#include "gdtype.h"
+#include "method_info.h"
+#include "object_id.h"
+#include "property_info.h"
+#include "../os/mutex.h"
+#include "../os/spin_lock.h"
+#include "../templates/hash_map.h"
+#include "../templates/hash_set.h"
+#include "../templates/list.h"
+#include "../templates/safe_refcount.h"
+#include "../variant/variant.h"
 
 #define ADD_SIGNAL(m_signal) get_gdtype_static_mutable().add_signal(m_signal)
 #define ADD_PROPERTY(m_property, m_setter, m_getter) ::ClassDB::add_property(get_class_static(), m_property, StringName(m_setter), StringName(m_getter))

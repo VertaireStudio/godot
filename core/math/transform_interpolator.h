@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/math/math_defs.h"
-#include "core/math/vector3.h"
+#include "math_defs.h"
+#include "vector3.h"
 
 // Keep all the functions for fixed timestep interpolation together.
 // There are two stages involved:

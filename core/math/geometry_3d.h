@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/math/color.h"
-#include "core/math/delaunay_3d.h"
-#include "core/math/face3.h"
-#include "core/math/vector2.h"
-#include "core/templates/local_vector.h"
-#include "core/templates/vector.h"
+#include "color.h"
+#include "delaunay_3d.h"
+#include "face3.h"
+#include "vector2.h"
+#include "../templates/local_vector.h"
+#include "../templates/vector.h"
 
 namespace Geometry3D {
 void get_closest_points_between_segments(const Vector3 &p_p0, const Vector3 &p_p1, const Vector3 &p_q0, const Vector3 &p_q1, Vector3 &r_ps, Vector3 &r_qt);

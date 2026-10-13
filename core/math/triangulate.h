@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/math/vector2.h"
-#include "core/templates/vector.h"
+#include "vector2.h"
+#include "../templates/vector.h"
 
 /*
 https://www.flipcode.com/archives/Efficient_Polygon_Triangulation.shtml

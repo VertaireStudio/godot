@@ -33,8 +33,8 @@
 #if defined(GODOT_USE_TRACY)
 // Use the tracy profiler.
 
-#include "core/os/mutex.h"
-#include "core/templates/paged_allocator.h"
+#include "../os/mutex.h"
+#include "../templates/paged_allocator.h"
 
 namespace tracy {
 static bool configured = false;

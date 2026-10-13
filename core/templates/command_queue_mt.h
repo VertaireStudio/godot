@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/object/worker_thread_pool.h"
-#include "core/os/condition_variable.h"
-#include "core/os/mutex.h"
-#include "core/templates/local_vector.h"
-#include "core/templates/tuple.h"
-#include "core/typedefs.h"
+#include "../object/worker_thread_pool.h"
+#include "../os/condition_variable.h"
+#include "../os/mutex.h"
+#include "local_vector.h"
+#include "tuple.h"
+#include "../typedefs.h"
 
 class CommandQueueMT {
 	static const size_t MAX_COMMAND_SIZE = 1024;

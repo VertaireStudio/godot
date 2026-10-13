@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/math/vector3.h"
-#include "core/math/vector4.h"
+#include "vector3.h"
+#include "vector4.h"
 
 template <typename T>
 class Vector;

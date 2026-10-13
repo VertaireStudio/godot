@@ -30,14 +30,14 @@
 
 #pragma once
 
-#include "core/extension/ext_wrappers.gen.h"
-#include "core/object/gdvirtual.gen.h"
-#include "core/object/script_language.h"
-#include "core/variant/native_ptr.h"
-#include "core/variant/typed_array.h"
+#include "../extension/ext_wrappers.gen.h"
+#include "gdvirtual.gen.h"
+#include "script_language.h"
+#include "../variant/native_ptr.h"
+#include "../variant/typed_array.h"
 
 #ifdef TOOLS_ENABLED
-#include "core/object/editor_language.h"
+#include "editor_language.h"
 #endif // TOOLS_ENABLED
 
 class ScriptExtension : public Script {

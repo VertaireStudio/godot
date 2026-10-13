@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/os/mutex.h"
-#include "core/os/thread.h"
-#include "core/string/ustring.h"
+#include "../object/ref_counted.h"
+#include "../os/mutex.h"
+#include "../os/thread.h"
+#include "../string/ustring.h"
 
 class StreamPeerSocket;
 

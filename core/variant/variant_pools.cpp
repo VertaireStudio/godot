@@ -28,13 +28,13 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-#include "core/variant/variant_pools.h"
+#include "variant_pools.h"
 
-#include "core/math/aabb.h"
-#include "core/math/projection.h"
-#include "core/math/transform_2d.h"
-#include "core/math/transform_3d.h"
-#include "core/templates/paged_allocator.h"
+#include "../math/aabb.h"
+#include "../math/projection.h"
+#include "../math/transform_2d.h"
+#include "../math/transform_3d.h"
+#include "../templates/paged_allocator.h"
 
 namespace VariantPools {
 union BucketSmall {

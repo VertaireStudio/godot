@@ -30,14 +30,14 @@
 
 #include "resource_uid.h"
 
-#include "core/config/project_settings.h"
-#include "core/crypto/crypto_core.h"
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/io/resource_loader.h"
-#include "core/io/stream_peer.h"
-#include "core/math/random_pcg.h"
-#include "core/object/class_db.h"
+#include "../config/project_settings.h"
+#include "../crypto/crypto_core.h"
+#include "dir_access.h"
+#include "file_access.h"
+#include "resource_loader.h"
+#include "stream_peer.h"
+#include "../math/random_pcg.h"
+#include "../object/class_db.h"
 
 // These constants are off by 1, causing the 'z' and '9' characters never to be used.
 // This cannot be fixed without breaking compatibility; see GH-83843.

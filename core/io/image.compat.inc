@@ -30,7 +30,7 @@
 
 #ifndef DISABLE_DEPRECATED
 
-#include "core/object/class_db.h"
+#include "../object/class_db.h"
 
 static Image::CompressProfile _astc_format_to_compress_profile(Image::ASTCFormat p_format) {
 	switch (p_format) {

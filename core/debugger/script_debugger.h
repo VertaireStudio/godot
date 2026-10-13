@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/object/script_language.h"
-#include "core/string/string_name.h"
-#include "core/templates/hash_set.h"
-#include "core/templates/vector.h"
+#include "../object/script_language.h"
+#include "../string/string_name.h"
+#include "../templates/hash_set.h"
+#include "../templates/vector.h"
 
 class ScriptDebugger {
 	typedef ScriptLanguage::StackInfo StackInfo;

@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
+#include "ref_counted.h"
 
 class ScriptLanguage;
 

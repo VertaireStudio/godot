@@ -30,12 +30,12 @@
 
 #include "projection.h"
 
-#include "core/math/aabb.h"
-#include "core/math/math_funcs.h"
-#include "core/math/plane.h"
-#include "core/math/rect2.h"
-#include "core/math/transform_3d.h"
-#include "core/string/ustring.h"
+#include "aabb.h"
+#include "math_funcs.h"
+#include "plane.h"
+#include "rect2.h"
+#include "transform_3d.h"
+#include "../string/ustring.h"
 
 real_t Projection::determinant() const {
 	return columns[0][3] * columns[1][2] * columns[2][1] * columns[3][0] - columns[0][2] * columns[1][3] * columns[2][1] * columns[3][0] -

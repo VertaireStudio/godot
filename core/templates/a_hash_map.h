@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/math/math_funcs_binary.h"
-#include "core/os/memory.h"
-#include "core/string/print_string.h"
-#include "core/templates/hashfuncs.h"
-#include "core/templates/pair.h"
+#include "../math/math_funcs_binary.h"
+#include "../os/memory.h"
+#include "../string/print_string.h"
+#include "hashfuncs.h"
+#include "pair.h"
 
 #include <initializer_list>
 

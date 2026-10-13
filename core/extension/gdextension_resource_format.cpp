@@ -30,8 +30,8 @@
 
 #include "gdextension_resource_format.h"
 
-#include "core/extension/gdextension_manager.h"
-#include "core/object/class_db.h"
+#include "gdextension_manager.h"
+#include "../object/class_db.h"
 
 Ref<Resource> GDExtensionResourceLoader::load(const String &p_path, const String &p_original_path, Error *r_error, bool p_use_sub_threads, float *r_progress, CacheMode p_cache_mode) {
 	// We can't have two GDExtension resource object representing the same library, because

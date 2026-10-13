@@ -31,8 +31,8 @@
 #include "regex.h"
 #include "regex.compat.inc"
 
-#include "core/object/class_db.h"
-#include "core/os/memory.h"
+#include "../object/class_db.h"
+#include "../os/memory.h"
 
 #ifndef PCRE2_STATIC
 #define PCRE2_STATIC

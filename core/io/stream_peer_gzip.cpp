@@ -28,10 +28,10 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-#include "core/io/stream_peer_gzip.h"
+#include "stream_peer_gzip.h"
 
-#include "core/io/zip_io.h"
-#include "core/object/class_db.h"
+#include "zip_io.h"
+#include "../object/class_db.h"
 
 #include <zlib.h>
 

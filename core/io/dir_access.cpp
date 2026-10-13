@@ -30,12 +30,12 @@
 
 #include "dir_access.h"
 
-#include "core/config/project_settings.h"
-#include "core/io/file_access.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "core/os/time.h"
-#include "core/templates/local_vector.h"
+#include "../config/project_settings.h"
+#include "file_access.h"
+#include "../object/class_db.h"
+#include "../os/os.h"
+#include "../os/time.h"
+#include "../templates/local_vector.h"
 
 String DirAccess::_get_root_path() const {
 	switch (_access_type) {

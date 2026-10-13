@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/templates/a_hash_map.h"
-#include "core/variant/binder_common.h"
-#include "core/variant/variant.h"
-#include "core/variant/variant_internal.h"
+#include "../templates/a_hash_map.h"
+#include "binder_common.h"
+#include "variant.h"
+#include "variant_internal.h"
 
 template <typename T>
 struct PtrConstruct {};

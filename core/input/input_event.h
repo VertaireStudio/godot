@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/input/input_enums.h"
-#include "core/io/resource.h"
-#include "core/os/keyboard.h"
-#include "core/typedefs.h"
+#include "input_enums.h"
+#include "../io/resource.h"
+#include "../os/keyboard.h"
+#include "../typedefs.h"
 
 /**
  * Input Event classes. These are used in the main loop.

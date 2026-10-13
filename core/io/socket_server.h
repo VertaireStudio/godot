@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/net_socket.h"
-#include "core/io/stream_peer_socket.h"
+#include "net_socket.h"
+#include "stream_peer_socket.h"
 
 class SocketServer : public RefCounted {
 	GDCLASS(SocketServer, RefCounted);

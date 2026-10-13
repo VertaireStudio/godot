@@ -30,9 +30,9 @@
 
 #include "rect2.h"
 
-#include "core/math/rect2i.h"
-#include "core/math/transform_2d.h"
-#include "core/string/ustring.h"
+#include "rect2i.h"
+#include "transform_2d.h"
+#include "../string/ustring.h"
 
 bool Rect2::is_equal_approx(const Rect2 &p_rect) const {
 	return position.is_equal_approx(p_rect.position) && size.is_equal_approx(p_rect.size);

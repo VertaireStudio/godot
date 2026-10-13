@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/string/string_name.h"
-#include "core/templates/hash_map.h"
-#include "core/templates/list.h"
+#include "../string/string_name.h"
+#include "../templates/hash_map.h"
+#include "../templates/list.h"
 
 class Object;
 class Dictionary;

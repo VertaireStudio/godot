@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/os/memory.h"
-#include "core/templates/span.h"
+#include "../os/memory.h"
+#include "span.h"
 
 GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Warray-bounds")
 

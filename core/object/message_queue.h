@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/object/object_id.h"
-#include "core/os/mutex.h"
-#include "core/templates/local_vector.h"
-#include "core/templates/paged_allocator.h"
-#include "core/variant/variant.h"
+#include "object_id.h"
+#include "../os/mutex.h"
+#include "../templates/local_vector.h"
+#include "../templates/paged_allocator.h"
+#include "../variant/variant.h"
 
 class Object;
 

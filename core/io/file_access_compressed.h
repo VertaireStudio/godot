@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/compression.h"
-#include "core/io/file_access.h"
+#include "compression.h"
+#include "file_access.h"
 
 class FileAccessCompressed : public FileAccess {
 	GDSOFTCLASS(FileAccessCompressed, FileAccess);

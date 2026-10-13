@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/string/ustring.h"
-#include "core/templates/vector.h"
+#include "../object/ref_counted.h"
+#include "../string/ustring.h"
+#include "../templates/vector.h"
 
 #include <cstdarg>
 

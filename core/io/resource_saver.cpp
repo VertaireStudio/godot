@@ -30,11 +30,11 @@
 
 #include "resource_saver.h"
 
-#include "core/config/project_settings.h"
-#include "core/io/file_access.h"
-#include "core/io/resource_loader.h"
-#include "core/object/class_db.h"
-#include "core/object/script_language.h"
+#include "../config/project_settings.h"
+#include "file_access.h"
+#include "resource_loader.h"
+#include "../object/class_db.h"
+#include "../object/script_language.h"
 
 Ref<ResourceFormatSaver> ResourceSaver::saver[MAX_SAVERS];
 

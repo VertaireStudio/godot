@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/version_generated.gen.h" // IWYU pragma: export
+#include "version_generated.gen.h" // IWYU pragma: export
 
 // Copied from typedefs.h to stay lean.
 #ifndef _STR

@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/string/ustring.h"
-#include "core/templates/hash_set.h"
-#include "core/templates/local_vector.h"
+#include "../string/ustring.h"
+#include "../templates/hash_set.h"
+#include "../templates/local_vector.h"
 
 class RemoteFilesystemClient {
 	String cache_path;

@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/debugger/debugger_marshalls.h"
-#include "core/debugger/engine_debugger.h"
-#include "core/debugger/remote_debugger_peer.h"
-#include "core/string/ustring.h"
-#include "core/variant/array.h"
+#include "debugger_marshalls.h"
+#include "engine_debugger.h"
+#include "remote_debugger_peer.h"
+#include "../string/ustring.h"
+#include "../variant/array.h"
 
 class RemoteDebugger : public EngineDebugger {
 public:

@@ -32,7 +32,7 @@
 
 #ifdef TOOLS_ENABLED
 
-#include "core/io/file_access.h"
+#include "../io/file_access.h"
 
 class GDExtensionInterfaceHeaderGenerator {
 public:

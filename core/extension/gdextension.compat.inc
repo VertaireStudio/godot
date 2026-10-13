@@ -32,7 +32,7 @@
 
 #include "gdextension.h"
 
-#include "core/object/class_db.h"
+#include "../object/class_db.h"
 
 Error GDExtension::_open_library_bind_compat_88418(const String &p_path, const String &p_entry_symbol) {
 	return ERR_UNAVAILABLE;

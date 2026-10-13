@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/doc_data.h"
-#include "core/io/resource.h"
-#include "core/object/script_backtrace.h"
-#include "core/object/script_instance.h"
-#include "core/templates/pair.h"
-#include "core/variant/typed_array.h"
+#include "../doc_data.h"
+#include "../io/resource.h"
+#include "script_backtrace.h"
+#include "script_instance.h"
+#include "../templates/pair.h"
+#include "../variant/typed_array.h"
 
 class ScriptLanguage;
 template <typename T>

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/string/translation.h"
-#include "core/string/translation_domain.h"
+#include "translation.h"
+#include "translation_domain.h"
 
 class TranslationServer : public Object {
 	GDCLASS(TranslationServer, Object);

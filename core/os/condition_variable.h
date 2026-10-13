@@ -30,14 +30,14 @@
 
 #pragma once
 
-#include "core/os/mutex.h"
-#include "core/os/safe_binary_mutex.h"
+#include "mutex.h"
+#include "safe_binary_mutex.h"
 
 #ifdef THREADS_ENABLED
 
 #ifdef MINGW_ENABLED
 #define MINGW_STDTHREAD_REDUNDANCY_WARNING
-#include <thirdparty/mingw-std-threads/mingw.condition_variable.h>
+#include "../../thirdparty/mingw-std-threads/mingw.condition_variable.h"
 #define THREADING_NAMESPACE mingw_stdthread
 #else
 #include <condition_variable>

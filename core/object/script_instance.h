@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/variant/variant.h"
+#include "../variant/variant.h"
 
 class Script;
 class ScriptLanguage;

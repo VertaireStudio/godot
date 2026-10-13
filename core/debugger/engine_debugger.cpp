@@ -30,11 +30,11 @@
 
 #include "engine_debugger.h"
 
-#include "core/debugger/local_debugger.h"
-#include "core/debugger/remote_debugger.h"
-#include "core/debugger/remote_debugger_peer.h"
-#include "core/debugger/script_debugger.h"
-#include "core/os/os.h"
+#include "local_debugger.h"
+#include "remote_debugger.h"
+#include "remote_debugger_peer.h"
+#include "script_debugger.h"
+#include "../os/os.h"
 
 void (*EngineDebugger::allow_focus_steal_fn)();
 

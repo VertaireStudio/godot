@@ -30,8 +30,8 @@
 
 #include "keyboard.h"
 
-#include "core/os/os.h"
-#include "core/string/ustring.h"
+#include "os.h"
+#include "../string/ustring.h"
 
 struct _KeyCodeText {
 	Key code;

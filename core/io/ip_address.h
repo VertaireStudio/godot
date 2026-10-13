@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/string/ustring.h"
+#include "../string/ustring.h"
 
 struct [[nodiscard]] _WARN_UNUSED_ IPAddress {
 private:

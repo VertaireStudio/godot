@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/socket_server.h"
-#include "core/io/stream_peer_uds.h"
+#include "socket_server.h"
+#include "stream_peer_uds.h"
 
 class UDSServer : public SocketServer {
 	GDCLASS(UDSServer, SocketServer);

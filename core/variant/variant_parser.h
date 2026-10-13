@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/io/file_access.h"
-#include "core/io/resource.h"
-#include "core/variant/variant.h"
+#include "../io/file_access.h"
+#include "../io/resource.h"
+#include "variant.h"
 
 class VariantParser {
 public:

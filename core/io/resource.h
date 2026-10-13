@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/io/resource_uid.h" // IWYU pragma: export. Make available to all resources.
-#include "core/object/gdvirtual.gen.h"
-#include "core/object/ref_counted.h"
-#include "core/templates/self_list.h"
+#include "resource_uid.h" // IWYU pragma: export. Make available to all resources.
+#include "../object/gdvirtual.gen.h"
+#include "../object/ref_counted.h"
+#include "../templates/self_list.h"
 
 class Node;
 class RWLock;

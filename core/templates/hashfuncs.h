@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/math/math_defs.h"
-#include "core/math/math_funcs.h"
-#include "core/typedefs.h"
+#include "../math/math_defs.h"
+#include "../math/math_funcs.h"
+#include "../typedefs.h"
 
 #ifdef _MSC_VER
 #include <intrin.h> // Needed for `__umulh` below.

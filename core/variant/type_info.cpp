@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-#include "core/variant/type_info.h"
+#include "type_info.h"
 
 namespace GodotTypeInfo {
 namespace Internal {

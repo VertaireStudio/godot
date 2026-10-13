@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/extension/gdextension_interface.gen.h"
-#include "core/variant/variant.h"
+#include "../extension/gdextension_interface.gen.h"
+#include "../variant/variant.h"
 
 template <typename T>
 class TypedArray;

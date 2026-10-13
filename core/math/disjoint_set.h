@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/templates/hash_map.h"
-#include "core/templates/vector.h"
+#include "../templates/hash_map.h"
+#include "../templates/vector.h"
 
 /* This DisjointSet class uses Find with path compression and Union by rank */
 template <typename T, typename H = HashMapHasherDefault, typename C = HashMapComparatorDefault<T>, typename AL = DefaultAllocator>

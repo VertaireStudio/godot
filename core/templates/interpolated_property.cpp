@@ -30,7 +30,7 @@
 
 #include "interpolated_property.h"
 
-#include "core/math/vector2.h"
+#include "../math/vector2.h"
 
 namespace InterpolatedPropertyFuncs {
 

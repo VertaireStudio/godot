@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/error/error_macros.h"
-#include "core/math/math_defs.h"
-#include "core/typedefs.h"
+#include "../error/error_macros.h"
+#include "math_defs.h"
+#include "../typedefs.h"
 
 #include <cmath>
 

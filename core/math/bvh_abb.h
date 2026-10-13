@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/math/aabb.h"
+#include "aabb.h"
 
 #include <cfloat> // FLT_MAX
 

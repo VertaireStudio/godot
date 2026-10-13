@@ -30,8 +30,8 @@
 
 #include "stream_peer.h"
 
-#include "core/io/marshalls.h"
-#include "core/object/class_db.h"
+#include "marshalls.h"
+#include "../object/class_db.h"
 
 Error StreamPeer::_put_data(const Vector<uint8_t> &p_data) {
 	int len = p_data.size();

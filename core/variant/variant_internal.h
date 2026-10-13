@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/variant/type_info.h"
-#include "core/variant/variant.h"
-#include "core/variant/variant_pools.h"
+#include "type_info.h"
+#include "variant.h"
+#include "variant_pools.h"
 
 // For use when you want to access the internal pointer of a Variant directly.
 // Use with caution. You need to be sure that the type is correct.

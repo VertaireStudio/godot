@@ -31,16 +31,16 @@
 #include "file_access.h"
 #include "file_access.compat.inc"
 
-#include "core/config/project_settings.h"
-#include "core/crypto/crypto_core.h"
-#include "core/io/file_access_compressed.h"
-#include "core/io/file_access_encrypted.h"
-#include "core/io/file_access_pack.h"
-#include "core/io/marshalls.h"
-#include "core/io/resource_uid.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "core/os/time.h"
+#include "../config/project_settings.h"
+#include "../crypto/crypto_core.h"
+#include "file_access_compressed.h"
+#include "file_access_encrypted.h"
+#include "file_access_pack.h"
+#include "marshalls.h"
+#include "resource_uid.h"
+#include "../object/class_db.h"
+#include "../os/os.h"
+#include "../os/time.h"
 
 Ref<FileAccess> FileAccess::create(AccessType p_access) {
 	ERR_FAIL_INDEX_V(p_access, ACCESS_MAX, nullptr);

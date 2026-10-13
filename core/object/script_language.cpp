@@ -30,14 +30,14 @@
 
 #include "script_language.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/core_bind.h"
-#include "core/debugger/engine_debugger.h"
-#include "core/debugger/script_debugger.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/templates/sort_array.h"
+#include "../config/engine.h"
+#include "../config/project_settings.h"
+#include "../core_bind.h"
+#include "../debugger/engine_debugger.h"
+#include "../debugger/script_debugger.h"
+#include "callable_mp.h"
+#include "class_db.h"
+#include "../templates/sort_array.h"
 
 ScriptLanguage *ScriptServer::_languages[MAX_LANGUAGES];
 int ScriptServer::_language_count = 0;

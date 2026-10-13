@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/object.h"
-#include "core/templates/safe_refcount.h"
+#include "object.h"
+#include "../templates/safe_refcount.h"
 
 class RefCounted : public Object {
 	GDCLASS(RefCounted, Object);

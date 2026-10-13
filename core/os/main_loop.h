@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/gdvirtual.gen.h"
-#include "core/object/object.h"
+#include "../object/gdvirtual.gen.h"
+#include "../object/object.h"
 
 class MainLoop : public Object {
 	GDCLASS(MainLoop, Object);

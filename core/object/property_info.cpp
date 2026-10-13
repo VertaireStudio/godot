@@ -30,8 +30,8 @@
 
 #include "property_info.h"
 
-#include "core/variant/dictionary.h"
-#include "core/variant/typed_array.h"
+#include "../variant/dictionary.h"
+#include "../variant/typed_array.h"
 
 PropertyInfo::operator Dictionary() const {
 	Dictionary d;

@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/error/error_macros.h"
-#include "core/os/memory.h"
-#include "core/templates/sort_list.h"
+#include "../error/error_macros.h"
+#include "../os/memory.h"
+#include "sort_list.h"
 
 #include <initializer_list>
 

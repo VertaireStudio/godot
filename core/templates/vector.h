@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/error/error_macros.h"
-#include "core/templates/cowdata.h"
-#include "core/templates/sort_array.h"
-#include "core/typedefs.h"
+#include "../error/error_macros.h"
+#include "cowdata.h"
+#include "sort_array.h"
+#include "../typedefs.h"
 
 #include <initializer_list>
 

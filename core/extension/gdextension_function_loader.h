@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/extension/gdextension_loader.h"
+#include "gdextension_loader.h"
 
 class GDExtension;
 

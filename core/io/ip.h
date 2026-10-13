@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/ip_address.h"
-#include "core/variant/type_info.h"
+#include "ip_address.h"
+#include "../variant/type_info.h"
 
 template <typename T>
 class TypedArray;

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/math/math_funcs.h"
-#include "core/templates/hashfuncs.h"
+#include "math_funcs.h"
+#include "../templates/hashfuncs.h"
 
 class String;
 

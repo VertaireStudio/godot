@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/extension/gdextension.h"
-#include "core/io/resource_loader.h"
+#include "gdextension.h"
+#include "../io/resource_loader.h"
 
 class GDExtensionResourceLoader : public ResourceFormatLoader {
 	GDSOFTCLASS(GDExtensionResourceLoader, ResourceFormatLoader);

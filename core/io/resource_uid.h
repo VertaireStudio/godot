@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/object/object.h"
-#include "core/string/ustring.h"
-#include "core/templates/hash_map.h"
+#include "../object/object.h"
+#include "../string/ustring.h"
+#include "../templates/hash_map.h"
 
 class FileAccess;
 

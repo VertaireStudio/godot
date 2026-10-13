@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/error/error_macros.h"
-#include "core/math/vector2i.h"
-#include "core/templates/hashfuncs.h"
+#include "../error/error_macros.h"
+#include "vector2i.h"
+#include "../templates/hashfuncs.h"
 
 class String;
 struct Rect2;

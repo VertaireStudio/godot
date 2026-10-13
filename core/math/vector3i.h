@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/error/error_macros.h"
-#include "core/math/math_funcs.h"
-#include "core/templates/hashfuncs.h"
+#include "../error/error_macros.h"
+#include "math_funcs.h"
+#include "../templates/hashfuncs.h"
 
 class String;
 struct Vector3;

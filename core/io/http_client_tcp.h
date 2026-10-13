@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/crypto/crypto.h"
-#include "core/io/http_client.h"
-#include "core/io/ip.h"
+#include "../crypto/crypto.h"
+#include "http_client.h"
+#include "ip.h"
 
 class StreamPeerTCP;
 

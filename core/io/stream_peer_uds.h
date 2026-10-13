@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/io/stream_peer_socket.h"
+#include "stream_peer_socket.h"
 
 class StreamPeerUDS : public StreamPeerSocket {
 	GDCLASS(StreamPeerUDS, StreamPeerSocket);

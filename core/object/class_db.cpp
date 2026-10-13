@@ -30,10 +30,10 @@
 
 #include "class_db.h"
 
-#include "core/config/engine.h"
-#include "core/object/ref_counted.h"
-#include "core/templates/sort_array.h"
-#include "core/version.h"
+#include "../config/engine.h"
+#include "ref_counted.h"
+#include "../templates/sort_array.h"
+#include "../version.h"
 
 #define ERR_FAIL_NO_CLASS(m_type, m_class) ERR_FAIL_NULL_MSG(m_type, vformat("Cannot get class \"%s\".", m_class))
 

@@ -30,7 +30,7 @@
 
 #include "aes_context.h"
 
-#include "core/object/class_db.h"
+#include "../object/class_db.h"
 
 using AESMode = CryptoCore::AESContext::Mode;
 using AESCipher = CryptoCore::AESContext::Cipher;

@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/io/resource_loader_constants.h"
-#include "core/object/gdvirtual.gen.h"
-#include "core/object/worker_thread_pool.h"
-#include "core/os/thread.h"
+#include "resource.h"
+#include "resource_loader_constants.h"
+#include "../object/gdvirtual.gen.h"
+#include "../object/worker_thread_pool.h"
+#include "../os/thread.h"
 
 namespace CoreBind {
 class ResourceLoader;

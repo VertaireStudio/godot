@@ -30,7 +30,7 @@
 
 #include "zip_io.h"
 
-#include "core/templates/local_vector.h"
+#include "../templates/local_vector.h"
 
 int godot_unzip_get_current_file_info(unzFile p_zip_file, unz_file_info64 &r_file_info, String &r_filepath) {
 	const uLong short_file_path_buffer_size = 16384ul;

@@ -196,12 +196,10 @@ def run(target, source, env):
     txt = """/* THIS FILE IS GENERATED DO NOT EDIT */
 #pragma once
 
-// IWYU pragma: begin_keep
-#include "core/object/script_instance.h"
-#include "core/variant/method_ptrcall.h"
-#include "core/variant/variant_caster.h"
-#include "core/variant/variant_internal.h"
-// IWYU pragma: end_keep
+#include "script_instance.h"
+#include "../variant/method_ptrcall.h"
+#include "../variant/variant_caster.h"
+#include "../variant/variant_internal.h"
 
 inline constexpr uintptr_t _INVALID_GDVIRTUAL_FUNC_ADDR = static_cast<uintptr_t>(-1);
 

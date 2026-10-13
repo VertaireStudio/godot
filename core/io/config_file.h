@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/io/file_access.h"
-#include "core/object/ref_counted.h"
-#include "core/templates/hash_map.h"
-#include "core/variant/variant_parser.h"
+#include "file_access.h"
+#include "../object/ref_counted.h"
+#include "../templates/hash_map.h"
+#include "../variant/variant_parser.h"
 
 class ConfigFile : public RefCounted {
 	GDCLASS(ConfigFile, RefCounted);

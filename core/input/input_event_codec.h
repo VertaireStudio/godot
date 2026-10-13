@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/input/input_event.h"
+#include "input_event.h"
 
 /**
  * Encodes the input event as a byte array.

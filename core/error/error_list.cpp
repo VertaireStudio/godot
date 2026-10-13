@@ -30,8 +30,8 @@
 
 #include "error_list.h"
 
-#include "core/string/ustring.h"
-#include "core/typedefs.h"
+#include "../string/ustring.h"
+#include "../typedefs.h"
 
 const char *error_names[] = {
 	TTRC("OK"), // OK

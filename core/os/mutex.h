@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/typedefs.h"
+#include "../typedefs.h"
 
 #ifdef MINGW_ENABLED
 #define MINGW_STDTHREAD_REDUNDANCY_WARNING
-#include <thirdparty/mingw-std-threads/mingw.mutex.h>
+#include "../../thirdparty/mingw-std-threads/mingw.mutex.h"
 #define THREADING_NAMESPACE mingw_stdthread
 #else
 #include <mutex>

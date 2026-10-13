@@ -30,16 +30,16 @@
 
 #pragma once
 
-#include "core/debugger/engine_profiler.h"
-#include "core/io/logger.h"
-#include "core/io/resource_loader.h"
-#include "core/io/resource_saver.h"
-#include "core/object/class_db.h"
-#include "core/object/script_backtrace.h"
-#include "core/os/semaphore.h"
-#include "core/os/thread.h"
-#include "core/templates/safe_refcount.h"
-#include "core/variant/typed_array.h"
+#include "debugger/engine_profiler.h"
+#include "io/logger.h"
+#include "io/resource_loader.h"
+#include "io/resource_saver.h"
+#include "object/class_db.h"
+#include "object/script_backtrace.h"
+#include "os/semaphore.h"
+#include "os/thread.h"
+#include "templates/safe_refcount.h"
+#include "variant/typed_array.h"
 
 class MainLoop;
 

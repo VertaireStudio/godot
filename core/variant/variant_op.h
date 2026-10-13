@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/math/math_funcs.h"
-#include "core/variant/container_type_validate.h"
-#include "core/variant/method_ptrcall.h"
-#include "core/variant/type_info.h"
-#include "core/variant/variant.h"
-#include "core/variant/variant_internal.h"
+#include "../math/math_funcs.h"
+#include "container_type_validate.h"
+#include "method_ptrcall.h"
+#include "type_info.h"
+#include "variant.h"
+#include "variant_internal.h"
 
 template <typename Evaluator>
 class CommonEvaluate {

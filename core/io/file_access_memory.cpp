@@ -30,7 +30,7 @@
 
 #include "file_access_memory.h"
 
-#include "core/config/project_settings.h"
+#include "../config/project_settings.h"
 
 static HashMap<String, Vector<uint8_t>> *files = nullptr;
 

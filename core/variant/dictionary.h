@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/templates/hash_map.h"
-#include "core/templates/local_vector.h"
-#include "core/templates/pair.h"
-#include "core/variant/variant_deep_duplicate.h"
+#include "../templates/hash_map.h"
+#include "../templates/local_vector.h"
+#include "../templates/pair.h"
+#include "variant_deep_duplicate.h"
 
 class Array;
 class StringName;

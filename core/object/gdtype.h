@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/object/method_info.h"
-#include "core/string/string_name.h"
-#include "core/templates/a_hash_map.h"
-#include "core/templates/vector.h"
+#include "method_info.h"
+#include "../string/string_name.h"
+#include "../templates/a_hash_map.h"
+#include "../templates/vector.h"
 
 class MethodBind;
 

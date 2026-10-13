@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/object/object.h"
-#include "core/variant/binder_common.h"
-#include "core/variant/callable.h"
+#include "object.h"
+#include "../variant/binder_common.h"
+#include "../variant/callable.h"
 
 #include <type_traits>
 

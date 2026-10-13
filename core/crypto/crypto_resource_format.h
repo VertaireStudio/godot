@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/io/resource_loader.h"
-#include "core/io/resource_saver.h"
-#include "core/io/resource_uid.h"
+#include "../io/resource_loader.h"
+#include "../io/resource_saver.h"
+#include "../io/resource_uid.h"
 
 class ResourceFormatLoaderCrypto : public ResourceFormatLoader {
 	GDSOFTCLASS(ResourceFormatLoaderCrypto, ResourceFormatLoader);

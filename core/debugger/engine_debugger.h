@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/string/string_name.h"
-#include "core/string/ustring.h"
-#include "core/templates/hash_map.h"
-#include "core/templates/vector.h"
-#include "core/variant/array.h"
+#include "../object/ref_counted.h"
+#include "../string/string_name.h"
+#include "../string/ustring.h"
+#include "../templates/hash_map.h"
+#include "../templates/vector.h"
+#include "../variant/array.h"
 
 class RemoteDebuggerPeer;
 class ScriptDebugger;

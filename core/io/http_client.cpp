@@ -30,7 +30,7 @@
 
 #include "http_client.h"
 
-#include "core/object/class_db.h"
+#include "../object/class_db.h"
 
 const char *HTTPClient::_methods[METHOD_MAX] = {
 	"GET",

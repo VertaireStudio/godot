@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/math/plane.h"
-#include "core/math/vector3.h"
-#include "core/templates/hashfuncs.h"
+#include "plane.h"
+#include "vector3.h"
+#include "../templates/hashfuncs.h"
 
 /**
  * AABB (Axis Aligned Bounding Box)

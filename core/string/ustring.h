@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/string/char_utils.h" // IWYU pragma: export
-#include "core/templates/cowdata.h"
-#include "core/templates/hashfuncs.h"
-#include "core/templates/vector.h"
-#include "core/typedefs.h"
+#include "char_utils.h" // IWYU pragma: export
+#include "../templates/cowdata.h"
+#include "../templates/hashfuncs.h"
+#include "../templates/vector.h"
+#include "../typedefs.h"
 
 class String;
 template <typename T>

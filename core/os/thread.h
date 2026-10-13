@@ -30,29 +30,17 @@
 
 #pragma once
 
-#include "platform_config.h" // IWYU pragma: keep. Can override the implementation.
-
-// Define PLATFORM_THREAD_OVERRIDE in your platform's `platform_config.h`
-// to use a custom Thread implementation defined in `platform/[your_platform]/platform_thread.h`.
-// Overriding the Thread implementation is required in some proprietary platforms.
-
-#ifdef PLATFORM_THREAD_OVERRIDE
-
-#include "platform_thread.h"
-
-#else
-
-#include "core/typedefs.h"
+#include "../typedefs.h"
 
 #ifdef THREADS_ENABLED
 
-#include "core/templates/safe_refcount.h"
+#include "../templates/safe_refcount.h"
 
 #include <new> // IWYU pragma: keep // For hardware interference size.
 
 #ifdef MINGW_ENABLED
 #define MINGW_STDTHREAD_REDUNDANCY_WARNING
-#include <thirdparty/mingw-std-threads/mingw.thread.h>
+#include "../../thirdparty/mingw-std-threads/mingw.thread.h"
 #define THREADING_NAMESPACE mingw_stdthread
 #else
 #include <thread>
@@ -199,7 +187,5 @@ public:
 	bool is_started() const { return false; }
 	void wait_to_finish() {}
 };
-
-#endif // THREADS_ENABLED
 
 #endif // PLATFORM_THREAD_OVERRIDE

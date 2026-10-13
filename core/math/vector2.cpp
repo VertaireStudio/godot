@@ -30,8 +30,8 @@
 
 #include "vector2.h"
 
-#include "core/math/vector2i.h"
-#include "core/string/ustring.h"
+#include "vector2i.h"
+#include "../string/ustring.h"
 
 real_t Vector2::angle() const {
 	return Math::atan2(y, x);

@@ -30,11 +30,11 @@
 
 #include "remote_filesystem_client.h"
 
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/io/stream_peer_tcp.h"
-#include "core/os/os.h"
-#include "core/string/string_builder.h"
+#include "dir_access.h"
+#include "file_access.h"
+#include "stream_peer_tcp.h"
+#include "../os/os.h"
+#include "../string/string_builder.h"
 
 #define FILESYSTEM_CACHE_VERSION 1
 #define FILESYSTEM_PROTOCOL_VERSION 1

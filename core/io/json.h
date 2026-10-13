@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/variant/variant.h"
+#include "resource.h"
+#include "../variant/variant.h"
 
 class JSON : public Resource {
 	GDCLASS(JSON, Resource);

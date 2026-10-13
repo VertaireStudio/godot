@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/error/error_macros.h"
+#include "../error/error_macros.h"
 
 enum class InputEventType {
 	INVALID = -1,

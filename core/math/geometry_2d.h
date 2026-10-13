@@ -30,14 +30,14 @@
 
 #pragma once
 
-#include "core/math/delaunay_2d.h"
-#include "core/math/math_funcs.h"
-#include "core/math/triangulate.h"
-#include "core/math/vector2.h"
-#include "core/math/vector2i.h"
-#include "core/math/vector3.h"
-#include "core/math/vector3i.h"
-#include "core/templates/vector.h"
+#include "delaunay_2d.h"
+#include "math_funcs.h"
+#include "triangulate.h"
+#include "vector2.h"
+#include "vector2i.h"
+#include "vector3.h"
+#include "vector3i.h"
+#include "../templates/vector.h"
 
 class Geometry2D {
 public:

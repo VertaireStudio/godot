@@ -30,9 +30,9 @@
 
 #include "file_access_patched.h"
 
-#include "core/io/delta_encoding.h"
-#include "core/io/file_access_pack.h"
-#include "core/os/os.h"
+#include "delta_encoding.h"
+#include "file_access_pack.h"
+#include "../os/os.h"
 
 Error FileAccessPatched::_apply_patch() const {
 	ERR_FAIL_COND_V(!is_open(), FAILED);

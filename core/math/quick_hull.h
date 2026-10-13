@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/math/geometry_3d.h"
-#include "core/templates/list.h"
+#include "geometry_3d.h"
+#include "../templates/list.h"
 
 class QuickHull {
 public:

@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/object/class_db.h"
-#include "core/object/script_language.h"
-#include "core/variant/variant.h"
+#include "../object/class_db.h"
+#include "../object/script_language.h"
+#include "variant.h"
 
 struct ContainerType {
 	Variant::Type variant_type = Variant::NIL;

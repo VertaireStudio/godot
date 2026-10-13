@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/templates/vector.h"
-#include "core/typedefs.h"
+#include "vector.h"
+#include "../typedefs.h"
 
 /**
  * Ordered set container with copy-on-write semantics.

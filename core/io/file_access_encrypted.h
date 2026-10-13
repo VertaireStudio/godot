@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/crypto/crypto_core.h"
-#include "core/io/file_access.h"
+#include "../crypto/crypto_core.h"
+#include "file_access.h"
 
 #define ENCRYPTED_HEADER_MAGIC 0x43454447
 

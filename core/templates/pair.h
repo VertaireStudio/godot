@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/typedefs.h"
+#include "../typedefs.h"
 
 template <typename F, typename S>
 struct Pair {

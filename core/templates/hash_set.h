@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/os/memory.h"
-#include "core/string/print_string.h" // IWYU pragma: keep. `WARN_VERBOSE` macro.
-#include "core/templates/hashfuncs.h"
+#include "../os/memory.h"
+#include "../string/print_string.h" // IWYU pragma: keep. `WARN_VERBOSE` macro.
+#include "hashfuncs.h"
 
 /**
  * Set container using robin hood hashing.

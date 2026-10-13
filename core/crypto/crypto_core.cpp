@@ -30,8 +30,8 @@
 
 #include "crypto_core.h"
 
-#include "core/os/os.h"
-#include "core/string/ustring.h"
+#include "../os/os.h"
+#include "../string/ustring.h"
 
 #include <mbedtls/base64.h>
 #include <psa/crypto.h>

@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/variant/type_info.h"
+#include "../variant/type_info.h"
 
 namespace ResourceLoaderConstants {
 

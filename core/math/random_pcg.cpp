@@ -30,8 +30,8 @@
 
 #include "random_pcg.h"
 
-#include "core/os/os.h"
-#include "core/templates/vector.h"
+#include "../os/os.h"
+#include "../templates/vector.h"
 
 RandomPCG::RandomPCG(uint64_t p_seed, uint64_t p_inc) :
 		pcg(),

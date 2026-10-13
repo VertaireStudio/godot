@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/stream_peer.h"
-#include "core/templates/ring_buffer.h"
+#include "stream_peer.h"
+#include "../templates/ring_buffer.h"
 
 class StreamPeerGZIP : public StreamPeer {
 	GDCLASS(StreamPeerGZIP, StreamPeer);

@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/math/aabb.h"
-#include "core/templates/list.h"
-#include "core/templates/local_vector.h"
-#include "core/templates/paged_allocator.h"
-#include "core/typedefs.h"
+#include "aabb.h"
+#include "../templates/list.h"
+#include "../templates/local_vector.h"
+#include "../templates/paged_allocator.h"
+#include "../typedefs.h"
 
 // Based on bullet Dbvh
 

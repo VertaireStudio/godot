@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/io/file_access.h"
-#include "core/io/image.h"
-#include "core/object/gdvirtual.gen.h"
-#include "core/string/ustring.h"
-#include "core/templates/list.h"
-#include "core/variant/type_info.h"
+#include "file_access.h"
+#include "image.h"
+#include "../object/gdvirtual.gen.h"
+#include "../string/ustring.h"
+#include "../templates/list.h"
+#include "../variant/type_info.h"
 
 class ImageLoader;
 

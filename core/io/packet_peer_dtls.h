@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/crypto/crypto.h"
-#include "core/io/packet_peer_udp.h"
+#include "../crypto/crypto.h"
+#include "packet_peer_udp.h"
 
 class PacketPeerDTLS : public PacketPeer {
 	GDCLASS(PacketPeerDTLS, PacketPeer);

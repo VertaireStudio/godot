@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/io/ip_address.h"
-#include "core/io/socket_server.h"
-#include "core/io/stream_peer_tcp.h"
+#include "ip_address.h"
+#include "socket_server.h"
+#include "stream_peer_tcp.h"
 
 class TCPServer : public SocketServer {
 	GDCLASS(TCPServer, SocketServer);

@@ -30,10 +30,10 @@
 
 #include "translation.h"
 
-#include "core/object/class_db.h"
-#include "core/os/thread.h"
-#include "core/string/plural_rules.h"
-#include "core/string/translation_server.h"
+#include "../object/class_db.h"
+#include "../os/thread.h"
+#include "plural_rules.h"
+#include "translation_server.h"
 
 void _check_for_incompatibility(const String &p_msgctxt, const String &p_msgid) {
 	// Gettext PO and MO files use an empty untranslated string without context

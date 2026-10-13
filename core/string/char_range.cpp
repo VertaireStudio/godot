@@ -30,7 +30,7 @@
 
 // This file was generated using the `misc/scripts/char_range_fetch.py` script.
 
-#include "core/string/char_utils.h"
+#include "char_utils.h"
 
 // Unicode Derived Core Properties
 // Source: https://www.unicode.org/Public/17.0.0/ucd/DerivedCoreProperties.txt

@@ -30,7 +30,7 @@
 
 #include "face3.h"
 
-#include "core/math/geometry_3d.h"
+#include "geometry_3d.h"
 
 int Face3::split_by_plane(const Plane &p_plane, Face3 p_res[3], bool p_is_point_over[3]) const {
 	ERR_FAIL_COND_V(is_degenerate(), 0);

@@ -30,7 +30,7 @@
 
 #include "script_debugger.h"
 
-#include "core/debugger/engine_debugger.h"
+#include "engine_debugger.h"
 
 thread_local Vector<ScriptDebugger::StackInfo> ScriptDebugger::error_stack_info;
 

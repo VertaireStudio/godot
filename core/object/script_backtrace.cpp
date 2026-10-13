@@ -30,8 +30,8 @@
 
 #include "script_backtrace.h"
 
-#include "core/object/class_db.h"
-#include "core/object/script_language.h"
+#include "class_db.h"
+#include "script_language.h"
 
 void ScriptBacktrace::_store_variables(const List<String> &p_names, const List<Variant> &p_values, LocalVector<StackVariable> &r_variables) {
 	r_variables.reserve(p_names.size());

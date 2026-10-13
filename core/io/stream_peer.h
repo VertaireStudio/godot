@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/extension/ext_wrappers.gen.h"
-#include "core/object/gdvirtual.gen.h"
-#include "core/object/ref_counted.h"
-#include "core/variant/native_ptr.h"
+#include "../extension/ext_wrappers.gen.h"
+#include "../object/gdvirtual.gen.h"
+#include "../object/ref_counted.h"
+#include "../variant/native_ptr.h"
 
 class StreamPeer : public RefCounted {
 	GDCLASS(StreamPeer, RefCounted);

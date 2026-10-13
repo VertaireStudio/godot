@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/math/random_pcg.h"
-#include "core/object/ref_counted.h"
+#include "random_pcg.h"
+#include "../object/ref_counted.h"
 
 class RandomNumberGenerator : public RefCounted {
 	GDCLASS(RandomNumberGenerator, RefCounted);

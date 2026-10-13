@@ -30,8 +30,8 @@
 
 #include "plist.h"
 
-#include "core/crypto/crypto_core.h"
-#include "core/os/time.h"
+#include "../crypto/crypto_core.h"
+#include "../os/time.h"
 
 PList::PLNodeType PListNode::get_type() const {
 	return data_type;

@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/error/error_macros.h"
-#include "core/math/math_funcs.h"
-#include "core/string/ustring.h"
+#include "../error/error_macros.h"
+#include "math_funcs.h"
+#include "../string/ustring.h"
 
 struct Basis;
 struct Vector2;

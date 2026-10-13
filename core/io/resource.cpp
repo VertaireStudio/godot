@@ -30,13 +30,13 @@
 
 #include "resource.h"
 
-#include "core/io/resource_loader.h"
-#include "core/math/math_funcs.h"
-#include "core/math/random_pcg.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "core/variant/container_type_validate.h" // IWYU pragma: keep.
-#include "scene/main/node.h" //only so casting works
+#include "resource_loader.h"
+#include "../math/math_funcs.h"
+#include "../math/random_pcg.h"
+#include "../object/class_db.h"
+#include "../os/os.h"
+#include "../variant/container_type_validate.h" // IWYU pragma: keep.
+#include "../../scene/main/node.h" //only so casting works
 
 void Resource::register_custom_data_to_otdb() {
 	ClassDB::add_resource_base_extension("res", get_class_static());

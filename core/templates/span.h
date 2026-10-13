@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/error/error_macros.h"
-#include "core/typedefs.h"
+#include "../error/error_macros.h"
+#include "../typedefs.h"
 
 template <typename LHS, typename RHS>
 bool are_spans_equal(const LHS *p_lhs, const RHS *p_rhs, size_t p_size) {

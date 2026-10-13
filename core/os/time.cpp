@@ -30,8 +30,8 @@
 
 #include "time.h" // NOLINT(modernize-deprecated-headers) False positive with C-Header of the same name.
 
-#include "core/object/class_db.h"
-#include "core/os/os.h"
+#include "../object/class_db.h"
+#include "os.h"
 
 #define UNIX_EPOCH_YEAR_AD 1970 // 1970
 #define SECONDS_PER_DAY (24 * 60 * 60) // 86400

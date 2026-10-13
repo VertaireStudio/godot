@@ -30,18 +30,18 @@
 
 #include "gdextension_interface.gen.h"
 
-#include "core/config/engine.h"
-#include "core/extension/gdextension.h"
-#include "core/extension/gdextension_special_compat_hashes.h"
-#include "core/io/file_access.h"
-#include "core/io/image.h"
-#include "core/io/xml_parser.h"
-#include "core/object/class_db.h"
-#include "core/object/script_language_extension.h"
-#include "core/object/worker_thread_pool.h"
-#include "core/os/memory.h"
-#include "core/variant/variant.h"
-#include "core/version.h"
+#include "../config/engine.h"
+#include "gdextension.h"
+#include "gdextension_special_compat_hashes.h"
+#include "../io/file_access.h"
+#include "../io/image.h"
+#include "../io/xml_parser.h"
+#include "../object/class_db.h"
+#include "../object/script_language_extension.h"
+#include "../object/worker_thread_pool.h"
+#include "../os/memory.h"
+#include "../variant/variant.h"
+#include "../version.h"
 
 class CallableCustomExtension : public CallableCustom {
 	void *userdata;

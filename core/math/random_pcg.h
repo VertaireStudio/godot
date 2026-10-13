@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/math/math_funcs.h"
+#include "math_funcs.h"
 
-#include <thirdparty/misc/pcg.h>
+#include "../../thirdparty/misc/pcg.h"
 
 #include <cmath> // ldexp
 

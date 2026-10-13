@@ -30,19 +30,19 @@
 
 #include "os.h"
 
-#include "core/config/project_settings.h"
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/io/json.h"
-#include "core/os/midi_driver.h"
-#include "core/version_generated.gen.h"
+#include "../config/project_settings.h"
+#include "../io/dir_access.h"
+#include "../io/file_access.h"
+#include "../io/json.h"
+#include "midi_driver.h"
+#include "../version_generated.gen.h"
 
 #include <cstdarg>
 #include <cstdio>
 
 #ifdef MINGW_ENABLED
 #define MINGW_STDTHREAD_REDUNDANCY_WARNING
-#include <thirdparty/mingw-std-threads/mingw.thread.h>
+#include "../../thirdparty/mingw-std-threads/mingw.thread.h"
 #define THREADING_NAMESPACE mingw_stdthread
 #else
 #include <thread>

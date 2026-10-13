@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/math/math_funcs_binary.h"
-#include "core/os/memory.h"
-#include "core/os/spin_lock.h"
-#include "core/typedefs.h"
+#include "../math/math_funcs_binary.h"
+#include "../os/memory.h"
+#include "../os/spin_lock.h"
+#include "../typedefs.h"
 
 #include <type_traits>
 

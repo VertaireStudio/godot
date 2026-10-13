@@ -30,9 +30,9 @@
 
 #include "packet_peer.h"
 
-#include "core/config/project_settings.h"
-#include "core/io/marshalls.h"
-#include "core/object/class_db.h"
+#include "../config/project_settings.h"
+#include "marshalls.h"
+#include "../object/class_db.h"
 
 /* helpers / binders */
 

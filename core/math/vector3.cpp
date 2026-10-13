@@ -30,10 +30,10 @@
 
 #include "vector3.h"
 
-#include "core/math/basis.h"
-#include "core/math/vector2.h"
-#include "core/math/vector3i.h"
-#include "core/string/ustring.h"
+#include "basis.h"
+#include "vector2.h"
+#include "vector3i.h"
+#include "../string/ustring.h"
 
 void Vector3::rotate(const Vector3 &p_axis, real_t p_angle) {
 	*this = Basis(p_axis, p_angle).xform(*this);

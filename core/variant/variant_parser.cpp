@@ -30,13 +30,13 @@
 
 #include "variant_parser.h"
 
-#include "core/crypto/crypto_core.h"
-#include "core/io/resource_loader.h"
-#include "core/io/resource_uid.h"
-#include "core/object/class_db.h"
-#include "core/object/script_language.h"
-#include "core/string/string_buffer.h"
-#include "core/variant/container_type_validate.h"
+#include "../crypto/crypto_core.h"
+#include "../io/resource_loader.h"
+#include "../io/resource_uid.h"
+#include "../object/class_db.h"
+#include "../object/script_language.h"
+#include "../string/string_buffer.h"
+#include "container_type_validate.h"
 
 char32_t VariantParser::Stream::get_char() {
 	// is within buffer?

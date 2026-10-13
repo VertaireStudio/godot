@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/ip_address.h"
-#include "core/io/stream_peer_socket.h"
+#include "ip_address.h"
+#include "stream_peer_socket.h"
 
 class StreamPeerTCP : public StreamPeerSocket {
 	GDCLASS(StreamPeerTCP, StreamPeerSocket);

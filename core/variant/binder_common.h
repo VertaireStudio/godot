@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/typedefs.h"
-#include "core/variant/method_ptrcall.h"
-#include "core/variant/type_info.h"
-#include "core/variant/variant.h"
-#include "core/variant/variant_caster.h"
-#include "core/variant/variant_internal.h"
+#include "../typedefs.h"
+#include "method_ptrcall.h"
+#include "type_info.h"
+#include "variant.h"
+#include "variant_caster.h"
+#include "variant_internal.h"
 
 #include <cstdio>
 

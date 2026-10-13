@@ -30,9 +30,9 @@
 
 #include "delta_encoding.h"
 
-#include "core/error/error_list.h"
-#include "core/templates/vector.h"
-#include "core/variant/variant.h" // vformat
+#include "../error/error_list.h"
+#include "../templates/vector.h"
+#include "../variant/variant.h" // vformat
 
 #include <zstd.h>
 

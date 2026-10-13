@@ -30,28 +30,28 @@
 
 #include "project_settings.h"
 
-#include "core/input/input_map.h"
-#include "core/io/compression.h"
-#include "core/io/config_file.h"
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/io/file_access_pack.h"
-#include "core/io/marshalls.h"
-#include "core/io/resource_uid.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/object/message_queue.h"
-#include "core/object/script_language.h"
-#include "core/os/os.h"
-#include "core/templates/rb_set.h"
-#include "core/variant/typed_array.h"
-#include "core/variant/variant_parser.h"
-#include "core/version.h"
+#include "../input/input_map.h"
+#include "../io/compression.h"
+#include "../io/config_file.h"
+#include "../io/dir_access.h"
+#include "../io/file_access.h"
+#include "../io/file_access_pack.h"
+#include "../io/marshalls.h"
+#include "../io/resource_uid.h"
+#include "../object/callable_mp.h"
+#include "../object/class_db.h"
+#include "../object/message_queue.h"
+#include "../object/script_language.h"
+#include "../os/os.h"
+#include "../templates/rb_set.h"
+#include "../variant/typed_array.h"
+#include "../variant/variant_parser.h"
+#include "../version.h"
 
 #ifdef TOOLS_ENABLED
-#include "core/config/engine.h"
+#include "engine.h"
 
-#include "modules/modules_enabled.gen.h" // IWYU pragma: keep. For mono.
+#include "../../modules/modules_enabled.gen.h" // IWYU pragma: keep. For mono.
 #endif // TOOLS_ENABLED
 
 ProjectSettings *ProjectSettings::get_singleton() {

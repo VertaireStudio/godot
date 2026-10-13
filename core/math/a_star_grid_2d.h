@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/object/gdvirtual.gen.h"
-#include "core/object/ref_counted.h"
-#include "core/templates/local_vector.h"
+#include "../object/gdvirtual.gen.h"
+#include "../object/ref_counted.h"
+#include "../templates/local_vector.h"
 
 class AStarGrid2D : public RefCounted {
 	GDCLASS(AStarGrid2D, RefCounted);

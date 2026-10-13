@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/error/error_macros.h"
-#include "core/os/memory.h"
-#include "core/string/print_string.h" // IWYU pragma: keep. `WARN_VERBOSE` macro.
-#include "core/templates/safe_refcount.h"
-#include "core/templates/span.h"
+#include "../error/error_macros.h"
+#include "../os/memory.h"
+#include "../string/print_string.h" // IWYU pragma: keep. `WARN_VERBOSE` macro.
+#include "safe_refcount.h"
+#include "span.h"
 
 #include <initializer_list>
 #include <type_traits>

@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/object/object.h"
-#include "core/os/time_enums.h"
-#include "core/variant/type_info.h"
+#include "../object/object.h"
+#include "time_enums.h"
+#include "../variant/type_info.h"
 
 // This Time class conforms with as many of the ISO 8601 standards as possible.
 // * As per ISO 8601:2004 4.3.2.1, all dates follow the Proleptic Gregorian

@@ -30,7 +30,7 @@
 
 #include "message_queue.h"
 
-#include "core/config/project_settings.h"
+#include "../config/project_settings.h"
 
 #include <cstdio>
 

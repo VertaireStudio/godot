@@ -30,10 +30,10 @@
 
 #include "translation_domain.h"
 
-#include "core/object/class_db.h"
-#include "core/string/translation.h"
-#include "core/string/translation_server.h"
-#include "core/variant/typed_array.h"
+#include "../object/class_db.h"
+#include "translation.h"
+#include "translation_server.h"
+#include "../variant/typed_array.h"
 
 struct _character_accent_pair {
 	const char32_t character;

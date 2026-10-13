@@ -30,7 +30,7 @@
 
 #include "node_path.h"
 
-#include "core/variant/variant.h"
+#include "../variant/variant.h"
 
 void NodePath::_update_hash_cache() const {
 	StringName path = get_concatenated_names();

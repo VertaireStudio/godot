@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/templates/hashfuncs.h"
-#include "core/typedefs.h"
+#include "../templates/hashfuncs.h"
+#include "../typedefs.h"
 
 // Class to store an object ID (int64)
 // needs to be compatile with int64 because this is what Variant uses

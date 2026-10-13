@@ -30,7 +30,7 @@
 
 #include "plural_rules.h"
 
-#include "core/math/expression.h"
+#include "../math/expression.h"
 
 int PluralRules::_eq_test(const Array &p_input_val, const Ref<EQNode> &p_node, const Variant &p_result) const {
 	if (p_node.is_null()) {

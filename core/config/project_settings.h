@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/object/object.h"
-#include "core/os/thread_safe.h"
-#include "core/templates/rb_map.h"
+#include "../object/object.h"
+#include "../os/thread_safe.h"
+#include "../templates/rb_map.h"
 
 template <typename T>
 class TypedArray;

@@ -50,9 +50,9 @@
 // TYPE_BODY
 // and pairable_mask is either 0 if static, or set to all if non static
 
-#include "core/math/bvh_tree.h"
-#include "core/math/geometry_3d.h"
-#include "core/os/mutex.h"
+#include "bvh_tree.h"
+#include "geometry_3d.h"
+#include "../os/mutex.h"
 
 #include <climits> // INT_MAX
 

@@ -30,8 +30,8 @@
 
 #include "input_event_codec.h"
 
-#include "core/input/input.h"
-#include "core/io/marshalls.h"
+#include "input.h"
+#include "../io/marshalls.h"
 
 enum class BoolShift : uint8_t {
 	SHIFT = 0,

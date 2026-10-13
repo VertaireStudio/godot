@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/templates/hashfuncs.h"
-#include "core/typedefs.h"
+#include "hashfuncs.h"
+#include "../typedefs.h"
 
 class RID_AllocBase;
 

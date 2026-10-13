@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/input/shortcut.h"
-#include "core/object/script_language.h"
+#include "../input/shortcut.h"
+#include "../object/script_language.h"
 
 struct DebuggerMarshalls {
 	struct ScriptStackVariable {

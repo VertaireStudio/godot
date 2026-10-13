@@ -32,7 +32,7 @@
 
 #include "regex.h"
 
-#include "core/object/class_db.h"
+#include "../object/class_db.h"
 
 Ref<RegEx> RegEx::_create_from_string_bind_compat_95212(const String &p_pattern) {
 	return create_from_string(p_pattern, true);

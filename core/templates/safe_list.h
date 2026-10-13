@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/os/memory.h"
-#include "core/typedefs.h"
+#include "../os/memory.h"
+#include "../typedefs.h"
 
 #include <atomic>
 #include <functional>

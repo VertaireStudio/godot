@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/string/ustring.h"
-#include "core/templates/vector.h"
+#include "../string/ustring.h"
+#include "../templates/vector.h"
 
 struct SharedObject {
 	String path;

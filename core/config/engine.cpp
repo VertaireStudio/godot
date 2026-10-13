@@ -30,16 +30,16 @@
 
 #include "engine.h"
 
-#include "core/authors.gen.h"
-#include "core/config/project_settings.h"
-#include "core/core_globals.h"
-#include "core/donors.gen.h"
-#include "core/license.gen.h"
-#include "core/object/object.h"
-#include "core/variant/typed_array.h"
-#include "core/version.h"
+#include "../authors.gen.h"
+#include "project_settings.h"
+#include "../core_globals.h"
+#include "../donors.gen.h"
+#include "../license.gen.h"
+#include "../object/object.h"
+#include "../variant/typed_array.h"
+#include "../version.h"
 #ifdef RD_ENABLED
-#include "servers/rendering/rendering_device.h"
+#include "../../servers/rendering/rendering_device.h"
 #endif // RD_ENABLED
 
 void Engine::_update_time_scale() {

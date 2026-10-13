@@ -30,7 +30,7 @@
 
 #include "method_bind.h"
 
-#include "core/object/object.h"
+#include "object.h"
 
 uint32_t MethodBind::get_hash() const {
 	MethodInfo mi;

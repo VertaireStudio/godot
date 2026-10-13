@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/error/error_macros.h"
-#include "core/math/math_defs.h"
-#include "core/templates/hashfuncs.h"
-#include "core/typedefs.h"
+#include "../error/error_macros.h"
+#include "math_defs.h"
+#include "../templates/hashfuncs.h"
+#include "../typedefs.h"
 
 class String;
 struct Vector4i;

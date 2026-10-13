@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/object/object.h"
-#include "core/typedefs.h"
-#include "core/variant/variant.h"
+#include "../object/object.h"
+#include "../typedefs.h"
+#include "variant.h"
 
 #include <type_traits>
 

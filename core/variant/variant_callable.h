@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/variant/callable.h"
-#include "core/variant/variant.h"
+#include "callable.h"
+#include "variant.h"
 
 class VariantCallable : public CallableCustom {
 	Variant variant;

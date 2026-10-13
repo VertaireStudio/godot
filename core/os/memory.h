@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/error/error_macros.h"
+#include "../error/error_macros.h"
 
 #include <new> // IWYU pragma: keep // `new` operators.
 #include <type_traits>

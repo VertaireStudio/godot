@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/io/file_access.h"
-#include "core/io/resource_loader.h"
-#include "core/io/resource_saver.h"
-#include "core/templates/rb_map.h"
+#include "file_access.h"
+#include "resource_loader.h"
+#include "resource_saver.h"
+#include "../templates/rb_map.h"
 
 class ResourceLoaderBinary {
 	bool translation_remapped = false;

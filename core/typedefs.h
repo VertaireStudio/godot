@@ -30,6 +30,8 @@
 
 #pragma once
 
+#include "essentials/platform_configs.hpp"
+
 /**
  * Basic definitions and simple functions to be used everywhere.
  */
@@ -38,15 +40,27 @@
 
 // Ensure that C++ standard is at least C++17.
 // If on MSVC, also ensures that the `Zc:__cplusplus` flag is present.
-static_assert(__cplusplus >= 201703L, "Minimum of C++17 required.");
+static_assert(CURRENT_CPP_VERSION >= CPP_VERSIONS::CPP_17, "Minimum of C++17 required.");
 
 // IWYU pragma: begin_exports
 
 // Include first in case the platform needs to pre-define/include some things.
-#include "platform_config.h"
+#if WINDOWS_ENABLED
+#include "../platform/windows/platform_config.h"
+#elif LINUX_ENABLED
+#include "../platform/linuxbsd/platform_config.h"
+#elif IOS_ENABLED
+#include "../platform/ios/platform_config.h"
+#elif ANDROID_ENABLED
+#include "../platform/android/platform_config.h"
+#elif MACOS_ENABLED
+#include "../platform/macos/platform_config.h"
+#elif WEB_ENABLED
+#include "../platform/web/platform_config.h"
+#endif
 
 // Should be available everywhere.
-#include "core/error/error_list.h"
+#include "error/error_list.h"
 
 #include <cstddef>
 #include <cstdint>

@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/templates/span.h"
+#include "../templates/span.h"
 
 #include <cstdint>
 

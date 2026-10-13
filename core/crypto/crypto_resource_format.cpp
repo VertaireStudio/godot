@@ -30,7 +30,7 @@
 
 #include "crypto_resource_format.h"
 
-#include "core/crypto/crypto.h"
+#include "crypto.h"
 
 Ref<Resource> ResourceFormatLoaderCrypto::load(const String &p_path, const String &p_original_path, Error *r_error, bool p_use_sub_threads, float *r_progress, CacheMode p_cache_mode) {
 	String el = p_path.get_extension().to_lower();

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/error/error_macros.h"
-#include "core/typedefs.h"
+#include "../error/error_macros.h"
+#include "../typedefs.h"
 
 #define ERR_BAD_COMPARE(cond) \
 	if (unlikely(cond)) { \

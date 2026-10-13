@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/math/rect2.h"
-#include "core/templates/vector.h"
+#include "rect2.h"
+#include "../templates/vector.h"
 
 class Delaunay2D {
 public:

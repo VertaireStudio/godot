@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/error/error_macros.h"
-#include "core/os/memory.h"
-#include "core/templates/pair.h"
+#include "../error/error_macros.h"
+#include "../os/memory.h"
+#include "pair.h"
 
 #include <initializer_list>
 

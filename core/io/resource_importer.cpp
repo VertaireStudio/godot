@@ -30,12 +30,12 @@
 
 #include "resource_importer.h"
 
-#include "core/config/project_settings.h"
-#include "core/io/config_file.h"
-#include "core/io/image.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "core/variant/variant_parser.h"
+#include "../config/project_settings.h"
+#include "config_file.h"
+#include "image.h"
+#include "../object/class_db.h"
+#include "../os/os.h"
+#include "../variant/variant_parser.h"
 
 bool ResourceFormatImporter::SortImporterByName::operator()(const Ref<ResourceImporter> &p_a, const Ref<ResourceImporter> &p_b) const {
 	return p_a->get_importer_name() < p_b->get_importer_name();

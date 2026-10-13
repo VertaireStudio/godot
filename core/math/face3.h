@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/math/aabb.h"
-#include "core/math/plane.h"
-#include "core/math/transform_3d.h"
-#include "core/math/vector3.h"
+#include "aabb.h"
+#include "plane.h"
+#include "transform_3d.h"
+#include "vector3.h"
 
 struct [[nodiscard]] Face3 {
 	enum Side {

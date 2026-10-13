@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/math/math_funcs.h"
-#include "core/math/rect2.h"
-#include "core/math/vector2.h"
-#include "core/templates/vector.h"
+#include "math_funcs.h"
+#include "rect2.h"
+#include "vector2.h"
+#include "../templates/vector.h"
 
 class String;
 

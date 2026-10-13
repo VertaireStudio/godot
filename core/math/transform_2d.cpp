@@ -30,7 +30,7 @@
 
 #include "transform_2d.h"
 
-#include "core/string/ustring.h"
+#include "../string/ustring.h"
 
 void Transform2D::invert() {
 	// FIXME: this function assumes the basis is a rotation matrix, with no scaling.

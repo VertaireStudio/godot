@@ -30,8 +30,8 @@
 
 #include "xml_parser.h"
 
-#include "core/io/file_access.h"
-#include "core/object/class_db.h"
+#include "file_access.h"
+#include "../object/class_db.h"
 
 //#define DEBUG_XML
 

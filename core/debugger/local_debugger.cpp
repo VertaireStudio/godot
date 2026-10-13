@@ -30,9 +30,9 @@
 
 #include "local_debugger.h"
 
-#include "core/debugger/script_debugger.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
+#include "script_debugger.h"
+#include "../os/main_loop.h"
+#include "../os/os.h"
 
 #include <cstdio>
 

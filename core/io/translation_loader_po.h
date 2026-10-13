@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/file_access.h"
-#include "core/io/resource_loader.h"
+#include "file_access.h"
+#include "resource_loader.h"
 
 class TranslationLoaderPO : public ResourceFormatLoader {
 	GDSOFTCLASS(TranslationLoaderPO, ResourceFormatLoader);

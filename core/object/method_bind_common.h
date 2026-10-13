@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/method_bind.h"
-#include "core/variant/binder_common.h"
+#include "method_bind.h"
+#include "../variant/binder_common.h"
 
 VARIANT_BITFIELD_CAST(MethodFlags)
 

@@ -32,9 +32,9 @@
 
 #ifndef DISABLE_DEPRECATED
 
-#include "core/string/string_name.h"
-#include "core/templates/hash_map.h"
-#include "core/templates/local_vector.h"
+#include "../string/string_name.h"
+#include "../templates/hash_map.h"
+#include "../templates/local_vector.h"
 
 class Array;
 

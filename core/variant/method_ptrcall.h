@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/object/object.h"
-#include "core/object/object_id.h"
-#include "core/typedefs.h"
-#include "core/variant/variant.h"
+#include "../object/object.h"
+#include "../object/object_id.h"
+#include "../typedefs.h"
+#include "variant.h"
 
 namespace Internal {
 

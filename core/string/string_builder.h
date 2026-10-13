@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/string/ustring.h"
-#include "core/templates/local_vector.h"
+#include "ustring.h"
+#include "../templates/local_vector.h"
 
 class StringBuilder {
 	uint32_t string_length = 0;

@@ -30,12 +30,12 @@
 
 #include "gdextension_library_loader.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/extension/gdextension.h"
-#include "core/io/dir_access.h"
-#include "core/os/os.h"
-#include "core/version.h"
+#include "../config/engine.h"
+#include "../config/project_settings.h"
+#include "gdextension.h"
+#include "../io/dir_access.h"
+#include "../os/os.h"
+#include "../version.h"
 
 Vector<SharedObject> GDExtensionLibraryLoader::find_extension_dependencies(const String &p_path, Ref<ConfigFile> p_config, std::function<bool(String)> p_has_feature) {
 	Vector<SharedObject> dependencies_shared_objects;

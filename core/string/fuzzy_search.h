@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/variant/variant.h"
+#include "../object/ref_counted.h"
+#include "../variant/variant.h"
 
 class FuzzyTokenMatch;
 

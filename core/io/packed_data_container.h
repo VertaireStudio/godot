@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/io/resource.h"
+#include "resource.h"
 
 class PackedDataContainer : public Resource {
 	GDCLASS(PackedDataContainer, Resource);

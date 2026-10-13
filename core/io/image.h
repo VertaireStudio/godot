@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/math/color.h"
+#include "resource.h"
+#include "../math/color.h"
 
 /**
  * Image storage class. This is used to store an image in user memory, as well as

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/image_loader.h"
-#include "core/io/resource_loader.h"
+#include "image_loader.h"
+#include "resource_loader.h"
 
 class ResourceFormatLoaderImage : public ResourceFormatLoader {
 	GDSOFTCLASS(ResourceFormatLoaderImage, ResourceFormatLoader);

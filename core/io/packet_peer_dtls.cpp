@@ -30,7 +30,7 @@
 
 #include "packet_peer_dtls.h"
 
-#include "core/object/class_db.h"
+#include "../object/class_db.h"
 
 PacketPeerDTLS *PacketPeerDTLS::create(bool p_notify_postinitialize) {
 	if (_create) {

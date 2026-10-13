@@ -30,9 +30,9 @@
 
 #include "json_resource_format.h"
 
-#include "core/config/engine.h"
-#include "core/io/file_access.h"
-#include "core/io/json.h"
+#include "../config/engine.h"
+#include "file_access.h"
+#include "json.h"
 
 Ref<Resource> ResourceFormatLoaderJSON::load(const String &p_path, const String &p_original_path, Error *r_error, bool p_use_sub_threads, float *r_progress, CacheMode p_cache_mode) {
 	if (r_error) {

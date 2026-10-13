@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/io/packet_peer_dtls.h"
+#include "packet_peer_dtls.h"
 
 class DTLSServer : public RefCounted {
 	GDCLASS(DTLSServer, RefCounted);

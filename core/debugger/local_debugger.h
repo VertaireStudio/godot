@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/debugger/engine_debugger.h"
-#include "core/templates/list.h"
+#include "engine_debugger.h"
+#include "../templates/list.h"
 
 class LocalDebugger : public EngineDebugger {
 private:

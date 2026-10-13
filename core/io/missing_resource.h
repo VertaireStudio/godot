@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/io/resource.h"
+#include "resource.h"
 
 #define META_PROPERTY_MISSING_RESOURCES "metadata/_missing_resources"
 #define META_MISSING_RESOURCES "_missing_resources"

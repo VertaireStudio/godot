@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/io/file_access.h"
+#include "file_access.h"
 
 class FileAccessPackedByteArray : public FileAccess {
 	GDSOFTCLASS(FileAccessPackedByteArray, FileAccess);

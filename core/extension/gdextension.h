@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/extension/gdextension_interface.gen.h"
-#include "core/extension/gdextension_loader.h"
-#include "core/io/resource.h"
+#include "gdextension_interface.gen.h"
+#include "gdextension_loader.h"
+#include "../io/resource.h"
 
 class GDExtensionMethodBind;
 

@@ -30,9 +30,9 @@
 
 #include "method_info.h"
 
-#include "core/variant/array.h"
-#include "core/variant/dictionary.h"
-#include "core/variant/typed_array.h" // IWYU pragma: keep. `convert_property_list` return type.
+#include "../variant/array.h"
+#include "../variant/dictionary.h"
+#include "../variant/typed_array.h" // IWYU pragma: keep. `convert_property_list` return type.
 
 MethodInfo::operator Dictionary() const {
 	Dictionary d;

@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/profiling/profiling.gen.h" // IWYU pragma: keep.
+#include "profiling.gen.h" // IWYU pragma: keep.
 
 // This header provides profiling primitives (implemented as macros) for various backends.
 // See the "No profiling" branch at the bottom for a short description of the functions.
@@ -45,7 +45,7 @@
 #if defined(GODOT_USE_TRACY)
 // Use the tracy profiler.
 
-#include "core/string/string_name.h"
+#include "../string/string_name.h"
 
 #define TRACY_ENABLE
 

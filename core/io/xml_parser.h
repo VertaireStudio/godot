@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/string/ustring.h"
-#include "core/templates/vector.h"
-#include "core/variant/type_info.h"
+#include "../object/ref_counted.h"
+#include "../string/ustring.h"
+#include "../templates/vector.h"
+#include "../variant/type_info.h"
 
 /*
   Based on irrXML (see their zlib license). Added mainly for compatibility with their Collada loader.

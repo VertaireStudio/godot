@@ -34,20 +34,20 @@ STATIC_ASSERT_INCOMPLETE_TYPE(class, Array);
 STATIC_ASSERT_INCOMPLETE_TYPE(class, Dictionary);
 STATIC_ASSERT_INCOMPLETE_TYPE(class, Object);
 
-#include "core/crypto/crypto_core.h"
-#include "core/io/ip_address.h"
-#include "core/math/color.h"
-#include "core/math/math_funcs.h"
-#include "core/object/object.h"
-#include "core/os/os.h"
-#include "core/string/print_string.h"
-#include "core/string/string_name.h"
-#include "core/string/translation_server.h"
-#include "core/string/ucaps.h"
-#include "core/variant/variant.h"
-#include "core/version_generated.gen.h"
+#include "../crypto/crypto_core.h"
+#include "../io/ip_address.h"
+#include "../math/color.h"
+#include "../math/math_funcs.h"
+#include "../object/object.h"
+#include "../os/os.h"
+#include "print_string.h"
+#include "string_name.h"
+#include "translation_server.h"
+#include "ucaps.h"
+#include "../variant/variant.h"
+#include "../version_generated.gen.h"
 
-#include <thirdparty/grisu2/grisu2.h>
+#include "../../thirdparty/grisu2/grisu2.h"
 
 #include <cstdio>
 

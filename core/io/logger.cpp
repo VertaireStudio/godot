@@ -30,13 +30,13 @@
 
 #include "logger.h"
 
-#include "core/core_globals.h"
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/object/script_backtrace.h"
-#include "core/os/time.h"
-#include "core/string/regex.h"
-#include "core/templates/rb_set.h"
+#include "../core_globals.h"
+#include "dir_access.h"
+#include "file_access.h"
+#include "../object/script_backtrace.h"
+#include "../os/time.h"
+#include "../string/regex.h"
+#include "../templates/rb_set.h"
 
 #include <cstdio>
 

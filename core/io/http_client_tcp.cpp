@@ -32,11 +32,11 @@
 
 #include "http_client_tcp.h"
 
-#include "core/io/stream_peer_tcp.h"
-#include "core/io/stream_peer_tls.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "core/version.h"
+#include "stream_peer_tcp.h"
+#include "stream_peer_tls.h"
+#include "../object/class_db.h"
+#include "../os/os.h"
+#include "../version.h"
 
 HTTPClient *HTTPClientTCP::_create_func(bool p_notify_postinitialize) {
 	return static_cast<HTTPClient *>(ClassDB::creator<HTTPClientTCP>(p_notify_postinitialize));

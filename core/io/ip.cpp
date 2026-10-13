@@ -30,11 +30,11 @@
 
 #include "ip.h"
 
-#include "core/object/class_db.h"
-#include "core/os/semaphore.h"
-#include "core/os/thread.h"
-#include "core/templates/hash_map.h"
-#include "core/variant/typed_array.h"
+#include "../object/class_db.h"
+#include "../os/semaphore.h"
+#include "../os/thread.h"
+#include "../templates/hash_map.h"
+#include "../variant/typed_array.h"
 
 /************* RESOLVER ******************/
 

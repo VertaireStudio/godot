@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-#include "core/variant/container_type_validate.h"
+#include "container_type_validate.h"
 
 const Variant *ContainerTypeValidate::_internal_convert_variant(const Variant &p_variant, Variant &r_tmp_variant, const char *p_operation, bool p_output_errors) const {
 	if (Variant::can_convert_strict(p_variant.get_type(), variant_type)) {

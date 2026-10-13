@@ -30,10 +30,10 @@
 
 #include "json.h"
 
-#include "core/io/resource_loader.h"
-#include "core/object/class_db.h"
-#include "core/object/script_language.h"
-#include "core/variant/container_type_validate.h"
+#include "resource_loader.h"
+#include "../object/class_db.h"
+#include "../object/script_language.h"
+#include "../variant/container_type_validate.h"
 
 const char *JSON::tk_name[TK_MAX] = {
 	"'{'",

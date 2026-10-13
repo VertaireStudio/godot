@@ -32,9 +32,9 @@
 
 #ifdef MINIZIP_ENABLED
 
-#include "core/io/file_access_pack.h"
+#include "file_access_pack.h"
 
-#include <thirdparty/minizip/unzip.h>
+#include "../../thirdparty/minizip/unzip.h"
 
 class ZipArchive : public PackSource {
 public:

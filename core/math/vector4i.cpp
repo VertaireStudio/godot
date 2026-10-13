@@ -30,8 +30,8 @@
 
 #include "vector4i.h"
 
-#include "core/math/vector4.h"
-#include "core/string/ustring.h"
+#include "vector4.h"
+#include "../string/ustring.h"
 
 Vector4i::Axis Vector4i::min_axis_index() const {
 	uint32_t min_index = 0;

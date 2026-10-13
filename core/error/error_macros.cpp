@@ -30,19 +30,19 @@
 
 #include "error_macros.h"
 
-#include "core/core_globals.h"
-#include "core/io/logger.h"
-#include "core/object/object_id.h"
-#include "core/object/script_language.h"
-#include "core/os/os.h"
-#include "core/string/ustring.h"
+#include "../core_globals.h"
+#include "../io/logger.h"
+#include "../object/object_id.h"
+#include "../object/script_language.h"
+#include "../os/os.h"
+#include "../string/ustring.h"
 
 #include <cstdio>
 
 // Optional physics interpolation warnings try to include the path to the relevant node.
 #if defined(DEBUG_ENABLED) && defined(TOOLS_ENABLED)
-#include "core/config/project_settings.h"
-#include "scene/main/node.h"
+#include "../config/project_settings.h"
+#include "../../scene/main/node.h"
 #endif
 
 static ErrorHandlerList *error_handler_list = nullptr;

@@ -10,9 +10,9 @@ def run(target, source, env):
         file.write(f"""\
 #ifdef TOOLS_ENABLED
 
-#include "core/io/compression.h"
-#include "core/io/file_access.h"
-#include "core/string/ustring.h"
+#include "../io/compression.h"
+#include "../io/file_access.h"
+#include "../string/ustring.h"
 
 inline constexpr int _gdextension_interface_data_compressed_size = {len(buffer)};
 inline constexpr int _gdextension_interface_data_uncompressed_size = {decomp_size};

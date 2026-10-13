@@ -30,8 +30,8 @@
 
 #include "fuzzy_search.h"
 
-#include "core/object/class_db.h"
-#include "core/variant/typed_array.h"
+#include "../object/class_db.h"
+#include "../variant/typed_array.h"
 
 static const String boundary_chars = "/\\-_. ";
 

@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/math/math_funcs_binary.h"
-#include "core/string/print_string.h"
-#include "core/string/ustring.h"
+#include "../math/math_funcs_binary.h"
+#include "print_string.h"
+#include "ustring.h"
 
 template <int SHORT_BUFFER_SIZE = 64>
 class StringBuffer {

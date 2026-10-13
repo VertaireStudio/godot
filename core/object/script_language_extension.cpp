@@ -30,7 +30,7 @@
 
 #include "script_language_extension.h"
 
-#include "core/object/class_db.h"
+#include "class_db.h"
 
 ScriptLanguageExtension::ScriptLanguageExtension() {
 #ifdef TOOLS_ENABLED

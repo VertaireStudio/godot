@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/typedefs.h"
+#include "../typedefs.h"
 
 #ifdef DEV_ENABLED
-#include "core/error/error_macros.h"
+#include "../error/error_macros.h"
 #endif
 
 #include <atomic>

@@ -37,7 +37,7 @@
  * https://docs.godotengine.org/en/latest/engine_details/architecture/common_engine_methods_and_macros.html#error-macros
  */
 
-#include "core/typedefs.h"
+#include "../typedefs.h"
 
 class String;
 class ObjectID;

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/object.h"
-#include "core/variant/type_info.h"
+#include "../object/object.h"
+#include "type_info.h"
 
 enum class HatDir;
 enum class HatMask;

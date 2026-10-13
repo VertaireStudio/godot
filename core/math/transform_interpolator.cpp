@@ -30,8 +30,8 @@
 
 #include "transform_interpolator.h"
 
-#include "core/math/transform_2d.h"
-#include "core/math/transform_3d.h"
+#include "transform_2d.h"
+#include "transform_3d.h"
 
 void TransformInterpolator::interpolate_transform_2d(const Transform2D &p_prev, const Transform2D &p_curr, Transform2D &r_result, real_t p_fraction) {
 	// Special case for physics interpolation, if flipping, don't interpolate basis.

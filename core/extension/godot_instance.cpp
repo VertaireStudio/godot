@@ -30,12 +30,12 @@
 
 #include "godot_instance.h"
 
-#include "core/extension/gdextension_manager.h"
-#include "core/object/class_db.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "main/main.h"
-#include "servers/display/display_server.h"
+#include "gdextension_manager.h"
+#include "../object/class_db.h"
+#include "../os/main_loop.h"
+#include "../os/os.h"
+#include "../../main/main.h"
+#include "../../servers/display/display_server.h"
 
 void GodotInstance::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("start"), &GodotInstance::start);

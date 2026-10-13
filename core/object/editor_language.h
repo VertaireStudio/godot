@@ -33,7 +33,7 @@
 // TODO: This file resides in `core/` while migrating `ScriptLanguage` features to prevent `editor/` includes in core. It should be moved to `editor/` when those includes are not needed anymore.
 #ifdef TOOLS_ENABLED
 
-#include "core/object/script_language.h"
+#include "script_language.h"
 
 /**
  * Interface for supporting semantic language features in the builtin script editor.

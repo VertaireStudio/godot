@@ -30,14 +30,14 @@
 
 #include "input_event.h"
 
-#include "core/input/input.h"
-#include "core/input/input_map.h"
-#include "core/input/shortcut.h"
-#include "core/math/transform_2d.h"
-#include "core/object/class_db.h"
-#include "core/os/keyboard.h"
-#include "core/os/os.h"
-#include "core/string/ustring.h"
+#include "input.h"
+#include "input_map.h"
+#include "shortcut.h"
+#include "../math/transform_2d.h"
+#include "../object/class_db.h"
+#include "../os/keyboard.h"
+#include "../os/os.h"
+#include "../string/ustring.h"
 
 void InputEvent::set_device(int p_device) {
 	device = p_device;

@@ -30,16 +30,16 @@
 
 #include "resource_format_binary.h"
 
-#include "core/config/project_settings.h"
-#include "core/io/dir_access.h"
-#include "core/io/file_access_compressed.h"
-#include "core/io/missing_resource.h"
-#include "core/object/class_db.h"
-#include "core/object/script_language.h"
-#include "core/variant/container_type_validate.h"
-#include "core/version.h"
-#include "scene/property_utils.h"
-#include "scene/resources/packed_scene.h"
+#include "../config/project_settings.h"
+#include "dir_access.h"
+#include "file_access_compressed.h"
+#include "missing_resource.h"
+#include "../object/class_db.h"
+#include "../object/script_language.h"
+#include "../variant/container_type_validate.h"
+#include "../version.h"
+#include "../../scene/property_utils.h"
+#include "../../scene/resources/packed_scene.h"
 
 enum {
 	//numbering must be different from variant, in case new variant types are added (variant must be always contiguous for jumptable optimization)

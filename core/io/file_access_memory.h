@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/io/file_access.h"
+#include "file_access.h"
 
 class FileAccessMemory : public FileAccess {
 	GDSOFTCLASS(FileAccessMemory, FileAccess);
