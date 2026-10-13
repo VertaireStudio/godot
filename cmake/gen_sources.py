@@ -14,7 +14,17 @@ Writes into ``bin/obj-debug/gen/``:
     modules_enabled.txt   - enabled module names (for gen_codegen / editors)
     count.json            - summary counts
 
-Usage:  python3 cmake/gen_sources.py <repo_root> [plan.txt]
+Usage:
+    python3 cmake/gen_sources.py <repo_root> [plan.txt] [config options]
+
+Config options (all optional; defaults reproduce the original editor/dev build):
+    --target editor|template_release|template_debug
+    --dev-build yes|no
+    --debug-symbols yes|no
+    --optimize none|speed|speed_trace|size|size_extra|debug|auto
+    --production yes|no
+    --build-dir bin/obj-debug
+    --suffix debug
 """
 
 import json
@@ -23,8 +33,56 @@ import posixpath
 import re
 import sys
 
-ROOT = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else ".")
-ORACLE = sys.argv[2] if len(sys.argv) > 2 else ""
+
+def _to_bool(value):
+    if isinstance(value, bool):
+        return value
+    return str(value).strip().lower() in ("1", "yes", "true", "on", "y")
+
+
+# Defaults keep the original editor/dev configuration so that debug.cmake is
+# entirely unaffected by the configurable release/template support below.
+CONFIG = {
+    "target": "editor",
+    "dev_build": True,
+    "debug_symbols": True,
+    "optimize": "none",
+    "production": False,
+    "build_dir": "bin/obj-debug",
+    "suffix": "debug",
+}
+
+_ARGPOS = []
+
+
+def _parse_args(argv):
+    """Parse positionals (root, oracle) plus the optional config switches."""
+    positionals = []
+    i = 1
+    while i < len(argv):
+        arg = argv[i]
+        if arg.startswith("--"):
+            key = arg[2:].replace("-", "_")
+            value = ""
+            if "=" in key:
+                key, value = key.split("=", 1)
+            else:
+                i += 1
+                value = argv[i] if i < len(argv) else ""
+            if key in ("target", "optimize", "build_dir", "suffix"):
+                CONFIG[key] = value
+            elif key in ("dev_build", "debug_symbols", "production"):
+                CONFIG[key] = _to_bool(value)
+        else:
+            positionals.append(arg)
+        i += 1
+    return positionals
+
+
+_ARGPOS = _parse_args(sys.argv)
+
+ROOT = os.path.abspath(_ARGPOS[0] if len(_ARGPOS) > 0 else ".")
+ORACLE = _ARGPOS[1] if len(_ARGPOS) > 1 else ""
 if not os.path.isabs(ROOT):
     ROOT = ROOT
 
@@ -194,22 +252,23 @@ def load_options():
         except Exception as exc:  # noqa: BLE001
             print("[gen_sources] warning: could not read .scons_env.json: {}".format(exc))
 
-    # Force the planned configuration.
+    # Force the planned configuration (from CONFIG; defaults reproduce the
+    # original editor/dev build).
     opts.update(
         {
             "platform": "linuxbsd",
-            "target": "editor",
+            "target": CONFIG["target"],
             "arch": "x86_64",
-            "dev_build": True,
-            "debug_symbols": True,
+            "dev_build": CONFIG["dev_build"],
+            "debug_symbols": CONFIG["debug_symbols"],
             "use_sowrap": True,
             "x11": True,
             "wayland": False,
             "libdecor": False,
             "tests": False,
             "scu_build": False,
-            "optimize": "none",
-            "production": False,
+            "optimize": CONFIG["optimize"],
+            "production": CONFIG["production"],
             "module_mono_enabled": False,
             "module_text_server_fb_enabled": False,
             "module_openxr_enabled": True,
@@ -231,15 +290,47 @@ def load_options():
         "LIBPATH",
         "FRAMEWORKS",
         "FRAMEWORKPATH",
+        "OPTIMIZELEVEL",
+        "WARNLEVEL",
     ):
         opts.pop(key, None)
     return opts
 
 
+_OPTIMIZE_LEVELS = {
+    "speed": "-O3",
+    "speed_trace": "-O2",
+    "size": "-Os",
+    "size_extra": "-Os",
+    "debug": "-Og",
+    "none": "-O0",
+}
+
+
+def _resolve_optimize(name, dev_build, debug_features):
+    """Resolve 'auto' the same way SConstruct does."""
+    if name in ("", None):
+        name = "none"
+    if name == "auto":
+        if dev_build:
+            return "none"
+        if debug_features:
+            return "speed_trace"
+        return "speed"
+    return name
+
+
 def seed_env(env, opts):
+    target = opts.get("target", "editor")
+    editor_build = target == "editor"
+    debug_features = target in ("editor", "template_debug")
+    dev_build = bool(opts.get("dev_build", False))
+    debug_symbols = bool(opts.get("debug_symbols", False))
+    optimize = _resolve_optimize(opts.get("optimize", "none"), dev_build, debug_features)
+
     env["WARNLEVEL"] = "-Wall"
-    env["OPTIMIZELEVEL"] = "-O0"
-    env["CCFLAGS"] = [
+    env["OPTIMIZELEVEL"] = _OPTIMIZE_LEVELS.get(optimize, "-O0")
+    ccflags = [
         "-fPIE",
         "-ffp-contract=off",
         "-pipe",
@@ -247,22 +338,34 @@ def seed_env(env, opts):
         "-mpopcnt",
         "-fno-diagnostics-color",
         "$OPTIMIZELEVEL",
-        "-gdwarf-4",
-        "-g3",
+    ]
+    if debug_symbols:
+        ccflags.append("-gdwarf-4")
+        ccflags.append("-g3" if dev_build else "-g2")
+    ccflags += [
         "$WARNLEVEL",
         "-Wshadow",
         "-Wno-misleading-indentation",
         "-Wenum-conversion",
     ]
+    env["CCFLAGS"] = ccflags
     env["CFLAGS"] = ["-std=gnu17"]
     env["CXXFLAGS"] = ["-std=gnu++17", "-fno-exceptions"]
     env["ASFLAGS"] = []
-    env["CPPDEFINES"] = [
-        "TOOLS_ENABLED",
-        "DEBUG_ENABLED",
-        "DEV_ENABLED",
-        "ENGINE_UPDATE_CHECK_ENABLED",
-        "NO_EDITOR_SPLASH",
+
+    defines = []
+    if editor_build:
+        defines.append("TOOLS_ENABLED")
+    if debug_features:
+        defines.append("DEBUG_ENABLED")
+    if dev_build:
+        defines.append("DEV_ENABLED")
+    else:
+        defines.append("NDEBUG")
+    if editor_build:
+        defines.append("ENGINE_UPDATE_CHECK_ENABLED")
+        defines.append("NO_EDITOR_SPLASH")
+    defines += [
         "RD_ENABLED",
         "MOBILE_RD_ENABLED",
         "FORWARD_RD_ENABLED",
@@ -292,6 +395,7 @@ def seed_env(env, opts):
         "OVERRIDE_PATH_ENABLED",
         "THREADS_ENABLED",
     ]
+    env["CPPDEFINES"] = defines
     env["CPPPATH"] = ["#thirdparty/linuxbsd_headers", "#platform/linuxbsd", "#"]
     env["LIBS"] = []
     env["LINKFLAGS"] = ["-pie", "-Wl,-z,relro", "-Wl,-z,now"]
@@ -443,12 +547,13 @@ def main():
     install_fake_scons()
     opts = load_options()
 
+    target = opts.get("target", "editor")
     ctx = Context(ROOT)
     env = make_base_env(ctx)
     seed_env(env, opts)
-    env.editor_build = env["target"] == "editor"
-    env.dev_build = True
-    env.debug_features = True
+    env.editor_build = target == "editor"
+    env.dev_build = bool(opts.get("dev_build", False))
+    env.debug_features = target in ("editor", "template_debug")
 
     modules_enabled = detect_and_configure_modules(env)
     compute_platform_metadata(env)
@@ -470,23 +575,27 @@ def main():
     captures = sort_captures(ctx)
     captures = _add_supplementals(captures)
     captures = order_by_include_deps(captures, ROOT)
-    gen_dir = os.path.join(ROOT, "bin", "obj-debug", "gen")
+
+    suffix = CONFIG["suffix"]
+    build_dir_rel = CONFIG["build_dir"].strip("/")
+    gen_dir = os.path.join(ROOT, *build_dir_rel.split("/"), "gen")
+    obj_rel = build_dir_rel + "/obj"
     os.makedirs(gen_dir, exist_ok=True)
 
-    with open(os.path.join(gen_dir, "sources_debug.txt"), "w", encoding="utf-8") as f:
+    with open(os.path.join(gen_dir, "sources_{0}.txt".format(suffix)), "w", encoding="utf-8") as f:
         for c in captures:
             f.write(c["src"] + "\n")
 
-    with open(os.path.join(gen_dir, "flags_debug.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(gen_dir, "flags_{0}.json".format(suffix)), "w", encoding="utf-8") as f:
         json.dump(captures, f, indent=0)
 
-    with open(os.path.join(gen_dir, "commands_debug.txt"), "w", encoding="utf-8") as f:
+    with open(os.path.join(gen_dir, "commands_{0}.txt".format(suffix)), "w", encoding="utf-8") as f:
         for c in captures:
             cc = "g++" if c["lang"] == "cxx" else "gcc"
             # Escape embedded double quotes (e.g. -DFOO="bar") so that the
-            # shell-style split performed by debug.cmake preserves them.
+            # shell-style split performed by the CMake drivers preserves them.
             args = " ".join(a.replace('"', '\\"') for a in c["args"])
-            f.write("{0} {1} -c {2} -o bin/obj-debug/obj/{3}\n".format(cc, args, c["src"], c["obj"]))
+            f.write("{0} {1} -c {2} -o {3}/{4}\n".format(cc, args, c["src"], obj_rel, c["obj"]))
 
     seen = set()
     includes = []
@@ -495,7 +604,7 @@ def main():
             if a.startswith("-I") and a not in seen:
                 seen.add(a)
                 includes.append(a)
-    with open(os.path.join(gen_dir, "includes_debug.txt"), "w", encoding="utf-8") as f:
+    with open(os.path.join(gen_dir, "includes_{0}.txt".format(suffix)), "w", encoding="utf-8") as f:
         f.write("\n".join(includes) + "\n")
 
     with open(os.path.join(gen_dir, "modules_enabled.txt"), "w", encoding="utf-8") as f:
@@ -508,9 +617,10 @@ def main():
     with open(os.path.join(gen_dir, "count.json"), "w", encoding="utf-8") as f:
         json.dump(count, f, indent=2)
 
+    print("[gen_sources] target: {0} (dev={1}, optimize={2})".format(target, env.dev_build, env["OPTIMIZELEVEL"]))
     print("[gen_sources] modules enabled: {0}".format(len(modules_enabled)))
     print("[gen_sources] translation units: {0} ({1})".format(len(captures), count["by_lang"]))
-    print("[gen_sources] generated in bin/obj-debug/gen/")
+    print("[gen_sources] generated in {0}/gen/".format(build_dir_rel))
     return counts_ok(ctx)
 
 
