@@ -30,13 +30,13 @@
 
 #import "crash_handler_macos.h"
 
-#include "core/config/project_settings.h"
-#include "core/object/script_language.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "core/string/print_string.h"
-#include "core/version.h"
-#include "main/main.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/script_language.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/os.h"
+#include "../../core/string/print_string.h"
+#include "../../core/version.h"
+#include "../../main/main.h"
 
 #include <unistd.h>
 

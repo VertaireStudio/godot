@@ -30,9 +30,9 @@
 
 #include "os_linuxbsd.h"
 
-#include "core/extension/godot_instance.h"
-#include "core/extension/libgodot.h"
-#include "main/main.h"
+#include "../../core/extension/godot_instance.h"
+#include "../../core/extension/libgodot.h"
+#include "../../main/main.h"
 
 static OS_LinuxBSD *os = nullptr;
 

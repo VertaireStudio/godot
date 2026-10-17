@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/os/keyboard.h"
-#include "core/templates/hash_map.h"
+#include "../../../core/os/keyboard.h"
+#include "../../../core/templates/hash_map.h"
 
 typedef uint32_t xkb_keycode_t;
 typedef uint32_t xkb_keysym_t;

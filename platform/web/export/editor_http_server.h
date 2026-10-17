@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/stream_peer_tls.h"
-#include "core/io/tcp_server.h"
+#include "../../../core/io/stream_peer_tls.h"
+#include "../../../core/io/tcp_server.h"
 
 class EditorHTTPServer : public RefCounted {
 	GDSOFTCLASS(EditorHTTPServer, RefCounted);

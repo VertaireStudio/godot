@@ -32,7 +32,7 @@
 
 #include "display_server_macos_base.h"
 
-#include "core/os/process_id.h"
+#include "../../core/os/process_id.h"
 
 #define FontVariation __FontVariation
 #define BitMap _QDBitMap // Suppress deprecated QuickDraw definition.

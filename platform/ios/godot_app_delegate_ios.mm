@@ -30,7 +30,7 @@
 
 #import "godot_app_delegate_ios.h"
 
-#import "drivers/apple_embedded/godot_app_delegate_service_apple_embedded.h"
+#import "../../drivers/apple_embedded/godot_app_delegate_service_apple_embedded.h"
 
 @implementation GDTAppDelegateIOS
 

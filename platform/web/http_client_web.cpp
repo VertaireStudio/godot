@@ -30,10 +30,10 @@
 
 #include "http_client_web.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 #ifdef DEBUG_ENABLED
-#include "core/config/engine.h"
+#include "../../core/config/engine.h"
 #endif
 
 void HTTPClientWeb::_parse_headers(int p_len, const char **p_headers, void *p_ref) {

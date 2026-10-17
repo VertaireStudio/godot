@@ -32,7 +32,7 @@
 
 #include "thread_jandroid.h"
 
-#include "core/string/print_string.h"
+#include "../../core/string/print_string.h"
 
 #include <android/asset_manager_jni.h>
 

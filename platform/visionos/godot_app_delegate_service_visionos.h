@@ -32,7 +32,7 @@
 
 #import "render_mode_visionos.h"
 
-#import "drivers/apple_embedded/godot_app_delegate_service_apple_embedded.h"
+#import "../../drivers/apple_embedded/godot_app_delegate_service_apple_embedded.h"
 
 #import <CompositorServices/CompositorServices.h>
 

@@ -31,8 +31,8 @@
 #import "gc_keyboard_handler.h"
 
 #include "core/os/keyboard.h"
-#import "drivers/apple_embedded/display_server_apple_embedded.h"
-#import "drivers/apple_embedded/key_mapping_apple_embedded.h"
+#import "../../drivers/apple_embedded/display_server_apple_embedded.h"
+#import "../../drivers/apple_embedded/key_mapping_apple_embedded.h"
 
 #import <GameController/GameController.h>
 

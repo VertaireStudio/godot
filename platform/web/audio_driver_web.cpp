@@ -32,11 +32,11 @@
 
 #include "godot_audio.h"
 
-#include "core/config/engine.h"
-#include "core/math/math_funcs_binary.h"
-#include "core/object/object.h"
-#include "scene/resources/audio/audio_stream.h"
-#include "servers/audio/audio_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/math/math_funcs_binary.h"
+#include "../../core/object/object.h"
+#include "../../scene/resources/audio/audio_stream.h"
+#include "../../servers/audio/audio_server.h"
 
 #include <emscripten.h>
 

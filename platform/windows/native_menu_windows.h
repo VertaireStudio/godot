@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/io/image.h"
-#include "core/templates/hash_map.h"
-#include "core/templates/rid_owner.h"
-#include "servers/display/native_menu.h"
+#include "../../core/io/image.h"
+#include "../../core/templates/hash_map.h"
+#include "../../core/templates/rid_owner.h"
+#include "../../servers/display/native_menu.h"
 
 #include <windows.h>
 

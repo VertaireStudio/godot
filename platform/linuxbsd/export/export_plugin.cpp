@@ -33,18 +33,18 @@
 #include "logo_svg.gen.h"
 #include "run_icon_svg.gen.h"
 
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/io/zip_io.h"
-#include "core/os/os.h"
-#include "editor/editor_node.h"
-#include "editor/editor_string_names.h"
-#include "editor/export/editor_export.h"
-#include "editor/file_system/editor_paths.h"
-#include "editor/settings/editor_settings.h"
-#include "editor/themes/editor_scale.h"
+#include "../../../core/io/dir_access.h"
+#include "../../../core/io/file_access.h"
+#include "../../../core/io/zip_io.h"
+#include "../../../core/os/os.h"
+#include "../../../editor/editor_node.h"
+#include "../../../editor/editor_string_names.h"
+#include "../../../editor/export/editor_export.h"
+#include "../../../editor/file_system/editor_paths.h"
+#include "../../../editor/settings/editor_settings.h"
+#include "../../../editor/themes/editor_scale.h"
 
-#include "modules/svg/image_loader_svg.h"
+#include "../../../modules/svg/image_loader_svg.h"
 
 Error EditorExportPlatformLinuxBSD::_export_debug_script(const Ref<EditorExportPreset> &p_preset, const String &p_app_name, const String &p_pkg_name, const String &p_path) {
 	Ref<FileAccess> f = FileAccess::open(p_path, FileAccess::WRITE);

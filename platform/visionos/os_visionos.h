@@ -32,7 +32,7 @@
 
 #ifdef VISIONOS_ENABLED
 
-#import "drivers/apple_embedded/os_apple_embedded.h"
+#import "../../drivers/apple_embedded/os_apple_embedded.h"
 
 class OS_VisionOS : public OS_AppleEmbedded {
 public:

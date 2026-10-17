@@ -32,7 +32,7 @@
 
 #include "godot_js.h"
 
-#include "core/debugger/remote_debugger_peer.h"
+#include "../../core/debugger/remote_debugger_peer.h"
 
 class RemoteDebuggerPeerMessagePort : public RemoteDebuggerPeer {
 	GDSOFTCLASS(RemoteDebuggerPeerMessagePort, RemoteDebuggerPeer);

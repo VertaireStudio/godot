@@ -67,10 +67,10 @@
 #include "protocol/xdg_system_bell.gen.h"
 #include "protocol/xdg_toplevel_icon.gen.h"
 
-#include "core/io/dir_access.h"
-#include "core/os/thread.h"
-#include "core/templates/a_hash_map.h"
-#include "core/templates/pooled_list.h"
+#include "../../../core/io/dir_access.h"
+#include "../../../core/os/thread.h"
+#include "../../../core/templates/a_hash_map.h"
+#include "../../../core/templates/pooled_list.h"
 
 #include <poll.h>
 #include <sys/socket.h>

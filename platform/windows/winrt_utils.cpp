@@ -30,12 +30,12 @@
 
 #include "winrt_utils.h"
 
-#include "core/crypto/crypto_core.h"
-#include "core/io/dir_access.h"
-#include "core/os/mutex.h"
-#include "core/os/os.h"
-#include "core/os/time.h"
-#include "scene/resources/texture.h"
+#include "../../core/crypto/crypto_core.h"
+#include "../../core/io/dir_access.h"
+#include "../../core/os/mutex.h"
+#include "../../core/os/os.h"
+#include "../../core/os/time.h"
+#include "../../scene/resources/texture.h"
 
 enum DISPATCHERQUEUE_THREAD_APARTMENTTYPE {
 	DQTAT_COM_NONE = 0,

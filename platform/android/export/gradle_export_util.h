@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/crypto/crypto_core.h"
-#include "editor/export/editor_export_platform.h"
-#include "servers/display/display_server_enums.h"
+#include "../../../core/crypto/crypto_core.h"
+#include "../../../editor/export/editor_export_platform.h"
+#include "../../../servers/display/display_server_enums.h"
 
 const String GODOT_PROJECT_NAME_XML_STRING = R"(<?xml version="1.0" encoding="utf-8"?>
 <!--WARNING: THIS FILE WILL BE OVERWRITTEN AT BUILD TIME-->

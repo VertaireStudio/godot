@@ -37,14 +37,14 @@
 #include "net_socket_web.h"
 #include "remote_debugger_peer_messageport.h"
 
-#include "core/debugger/engine_debugger.h"
-#include "core/io/file_access.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "core/profiling/profiling.h"
-#include "drivers/unix/dir_access_unix.h"
-#include "drivers/unix/file_access_unix.h"
-#include "main/main.h"
+#include "../../core/debugger/engine_debugger.h"
+#include "../../core/io/file_access.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/os.h"
+#include "../../core/profiling/profiling.h"
+#include "../../drivers/unix/dir_access_unix.h"
+#include "../../drivers/unix/file_access_unix.h"
+#include "../../main/main.h"
 
 #include <dlfcn.h>
 #include <emscripten.h>

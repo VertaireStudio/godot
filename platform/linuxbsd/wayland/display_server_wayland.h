@@ -32,10 +32,10 @@
 
 #ifdef WAYLAND_ENABLED
 
-#include "wayland/wayland_thread.h"
+#include "wayland_thread.h"
 
-#include "core/os/process_id.h"
-#include "servers/display/display_server.h"
+#include "../../../core/os/process_id.h"
+#include "../../../servers/display/display_server.h"
 
 class InputEvent;
 class NativeMenu;

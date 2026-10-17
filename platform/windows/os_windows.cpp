@@ -36,21 +36,21 @@
 #include "windows_utils.h"
 #include "winrt_utils.h"
 
-#include "core/config/engine.h"
-#include "core/debugger/engine_debugger.h"
-#include "core/debugger/script_debugger.h"
-#include "core/os/main_loop.h"
-#include "core/profiling/profiling.h"
-#include "core/version_generated.gen.h"
-#include "drivers/windows/dir_access_windows.h"
-#include "drivers/windows/file_access_windows.h"
-#include "drivers/windows/file_access_windows_pipe.h"
-#include "drivers/windows/ip_windows.h"
-#include "drivers/windows/net_socket_winsock.h"
-#include "drivers/windows/thread_windows.h"
-#include "main/main.h"
-#include "servers/rendering/rendering_server.h"
-#include "servers/text/text_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/debugger/engine_debugger.h"
+#include "../../core/debugger/script_debugger.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/profiling/profiling.h"
+#include "../../core/version_generated.gen.h"
+#include "../../drivers/windows/dir_access_windows.h"
+#include "../../drivers/windows/file_access_windows.h"
+#include "../../drivers/windows/file_access_windows_pipe.h"
+#include "../../drivers/windows/ip_windows.h"
+#include "../../drivers/windows/net_socket_winsock.h"
+#include "../../drivers/windows/thread_windows.h"
+#include "../../main/main.h"
+#include "../../servers/rendering/rendering_server.h"
+#include "../../servers/text/text_server.h"
 
 #include <avrt.h>
 #include <bcrypt.h>
@@ -74,7 +74,7 @@ extern "C" {
 #endif
 
 #if defined(RD_ENABLED)
-#include "servers/rendering/rendering_device.h"
+#include "../../servers/rendering/rendering_device.h"
 #endif
 
 #if defined(GLES3_ENABLED)
@@ -82,13 +82,13 @@ extern "C" {
 #endif
 
 #if defined(VULKAN_ENABLED)
-#include "drivers/vulkan/rendering_context_driver_vulkan.h"
+#include "../../drivers/vulkan/rendering_context_driver_vulkan.h"
 #endif
 #if defined(D3D12_ENABLED)
-#include "drivers/d3d12/rendering_context_driver_d3d12.h"
+#include "../../drivers/d3d12/rendering_context_driver_d3d12.h"
 #endif
 #if defined(GLES3_ENABLED)
-#include "drivers/gles3/rasterizer_gles3.h"
+#include "../../drivers/gles3/rasterizer_gles3.h"
 #endif
 
 #ifdef DEBUG_ENABLED

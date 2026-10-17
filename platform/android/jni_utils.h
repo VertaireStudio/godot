@@ -32,8 +32,8 @@
 
 #include "thread_jandroid.h"
 
-#include "core/string/ustring.h"
-#include "core/variant/variant.h"
+#include "../../core/string/ustring.h"
+#include "../../core/variant/variant.h"
 
 #include <jni.h>
 

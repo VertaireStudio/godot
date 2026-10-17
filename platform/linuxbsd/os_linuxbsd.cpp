@@ -30,19 +30,19 @@
 
 #include "os_linuxbsd.h"
 
-#include "core/io/certs_compressed.gen.h"
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "core/profiling/profiling.h"
-#include "core/string/regex.h"
-#include "main/main.h"
-#include "servers/display/display_server.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/io/certs_compressed.gen.h"
+#include "../../core/io/dir_access.h"
+#include "../../core/io/file_access.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/os.h"
+#include "../../core/profiling/profiling.h"
+#include "../../core/string/regex.h"
+#include "../../main/main.h"
+#include "../../servers/display/display_server.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #ifdef SDL_ENABLED
-#include "drivers/sdl/joypad_sdl.h"
+#include "../../drivers/sdl/joypad_sdl.h"
 #endif
 
 #ifdef X11_ENABLED
@@ -56,7 +56,7 @@
 #endif
 
 #if defined(RD_ENABLED)
-#include "servers/rendering/rendering_device.h"
+#include "../../servers/rendering/rendering_device.h"
 #endif
 
 #if defined(VULKAN_ENABLED)
@@ -68,7 +68,7 @@
 #endif
 #endif
 #if defined(GLES3_ENABLED)
-#include "drivers/gles3/rasterizer_gles3.h"
+#include "../../drivers/gles3/rasterizer_gles3.h"
 #endif
 
 #include <dlfcn.h>
@@ -90,10 +90,10 @@
 
 #ifdef __linux__
 namespace GameMode {
-#include <thirdparty/misc/gamemode_client.h>
+#include "../../thirdparty/misc/gamemode_client.h"
 }
 
-#include "core/config/project_settings.h"
+#include "../../core/config/project_settings.h"
 #endif
 
 #ifdef FONTCONFIG_ENABLED

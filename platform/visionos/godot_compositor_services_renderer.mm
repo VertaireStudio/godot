@@ -32,14 +32,14 @@
 
 #import "godot_swift_module-Swift.gen.h"
 
-#include "core/math/transform_3d.h"
-#include "core/math/vector3.h"
-#include "core/templates/vector.h"
-#import "drivers/apple_embedded/os_apple_embedded.h"
+#include "../../core/math/transform_3d.h"
+#include "../../core/math/vector3.h"
+#include "../../core/templates/vector.h"
+#import "../../drivers/apple_embedded/os_apple_embedded.h"
 
-#include "modules/modules_enabled.gen.h"
+#include "../../modules/modules_enabled.gen.h"
 #if defined(MODULE_VISIONOS_XR_ENABLED)
-#include "modules/visionos_xr/visionos_xr_interface.h"
+#include "../../modules/visionos_xr/visionos_xr_interface.h"
 #endif
 
 #import <CompositorServices/CompositorServices.h>

@@ -32,12 +32,12 @@
 
 #include "export_plugin.h"
 
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "editor/export/android_sdk_manager.h"
-#include "editor/export/editor_export.h"
-#include "editor/file_system/editor_paths.h"
-#include "editor/settings/editor_settings.h"
+#include "../../../core/object/class_db.h"
+#include "../../../core/os/os.h"
+#include "../../../editor/export/android_sdk_manager.h"
+#include "../../../editor/export/editor_export.h"
+#include "../../../editor/file_system/editor_paths.h"
+#include "../../../editor/settings/editor_settings.h"
 
 void register_android_exporter_types() {
 	GDREGISTER_VIRTUAL_CLASS(EditorExportPlatformAndroid);

@@ -33,7 +33,7 @@
 #import "gc_keyboard_handler.h"
 #import "godot_app_delegate_service_visionos.h"
 
-#import "core/os/os.h"
+#import "../../core/os/os.h"
 
 DisplayServerVisionOS *DisplayServerVisionOS::get_singleton() {
 	return (DisplayServerVisionOS *)DisplayServerAppleEmbedded::get_singleton();

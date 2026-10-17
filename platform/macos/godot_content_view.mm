@@ -34,12 +34,12 @@
 #import "godot_window.h"
 #import "key_mapping_macos.h"
 
-#include "core/input/input.h"
-#include "core/input/input_event.h"
-#include "core/os/keyboard.h"
-#include "core/os/os.h"
-#include "core/profiling/profiling.h"
-#include "main/main.h"
+#include "../../core/input/input.h"
+#include "../../core/input/input_event.h"
+#include "../../core/os/keyboard.h"
+#include "../../core/os/os.h"
+#include "../../core/profiling/profiling.h"
+#include "../../main/main.h"
 
 @implementation GodotContentLayerDelegate
 

@@ -34,8 +34,8 @@
 #include "godot_js.h"
 #include "webmidi_driver.h"
 
-#include "core/input/input_event.h"
-#include "drivers/unix/os_unix.h"
+#include "../../core/input/input_event.h"
+#include "../../drivers/unix/os_unix.h"
 
 #include <emscripten/html5.h>
 

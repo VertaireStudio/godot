@@ -34,14 +34,14 @@
 #import "key_mapping_macos.h"
 #import "tts_macos.h"
 
-#include "core/config/project_settings.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "drivers/png/png_driver_common.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/os.h"
+#include "../../drivers/png/png_driver_common.h"
 
 #if defined(RD_ENABLED)
-#include "servers/rendering/rendering_context_driver.h"
-#include "servers/rendering/rendering_device.h"
+#include "../../servers/rendering/rendering_context_driver.h"
+#include "../../servers/rendering/rendering_device.h"
 #endif
 
 #import <Carbon/Carbon.h>

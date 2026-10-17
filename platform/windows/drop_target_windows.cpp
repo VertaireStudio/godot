@@ -30,9 +30,9 @@
 
 #include "drop_target_windows.h"
 
-#include "core/io/dir_access.h"
-#include "core/math/random_pcg.h"
-#include "core/os/time.h"
+#include "../../core/io/dir_access.h"
+#include "../../core/math/random_pcg.h"
+#include "../../core/os/time.h"
 
 #include <fileapi.h>
 #include <shellapi.h>

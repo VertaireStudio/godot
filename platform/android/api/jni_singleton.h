@@ -32,8 +32,8 @@
 
 #include "java_class_wrapper.h"
 
-#include "core/templates/rb_map.h"
-#include "core/variant/variant.h"
+#include "../../../core/templates/rb_map.h"
+#include "../../../core/variant/variant.h"
 
 class JNISingleton : public Object {
 	GDCLASS(JNISingleton, Object);

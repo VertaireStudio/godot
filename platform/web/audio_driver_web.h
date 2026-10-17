@@ -32,9 +32,9 @@
 
 #include "godot_js.h"
 
-#include "core/os/mutex.h"
-#include "core/os/thread.h"
-#include "servers/audio/audio_driver.h"
+#include "../../core/os/mutex.h"
+#include "../../core/os/thread.h"
+#include "../../servers/audio/audio_driver.h"
 
 class AudioDriverWeb : public AudioDriver {
 private:

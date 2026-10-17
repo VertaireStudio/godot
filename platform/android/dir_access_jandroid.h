@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "drivers/unix/dir_access_unix.h"
+#include "../../drivers/unix/dir_access_unix.h"
 
 #include <jni.h>
 

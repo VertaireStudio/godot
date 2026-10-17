@@ -32,9 +32,9 @@
 
 #ifdef WINDOWS_ENABLED
 
-#include "core/error/error_macros.h"
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
+#include "../../core/error/error_macros.h"
+#include "../../core/io/dir_access.h"
+#include "../../core/io/file_access.h"
 
 #include <windows.h>
 #undef FAILED // Overrides Error::FAILED

@@ -46,25 +46,25 @@
 #import "native_menu_macos.h"
 #import "os_macos.h"
 
-#include "core/config/project_settings.h"
-#include "core/input/input.h"
-#include "core/io/file_access.h"
-#include "core/io/marshalls.h"
-#include "core/math/geometry_2d.h"
-#include "core/object/callable_mp.h"
-#include "core/os/keyboard.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "drivers/png/png_driver_common.h"
-#include "main/main.h"
-#include "scene/resources/image_texture.h"
-#include "servers/display/accessibility_server.h"
-#include "servers/rendering/dummy/rasterizer_dummy.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/input/input.h"
+#include "../../core/io/file_access.h"
+#include "../../core/io/marshalls.h"
+#include "../../core/math/geometry_2d.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/os/keyboard.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/os.h"
+#include "../../drivers/png/png_driver_common.h"
+#include "../../main/main.h"
+#include "../../scene/resources/image_texture.h"
+#include "../../servers/display/accessibility_server.h"
+#include "../../servers/rendering/dummy/rasterizer_dummy.h"
 
 #ifdef TOOLS_ENABLED
 #import "display_server_macos_embedded.h"
 
-#import "editor/embedded_process_macos.h"
+#import "../../editor/embedded_process_macos.h"
 #endif
 
 // Rendering drivers - include after general Godot deps as they imply system includes
@@ -76,18 +76,18 @@
 #endif
 #include "gl_manager_macos_legacy.h"
 
-#include "drivers/gles3/rasterizer_gles3.h"
+#include "../../drivers/gles3/rasterizer_gles3.h"
 #endif
 
 #if defined(RD_ENABLED)
-#include "servers/rendering/renderer_rd/renderer_compositor_rd.h"
-#include "servers/rendering/rendering_device.h"
+#include "../../servers/rendering/renderer_rd/renderer_compositor_rd.h"
+#include "../../servers/rendering/rendering_device.h"
 
 #if defined(VULKAN_ENABLED)
 #import "rendering_context_driver_vulkan_macos.h"
 #endif
 #if defined(METAL_ENABLED)
-#import "drivers/metal/rendering_context_driver_metal.h"
+#import "../../drivers/metal/rendering_context_driver_metal.h"
 #endif
 #endif // RD_ENABLED
 

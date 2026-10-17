@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "drivers/apple_embedded/display_layer_apple_embedded.h"
+#include "../../drivers/apple_embedded/display_layer_apple_embedded.h"
 
 #if defined(GLES3_ENABLED)
 #import <OpenGLES/EAGLDrawable.h>

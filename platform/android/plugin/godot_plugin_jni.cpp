@@ -34,8 +34,8 @@
 #include "api/jni_singleton.h"
 #include "jni_utils.h"
 
-#include "core/config/engine.h"
-#include "core/error/error_macros.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/error/error_macros.h"
 
 static HashMap<String, JNISingleton *> jni_singletons;
 

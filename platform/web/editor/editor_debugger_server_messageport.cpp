@@ -30,8 +30,8 @@
 
 #include "editor_debugger_server_messageport.h"
 
-#include "editor/editor_log.h"
-#include "editor/editor_node.h"
+#include "../../../editor/editor_log.h"
+#include "../../../editor/editor_node.h"
 
 extern "C" {
 bool godot_js_editor_debugger_active();

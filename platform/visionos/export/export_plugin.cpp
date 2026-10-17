@@ -33,8 +33,8 @@
 #include "logo_svg.gen.h"
 #include "run_icon_svg.gen.h"
 
-#include "editor/editor_node.h"
-#include "editor/export/editor_export_platform_apple_embedded.h"
+#include "../../../editor/editor_node.h"
+#include "../../../editor/export/editor_export_platform_apple_embedded.h"
 
 Vector<String> EditorExportPlatformVisionOS::device_types({ "realityDevice" });
 

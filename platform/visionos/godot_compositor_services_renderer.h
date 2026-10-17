@@ -30,9 +30,9 @@
 
 #pragma once
 
-#import "drivers/apple_embedded/godot_renderer.h"
+#import "../../drivers/apple_embedded/godot_renderer.h"
 
-#import "modules/visionos_xr/visionos_definitions.h"
+#import "../../modules/visionos_xr/visionos_definitions.h"
 
 #import <CompositorServices/CompositorServices.h>
 

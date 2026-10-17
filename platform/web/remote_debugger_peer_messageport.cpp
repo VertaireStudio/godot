@@ -30,8 +30,8 @@
 
 #include "remote_debugger_peer_messageport.h"
 
-#include "core/config/project_settings.h"
-#include "core/io/marshalls.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/io/marshalls.h"
 
 extern "C" {
 int godot_js_debugger_bind(int p_id, void (*p_callback)(void *p_ref, const uint8_t *p_buffer, size_t p_len), void *p_ref);

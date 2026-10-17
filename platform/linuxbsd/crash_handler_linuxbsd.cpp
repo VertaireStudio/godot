@@ -30,14 +30,14 @@
 
 #include "crash_handler_linuxbsd.h"
 
-#include "core/config/project_settings.h"
-#include "core/io/file_access.h"
-#include "core/object/script_language.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "core/string/print_string.h"
-#include "core/version.h"
-#include "main/main.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/io/file_access.h"
+#include "../../core/object/script_language.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/os.h"
+#include "../../core/string/print_string.h"
+#include "../../core/version.h"
+#include "../../main/main.h"
 
 #ifndef DEBUG_ENABLED
 #undef CRASH_HANDLER_ENABLED

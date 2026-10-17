@@ -32,10 +32,10 @@
 
 #include "editor_http_server.h"
 
-#include "editor/editor_node.h"
-#include "editor/editor_string_names.h"
-#include "editor/export/editor_export_platform.h"
-#include "main/splash.gen.h"
+#include "../../../editor/editor_node.h"
+#include "../../../editor/editor_string_names.h"
+#include "../../../editor/export/editor_export_platform.h"
+#include "../../../main/splash.gen.h"
 
 class ImageTexture;
 

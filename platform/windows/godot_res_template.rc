@@ -1,4 +1,4 @@
-#include "core/version.h"
+#include "../../core/version.h"
 
 #ifndef RT_MANIFEST
 #define RT_MANIFEST 24

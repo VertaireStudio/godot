@@ -30,17 +30,17 @@
 
 #include "crash_handler_windows.h"
 
-#include "core/config/project_settings.h"
-#include "core/io/file_access.h"
-#include "core/object/script_language.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "core/string/print_string.h"
-#include "core/version.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/io/file_access.h"
+#include "../../core/object/script_language.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/os.h"
+#include "../../core/string/print_string.h"
+#include "../../core/version.h"
 
 #ifdef CRASH_HANDLER_EXCEPTION
 
-#include <thirdparty/libbacktrace/backtrace.h>
+#include "../../thirdparty/libbacktrace/backtrace.h"
 
 #include <cxxabi.h>
 #include <psapi.h>

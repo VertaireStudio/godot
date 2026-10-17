@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/variant/typed_array.h"
+#include "../../../core/object/ref_counted.h"
+#include "../../../core/variant/typed_array.h"
 
 #ifdef ANDROID_ENABLED
-#include "core/templates/rb_map.h"
+#include "../../../core/templates/rb_map.h"
 
 #include <android/log.h>
 #include <jni.h>

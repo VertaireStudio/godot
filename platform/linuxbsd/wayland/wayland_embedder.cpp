@@ -43,7 +43,7 @@
 #include <linux/input-event-codes.h>
 #endif
 
-#include "core/os/os.h"
+#include "../../../core/os/os.h"
 
 #include <fcntl.h>
 #include <sys/file.h>

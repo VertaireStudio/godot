@@ -33,16 +33,16 @@
 #include "../display_server_macos.h"
 #include "../display_server_macos_embedded.h"
 
-#include "core/input/input_event_codec.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "editor/debugger/script_editor_debugger.h"
-#include "editor/editor_main_screen.h"
-#include "editor/editor_node.h"
-#include "editor/run/game_view_plugin.h"
-#include "editor/settings/editor_settings.h"
-#include "scene/gui/control.h"
-#include "scene/main/window.h"
+#include "../../../core/input/input_event_codec.h"
+#include "../../../core/os/main_loop.h"
+#include "../../../core/os/os.h"
+#include "../../../editor/debugger/script_editor_debugger.h"
+#include "../../../editor/editor_main_screen.h"
+#include "../../../editor/editor_node.h"
+#include "../../../editor/run/game_view_plugin.h"
+#include "../../../editor/settings/editor_settings.h"
+#include "../../../scene/gui/control.h"
+#include "../../../scene/main/window.h"
 
 void EmbeddedProcessMacOS::_notification(int p_what) {
 	switch (p_what) {

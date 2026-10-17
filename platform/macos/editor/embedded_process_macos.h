@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/object/class_db.h"
-#include "core/os/process_id.h"
-#include "editor/run/embedded_process.h"
-#include "scene/gui/control.h"
-#include "servers/display/display_server_enums.h"
+#include "../../../core/object/class_db.h"
+#include "../../../core/os/process_id.h"
+#include "../../../editor/run/embedded_process.h"
+#include "../../../scene/gui/control.h"
+#include "../../../servers/display/display_server_enums.h"
 
 class DisplayServerMacOS;
 class EmbeddedProcessMacOS;

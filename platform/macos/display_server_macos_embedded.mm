@@ -32,32 +32,32 @@
 
 #import "embedded_debugger.h"
 
-#import "core/config/project_settings.h"
-#import "core/debugger/engine_debugger.h"
-#import "core/input/input.h"
-#import "core/input/input_event.h"
-#import "core/io/marshalls.h"
-#import "core/os/main_loop.h"
-#import "core/os/os.h"
-#import "servers/display/native_menu.h"
+#import "../../core/config/project_settings.h"
+#import "../../core/debugger/engine_debugger.h"
+#import "../../core/input/input.h"
+#import "../../core/input/input_event.h"
+#import "../../core/io/marshalls.h"
+#import "../../core/os/main_loop.h"
+#import "../../core/os/os.h"
+#import "../../servers/display/native_menu.h"
 
 #if defined(GLES3_ENABLED)
 #import "embedded_gl_manager.h"
 
-#import "drivers/gles3/rasterizer_gles3.h"
+#import "../../drivers/gles3/rasterizer_gles3.h"
 
 #import <platform_gl.h>
 #endif
 
 #if defined(RD_ENABLED)
-#import "servers/rendering/renderer_rd/renderer_compositor_rd.h"
-#import "servers/rendering/rendering_device.h"
+#import "../../servers/rendering/renderer_rd/renderer_compositor_rd.h"
+#import "../../servers/rendering/rendering_device.h"
 
 #if defined(VULKAN_ENABLED)
 #import "rendering_context_driver_vulkan_macos.h"
 #endif // VULKAN_ENABLED
 #if defined(METAL_ENABLED)
-#import "drivers/metal/rendering_context_driver_metal.h"
+#import "../../drivers/metal/rendering_context_driver_metal.h"
 #endif
 #endif // RD_ENABLED
 

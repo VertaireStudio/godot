@@ -32,7 +32,7 @@
 
 #ifdef ANDROID_ENABLED
 
-#include "core/object/object.h"
+#include "../../../core/object/object.h"
 
 class ConfirmationDialog;
 class RichTextLabel;

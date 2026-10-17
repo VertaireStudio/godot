@@ -36,10 +36,10 @@
 #import "native_menu_macos.h"
 #import "os_macos.h"
 
-#import "core/input/input.h"
-#import "core/input/input_event.h"
-#import "core/os/main_loop.h"
-#import "main/main.h"
+#import "../../core/input/input.h"
+#import "../../core/input/input_event.h"
+#import "../../core/os/main_loop.h"
+#import "../../main/main.h"
 
 #import <Carbon/Carbon.h>
 

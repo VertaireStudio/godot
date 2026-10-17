@@ -30,8 +30,8 @@
 
 #include "os_linuxbsd.h"
 
-#include "core/profiling/profiling.h"
-#include "main/main.h"
+#include "../../core/profiling/profiling.h"
+#include "../../main/main.h"
 
 #include <unistd.h>
 

@@ -33,32 +33,32 @@
 #include "logo_svg.gen.h"
 #include "run_icon_svg.gen.h"
 
-#include "core/config/project_settings.h"
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/io/json.h"
-#include "core/io/marshalls.h"
-#include "core/math/random_pcg.h"
-#include "core/os/os.h"
-#include "core/os/shared_object.h"
-#include "core/string/translation_server.h"
-#include "core/version.h"
-#include "editor/editor_node.h"
-#include "editor/export/android_sdk_manager.h"
-#include "editor/export/editor_export.h"
-#include "editor/export/editor_export_plugin.h"
-#include "editor/export/export_template_manager.h"
-#include "editor/file_system/editor_paths.h"
-#include "editor/import/resource_importer_texture_settings.h"
-#include "editor/settings/editor_settings.h"
-#include "editor/themes/editor_scale.h"
-#include "scene/resources/image_texture.h"
+#include "../../../core/config/project_settings.h"
+#include "../../../core/io/dir_access.h"
+#include "../../../core/io/file_access.h"
+#include "../../../core/io/json.h"
+#include "../../../core/io/marshalls.h"
+#include "../../../core/math/random_pcg.h"
+#include "../../../core/os/os.h"
+#include "../../../core/os/shared_object.h"
+#include "../../../core/string/translation_server.h"
+#include "../../../core/version.h"
+#include "../../../editor/editor_node.h"
+#include "../../../editor/export/android_sdk_manager.h"
+#include "../../../editor/export/editor_export.h"
+#include "../../../editor/export/editor_export_plugin.h"
+#include "../../../editor/export/export_template_manager.h"
+#include "../../../editor/file_system/editor_paths.h"
+#include "../../../editor/import/resource_importer_texture_settings.h"
+#include "../../../editor/settings/editor_settings.h"
+#include "../../../editor/themes/editor_scale.h"
+#include "../../../scene/resources/image_texture.h"
 
-#include "modules/modules_enabled.gen.h" // IWYU pragma: keep. For mono.
-#include "modules/svg/image_loader_svg.h"
+#include "../../../modules/modules_enabled.gen.h" // IWYU pragma: keep. For mono.
+#include "../../../modules/svg/image_loader_svg.h"
 
 #ifdef MODULE_MONO_ENABLED
-#include "modules/mono/utils/path_utils.h"
+#include "../../../modules/mono/utils/path_utils.h"
 #endif
 
 #ifdef ANDROID_ENABLED
@@ -67,9 +67,9 @@
 #endif
 
 #ifndef ANDROID_ENABLED
-#include "core/object/callable_mp.h"
-#include "editor/editor_log.h"
-#include "editor/editor_string_names.h"
+#include "../../../core/object/callable_mp.h"
+#include "../../../editor/editor_log.h"
+#include "../../../editor/editor_string_names.h"
 #endif
 
 static const char *ANDROID_PERMS[] = {

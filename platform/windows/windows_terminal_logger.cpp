@@ -32,8 +32,8 @@
 
 #ifdef WINDOWS_ENABLED
 
-#include "core/object/script_backtrace.h"
-#include "core/os/os.h"
+#include "../../core/object/script_backtrace.h"
+#include "../../core/os/os.h"
 
 #include <windows.h>
 

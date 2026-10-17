@@ -39,20 +39,20 @@
 #import "display_server_macos_embedded.h"
 #endif
 
-#include "core/config/engine.h"
-#include "core/crypto/crypto_core.h"
-#include "core/debugger/engine_debugger.h"
-#include "core/input/input.h"
-#include "core/io/file_access.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "core/profiling/profiling.h"
-#include "core/version_generated.gen.h"
-#include "drivers/apple/os_log_logger.h"
-#include "main/main.h"
+#include "../../core/config/engine.h"
+#include "../../core/crypto/crypto_core.h"
+#include "../../core/debugger/engine_debugger.h"
+#include "../../core/input/input.h"
+#include "../../core/io/file_access.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/os.h"
+#include "../../core/profiling/profiling.h"
+#include "../../core/version_generated.gen.h"
+#include "../../drivers/apple/os_log_logger.h"
+#include "../../main/main.h"
 
 #ifdef SDL_ENABLED
-#include "drivers/sdl/joypad_sdl.h"
+#include "../../drivers/sdl/joypad_sdl.h"
 #endif
 
 #include <dlfcn.h>

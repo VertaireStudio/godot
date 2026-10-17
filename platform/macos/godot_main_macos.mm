@@ -31,8 +31,8 @@
 #import "godot_application.h"
 #import "os_macos.h"
 
-#include "core/profiling/profiling.h"
-#include "main/main.h"
+#include "../../core/profiling/profiling.h"
+#include "../../main/main.h"
 
 #if defined(ASAN_ENABLED)
 #include <sys/resource.h>

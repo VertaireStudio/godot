@@ -35,7 +35,7 @@
 #import "godot_content_view.h"
 #import "godot_window.h"
 
-#include "servers/display/accessibility_server.h"
+#include "../../servers/display/accessibility_server.h"
 
 @implementation GodotWindowDelegate {
 	DisplayServerEnums::WindowID window_id;

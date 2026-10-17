@@ -32,9 +32,9 @@
 
 #ifdef VULKAN_ENABLED
 
-#include "core/variant/variant.h"
+#include "../../core/variant/variant.h"
 
-#include <drivers/vulkan/godot_vulkan.h>
+#include "../../drivers/vulkan/godot_vulkan.h"
 
 const char *RenderingContextDriverVulkanAndroid::_get_platform_surface_extension() const {
 	return VK_KHR_ANDROID_SURFACE_EXTENSION_NAME;

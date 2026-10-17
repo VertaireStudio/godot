@@ -30,7 +30,7 @@
 
 #import "tts_macos.h"
 
-#include "servers/display/display_server.h"
+#include "../../servers/display/display_server.h"
 
 @implementation TTS_MacOS
 

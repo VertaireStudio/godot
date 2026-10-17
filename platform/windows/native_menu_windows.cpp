@@ -32,7 +32,7 @@
 
 #include "display_server_windows.h"
 
-#include "scene/resources/image_texture.h"
+#include "../../scene/resources/image_texture.h"
 
 HBITMAP NativeMenuWindows::_make_bitmap(const Ref<Image> &p_img) const {
 	p_img->convert(Image::FORMAT_RGBA8);

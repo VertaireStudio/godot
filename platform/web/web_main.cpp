@@ -32,19 +32,19 @@
 #include "godot_js.h"
 #include "os_web.h"
 
-#include "core/config/engine.h"
-#include "core/io/resource_loader.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "core/profiling/profiling.h"
-#include "main/main.h"
+#include "../../core/config/engine.h"
+#include "../../core/io/resource_loader.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/os.h"
+#include "../../core/profiling/profiling.h"
+#include "../../main/main.h"
 
 #ifdef TOOLS_ENABLED
-#include "core/io/file_access.h"
-#include "editor/editor_debugger_server_messageport.h"
-#include "editor/editor_node.h"
-#include "scene/main/scene_tree.h"
-#include "scene/main/window.h" // SceneTree only forward declares it.
+#include "../../core/io/file_access.h"
+#include "../../editor/editor_debugger_server_messageport.h"
+#include "../../editor/editor_node.h"
+#include "../../scene/main/scene_tree.h"
+#include "../../scene/main/window.h" // SceneTree only forward declares it.
 #endif
 
 #include <emscripten/emscripten.h>

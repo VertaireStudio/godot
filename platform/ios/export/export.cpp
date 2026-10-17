@@ -32,11 +32,11 @@
 
 #include "export_plugin.h"
 
-#include "core/object/class_db.h"
-#include "editor/export/editor_export.h"
+#include "../../core/object/class_db.h"
+#include "../../editor/export/editor_export.h"
 
 #ifdef MACOS_ENABLED
-#include "editor/settings/editor_settings.h"
+#include "../../editor/settings/editor_settings.h"
 #endif
 
 void register_ios_exporter_types() {

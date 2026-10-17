@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/templates/hash_map.h"
-#include "core/templates/rid_owner.h"
-#include "servers/display/native_menu.h"
+#include "../../core/templates/hash_map.h"
+#include "../../core/templates/rid_owner.h"
+#include "../../servers/display/native_menu.h"
 
 #import <AppKit/AppKit.h>
 #import <ApplicationServices/ApplicationServices.h>

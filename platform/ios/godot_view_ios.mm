@@ -32,8 +32,8 @@
 
 #import "display_layer_ios.h"
 
-#include "core/config/project_settings.h"
-#include "core/error/error_macros.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/error/error_macros.h"
 
 @interface GDTViewIOS ()
 

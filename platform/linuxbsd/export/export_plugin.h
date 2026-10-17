@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/os/process_id.h"
-#include "editor/export/editor_export_platform_pc.h"
-#include "scene/resources/image_texture.h"
+#include "../../../core/os/process_id.h"
+#include "../../../editor/export/editor_export_platform_pc.h"
+#include "../../../scene/resources/image_texture.h"
 
 class EditorExportPlatformLinuxBSD : public EditorExportPlatformPC {
 	GDCLASS(EditorExportPlatformLinuxBSD, EditorExportPlatformPC);

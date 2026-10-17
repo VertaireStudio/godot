@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "drivers/apple_embedded/godot_app_delegate_apple_embedded.h"
+#include "../../drivers/apple_embedded/godot_app_delegate_apple_embedded.h"
 
 @interface GDTAppDelegateVisionOS : GDTAppDelegate
 

@@ -44,4 +44,4 @@
 #endif
 #endif
 
-#include <thirdparty/glad/glad/gl.h> // IWYU pragma: export.
+#include "../../thirdparty/glad/glad/gl.h" // IWYU pragma: export.

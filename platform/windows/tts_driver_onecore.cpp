@@ -30,8 +30,8 @@
 
 #include "tts_driver_onecore.h"
 
-#include "core/object/callable_mp.h"
-#include "servers/display/display_server.h"
+#include "../../core/object/callable_mp.h"
+#include "../../servers/display/display_server.h"
 
 static const WCHAR *ROSpeechSynthesizerName = L"Windows.Media.SpeechSynthesis.SpeechSynthesizer";
 static const WCHAR *ROMediaPlayerName = L"Windows.Media.Playback.MediaPlayer";

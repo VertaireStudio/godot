@@ -32,11 +32,11 @@
 
 #if defined(WINDOWS_ENABLED) && defined(GLES3_ENABLED)
 
-#include "core/config/project_settings.h"
-#include "core/os/os.h"
-#include "core/version.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/os/os.h"
+#include "../../core/version.h"
 
-#include <thirdparty/misc/nvapi_minimal.h>
+#include "../../thirdparty/misc/nvapi_minimal.h"
 
 #include <dwmapi.h>
 

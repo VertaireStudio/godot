@@ -32,8 +32,8 @@
 
 #if defined(WINDOWS_ENABLED) && defined(GLES3_ENABLED)
 
-#include "drivers/egl/egl_manager.h"
-#include "servers/display/display_server_enums.h"
+#include "../../drivers/egl/egl_manager.h"
+#include "../../servers/display/display_server_enums.h"
 
 #include <windows.h>
 

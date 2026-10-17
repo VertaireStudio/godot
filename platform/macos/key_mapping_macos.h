@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/os/keyboard.h"
+#include "../../core/os/keyboard.h"
 
 class KeyMappingMacOS {
 	KeyMappingMacOS() {}

@@ -30,7 +30,7 @@
 
 #include "key_mapping_windows.h"
 
-#include "core/templates/hash_map.h"
+#include "../../core/templates/hash_map.h"
 
 // This provides translation from Windows virtual key codes to Godot and back.
 // See WinUser.h and the below for documentation:

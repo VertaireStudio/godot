@@ -45,25 +45,25 @@
 #include "thread_jandroid.h"
 #include "tts_android.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/input/input.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "core/os/thread.h"
-#include "core/os/thread_safe.h"
-#include "core/profiling/profiling.h"
-#include "main/main.h"
-#include "servers/camera/camera_server.h"
-#include "servers/display/accessibility_server.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/input/input.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/os.h"
+#include "../../core/os/thread.h"
+#include "../../core/os/thread_safe.h"
+#include "../../core/profiling/profiling.h"
+#include "../../main/main.h"
+#include "../../servers/camera/camera_server.h"
+#include "../../servers/display/accessibility_server.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #ifndef XR_DISABLED
-#include "servers/xr/xr_server.h"
+#include "../../servers/xr/xr_server.h"
 #endif // XR_DISABLED
 
 #ifdef TOOLS_ENABLED
-#include "editor/settings/editor_settings.h"
+#include "../../editor/settings/editor_settings.h"
 #endif
 
 #include <android/asset_manager_jni.h>

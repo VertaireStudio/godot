@@ -32,7 +32,7 @@
 
 #if defined(UNIX_ENABLED)
 
-#include "core/config/project_settings.h"
+#include "../../core/config/project_settings.h"
 
 #import <AppKit/NSWorkspace.h>
 #import <Foundation/Foundation.h>

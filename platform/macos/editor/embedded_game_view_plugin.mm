@@ -32,13 +32,13 @@
 
 #include "embedded_process_macos.h"
 
-#include "core/config/engine.h"
-#include "core/input/input.h"
-#include "core/os/os.h"
-#include "editor/editor_node.h"
-#include "editor/gui/window_wrapper.h"
-#include "scene/main/window.h"
-#include "servers/display/display_server.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/input/input.h"
+#include "../../../core/os/os.h"
+#include "../../../editor/editor_node.h"
+#include "../../../editor/gui/window_wrapper.h"
+#include "../../../scene/main/window.h"
+#include "../../../servers/display/display_server.h"
 
 HashMap<String, GameViewDebuggerMacOS::ParseMessageFunc> GameViewDebuggerMacOS::parse_message_handlers;
 

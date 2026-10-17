@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/os/os.h"
+#include "../../core/os/os.h"
 
 #include <dlfcn.h>
 #include <mach-o/dyld.h>

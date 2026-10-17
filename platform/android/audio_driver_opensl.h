@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/os/mutex.h"
-#include "servers/audio/audio_driver.h"
+#include "../../core/os/mutex.h"
+#include "../../servers/audio/audio_driver.h"
 
 #include <SLES/OpenSLES.h>
 #include <SLES/OpenSLES_Android.h>

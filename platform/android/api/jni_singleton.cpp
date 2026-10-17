@@ -30,7 +30,7 @@
 
 #include "jni_singleton.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 void JNISingleton::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("has_java_method", "method"), &JNISingleton::has_java_method);

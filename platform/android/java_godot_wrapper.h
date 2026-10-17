@@ -32,10 +32,10 @@
 
 #include "java_godot_view_wrapper.h"
 
-#include "core/math/color.h"
-#include "core/templates/list.h"
-#include "core/templates/vector.h"
-#include "core/variant/callable.h"
+#include "../../core/math/color.h"
+#include "../../core/templates/list.h"
+#include "../../core/templates/vector.h"
+#include "../../core/variant/callable.h"
 
 #include <jni.h>
 

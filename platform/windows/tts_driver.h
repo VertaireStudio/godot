@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/object/object.h"
+#include "../../core/object/object.h"
 
 class TTSDriver : public Object {
 	GDSOFTCLASS(TTSDriver, Object);

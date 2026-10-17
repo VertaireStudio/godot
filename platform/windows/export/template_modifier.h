@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/io/file_access.h"
+#include "../../../core/io/file_access.h"
 
 class EditorExportPreset;
 

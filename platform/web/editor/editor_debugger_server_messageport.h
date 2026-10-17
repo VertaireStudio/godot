@@ -31,9 +31,9 @@
 #pragma once
 
 #include "../remote_debugger_peer_messageport.h"
-#include "godot_js.h"
+#include "../godot_js.h"
 
-#include "editor/debugger/editor_debugger_server.h"
+#include "../../../editor/debugger/editor_debugger_server.h"
 
 class EditorDebuggerServerMessagePort : public EditorDebuggerServer {
 	GDCLASS(EditorDebuggerServerMessagePort, EditorDebuggerServer);

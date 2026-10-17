@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/string/ustring.h"
-#include "core/variant/array.h"
+#include "../../core/string/ustring.h"
+#include "../../core/variant/array.h"
 
 class TTSDriver;
 

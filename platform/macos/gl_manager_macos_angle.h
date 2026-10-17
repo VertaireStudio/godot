@@ -32,9 +32,9 @@
 
 #if defined(MACOS_ENABLED) && defined(GLES3_ENABLED)
 
-#include "core/templates/vector.h"
-#include "drivers/egl/egl_manager.h"
-#include "servers/display/display_server_enums.h"
+#include "../../core/templates/vector.h"
+#include "../../drivers/egl/egl_manager.h"
+#include "../../servers/display/display_server_enums.h"
 
 // Suppress redefinition conflicts
 #define FontVariation __FontVariation

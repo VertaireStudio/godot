@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/io/dir_access.h"
-#include "core/io/image.h"
-#include "core/os/process_id.h"
-#include "editor/export/editor_export_platform.h"
-#include "scene/resources/image_texture.h"
+#include "../../../core/io/dir_access.h"
+#include "../../../core/io/image.h"
+#include "../../../core/os/process_id.h"
+#include "../../../editor/export/editor_export_platform.h"
+#include "../../../scene/resources/image_texture.h"
 
 #include <sys/stat.h>
 

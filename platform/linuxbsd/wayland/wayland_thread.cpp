@@ -32,9 +32,9 @@
 
 #ifdef WAYLAND_ENABLED
 
-#include "core/config/engine.h"
-#include "core/io/image.h"
-#include "core/os/os.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/io/image.h"
+#include "../../../core/os/os.h"
 
 #ifdef __FreeBSD__
 #include <dev/evdev/input-event-codes.h>

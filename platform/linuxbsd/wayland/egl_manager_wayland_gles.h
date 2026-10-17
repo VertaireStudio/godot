@@ -34,7 +34,7 @@
 #ifdef EGL_ENABLED
 #ifdef GLES3_ENABLED
 
-#include "drivers/egl/egl_manager.h"
+#include "../../../drivers/egl/egl_manager.h"
 
 class EGLManagerWaylandGLES : public EGLManager {
 public:

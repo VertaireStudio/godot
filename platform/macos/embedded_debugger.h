@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/templates/hash_map.h"
-#include "core/variant/array.h"
+#include "../../core/templates/hash_map.h"
+#include "../../core/variant/array.h"
 
 class DisplayServerMacOSEmbedded;
 

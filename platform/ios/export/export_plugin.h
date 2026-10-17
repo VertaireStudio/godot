@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "editor/export/editor_export_platform_apple_embedded.h"
+#include "../../editor/export/editor_export_platform_apple_embedded.h"
 
 class EditorExportPlatformIOS : public EditorExportPlatformAppleEmbedded {
 	GDCLASS(EditorExportPlatformIOS, EditorExportPlatformAppleEmbedded);

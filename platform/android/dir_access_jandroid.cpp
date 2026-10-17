@@ -33,7 +33,7 @@
 #include "jni_utils.h"
 #include "thread_jandroid.h"
 
-#include "core/string/print_string.h"
+#include "../../core/string/print_string.h"
 
 jobject DirAccessJAndroid::dir_access_handler = nullptr;
 jclass DirAccessJAndroid::cls = nullptr;

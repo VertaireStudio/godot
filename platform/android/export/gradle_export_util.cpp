@@ -30,14 +30,14 @@
 
 #include "gradle_export_util.h"
 
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/os/os.h"
-#include "core/string/regex.h"
-#include "core/string/translation_server.h"
-#include "editor/export/editor_export.h"
-#include "editor/export/editor_export_plugin.h"
-#include "editor/export/export_template_manager.h"
+#include "../../../core/io/dir_access.h"
+#include "../../../core/io/file_access.h"
+#include "../../../core/os/os.h"
+#include "../../../core/string/regex.h"
+#include "../../../core/string/translation_server.h"
+#include "../../../editor/export/editor_export.h"
+#include "../../../editor/export/editor_export_plugin.h"
+#include "../../../editor/export/export_template_manager.h"
 
 int _get_android_orientation_value(DisplayServerEnums::ScreenOrientation screen_orientation) {
 	switch (screen_orientation) {

@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/io/ip.h"
+#include "../../core/io/ip.h"
 
 class IPWeb : public IP {
 	GDSOFTCLASS(IPWeb, IP);

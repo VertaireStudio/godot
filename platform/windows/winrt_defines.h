@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/typedefs.h"
+#include "../../core/object/ref_counted.h"
+#include "../../core/typedefs.h"
 
 #include <activation.h>
 #include <inspectable.h>

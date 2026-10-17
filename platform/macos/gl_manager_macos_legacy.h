@@ -34,9 +34,9 @@
 
 #include "platform_gl.h"
 
-#include "core/error/error_list.h"
-#include "core/templates/rb_map.h"
-#include "servers/display/display_server_enums.h"
+#include "../../core/error/error_list.h"
+#include "../../core/templates/rb_map.h"
+#include "../../servers/display/display_server_enums.h"
 
 #import <AppKit/AppKit.h>
 #import <ApplicationServices/ApplicationServices.h>

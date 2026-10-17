@@ -38,38 +38,38 @@
 #include "wgl_detect_version.h"
 #include "winrt_utils.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/input/input.h"
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/io/marshalls.h"
-#include "core/io/xml_parser.h"
-#include "core/object/callable_mp.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "core/version.h"
-#include "drivers/png/png_driver_common.h"
-#include "main/main.h"
-#include "scene/resources/texture.h"
-#include "servers/display/accessibility_server.h"
-#include "servers/rendering/dummy/rasterizer_dummy.h"
-#include "servers/rendering/renderer_rd/renderer_compositor_rd.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/input/input.h"
+#include "../../core/io/dir_access.h"
+#include "../../core/io/file_access.h"
+#include "../../core/io/marshalls.h"
+#include "../../core/io/xml_parser.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/os.h"
+#include "../../core/version.h"
+#include "../../drivers/png/png_driver_common.h"
+#include "../../main/main.h"
+#include "../../scene/resources/texture.h"
+#include "../../servers/display/accessibility_server.h"
+#include "../../servers/rendering/dummy/rasterizer_dummy.h"
+#include "../../servers/rendering/renderer_rd/renderer_compositor_rd.h"
 
 #ifdef SDL_ENABLED
-#include "drivers/sdl/joypad_sdl.h"
+#include "../../drivers/sdl/joypad_sdl.h"
 #endif
 
 #if defined(VULKAN_ENABLED)
 #include "rendering_context_driver_vulkan_windows.h"
 #endif
 #if defined(D3D12_ENABLED)
-#include "drivers/d3d12/rendering_context_driver_d3d12.h"
+#include "../../drivers/d3d12/rendering_context_driver_d3d12.h"
 
 #include <dxgi1_6.h>
 #endif
 #if defined(GLES3_ENABLED)
-#include "drivers/gles3/rasterizer_gles3.h"
+#include "../../drivers/gles3/rasterizer_gles3.h"
 #endif
 
 #include <avrt.h>

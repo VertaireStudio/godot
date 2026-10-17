@@ -36,9 +36,9 @@
 
 #include "gradle_export_util.h"
 
-#include "core/io/image.h"
-#include "core/io/zip_io.h"
-#include "editor/export/editor_export_platform.h"
+#include "../../../core/io/image.h"
+#include "../../../core/io/zip_io.h"
+#include "../../../editor/export/editor_export_platform.h"
 
 class ImageTexture;
 

@@ -32,8 +32,8 @@
 
 #ifdef WINDOWS_ENABLED
 
-#include "core/string/ustring.h"
-#include "core/templates/hash_map.h"
+#include "../../core/string/ustring.h"
+#include "../../core/templates/hash_map.h"
 
 class WindowsUtils {
 	static HashMap<String, Vector<String>> temp_pdbs;

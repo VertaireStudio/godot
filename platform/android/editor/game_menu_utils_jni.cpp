@@ -31,9 +31,9 @@
 #include "game_menu_utils_jni.h"
 
 #ifdef TOOLS_ENABLED
-#include "editor/editor_interface.h"
-#include "editor/editor_node.h"
-#include "editor/run/game_view_plugin.h"
+#include "../../../editor/editor_interface.h"
+#include "../../../editor/editor_node.h"
+#include "../../../editor/run/game_view_plugin.h"
 
 _FORCE_INLINE_ static GameViewPlugin *_get_game_view_plugin() {
 	ERR_FAIL_NULL_V(EditorNode::get_singleton(), nullptr);

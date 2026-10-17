@@ -39,32 +39,32 @@
 #define DEBUG_LOG_WAYLAND(...)
 #endif
 
-#include "core/config/project_settings.h"
-#include "core/input/input.h"
-#include "core/input/input_event.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "servers/display/accessibility_server.h"
-#include "servers/display/native_menu.h"
-#include "servers/rendering/dummy/rasterizer_dummy.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../../core/config/project_settings.h"
+#include "../../../core/input/input.h"
+#include "../../../core/input/input_event.h"
+#include "../../../core/os/main_loop.h"
+#include "../../../core/os/os.h"
+#include "../../../servers/display/accessibility_server.h"
+#include "../../../servers/display/native_menu.h"
+#include "../../../servers/rendering/dummy/rasterizer_dummy.h"
+#include "../../../servers/rendering/rendering_server.h"
 
 #ifdef RD_ENABLED
 #ifdef VULKAN_ENABLED
-#include "wayland/rendering_context_driver_vulkan_wayland.h"
+#include "rendering_context_driver_vulkan_wayland.h"
 #endif
 
-#include "servers/rendering/renderer_rd/renderer_compositor_rd.h"
+#include "../../../servers/rendering/renderer_rd/renderer_compositor_rd.h"
 #endif
 
 #ifdef GLES3_ENABLED
 #include "detect_prime_egl.h"
-#include "wayland/egl_manager_wayland.h"
-#include "wayland/egl_manager_wayland_gles.h"
+#include "egl_manager_wayland.h"
+#include "egl_manager_wayland_gles.h"
 
-#include "core/io/file_access.h"
-#include "drivers/egl/egl_manager.h"
-#include "drivers/gles3/rasterizer_gles3.h"
+#include "../../../core/io/file_access.h"
+#include "../../../drivers/egl/egl_manager.h"
+#include "../../../drivers/gles3/rasterizer_gles3.h"
 #endif
 
 #ifdef DBUS_ENABLED
