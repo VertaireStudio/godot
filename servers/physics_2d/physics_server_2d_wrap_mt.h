@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/object/worker_thread_pool.h"
-#include "core/os/thread.h"
-#include "core/templates/command_queue_mt.h"
-#include "servers/physics_2d/physics_server_2d.h"
+#include "../../core/object/worker_thread_pool.h"
+#include "../../core/os/thread.h"
+#include "../../core/templates/command_queue_mt.h"
+#include "physics_server_2d.h"
 
 #define ASYNC_COND_PUSH (Thread::get_caller_id() != server_thread && !(doing_sync.is_set() && Thread::is_main_thread()))
 #define ASYNC_COND_PUSH_AND_RET (Thread::get_caller_id() != server_thread && !(doing_sync.is_set() && Thread::is_main_thread()))

@@ -30,14 +30,14 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_rd/shaders/effects/fsr2/fsr2_accumulate_pass.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/fsr2/fsr2_autogen_reactive_pass.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/fsr2/fsr2_compute_luminance_pyramid_pass.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/fsr2/fsr2_depth_clip_pass.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/fsr2/fsr2_lock_pass.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/fsr2/fsr2_rcas_pass.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/fsr2/fsr2_reconstruct_previous_depth_pass.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/fsr2/fsr2_tcr_autogen_pass.glsl.gen.h"
+#include "../shaders/effects/fsr2/fsr2_accumulate_pass.glsl.gen.h"
+#include "../shaders/effects/fsr2/fsr2_autogen_reactive_pass.glsl.gen.h"
+#include "../shaders/effects/fsr2/fsr2_compute_luminance_pyramid_pass.glsl.gen.h"
+#include "../shaders/effects/fsr2/fsr2_depth_clip_pass.glsl.gen.h"
+#include "../shaders/effects/fsr2/fsr2_lock_pass.glsl.gen.h"
+#include "../shaders/effects/fsr2/fsr2_rcas_pass.glsl.gen.h"
+#include "../shaders/effects/fsr2/fsr2_reconstruct_previous_depth_pass.glsl.gen.h"
+#include "../shaders/effects/fsr2/fsr2_tcr_autogen_pass.glsl.gen.h"
 
 // This flag doesn't actually control anything GCC specific in FSR2. It determines
 // if symbols should be exported, which is not required for Godot.

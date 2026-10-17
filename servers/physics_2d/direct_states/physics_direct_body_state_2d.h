@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/variant/type_info.h"
-#include "servers/physics_2d/direct_states/physics_direct_space_state_2d.h"
+#include "../../../core/variant/type_info.h"
+#include "physics_direct_space_state_2d.h"
 
 class PhysicsDirectBodyState2D : public Object {
 	GDCLASS(PhysicsDirectBodyState2D, Object);

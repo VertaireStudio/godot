@@ -30,8 +30,8 @@
 
 #include "physics_testmotion_query_parameters_3d.h"
 
-#include "core/object/class_db.h"
-#include "core/variant/typed_array.h"
+#include "../../../core/object/class_db.h"
+#include "../../../core/variant/typed_array.h"
 
 TypedArray<RID> PhysicsTestMotionParameters3D::get_exclude_bodies() const {
 	TypedArray<RID> exclude;

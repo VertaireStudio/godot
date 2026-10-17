@@ -30,9 +30,9 @@
 
 #include "mesh_storage.h"
 
-#include "servers/rendering/renderer_viewport.h"
-#include "servers/rendering/rendering_server.h"
-#include "servers/rendering/rendering_server_types.h"
+#include "../../renderer_viewport.h"
+#include "../../rendering_server.h"
+#include "../../rendering_server_types.h"
 
 using namespace RendererRD;
 

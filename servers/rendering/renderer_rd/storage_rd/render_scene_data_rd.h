@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_scene_render.h"
-#include "servers/rendering/storage/render_scene_data.h"
+#include "../../renderer_scene_render.h"
+#include "../../storage/render_scene_data.h"
 
 // This is a container for data related to rendering a single frame of a viewport where we load this data into a UBO
 // that can be used by the main scene shader but also by various effects.

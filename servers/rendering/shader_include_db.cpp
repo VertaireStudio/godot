@@ -30,7 +30,7 @@
 
 #include "shader_include_db.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 HashMap<String, String> ShaderIncludeDB::built_in_includes;
 

@@ -30,9 +30,9 @@
 
 #include "taa.h"
 
-#include "servers/rendering/renderer_rd/effects/copy_effects.h"
-#include "servers/rendering/renderer_rd/storage_rd/material_storage.h"
-#include "servers/rendering/renderer_rd/uniform_set_cache_rd.h"
+#include "copy_effects.h"
+#include "../storage_rd/material_storage.h"
+#include "../uniform_set_cache_rd.h"
 
 using namespace RendererRD;
 

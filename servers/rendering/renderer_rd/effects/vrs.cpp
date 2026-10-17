@@ -30,13 +30,13 @@
 
 #include "vrs.h"
 
-#include "servers/rendering/renderer_rd/renderer_compositor_rd.h"
-#include "servers/rendering/renderer_rd/storage_rd/texture_storage.h"
-#include "servers/rendering/renderer_rd/uniform_set_cache_rd.h"
+#include "../renderer_compositor_rd.h"
+#include "../storage_rd/texture_storage.h"
+#include "../uniform_set_cache_rd.h"
 
 #ifndef XR_DISABLED
-#include "servers/xr/xr_interface.h"
-#include "servers/xr/xr_server.h"
+#include "../../../xr/xr_interface.h"
+#include "../../../xr/xr_server.h"
 #endif // XR_DISABLED
 
 using namespace RendererRD;

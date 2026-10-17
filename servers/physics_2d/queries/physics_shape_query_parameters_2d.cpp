@@ -30,9 +30,9 @@
 
 #include "physics_shape_query_parameters_2d.h"
 
-#include "core/io/resource.h"
-#include "core/object/class_db.h"
-#include "core/variant/typed_array.h"
+#include "../../../core/io/resource.h"
+#include "../../../core/object/class_db.h"
+#include "../../../core/variant/typed_array.h"
 
 Ref<Resource> PhysicsShapeQueryParameters2D::get_shape() const {
 	return shape_ref;

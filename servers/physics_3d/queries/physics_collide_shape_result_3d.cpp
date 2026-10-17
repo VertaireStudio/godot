@@ -30,7 +30,7 @@
 
 #include "physics_collide_shape_result_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 PhysicsCollideShapeResult3D::PhysicsCollideShapeResult3D(int p_max_collisions) {
 	ERR_FAIL_COND(p_max_collisions < 0);

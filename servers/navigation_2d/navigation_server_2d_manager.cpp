@@ -30,10 +30,10 @@
 
 #include "navigation_server_2d_manager.h"
 
-#include "core/config/project_settings.h"
-#include "core/object/class_db.h"
-#include "servers/navigation_2d/navigation_server_2d.h"
-#include "servers/navigation_2d/navigation_server_2d_dummy.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/class_db.h"
+#include "navigation_server_2d.h"
+#include "navigation_server_2d_dummy.h"
 
 static NavigationServer2D *navigation_server_2d = nullptr;
 

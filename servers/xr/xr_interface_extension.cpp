@@ -30,9 +30,9 @@
 
 #include "xr_interface_extension.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 #ifdef RD_ENABLED
-#include "servers/rendering/renderer_rd/storage_rd/texture_storage.h"
+#include "../rendering/renderer_rd/storage_rd/texture_storage.h"
 #endif
 
 void XRInterfaceExtension::_bind_methods() {

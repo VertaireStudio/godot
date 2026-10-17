@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "servers/physics_3d/physics_server_3d_types.h"
+#include "../../../core/object/ref_counted.h"
+#include "../physics_server_3d_types.h"
 
 class PhysicsPointQueryParameters3D : public RefCounted {
 	GDCLASS(PhysicsPointQueryParameters3D, RefCounted);

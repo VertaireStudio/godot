@@ -30,15 +30,15 @@
 
 #pragma once
 
-#include "core/io/image.h"
-#include "core/templates/rid.h"
-#include "core/variant/typed_array.h"
-#include "core/variant/variant.h"
-#include "servers/display/display_server_enums.h"
-#include "servers/rendering/rendering_server_enums.h"
-#include "servers/rendering/rendering_server_types.h"
+#include "../../core/io/image.h"
+#include "../../core/templates/rid.h"
+#include "../../core/variant/typed_array.h"
+#include "../../core/variant/variant.h"
+#include "../display/display_server_enums.h"
+#include "rendering_server_enums.h"
+#include "rendering_server_types.h"
 #ifdef RD_ENABLED
-#include "servers/rendering/rendering_device_enums.h"
+#include "rendering_device_enums.h"
 #endif
 
 namespace Geometry3D {

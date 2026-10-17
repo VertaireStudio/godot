@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/string/ustring.h"
-#include "core/templates/hash_map.h"
-#include "servers/display/display_server_enums.h"
+#include "../../core/string/ustring.h"
+#include "../../core/templates/hash_map.h"
+#include "../display/display_server_enums.h"
 
 #include <cstdint>
 

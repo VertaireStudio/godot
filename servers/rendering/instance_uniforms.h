@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/variant/variant.h"
-#include "servers/rendering/storage/material_storage.h"
+#include "../../core/variant/variant.h"
+#include "storage/material_storage.h"
 
 class InstanceUniforms {
 public:

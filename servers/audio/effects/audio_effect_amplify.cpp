@@ -30,7 +30,7 @@
 
 #include "audio_effect_amplify.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 void AudioEffectAmplifyInstance::process(const AudioFrame *p_src_frames, AudioFrame *p_dst_frames, int p_frame_count) {
 	//multiply volume interpolating to avoid clicks if this changes

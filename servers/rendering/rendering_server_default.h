@@ -30,19 +30,19 @@
 
 #pragma once
 
-#include "core/object/worker_thread_pool.h"
-#include "core/os/thread.h"
-#include "core/templates/command_queue_mt.h"
-#include "core/templates/hash_map.h"
-#include "servers/rendering/renderer_canvas_cull.h"
-#include "servers/rendering/renderer_compositor.h"
-#include "servers/rendering/renderer_viewport.h"
-#include "servers/rendering/rendering_method.h"
-#include "servers/rendering/rendering_server.h"
-#include "servers/rendering/rendering_server_enums.h"
-#include "servers/rendering/rendering_server_globals.h"
-#include "servers/rendering/rendering_server_types.h"
-#include "servers/server_wrap_mt_common.h"
+#include "../../core/object/worker_thread_pool.h"
+#include "../../core/os/thread.h"
+#include "../../core/templates/command_queue_mt.h"
+#include "../../core/templates/hash_map.h"
+#include "renderer_canvas_cull.h"
+#include "renderer_compositor.h"
+#include "renderer_viewport.h"
+#include "rendering_method.h"
+#include "rendering_server.h"
+#include "rendering_server_enums.h"
+#include "rendering_server_globals.h"
+#include "rendering_server_types.h"
+#include "../server_wrap_mt_common.h"
 
 class RenderingServerDefault : public RenderingServer {
 	GDSOFTCLASS(RenderingServerDefault, RenderingServer);

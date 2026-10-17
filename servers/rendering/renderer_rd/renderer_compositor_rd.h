@@ -30,20 +30,20 @@
 
 #pragma once
 
-#include "core/io/image.h"
-#include "servers/rendering/renderer_compositor.h"
-#include "servers/rendering/renderer_rd/environment/fog.h"
-#include "servers/rendering/renderer_rd/framebuffer_cache_rd.h"
-#include "servers/rendering/renderer_rd/renderer_canvas_render_rd.h"
-#include "servers/rendering/renderer_rd/renderer_scene_render_rd.h"
-#include "servers/rendering/renderer_rd/shaders/blit.glsl.gen.h"
-#include "servers/rendering/renderer_rd/storage_rd/light_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/material_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/mesh_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/particles_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/texture_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/utilities.h"
-#include "servers/rendering/renderer_rd/uniform_set_cache_rd.h"
+#include "../../../core/io/image.h"
+#include "../renderer_compositor.h"
+#include "environment/fog.h"
+#include "framebuffer_cache_rd.h"
+#include "renderer_canvas_render_rd.h"
+#include "renderer_scene_render_rd.h"
+#include "shaders/blit.glsl.gen.h"
+#include "storage_rd/light_storage.h"
+#include "storage_rd/material_storage.h"
+#include "storage_rd/mesh_storage.h"
+#include "storage_rd/particles_storage.h"
+#include "storage_rd/texture_storage.h"
+#include "storage_rd/utilities.h"
+#include "uniform_set_cache_rd.h"
 
 class RendererCompositorRD : public RendererCompositor {
 protected:

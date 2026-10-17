@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_rd/pipeline_cache_rd.h"
-#include "servers/rendering/renderer_rd/shaders/effects/vrs.glsl.gen.h"
+#include "../pipeline_cache_rd.h"
+#include "../shaders/effects/vrs.glsl.gen.h"
 
 namespace RendererRD {
 

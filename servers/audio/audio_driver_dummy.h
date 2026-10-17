@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/os/mutex.h"
-#include "core/os/thread.h"
-#include "core/templates/safe_refcount.h"
-#include "servers/audio/audio_driver.h"
+#include "../../core/os/mutex.h"
+#include "../../core/os/thread.h"
+#include "../../core/templates/safe_refcount.h"
+#include "audio_driver.h"
 
 class AudioDriverDummy : public AudioDriver {
 	Thread thread;

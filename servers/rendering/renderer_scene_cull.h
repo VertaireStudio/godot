@@ -30,22 +30,22 @@
 
 #pragma once
 
-#include "core/math/dynamic_bvh.h"
-#include "core/math/transform_interpolator.h"
-#include "core/templates/bin_sorted_array.h"
-#include "core/templates/local_vector.h"
-#include "core/templates/paged_allocator.h"
-#include "core/templates/paged_array.h"
-#include "core/templates/pass_func.h"
-#include "core/templates/rid_owner.h"
-#include "core/templates/self_list.h"
-#include "servers/rendering/instance_uniforms.h"
-#include "servers/rendering/renderer_scene_occlusion_cull.h"
-#include "servers/rendering/renderer_scene_render.h"
-#include "servers/rendering/rendering_method.h"
-#include "servers/rendering/rendering_server_globals.h"
-#include "servers/rendering/rendering_server_types.h"
-#include "servers/rendering/storage/utilities.h"
+#include "../../core/math/dynamic_bvh.h"
+#include "../../core/math/transform_interpolator.h"
+#include "../../core/templates/bin_sorted_array.h"
+#include "../../core/templates/local_vector.h"
+#include "../../core/templates/paged_allocator.h"
+#include "../../core/templates/paged_array.h"
+#include "../../core/templates/pass_func.h"
+#include "../../core/templates/rid_owner.h"
+#include "../../core/templates/self_list.h"
+#include "instance_uniforms.h"
+#include "renderer_scene_occlusion_cull.h"
+#include "renderer_scene_render.h"
+#include "rendering_method.h"
+#include "rendering_server_globals.h"
+#include "rendering_server_types.h"
+#include "storage/utilities.h"
 
 class RenderingLightCuller;
 

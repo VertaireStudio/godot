@@ -30,13 +30,13 @@
 
 #pragma once
 
-#include "servers/physics_3d/direct_states/physics_direct_body_state_3d.h"
-#include "servers/physics_3d/direct_states/physics_direct_space_state_3d.h"
-#include "servers/physics_3d/physics_server_3d_enums.h"
-#include "servers/physics_3d/physics_server_3d_rendering_server_handler.h"
-#include "servers/physics_3d/physics_server_3d_types.h"
-#include "servers/physics_3d/queries/physics_testmotion_query_parameters_3d.h"
-#include "servers/physics_3d/queries/physics_testmotion_query_result_3d.h"
+#include "direct_states/physics_direct_body_state_3d.h"
+#include "direct_states/physics_direct_space_state_3d.h"
+#include "physics_server_3d_enums.h"
+#include "physics_server_3d_rendering_server_handler.h"
+#include "physics_server_3d_types.h"
+#include "queries/physics_testmotion_query_parameters_3d.h"
+#include "queries/physics_testmotion_query_result_3d.h"
 
 class PhysicsDirectSpaceState3D;
 template <typename T>

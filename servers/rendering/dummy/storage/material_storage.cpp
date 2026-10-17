@@ -30,7 +30,7 @@
 
 #include "material_storage.h"
 
-#include "core/config/project_settings.h"
+#include "../../../../core/config/project_settings.h"
 
 using namespace RendererDummy;
 

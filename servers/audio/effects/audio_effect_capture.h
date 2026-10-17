@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/templates/ring_buffer.h"
-#include "servers/audio/audio_effect.h"
-#include "servers/audio/audio_frame.h"
+#include "../../../core/object/ref_counted.h"
+#include "../../../core/templates/ring_buffer.h"
+#include "../audio_effect.h"
+#include "../audio_frame.h"
 
 class AudioEffectCapture;
 

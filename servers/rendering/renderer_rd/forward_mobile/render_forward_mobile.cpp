@@ -30,25 +30,25 @@
 
 #include "render_forward_mobile.h"
 
-#include "core/config/project_settings.h"
-#include "servers/rendering/renderer_rd/framebuffer_cache_rd.h"
-#include "servers/rendering/renderer_rd/storage_rd/light_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/mesh_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/particles_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/texture_storage.h"
-#include "servers/rendering/renderer_rd/uniform_set_cache_rd.h"
-#include "servers/rendering/rendering_device.h"
-#include "servers/rendering/rendering_server_default.h"
-#include "servers/rendering/storage/ltc_lut.gen.h"
+#include "../../../../core/config/project_settings.h"
+#include "../framebuffer_cache_rd.h"
+#include "../storage_rd/light_storage.h"
+#include "../storage_rd/mesh_storage.h"
+#include "../storage_rd/particles_storage.h"
+#include "../storage_rd/texture_storage.h"
+#include "../uniform_set_cache_rd.h"
+#include "../../rendering_device.h"
+#include "../../rendering_server_default.h"
+#include "../../storage/ltc_lut.gen.h"
 
 #ifndef XR_DISABLED
-#include "servers/xr/xr_interface.h"
-#include "servers/xr/xr_server.h"
+#include "../../../xr/xr_interface.h"
+#include "../../../xr/xr_server.h"
 #endif
 
-#include "modules/modules_enabled.gen.h"
+#include "../../../../modules/modules_enabled.gen.h"
 #ifdef MODULE_TEXTURE_STREAMING_ENABLED
-#include "modules/texture_streaming/texture_streaming.h"
+#include "../../../../modules/texture_streaming/texture_streaming.h"
 #endif
 
 #define PRELOAD_PIPELINES_ON_SURFACE_CACHE_CONSTRUCTION 1

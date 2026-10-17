@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/math/vector2.h"
-#include "core/typedefs.h"
+#include "../../core/math/vector2.h"
+#include "../../core/typedefs.h"
 
 static _FORCE_INLINE_ float undenormalize(float p_value) {
 	union {

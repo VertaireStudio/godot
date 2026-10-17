@@ -30,9 +30,9 @@
 
 #include "rasterizer_scene_dummy.h"
 
-#include "core/io/image.h"
-#include "core/variant/typed_array.h"
-#include "servers/rendering/rendering_server_globals.h"
+#include "../../../core/io/image.h"
+#include "../../../core/variant/typed_array.h"
+#include "../rendering_server_globals.h"
 
 TypedArray<Image> RasterizerSceneDummy::bake_render_uv2(RID p_base, const TypedArray<RID> &p_material_overrides, const Size2i &p_image_size) {
 	return TypedArray<Image>();

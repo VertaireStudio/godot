@@ -30,7 +30,7 @@
 
 #include "xr_tracker.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void XRTracker::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_tracker_type"), &XRTracker::get_tracker_type);

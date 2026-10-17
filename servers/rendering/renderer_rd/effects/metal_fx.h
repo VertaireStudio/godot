@@ -36,10 +36,10 @@
 
 #ifdef METAL_ENABLED
 
-#include "core/templates/paged_allocator.h"
-#include "servers/rendering/renderer_rd/effects/spatial_upscaler.h"
-#include "servers/rendering/renderer_scene_render.h"
-#include "servers/rendering/rendering_device_driver.h"
+#include "../../../../core/templates/paged_allocator.h"
+#include "spatial_upscaler.h"
+#include "../../renderer_scene_render.h"
+#include "../../rendering_device_driver.h"
 
 namespace MTLFX {
 class SpatialScalerBase;

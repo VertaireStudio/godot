@@ -30,7 +30,7 @@
 
 #include "physics_intersect_point_result_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 PhysicsIntersectPointResult3D::PhysicsIntersectPointResult3D(int p_max_intersections) {
 	ERR_FAIL_COND(p_max_intersections < 0);

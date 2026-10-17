@@ -31,15 +31,15 @@
 #include "rendering_server.h"
 #include "rendering_server.compat.inc"
 
-#include "core/config/project_settings.h"
-#include "core/math/geometry_3d.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "core/variant/typed_array.h"
-#include "servers/rendering/rendering_device.h"
-#include "servers/rendering/rendering_server_types.h"
-#include "servers/rendering/shader_language.h"
-#include "servers/rendering/shader_warnings.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/math/geometry_3d.h"
+#include "../../core/object/class_db.h"
+#include "../../core/os/os.h"
+#include "../../core/variant/typed_array.h"
+#include "rendering_device.h"
+#include "rendering_server_types.h"
+#include "shader_language.h"
+#include "shader_warnings.h"
 
 RenderingServer *RenderingServer::singleton = nullptr;
 RenderingServer *(*RenderingServer::create_func)() = nullptr;

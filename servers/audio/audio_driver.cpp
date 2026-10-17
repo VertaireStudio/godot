@@ -30,11 +30,11 @@
 
 #include "audio_driver.h"
 
-#include "core/config/project_settings.h"
-#include "core/os/os.h"
-#include "scene/resources/audio/audio_stream.h"
-#include "servers/audio/audio_driver_dummy.h"
-#include "servers/audio/audio_server.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/os/os.h"
+#include "../../scene/resources/audio/audio_stream.h"
+#include "audio_driver_dummy.h"
+#include "audio_server.h"
 
 AudioDriver *AudioDriver::singleton = nullptr;
 AudioDriver *AudioDriver::get_singleton() {

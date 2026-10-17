@@ -30,11 +30,11 @@
 
 #include "fog.h"
 
-#include "servers/rendering/renderer_rd/cluster_builder_rd.h"
-#include "servers/rendering/renderer_rd/renderer_scene_render_rd.h"
-#include "servers/rendering/renderer_rd/storage_rd/material_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/texture_storage.h"
-#include "servers/rendering/rendering_server_default.h"
+#include "../cluster_builder_rd.h"
+#include "../renderer_scene_render_rd.h"
+#include "../storage_rd/material_storage.h"
+#include "../storage_rd/texture_storage.h"
+#include "../../rendering_server_default.h"
 
 using namespace RendererRD;
 

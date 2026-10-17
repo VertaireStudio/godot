@@ -30,17 +30,17 @@
 
 #include "rasterizer_dummy.h"
 
-#include "servers/display/display_server.h"
-#include "servers/rendering/dummy/environment/fog.h"
-#include "servers/rendering/dummy/environment/gi.h"
-#include "servers/rendering/dummy/rasterizer_canvas_dummy.h"
-#include "servers/rendering/dummy/rasterizer_scene_dummy.h"
-#include "servers/rendering/dummy/storage/light_storage.h"
-#include "servers/rendering/dummy/storage/material_storage.h"
-#include "servers/rendering/dummy/storage/mesh_storage.h"
-#include "servers/rendering/dummy/storage/particles_storage.h"
-#include "servers/rendering/dummy/storage/texture_storage.h"
-#include "servers/rendering/dummy/storage/utilities.h"
+#include "../../display/display_server.h"
+#include "environment/fog.h"
+#include "environment/gi.h"
+#include "rasterizer_canvas_dummy.h"
+#include "rasterizer_scene_dummy.h"
+#include "storage/light_storage.h"
+#include "storage/material_storage.h"
+#include "storage/mesh_storage.h"
+#include "storage/particles_storage.h"
+#include "storage/texture_storage.h"
+#include "storage/utilities.h"
 
 void RasterizerDummy::end_frame(bool p_present) {
 	if (p_present) {

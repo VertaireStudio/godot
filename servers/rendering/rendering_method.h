@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/variant/typed_array.h"
-#include "core/variant/variant.h"
-#include "servers/rendering/rendering_server_enums.h"
-#include "servers/rendering/rendering_server_types.h"
+#include "../../core/variant/typed_array.h"
+#include "../../core/variant/variant.h"
+#include "rendering_server_enums.h"
+#include "rendering_server_types.h"
 
 #ifdef XR_DISABLED
 // RendererSceneCull::render_camera is empty when XR is disabled, but

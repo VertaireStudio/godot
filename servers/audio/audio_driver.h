@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/templates/vector.h"
-#include "core/variant/variant.h"
-#include "servers/audio/audio_server_enums.h"
+#include "../../core/templates/vector.h"
+#include "../../core/variant/variant.h"
+#include "audio_server_enums.h"
 
 struct AudioFrame;
 class AudioDriverDummy;

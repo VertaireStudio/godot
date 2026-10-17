@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/templates/local_vector.h"
-#include "core/templates/paged_allocator.h"
-#include "servers/rendering/rendering_device.h"
+#include "../../../core/templates/local_vector.h"
+#include "../../../core/templates/paged_allocator.h"
+#include "../rendering_device.h"
 
 class FramebufferCacheRD : public Object {
 	GDCLASS(FramebufferCacheRD, Object)

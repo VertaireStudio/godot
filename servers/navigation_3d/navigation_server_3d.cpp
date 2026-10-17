@@ -31,15 +31,15 @@
 #include "navigation_server_3d.h"
 #include "navigation_server_3d.compat.inc"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/main/node.h" // IWYU pragma: keep. Needed to bind `Node *` arg.
-#include "scene/resources/3d/navigation_mesh_source_geometry_data_3d.h" // IWYU pragma: keep. Bind `NavigationMeshSourceGeometryData3D`.
-#include "scene/resources/navigation_mesh.h" // IWYU pragma: keep. Bind `NavigationMesh`.
-#include "servers/navigation_3d/navigation_path_query_parameters_3d.h" // IWYU pragma: keep. Bind `NavigationPathQueryParameters3D`.
-#include "servers/navigation_3d/navigation_path_query_result_3d.h" // IWYU pragma: keep. Bind `NavigationPathQueryResult3D`.
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../scene/main/node.h" // IWYU pragma: keep. Needed to bind `Node *` arg.
+#include "../../scene/resources/3d/navigation_mesh_source_geometry_data_3d.h" // IWYU pragma: keep. Bind `NavigationMeshSourceGeometryData3D`.
+#include "../../scene/resources/navigation_mesh.h" // IWYU pragma: keep. Bind `NavigationMesh`.
+#include "navigation_path_query_parameters_3d.h" // IWYU pragma: keep. Bind `NavigationPathQueryParameters3D`.
+#include "navigation_path_query_result_3d.h" // IWYU pragma: keep. Bind `NavigationPathQueryResult3D`.
 
 NavigationServer3D *NavigationServer3D::singleton = nullptr;
 

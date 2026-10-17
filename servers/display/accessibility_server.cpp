@@ -30,8 +30,8 @@
 
 #include "accessibility_server.h"
 
-#include "core/object/class_db.h"
-#include "servers/display/accessibility_server_dummy.h"
+#include "../../core/object/class_db.h"
+#include "accessibility_server_dummy.h"
 
 AccessibilityServer::AccessibilityServerCreate AccessibilityServer::server_create_functions[AccessibilityServer::MAX_SERVERS] = {
 	{ "dummy", &AccessibilityServerDummy::create_func }

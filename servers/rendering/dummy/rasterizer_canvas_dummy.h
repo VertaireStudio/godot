@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_canvas_render.h"
+#include "../renderer_canvas_render.h"
 
 class RasterizerCanvasDummy : public RendererCanvasRender {
 public:

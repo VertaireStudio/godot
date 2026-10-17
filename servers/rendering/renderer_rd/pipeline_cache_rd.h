@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/os/spin_lock.h"
-#include "servers/rendering/rendering_device.h"
+#include "../../../core/os/spin_lock.h"
+#include "../rendering_device.h"
 
 class PipelineCacheRD {
 	SpinLock spin_lock;

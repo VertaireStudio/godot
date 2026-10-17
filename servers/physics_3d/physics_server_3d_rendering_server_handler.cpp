@@ -30,9 +30,9 @@
 
 #include "physics_server_3d_rendering_server_handler.h"
 
-#include "core/math/aabb.h"
-#include "core/math/vector3.h"
-#include "core/object/class_db.h"
+#include "../../core/math/aabb.h"
+#include "../../core/math/vector3.h"
+#include "../../core/object/class_db.h"
 
 void PhysicsServer3DRenderingServerHandler::set_vertex(int p_vertex_id, const Vector3 &p_vertex) {
 	GDVIRTUAL_CALL(_set_vertex, p_vertex_id, p_vertex);

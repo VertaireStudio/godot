@@ -30,7 +30,7 @@
 
 #include "audio_driver_dummy.h"
 
-#include "core/os/os.h"
+#include "../../core/os/os.h"
 
 AudioDriverDummy *AudioDriverDummy::singleton = nullptr;
 

@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/math/vector2.h"
-#include "core/object/object.h"
-#include "core/templates/hash_set.h"
-#include "core/templates/rid.h"
+#include "../../core/math/vector2.h"
+#include "../../core/object/object.h"
+#include "../../core/templates/hash_set.h"
+#include "../../core/templates/rid.h"
 
 namespace PhysicsServer2DTypes {
 

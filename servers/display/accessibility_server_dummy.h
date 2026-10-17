@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "servers/display/accessibility_server.h"
+#include "accessibility_server.h"
 
 class AccessibilityServerDummy : public AccessibilityServer {
 	GDSOFTCLASS(AccessibilityServerDummy, AccessibilityServer)

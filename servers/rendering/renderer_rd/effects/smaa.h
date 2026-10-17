@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_rd/pipeline_cache_rd.h"
-#include "servers/rendering/renderer_rd/shaders/effects/smaa_blending.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/smaa_edge_detection.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/smaa_weight_calculation.glsl.gen.h"
-#include "servers/rendering/renderer_rd/storage_rd/render_scene_buffers_rd.h"
+#include "../pipeline_cache_rd.h"
+#include "../shaders/effects/smaa_blending.glsl.gen.h"
+#include "../shaders/effects/smaa_edge_detection.glsl.gen.h"
+#include "../shaders/effects/smaa_weight_calculation.glsl.gen.h"
+#include "../storage_rd/render_scene_buffers_rd.h"
 
 #define RB_SCOPE_SMAA SNAME("rb_smaa")
 

@@ -30,20 +30,20 @@
 
 #pragma once
 
-#include "core/templates/paged_allocator.h"
-#include "servers/rendering/multi_uma_buffer.h"
-#include "servers/rendering/renderer_rd/cluster_builder_rd.h"
-#include "servers/rendering/renderer_rd/effects/fsr2.h"
-#include "servers/rendering/renderer_rd/effects/motion_vectors_store.h"
-#include "servers/rendering/renderer_rd/effects/ss_effects.h"
-#include "servers/rendering/renderer_rd/effects/taa.h"
-#include "servers/rendering/renderer_rd/forward_clustered/scene_shader_forward_clustered.h"
-#include "servers/rendering/renderer_rd/renderer_scene_render_rd.h"
-#include "servers/rendering/renderer_rd/shaders/forward_clustered/best_fit_normal.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/forward_clustered/integrate_dfg.glsl.gen.h"
+#include "../../../../core/templates/paged_allocator.h"
+#include "../../multi_uma_buffer.h"
+#include "../cluster_builder_rd.h"
+#include "../effects/fsr2.h"
+#include "../effects/motion_vectors_store.h"
+#include "../effects/ss_effects.h"
+#include "../effects/taa.h"
+#include "scene_shader_forward_clustered.h"
+#include "../renderer_scene_render_rd.h"
+#include "../shaders/forward_clustered/best_fit_normal.glsl.gen.h"
+#include "../shaders/forward_clustered/integrate_dfg.glsl.gen.h"
 
 #ifdef METAL_ENABLED
-#include "servers/rendering/renderer_rd/effects/metal_fx.h"
+#include "../effects/metal_fx.h"
 #endif
 
 #define RB_SCOPE_FORWARD_CLUSTERED SNAME("forward_clustered")

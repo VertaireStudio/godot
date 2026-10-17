@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/io/image.h"
-#include "core/object/ref_counted.h"
-#include "core/templates/rid.h"
-#include "core/variant/native_ptr.h"
-#include "core/variant/variant.h"
+#include "../../core/io/image.h"
+#include "../../core/object/ref_counted.h"
+#include "../../core/templates/rid.h"
+#include "../../core/variant/native_ptr.h"
+#include "../../core/variant/variant.h"
 
 template <typename T>
 class TypedArray;

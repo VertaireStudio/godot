@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "servers/rendering/rendering_device.h"
+#include "../rendering_device.h"
 
 // Helper class for automatically deferring compilation of a pipeline to a background task.
 // When attempting to retrieve the pipeline with the getter, the caller will automatically

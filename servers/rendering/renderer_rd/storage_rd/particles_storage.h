@@ -30,17 +30,17 @@
 
 #pragma once
 
-#include "core/templates/local_vector.h"
-#include "core/templates/rid_owner.h"
-#include "core/templates/self_list.h"
-#include "servers/rendering/renderer_rd/pipeline_deferred_rd.h"
-#include "servers/rendering/renderer_rd/shaders/particles.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/particles_copy.glsl.gen.h"
-#include "servers/rendering/renderer_rd/storage_rd/material_storage.h"
-#include "servers/rendering/rendering_server_types.h"
-#include "servers/rendering/shader_compiler.h"
-#include "servers/rendering/storage/particles_storage.h"
-#include "servers/rendering/storage/utilities.h"
+#include "../../../../core/templates/local_vector.h"
+#include "../../../../core/templates/rid_owner.h"
+#include "../../../../core/templates/self_list.h"
+#include "../pipeline_deferred_rd.h"
+#include "../shaders/particles.glsl.gen.h"
+#include "../shaders/particles_copy.glsl.gen.h"
+#include "material_storage.h"
+#include "../../rendering_server_types.h"
+#include "../../shader_compiler.h"
+#include "../../storage/particles_storage.h"
+#include "../../storage/utilities.h"
 
 namespace RendererRD {
 

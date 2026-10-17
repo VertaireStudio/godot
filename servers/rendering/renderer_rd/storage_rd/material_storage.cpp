@@ -30,20 +30,20 @@
 
 #include "material_storage.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/io/resource_loader.h"
-#include "core/math/projection.h"
-#include "core/templates/local_vector.h"
-#include "servers/rendering/renderer_rd/forward_clustered/scene_shader_forward_clustered.h"
-#include "servers/rendering/renderer_rd/forward_mobile/scene_shader_forward_mobile.h"
-#include "servers/rendering/renderer_rd/storage_rd/texture_storage.h"
-#include "servers/rendering/storage/variant_converters.h"
+#include "../../../../core/config/engine.h"
+#include "../../../../core/config/project_settings.h"
+#include "../../../../core/io/resource_loader.h"
+#include "../../../../core/math/projection.h"
+#include "../../../../core/templates/local_vector.h"
+#include "../forward_clustered/scene_shader_forward_clustered.h"
+#include "../forward_mobile/scene_shader_forward_mobile.h"
+#include "texture_storage.h"
+#include "../../storage/variant_converters.h"
 
-#include "modules/modules_enabled.gen.h"
+#include "../../../../modules/modules_enabled.gen.h"
 
 #ifdef MODULE_TEXTURE_STREAMING_ENABLED
-#include "modules/texture_streaming/texture_streaming.h"
+#include "../../../../modules/texture_streaming/texture_streaming.h"
 #endif
 
 using namespace RendererRD;

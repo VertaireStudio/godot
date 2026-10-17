@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/os/thread.h"
-#include "scene/resources/audio/audio_stream_wav.h"
-#include "servers/audio/audio_effect.h"
+#include "../../../core/os/thread.h"
+#include "../../../scene/resources/audio/audio_stream_wav.h"
+#include "../audio_effect.h"
 
 class AudioEffectRecord;
 

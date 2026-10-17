@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
+#include "../../../core/object/ref_counted.h"
 
 class PhysicsCastMotionResult2D : public RefCounted {
 	GDCLASS(PhysicsCastMotionResult2D, RefCounted);

@@ -30,7 +30,7 @@
 
 #include "physics_testmotion_query_result_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 Vector3 PhysicsTestMotionResult3D::get_travel() const {
 	return result.travel;

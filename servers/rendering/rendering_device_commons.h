@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/object/object.h"
+#include "../../core/object/object.h"
 
 #define STEPIFY(m_number, m_alignment) ((((m_number) + ((m_alignment) - 1)) / (m_alignment)) * (m_alignment))
 

@@ -45,10 +45,10 @@
 //   There's no backwards communication from the driver to query data from RenderingDevice.
 // ***********************************************************************************
 
-#include "core/object/object.h"
-#include "core/templates/paged_allocator.h"
-#include "servers/rendering/rendering_context_driver.h"
-#include "servers/rendering/rendering_device_commons.h"
+#include "../../core/object/object.h"
+#include "../../core/templates/paged_allocator.h"
+#include "rendering_context_driver.h"
+#include "rendering_device_commons.h"
 
 class RenderingShaderContainer;
 class RenderingShaderContainerFormat;

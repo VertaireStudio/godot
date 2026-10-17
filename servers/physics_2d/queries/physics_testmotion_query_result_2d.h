@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "servers/physics_2d/physics_server_2d_types.h"
+#include "../../../core/object/ref_counted.h"
+#include "../physics_server_2d_types.h"
 
 class PhysicsTestMotionResult2D : public RefCounted {
 	GDCLASS(PhysicsTestMotionResult2D, RefCounted);

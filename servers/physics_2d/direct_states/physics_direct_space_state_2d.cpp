@@ -30,8 +30,8 @@
 
 #include "physics_direct_space_state_2d.h"
 
-#include "core/object/class_db.h"
-#include "core/variant/typed_array.h"
+#include "../../../core/object/class_db.h"
+#include "../../../core/variant/typed_array.h"
 
 Dictionary PhysicsDirectSpaceState2D::_intersect_ray(RequiredParam<PhysicsRayQueryParameters2D> p_ray_query) {
 	EXTRACT_PARAM_OR_FAIL_V(ray_query, p_ray_query, Dictionary());

@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/templates/paged_allocator.h"
-#include "servers/rendering/instance_uniforms.h"
-#include "servers/rendering/renderer_canvas_render.h"
-#include "servers/rendering/renderer_viewport.h"
-#include "servers/rendering/rendering_server_enums.h"
-#include "servers/rendering/rendering_server_types.h"
+#include "../../core/templates/paged_allocator.h"
+#include "instance_uniforms.h"
+#include "renderer_canvas_render.h"
+#include "renderer_viewport.h"
+#include "rendering_server_enums.h"
+#include "rendering_server_types.h"
 
 class RendererCanvasCull {
 	static void _dependency_changed(Dependency::DependencyChangedNotification p_notification, DependencyTracker *p_tracker);

@@ -30,8 +30,8 @@
 
 #include "physics_ray_query_parameters_2d.h"
 
-#include "core/object/class_db.h"
-#include "core/variant/typed_array.h"
+#include "../../../core/object/class_db.h"
+#include "../../../core/variant/typed_array.h"
 
 Ref<PhysicsRayQueryParameters2D> PhysicsRayQueryParameters2D::create(Vector2 p_from, Vector2 p_to, uint32_t p_mask, const TypedArray<RID> &p_exclude) {
 	Ref<PhysicsRayQueryParameters2D> params;

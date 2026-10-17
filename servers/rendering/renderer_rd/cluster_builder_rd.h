@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_rd/shaders/cluster_debug.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/cluster_render.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/cluster_store.glsl.gen.h"
-#include "servers/rendering/renderer_rd/storage_rd/material_storage.h"
+#include "shaders/cluster_debug.glsl.gen.h"
+#include "shaders/cluster_render.glsl.gen.h"
+#include "shaders/cluster_store.glsl.gen.h"
+#include "storage_rd/material_storage.h"
 
 class ClusterBuilderSharedDataRD {
 	friend class ClusterBuilderRD;

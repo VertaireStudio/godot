@@ -32,7 +32,7 @@
 
 #include "rendering_device.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 RID RenderingDevice::_shader_create_from_bytecode_bind_compat_79606(const Vector<uint8_t> &p_shader_binary) {
 	return shader_create_from_bytecode(p_shader_binary, RID());

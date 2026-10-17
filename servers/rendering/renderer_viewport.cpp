@@ -30,24 +30,24 @@
 
 #include "renderer_viewport.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/math/transform_interpolator.h"
-#include "core/object/worker_thread_pool.h"
-#include "core/os/os.h"
-#include "core/profiling/profiling.h"
-#include "servers/display/display_server.h"
-#include "servers/rendering/renderer_canvas_cull.h"
-#include "servers/rendering/renderer_compositor.h"
-#include "servers/rendering/renderer_scene_occlusion_cull.h"
-#include "servers/rendering/rendering_device.h"
-#include "servers/rendering/rendering_method.h"
-#include "servers/rendering/rendering_server_globals.h"
-#include "servers/rendering/storage/texture_storage.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/math/transform_interpolator.h"
+#include "../../core/object/worker_thread_pool.h"
+#include "../../core/os/os.h"
+#include "../../core/profiling/profiling.h"
+#include "../display/display_server.h"
+#include "renderer_canvas_cull.h"
+#include "renderer_compositor.h"
+#include "renderer_scene_occlusion_cull.h"
+#include "rendering_device.h"
+#include "rendering_method.h"
+#include "rendering_server_globals.h"
+#include "storage/texture_storage.h"
 
 #ifndef XR_DISABLED
-#include "servers/xr/xr_interface.h"
-#include "servers/xr/xr_server.h"
+#include "../xr/xr_interface.h"
+#include "../xr/xr_server.h"
 #endif // XR_DISABLED
 
 static Transform2D _canvas_get_transform(RendererViewport::Viewport *p_viewport, RendererCanvasCull::Canvas *p_canvas, RendererViewport::Viewport::CanvasData *p_canvas_data, const Vector2 &p_vp_size) {

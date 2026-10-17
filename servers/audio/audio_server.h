@@ -30,15 +30,15 @@
 
 #pragma once
 
-#include "core/templates/safe_list.h"
-#include "core/variant/variant.h"
-#include "servers/audio/audio_bus_layout.h"
-#include "servers/audio/audio_effect.h"
-#include "servers/audio/audio_filter_sw.h"
-#include "servers/audio/audio_frame.h"
-#include "servers/audio/audio_server_constants.h"
-#include "servers/audio/audio_server_enums.h"
-#include "servers/audio/audio_server_types.h" // IWYU pragma: keep. Included to have a dedicated file to move stuff over.
+#include "../../core/templates/safe_list.h"
+#include "../../core/variant/variant.h"
+#include "audio_bus_layout.h"
+#include "audio_effect.h"
+#include "audio_filter_sw.h"
+#include "audio_frame.h"
+#include "audio_server_constants.h"
+#include "audio_server_enums.h"
+#include "audio_server_types.h" // IWYU pragma: keep. Included to have a dedicated file to move stuff over.
 
 class AudioSample;
 class AudioStream;

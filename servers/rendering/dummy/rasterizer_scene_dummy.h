@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/templates/paged_allocator.h"
-#include "servers/rendering/dummy/storage/utilities.h"
-#include "servers/rendering/renderer_scene_render.h"
+#include "../../../core/templates/paged_allocator.h"
+#include "storage/utilities.h"
+#include "../renderer_scene_render.h"
 
 class Image;
 

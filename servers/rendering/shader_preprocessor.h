@@ -30,15 +30,15 @@
 
 #pragma once
 
-#include "core/string/ustring.h"
-#include "core/templates/list.h"
-#include "core/templates/local_vector.h"
-#include "core/templates/rb_map.h"
-#include "core/templates/rb_set.h"
-#include "scene/resources/shader_include.h"
+#include "../../core/string/ustring.h"
+#include "../../core/templates/list.h"
+#include "../../core/templates/local_vector.h"
+#include "../../core/templates/rb_map.h"
+#include "../../core/templates/rb_set.h"
+#include "../../scene/resources/shader_include.h"
 
 #ifdef TOOLS_ENABLED
-#include "core/object/editor_language.h"
+#include "../../core/object/editor_language.h"
 #endif
 
 class ShaderPreprocessor {

@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/templates/paged_allocator.h"
-#include "servers/rendering/multi_uma_buffer.h"
-#include "servers/rendering/renderer_rd/forward_mobile/scene_shader_forward_mobile.h"
-#include "servers/rendering/renderer_rd/renderer_scene_render_rd.h"
+#include "../../../../core/templates/paged_allocator.h"
+#include "../../multi_uma_buffer.h"
+#include "scene_shader_forward_mobile.h"
+#include "../renderer_scene_render_rd.h"
 
 #define RB_SCOPE_MOBILE SNAME("mobile")
 

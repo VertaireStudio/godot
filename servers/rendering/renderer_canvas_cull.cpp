@@ -30,14 +30,14 @@
 
 #include "renderer_canvas_cull.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/math/geometry_2d.h"
-#include "core/math/transform_interpolator.h"
-#include "servers/rendering/renderer_viewport.h"
-#include "servers/rendering/rendering_server_default.h"
-#include "servers/rendering/rendering_server_globals.h"
-#include "servers/rendering/storage/texture_storage.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/math/geometry_2d.h"
+#include "../../core/math/transform_interpolator.h"
+#include "renderer_viewport.h"
+#include "rendering_server_default.h"
+#include "rendering_server_globals.h"
+#include "storage/texture_storage.h"
 
 // Use the same antialiasing feather size as StyleBoxFlat's default
 // (but doubled, as it's specified for both sides here).

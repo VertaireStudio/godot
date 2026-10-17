@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_rd/shaders/effects/taa_resolve.glsl.gen.h"
-#include "servers/rendering/renderer_rd/storage_rd/render_scene_buffers_rd.h"
+#include "../shaders/effects/taa_resolve.glsl.gen.h"
+#include "../storage_rd/render_scene_buffers_rd.h"
 
 namespace RendererRD {
 

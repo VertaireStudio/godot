@@ -30,15 +30,15 @@
 
 #pragma once
 
-#include "core/input/input_enums.h"
-#include "core/io/image.h"
-#include "core/io/resource.h"
-#include "core/object/object.h"
-#include "core/os/keyboard.h"
-#include "core/os/process_id.h"
-#include "core/variant/callable.h"
-#include "core/variant/typed_array.h"
-#include "servers/display/display_server_enums.h"
+#include "../../core/input/input_enums.h"
+#include "../../core/io/image.h"
+#include "../../core/io/resource.h"
+#include "../../core/object/object.h"
+#include "../../core/os/keyboard.h"
+#include "../../core/os/process_id.h"
+#include "../../core/variant/callable.h"
+#include "../../core/variant/typed_array.h"
+#include "display_server_enums.h"
 
 class NativeMenu;
 class Texture2D;

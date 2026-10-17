@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/object/class_db.h"
-#include "servers/rendering/rendering_device.h"
+#include "../../core/io/resource.h"
+#include "../../core/object/class_db.h"
+#include "rendering_device.h"
 
 #define RD_SETGET(m_type, m_member) \
 	void set_##m_member(m_type p_##m_member) { \

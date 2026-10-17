@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/math/expression.h"
+#include "../../core/math/expression.h"
 
 class ShaderExpression : public Expression {
 	GDCLASS(ShaderExpression, Expression);

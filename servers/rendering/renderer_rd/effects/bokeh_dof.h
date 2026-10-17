@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_rd/pipeline_cache_rd.h"
-#include "servers/rendering/renderer_rd/pipeline_deferred_rd.h"
-#include "servers/rendering/renderer_rd/shaders/effects/bokeh_dof.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/bokeh_dof_raster.glsl.gen.h"
+#include "../pipeline_cache_rd.h"
+#include "../pipeline_deferred_rd.h"
+#include "../shaders/effects/bokeh_dof.glsl.gen.h"
+#include "../shaders/effects/bokeh_dof_raster.glsl.gen.h"
 
 namespace RendererRD {
 

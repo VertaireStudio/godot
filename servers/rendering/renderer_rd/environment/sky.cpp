@@ -30,19 +30,19 @@
 
 #include "sky.h"
 
-#include "core/config/project_settings.h"
-#include "core/math/math_defs.h"
-#include "servers/rendering/renderer_rd/effects/copy_effects.h"
-#include "servers/rendering/renderer_rd/framebuffer_cache_rd.h"
-#include "servers/rendering/renderer_rd/renderer_compositor_rd.h"
-#include "servers/rendering/renderer_rd/renderer_scene_render_rd.h"
-#include "servers/rendering/renderer_rd/storage_rd/material_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/render_data_rd.h"
-#include "servers/rendering/renderer_rd/storage_rd/render_scene_buffers_rd.h"
-#include "servers/rendering/renderer_rd/storage_rd/texture_storage.h"
-#include "servers/rendering/renderer_rd/uniform_set_cache_rd.h"
-#include "servers/rendering/rendering_server_default.h"
-#include "servers/rendering/rendering_server_globals.h"
+#include "../../../../core/config/project_settings.h"
+#include "../../../../core/math/math_defs.h"
+#include "copy_effects.h"
+#include "../framebuffer_cache_rd.h"
+#include "../renderer_compositor_rd.h"
+#include "../renderer_scene_render_rd.h"
+#include "../storage_rd/material_storage.h"
+#include "../storage_rd/render_data_rd.h"
+#include "../storage_rd/render_scene_buffers_rd.h"
+#include "../storage_rd/texture_storage.h"
+#include "../uniform_set_cache_rd.h"
+#include "../../rendering_server_default.h"
+#include "../../rendering_server_globals.h"
 
 using namespace RendererRD;
 

@@ -31,7 +31,7 @@
 #pragma once
 
 #ifdef DEBUG_ENABLED
-#include "core/config/engine.h" // IWYU pragma: keep. Used in macro.
+#include "../core/config/engine.h" // IWYU pragma: keep. Used in macro.
 
 #define MAIN_THREAD_SYNC_CHECK \
 	if (unlikely(Thread::is_main_thread() && Engine::get_singleton()->notify_frame_server_synced())) { \

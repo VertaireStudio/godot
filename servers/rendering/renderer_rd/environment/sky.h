@@ -30,14 +30,14 @@
 
 #pragma once
 
-#include "core/templates/rid_owner.h"
-#include "servers/rendering/renderer_rd/pipeline_cache_rd.h"
-#include "servers/rendering/renderer_rd/shaders/environment/sky.glsl.gen.h"
-#include "servers/rendering/renderer_rd/storage_rd/material_storage.h"
-#include "servers/rendering/renderer_scene_render.h"
-#include "servers/rendering/rendering_device.h"
-#include "servers/rendering/rendering_server_types.h"
-#include "servers/rendering/shader_compiler.h"
+#include "../../../../core/templates/rid_owner.h"
+#include "../pipeline_cache_rd.h"
+#include "../shaders/environment/sky.glsl.gen.h"
+#include "../storage_rd/material_storage.h"
+#include "../../renderer_scene_render.h"
+#include "../../rendering_device.h"
+#include "../../rendering_server_types.h"
+#include "../../shader_compiler.h"
 
 // Forward declare RendererSceneRenderRD so we can pass it into some of our methods, these classes are pretty tightly bound
 class RendererSceneRenderRD;

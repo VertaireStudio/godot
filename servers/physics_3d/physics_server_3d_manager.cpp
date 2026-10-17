@@ -30,10 +30,10 @@
 
 #include "physics_server_3d_manager.h"
 
-#include "core/config/project_settings.h"
-#include "core/object/class_db.h"
-#include "servers/physics_3d/physics_server_3d.h"
-#include "servers/physics_3d/physics_server_3d_dummy.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/class_db.h"
+#include "physics_server_3d.h"
+#include "physics_server_3d_dummy.h"
 
 static PhysicsServer3D *physics_server_3d = nullptr;
 

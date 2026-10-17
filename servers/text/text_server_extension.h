@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/object/gdvirtual.gen.h"
-#include "core/os/thread_safe.h"
-#include "core/variant/native_ptr.h"
-#include "core/variant/typed_array.h"
-#include "servers/text/text_server.h"
+#include "../../core/object/gdvirtual.gen.h"
+#include "../../core/os/thread_safe.h"
+#include "../../core/variant/native_ptr.h"
+#include "../../core/variant/typed_array.h"
+#include "text_server.h"
 
 class TextServerExtension : public TextServer {
 	GDCLASS(TextServerExtension, TextServer);

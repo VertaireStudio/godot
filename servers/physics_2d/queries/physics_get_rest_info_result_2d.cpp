@@ -30,7 +30,7 @@
 
 #include "physics_get_rest_info_result_2d.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 Vector2 PhysicsGetRestInfoResult2D::get_point() const {
 	return result.point;

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/templates/rid_owner.h"
-#include "servers/rendering/storage/utilities.h"
+#include "../../../../core/templates/rid_owner.h"
+#include "../../storage/utilities.h"
 
 namespace RendererRD {
 

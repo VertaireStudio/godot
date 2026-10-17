@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/gdvirtual.gen.h"
-#include "core/object/object.h"
+#include "../../core/object/gdvirtual.gen.h"
+#include "../../core/object/object.h"
 
 struct AABB;
 struct Vector3;

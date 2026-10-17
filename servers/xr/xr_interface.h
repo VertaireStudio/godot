@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/os/thread_safe.h"
-#include "core/variant/type_info.h"
-#include "core/variant/typed_array.h"
-#include "core/variant/variant.h"
-#include "servers/rendering/rendering_server_types.h"
+#include "../../core/object/ref_counted.h"
+#include "../../core/os/thread_safe.h"
+#include "../../core/variant/type_info.h"
+#include "../../core/variant/typed_array.h"
+#include "../../core/variant/variant.h"
+#include "../rendering/rendering_server_types.h"
 
 /**
 	The XR interface is a template class on top of which we build interface to different AR, VR and tracking SDKs.

@@ -31,15 +31,15 @@
 #include "navigation_server_2d.h"
 #include "navigation_server_2d.compat.inc"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/main/node.h" // IWYU pragma: keep. Needed to bind `Node *` arg.
-#include "scene/resources/2d/navigation_mesh_source_geometry_data_2d.h" // IWYU pragma: keep. Bind `NavigationMeshSourceGeometryData2D`.
-#include "scene/resources/2d/navigation_polygon.h" // IWYU pragma: keep. Bind `NavigationPolygon`.
-#include "servers/navigation_2d/navigation_path_query_parameters_2d.h" // IWYU pragma: keep. Bind `NavigationPathQueryParameters2D`.
-#include "servers/navigation_2d/navigation_path_query_result_2d.h" // IWYU pragma: keep. Bind `NavigationPathQueryResult2D`.
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../scene/main/node.h" // IWYU pragma: keep. Needed to bind `Node *` arg.
+#include "../../scene/resources/2d/navigation_mesh_source_geometry_data_2d.h" // IWYU pragma: keep. Bind `NavigationMeshSourceGeometryData2D`.
+#include "../../scene/resources/2d/navigation_polygon.h" // IWYU pragma: keep. Bind `NavigationPolygon`.
+#include "navigation_path_query_parameters_2d.h" // IWYU pragma: keep. Bind `NavigationPathQueryParameters2D`.
+#include "navigation_path_query_result_2d.h" // IWYU pragma: keep. Bind `NavigationPathQueryResult2D`.
 
 NavigationServer2D *NavigationServer2D::singleton = nullptr;
 

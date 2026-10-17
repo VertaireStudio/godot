@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/math/color.h"
-#include "core/math/rect2.h"
-#include "core/math/transform_3d.h"
-#include "core/templates/rid.h"
-#include "servers/rendering/storage/utilities.h"
+#include "../../core/math/color.h"
+#include "../../core/math/rect2.h"
+#include "../../core/math/transform_3d.h"
+#include "../../core/templates/rid.h"
+#include "storage/utilities.h"
 
 // API definition for our RenderGeometryInstance class so we can expose this through GDExtension in the near future
 class RenderGeometryInstance {

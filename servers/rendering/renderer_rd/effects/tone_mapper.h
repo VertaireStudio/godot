@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_rd/pipeline_cache_rd.h"
-#include "servers/rendering/renderer_rd/shaders/effects/tonemap.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/tonemap_mobile.glsl.gen.h"
+#include "../pipeline_cache_rd.h"
+#include "../shaders/effects/tonemap.glsl.gen.h"
+#include "../shaders/effects/tonemap_mobile.glsl.gen.h"
 
 namespace RendererRD {
 

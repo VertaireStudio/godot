@@ -30,7 +30,7 @@
 
 #include "motion_vectors_store.h"
 
-#include "servers/rendering/renderer_rd/uniform_set_cache_rd.h"
+#include "../uniform_set_cache_rd.h"
 
 namespace RendererRD {
 

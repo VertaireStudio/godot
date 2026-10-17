@@ -30,7 +30,7 @@
 
 #include "renderer_canvas_render.h"
 
-#include "servers/rendering/rendering_server_globals.h"
+#include "rendering_server_globals.h"
 
 RendererCanvasRender *RendererCanvasRender::singleton = nullptr;
 

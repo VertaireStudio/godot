@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "servers/text/text_server_extension.h"
+#include "text_server_extension.h"
 
 /*************************************************************************/
 

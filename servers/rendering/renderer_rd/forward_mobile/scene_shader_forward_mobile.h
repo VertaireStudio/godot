@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_rd/pipeline_hash_map_rd.h"
-#include "servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl.gen.h"
-#include "servers/rendering/renderer_rd/storage_rd/material_storage.h"
-#include "servers/rendering/rendering_server_types.h"
+#include "../pipeline_hash_map_rd.h"
+#include "../shaders/forward_mobile/scene_forward_mobile.glsl.gen.h"
+#include "../storage_rd/material_storage.h"
+#include "../../rendering_server_types.h"
 
 namespace RendererSceneRenderImplementation {
 

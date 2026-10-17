@@ -30,18 +30,18 @@
 
 #include "renderer_canvas_render_rd.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/math/geometry_2d.h"
-#include "core/math/math_defs.h"
-#include "core/math/math_funcs.h"
-#include "core/math/transform_interpolator.h"
-#include "core/templates/fixed_vector.h"
-#include "servers/rendering/renderer_rd/storage_rd/material_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/mesh_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/particles_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/texture_storage.h"
-#include "servers/rendering/rendering_server_default.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/config/project_settings.h"
+#include "../../../core/math/geometry_2d.h"
+#include "../../../core/math/math_defs.h"
+#include "../../../core/math/math_funcs.h"
+#include "../../../core/math/transform_interpolator.h"
+#include "../../../core/templates/fixed_vector.h"
+#include "storage_rd/material_storage.h"
+#include "storage_rd/mesh_storage.h"
+#include "storage_rd/particles_storage.h"
+#include "storage_rd/texture_storage.h"
+#include "../rendering_server_default.h"
 
 void RendererCanvasRenderRD::_update_transform_2d_to_mat4(const Transform2D &p_transform, float *p_mat4) {
 	p_mat4[0] = p_transform.columns[0][0];

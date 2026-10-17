@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "servers/display/display_server_enums.h"
-#include "servers/rendering/rendering_server_enums.h"
-#include "servers/rendering/rendering_server_types.h"
+#include "../display/display_server_enums.h"
+#include "rendering_server_enums.h"
+#include "rendering_server_types.h"
 
 class RendererCanvasRender;
 class RendererSceneRender;

@@ -30,9 +30,9 @@
 
 #include "rendering_device_binds.h"
 
-#include "modules/modules_enabled.gen.h" // For glslang.
+#include "../../modules/modules_enabled.gen.h" // For glslang.
 #ifdef MODULE_GLSLANG_ENABLED
-#include "modules/glslang/shader_compile.h"
+#include "../../modules/glslang/shader_compile.h"
 #endif
 
 #include "servers/rendering/shader_include_db.h"

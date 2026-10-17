@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/io/image.h"
-#include "core/templates/local_vector.h"
-#include "servers/audio/audio_server.h" // IWYU pragma: keep. Bind GDVIRTUAL0RC_REQUIRED.
-#include "servers/audio/audio_server_enums.h"
+#include "../../core/io/image.h"
+#include "../../core/templates/local_vector.h"
+#include "../audio/audio_server.h" // IWYU pragma: keep. Bind GDVIRTUAL0RC_REQUIRED.
+#include "../audio/audio_server_enums.h"
 
 class MovieWriter : public Object {
 	GDCLASS(MovieWriter, Object);

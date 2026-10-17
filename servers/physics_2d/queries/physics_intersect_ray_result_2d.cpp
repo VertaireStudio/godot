@@ -30,7 +30,7 @@
 
 #include "physics_intersect_ray_result_2d.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 Vector2 PhysicsIntersectRayResult2D::get_position() const {
 	return result.position;

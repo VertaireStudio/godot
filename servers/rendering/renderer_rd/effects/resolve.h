@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_rd/pipeline_cache_rd.h"
-#include "servers/rendering/renderer_rd/shaders/effects/resolve.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/resolve_raster.glsl.gen.h"
+#include "../pipeline_cache_rd.h"
+#include "../shaders/effects/resolve.glsl.gen.h"
+#include "../shaders/effects/resolve_raster.glsl.gen.h"
 
 namespace RendererRD {
 

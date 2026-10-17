@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/extension/ext_wrappers.gen.h"
-#include "core/object/gdvirtual.gen.h"
-#include "core/variant/native_ptr.h"
-#include "core/variant/typed_array.h"
-#include "servers/physics_2d/physics_server_2d.h"
+#include "../../core/extension/ext_wrappers.gen.h"
+#include "../../core/object/gdvirtual.gen.h"
+#include "../../core/variant/native_ptr.h"
+#include "../../core/variant/typed_array.h"
+#include "physics_server_2d.h"
 
 class PhysicsDirectBodyState2DExtension : public PhysicsDirectBodyState2D {
 	GDCLASS(PhysicsDirectBodyState2DExtension, PhysicsDirectBodyState2D);

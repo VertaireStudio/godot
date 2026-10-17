@@ -30,7 +30,7 @@
 
 #include "physics_intersect_ray_result_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 Vector3 PhysicsIntersectRayResult3D::get_position() const {
 	return result.position;

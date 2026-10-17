@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/templates/rid_owner.h"
-#include "servers/display/display_server_enums.h"
-#include "servers/rendering/renderer_scene_render.h"
-#include "servers/rendering/rendering_server_enums.h"
-#include "servers/rendering/rendering_server_types.h"
-#include "servers/rendering/storage/render_scene_buffers.h"
+#include "../../core/templates/rid_owner.h"
+#include "../display/display_server_enums.h"
+#include "renderer_scene_render.h"
+#include "rendering_server_enums.h"
+#include "rendering_server_types.h"
+#include "storage/render_scene_buffers.h"
 
 class RendererViewport {
 public:

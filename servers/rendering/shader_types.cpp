@@ -31,7 +31,7 @@
 #include "shader_types.h"
 
 #ifdef DEV_ENABLED
-#include "scene/resources/shader.h"
+#include "../../scene/resources/shader.h"
 #endif
 
 const HashMap<StringName, ShaderLanguage::FunctionInfo> &ShaderTypes::get_functions(RSE::ShaderMode p_mode) const {

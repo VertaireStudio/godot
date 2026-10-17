@@ -30,17 +30,17 @@
 
 #include "audio_server.h"
 
-#include "core/config/project_settings.h"
-#include "core/debugger/engine_debugger.h"
-#include "core/io/resource_loader.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "scene/resources/audio/audio_stream.h"
-#include "scene/scene_string_names.h"
-#include "servers/audio/audio_bus_layout.h"
-#include "servers/audio/audio_driver.h"
-#include "servers/audio/audio_frame.h"
-#include "servers/audio/effects/audio_effect_compressor.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/debugger/engine_debugger.h"
+#include "../../core/io/resource_loader.h"
+#include "../../core/object/class_db.h"
+#include "../../core/os/os.h"
+#include "../../scene/resources/audio/audio_stream.h"
+#include "../../scene/scene_string_names.h"
+#include "audio_bus_layout.h"
+#include "audio_driver.h"
+#include "audio_frame.h"
+#include "effects/audio_effect_compressor.h"
 
 #ifdef TOOLS_ENABLED
 #define MARK_EDITED set_edited(true);

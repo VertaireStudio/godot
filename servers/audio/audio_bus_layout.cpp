@@ -30,8 +30,8 @@
 
 #include "audio_bus_layout.h"
 
-#include "scene/scene_string_names.h"
-#include "servers/audio/audio_effect.h" // IWYU pragma: keep. For Bus::Effect.
+#include "../../scene/scene_string_names.h"
+#include "audio_effect.h" // IWYU pragma: keep. For Bus::Effect.
 
 bool AudioBusLayout::_set(const StringName &p_name, const Variant &p_value) {
 	String s = p_name;

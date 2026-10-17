@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/object/object.h"
-#include "core/variant/type_info.h"
-#include "servers/display/accessibility_server_enums.h"
-#include "servers/display/display_server_enums.h"
+#include "../../core/object/object.h"
+#include "../../core/variant/type_info.h"
+#include "accessibility_server_enums.h"
+#include "display_server_enums.h"
 
 class AccessibilityServer : public Object {
 	GDCLASS(AccessibilityServer, Object)

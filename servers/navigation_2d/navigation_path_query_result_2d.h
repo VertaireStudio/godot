@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/variant/type_info.h"
-#include "core/variant/typed_array.h"
-#include "servers/navigation_2d/navigation_constants_2d.h"
+#include "../../core/object/ref_counted.h"
+#include "../../core/variant/type_info.h"
+#include "../../core/variant/typed_array.h"
+#include "navigation_constants_2d.h"
 
 class NavigationPathQueryResult2D : public RefCounted {
 	GDCLASS(NavigationPathQueryResult2D, RefCounted);

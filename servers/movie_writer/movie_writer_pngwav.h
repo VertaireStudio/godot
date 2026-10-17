@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "servers/movie_writer/movie_writer.h"
+#include "movie_writer.h"
 
 class MovieWriterPNGWAV : public MovieWriter {
 	GDCLASS(MovieWriterPNGWAV, MovieWriter)

@@ -30,10 +30,10 @@
 
 #include "navigation_server_3d_manager.h"
 
-#include "core/config/project_settings.h"
-#include "core/object/class_db.h"
-#include "servers/navigation_3d/navigation_server_3d.h"
-#include "servers/navigation_3d/navigation_server_3d_dummy.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/class_db.h"
+#include "navigation_server_3d.h"
+#include "navigation_server_3d_dummy.h"
 
 static NavigationServer3D *navigation_server_3d = nullptr;
 

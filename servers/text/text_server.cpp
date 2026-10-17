@@ -31,15 +31,15 @@
 #include "text_server.h"
 #include "text_server.compat.inc"
 
-#include "core/config/project_settings.h"
-#include "core/object/class_db.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "core/variant/typed_array.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/class_db.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/os.h"
+#include "../../core/variant/typed_array.h"
+#include "../rendering/rendering_server.h"
 
 #ifndef DISABLE_DEPRECATED
-#include "core/string/translation_server.h"
+#include "../../core/string/translation_server.h"
 #endif // DISABLE_DEPRECATED
 
 TextServerManager *TextServerManager::singleton = nullptr;

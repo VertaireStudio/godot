@@ -30,16 +30,16 @@
 
 #pragma once
 
-#include "core/templates/lru.h"
-#include "servers/rendering/multi_uma_buffer.h"
-#include "servers/rendering/renderer_canvas_render.h"
-#include "servers/rendering/renderer_rd/pipeline_hash_map_rd.h"
-#include "servers/rendering/renderer_rd/shaders/canvas.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/canvas_occlusion.glsl.gen.h"
-#include "servers/rendering/renderer_rd/storage_rd/material_storage.h"
-#include "servers/rendering/rendering_device.h"
-#include "servers/rendering/rendering_server_types.h"
-#include "servers/rendering/shader_compiler.h"
+#include "../../../core/templates/lru.h"
+#include "../multi_uma_buffer.h"
+#include "../renderer_canvas_render.h"
+#include "pipeline_hash_map_rd.h"
+#include "shaders/canvas.glsl.gen.h"
+#include "shaders/canvas_occlusion.glsl.gen.h"
+#include "storage_rd/material_storage.h"
+#include "../rendering_device.h"
+#include "../rendering_server_types.h"
+#include "../shader_compiler.h"
 
 class RendererCanvasRenderRD : public RendererCanvasRender {
 	enum {

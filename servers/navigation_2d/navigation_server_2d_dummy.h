@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/variant/typed_array.h"
-#include "servers/navigation_2d/navigation_server_2d.h"
+#include "../../core/variant/typed_array.h"
+#include "navigation_server_2d.h"
 
 class NavigationServer2DDummy : public NavigationServer2D {
 	GDCLASS(NavigationServer2DDummy, NavigationServer2D);

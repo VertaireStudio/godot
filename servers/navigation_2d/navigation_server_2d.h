@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/os/rw_lock.h"
-#include "core/templates/rid_owner.h"
-#include "core/variant/type_info.h"
+#include "../../core/object/ref_counted.h"
+#include "../../core/os/rw_lock.h"
+#include "../../core/templates/rid_owner.h"
+#include "../../core/variant/type_info.h"
 
 class Node;
 class NavigationPolygon;

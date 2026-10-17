@@ -30,20 +30,20 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_rd/pipeline_cache_rd.h"
-#include "servers/rendering/renderer_rd/pipeline_deferred_rd.h"
-#include "servers/rendering/renderer_rd/shaders/effects/blur_raster.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/copy.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/copy_to_fb.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/cube_to_dp.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/cube_to_octmap.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/octmap_downsampler.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/octmap_downsampler_raster.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/octmap_filter.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/octmap_filter_raster.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/octmap_roughness.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/octmap_roughness_raster.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/specular_merge.glsl.gen.h"
+#include "../pipeline_cache_rd.h"
+#include "../pipeline_deferred_rd.h"
+#include "../shaders/effects/blur_raster.glsl.gen.h"
+#include "../shaders/effects/copy.glsl.gen.h"
+#include "../shaders/effects/copy_to_fb.glsl.gen.h"
+#include "../shaders/effects/cube_to_dp.glsl.gen.h"
+#include "../shaders/effects/cube_to_octmap.glsl.gen.h"
+#include "../shaders/effects/octmap_downsampler.glsl.gen.h"
+#include "../shaders/effects/octmap_downsampler_raster.glsl.gen.h"
+#include "../shaders/effects/octmap_filter.glsl.gen.h"
+#include "../shaders/effects/octmap_filter_raster.glsl.gen.h"
+#include "../shaders/effects/octmap_roughness.glsl.gen.h"
+#include "../shaders/effects/octmap_roughness_raster.glsl.gen.h"
+#include "../shaders/effects/specular_merge.glsl.gen.h"
 
 namespace RendererRD {
 

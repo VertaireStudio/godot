@@ -30,17 +30,17 @@
 
 #pragma once
 
-#include "core/variant/type_info.h"
-#include "servers/physics_2d/physics_server_2d_types.h"
-#include "servers/physics_2d/queries/physics_cast_motion_result_2d.h"
-#include "servers/physics_2d/queries/physics_collide_shape_result_2d.h"
-#include "servers/physics_2d/queries/physics_get_rest_info_result_2d.h"
-#include "servers/physics_2d/queries/physics_intersect_point_result_2d.h"
-#include "servers/physics_2d/queries/physics_intersect_ray_result_2d.h"
-#include "servers/physics_2d/queries/physics_intersect_shape_result_2d.h"
-#include "servers/physics_2d/queries/physics_point_query_parameters_2d.h"
-#include "servers/physics_2d/queries/physics_ray_query_parameters_2d.h"
-#include "servers/physics_2d/queries/physics_shape_query_parameters_2d.h"
+#include "../../../core/variant/type_info.h"
+#include "../physics_server_2d_types.h"
+#include "../queries/physics_cast_motion_result_2d.h"
+#include "../queries/physics_collide_shape_result_2d.h"
+#include "../queries/physics_get_rest_info_result_2d.h"
+#include "../queries/physics_intersect_point_result_2d.h"
+#include "../queries/physics_intersect_ray_result_2d.h"
+#include "../queries/physics_intersect_shape_result_2d.h"
+#include "../queries/physics_point_query_parameters_2d.h"
+#include "../queries/physics_ray_query_parameters_2d.h"
+#include "../queries/physics_shape_query_parameters_2d.h"
 
 class PhysicsDirectSpaceState2D : public Object {
 	GDCLASS(PhysicsDirectSpaceState2D, Object);

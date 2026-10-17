@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/os/rw_lock.h"
-#include "core/templates/rid_owner.h"
-#include "scene/resources/material.h"
+#include "../../core/object/ref_counted.h"
+#include "../../core/os/rw_lock.h"
+#include "../../core/templates/rid_owner.h"
+#include "../../scene/resources/material.h"
 
 class Node;
 class NavigationMesh;

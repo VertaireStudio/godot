@@ -30,22 +30,22 @@
 
 #pragma once
 
-#include "core/object/property_info.h"
-#include "core/string/string_name.h"
-#include "core/string/ustring.h"
-#include "core/templates/hash_set.h"
-#include "core/templates/list.h"
-#include "core/templates/rb_map.h"
-#include "core/templates/safe_refcount.h"
-#include "core/typedefs.h"
-#include "core/variant/variant.h"
+#include "../../core/object/property_info.h"
+#include "../../core/string/string_name.h"
+#include "../../core/string/ustring.h"
+#include "../../core/templates/hash_set.h"
+#include "../../core/templates/list.h"
+#include "../../core/templates/rb_map.h"
+#include "../../core/templates/safe_refcount.h"
+#include "../../core/typedefs.h"
+#include "../../core/variant/variant.h"
 
 #ifdef TOOLS_ENABLED
-#include "core/object/editor_language.h"
+#include "../../core/object/editor_language.h"
 #endif
 
 #ifdef DEBUG_ENABLED
-#include "servers/rendering/shader_warnings.h"
+#include "shader_warnings.h"
 #endif // DEBUG_ENABLED
 
 class ShaderLanguage {

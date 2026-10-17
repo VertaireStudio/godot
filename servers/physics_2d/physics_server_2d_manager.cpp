@@ -30,10 +30,10 @@
 
 #include "physics_server_2d_manager.h"
 
-#include "core/config/project_settings.h"
-#include "core/object/class_db.h"
-#include "servers/physics_2d/physics_server_2d.h"
-#include "servers/physics_2d/physics_server_2d_dummy.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/class_db.h"
+#include "physics_server_2d.h"
+#include "physics_server_2d_dummy.h"
 
 static PhysicsServer2D *physics_server_2d = nullptr;
 

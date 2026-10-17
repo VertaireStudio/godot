@@ -30,7 +30,7 @@
 
 #include "physics_get_rest_info_result_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 Vector3 PhysicsGetRestInfoResult3D::get_point() const {
 	return result.point;

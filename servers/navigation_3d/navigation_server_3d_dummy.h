@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/variant/typed_array.h"
-#include "servers/navigation_3d/navigation_server_3d.h"
+#include "../../core/variant/typed_array.h"
+#include "navigation_server_3d.h"
 
 class NavigationServer3DDummy : public NavigationServer3D {
 	GDCLASS(NavigationServer3DDummy, NavigationServer3D);

@@ -30,22 +30,22 @@
 
 #include "renderer_scene_cull.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/math/geometry_3d.h"
-#include "core/object/callable_mp.h"
-#include "core/object/worker_thread_pool.h"
-#include "servers/rendering/rendering_light_culler.h"
-#include "servers/rendering/rendering_server.h"
-#include "servers/rendering/rendering_server_default.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/math/geometry_3d.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/worker_thread_pool.h"
+#include "rendering_light_culler.h"
+#include "rendering_server.h"
+#include "rendering_server_default.h"
 
 #ifndef XR_DISABLED
-#include "servers/xr/xr_interface.h"
+#include "../xr/xr_interface.h"
 #endif
 
 //#define DEBUG_CULL_TIME
 #ifdef DEBUG_CULL_TIME
-#include "core/os/os.h"
+#include "../../core/os/os.h"
 #endif
 
 /* HALTON SEQUENCE */

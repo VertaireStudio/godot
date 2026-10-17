@@ -30,13 +30,13 @@
 
 #include "smaa.h"
 
-#include "core/config/project_settings.h"
-#include "servers/rendering/renderer_rd/effects/smaa_area_tex.gen.h"
-#include "servers/rendering/renderer_rd/effects/smaa_search_tex.gen.h"
-#include "servers/rendering/renderer_rd/framebuffer_cache_rd.h"
-#include "servers/rendering/renderer_rd/storage_rd/material_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/render_scene_buffers_rd.h"
-#include "servers/rendering/renderer_rd/uniform_set_cache_rd.h"
+#include "../../../../core/config/project_settings.h"
+#include "smaa_area_tex.gen.h"
+#include "smaa_search_tex.gen.h"
+#include "../framebuffer_cache_rd.h"
+#include "../storage_rd/material_storage.h"
+#include "../storage_rd/render_scene_buffers_rd.h"
+#include "../uniform_set_cache_rd.h"
 
 using namespace RendererRD;
 

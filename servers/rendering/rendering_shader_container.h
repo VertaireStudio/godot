@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "servers/rendering/rendering_device_commons.h"
+#include "../../core/object/ref_counted.h"
+#include "rendering_device_commons.h"
 
 struct SpvReflectShaderModule;
 struct SpvReflectDescriptorBinding;

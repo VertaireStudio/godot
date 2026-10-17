@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_rd/pipeline_cache_rd.h"
-#include "servers/rendering/renderer_rd/shaders/effects/motion_vectors.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/effects/shadow_frustum.glsl.gen.h"
+#include "../pipeline_cache_rd.h"
+#include "../shaders/effects/motion_vectors.glsl.gen.h"
+#include "../shaders/effects/shadow_frustum.glsl.gen.h"
 
 namespace RendererRD {
 

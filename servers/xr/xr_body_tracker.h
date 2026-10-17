@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "servers/xr/xr_positional_tracker.h"
+#include "xr_positional_tracker.h"
 
 class XRBodyTracker : public XRPositionalTracker {
 	GDCLASS(XRBodyTracker, XRPositionalTracker);

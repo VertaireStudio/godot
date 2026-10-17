@@ -30,7 +30,7 @@
 
 #include "physics_testmotion_query_result_2d.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 Vector2 PhysicsTestMotionResult2D::get_travel() const {
 	return result.travel;

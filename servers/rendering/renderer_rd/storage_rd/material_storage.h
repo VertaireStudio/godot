@@ -30,15 +30,15 @@
 
 #pragma once
 
-#include "core/templates/rid_owner.h"
-#include "core/templates/self_list.h"
-#include "servers/rendering/renderer_rd/pipeline_cache_rd.h"
-#include "servers/rendering/renderer_rd/storage_rd/texture_storage.h"
-#include "servers/rendering/rendering_server_types.h"
-#include "servers/rendering/shader_compiler.h"
-#include "servers/rendering/shader_language.h"
-#include "servers/rendering/storage/material_storage.h"
-#include "servers/rendering/storage/utilities.h"
+#include "../../../../core/templates/rid_owner.h"
+#include "../../../../core/templates/self_list.h"
+#include "../pipeline_cache_rd.h"
+#include "texture_storage.h"
+#include "../../rendering_server_types.h"
+#include "../../shader_compiler.h"
+#include "../../shader_language.h"
+#include "../../storage/material_storage.h"
+#include "../../storage/utilities.h"
 
 struct Projection;
 

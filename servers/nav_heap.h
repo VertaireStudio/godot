@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/templates/local_vector.h"
+#include "../core/templates/local_vector.h"
 
 // This file contains Heap which is used by both 2D and 3D navigation.
 

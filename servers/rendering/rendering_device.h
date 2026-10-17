@@ -30,20 +30,20 @@
 
 #pragma once
 
-#include "core/object/worker_thread_pool.h"
-#include "core/os/condition_variable.h"
-#include "core/os/thread_safe.h"
-#include "core/templates/local_vector.h"
-#include "core/templates/rb_map.h"
-#include "core/templates/rb_set.h"
-#include "core/templates/rid_owner.h"
-#include "core/variant/type_info.h"
-#include "core/variant/typed_array.h"
-#include "servers/display/display_server_enums.h"
-#include "servers/rendering/rendering_device_commons.h"
-#include "servers/rendering/rendering_device_driver.h"
-#include "servers/rendering/rendering_device_enums.h"
-#include "servers/rendering/rendering_device_graph.h"
+#include "../../core/object/worker_thread_pool.h"
+#include "../../core/os/condition_variable.h"
+#include "../../core/os/thread_safe.h"
+#include "../../core/templates/local_vector.h"
+#include "../../core/templates/rb_map.h"
+#include "../../core/templates/rb_set.h"
+#include "../../core/templates/rid_owner.h"
+#include "../../core/variant/type_info.h"
+#include "../../core/variant/typed_array.h"
+#include "../display/display_server_enums.h"
+#include "rendering_device_commons.h"
+#include "rendering_device_driver.h"
+#include "rendering_device_enums.h"
+#include "rendering_device_graph.h"
 
 class RDTextureFormat;
 class RDTextureView;

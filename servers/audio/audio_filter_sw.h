@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/typedefs.h"
+#include "../../core/typedefs.h"
 
 class AudioFilterSW {
 public:

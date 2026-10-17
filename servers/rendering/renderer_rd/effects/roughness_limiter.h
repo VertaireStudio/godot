@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_rd/shaders/effects/roughness_limiter.glsl.gen.h"
+#include "../shaders/effects/roughness_limiter.glsl.gen.h"
 
 namespace RendererRD {
 

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_compositor.h"
-#include "servers/rendering/rendering_server_enums.h"
+#include "../renderer_compositor.h"
+#include "../rendering_server_enums.h"
 
 class RasterizerCanvasDummy;
 class RasterizerSceneDummy;

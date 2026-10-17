@@ -30,7 +30,7 @@
 
 #include "xr_face_tracker.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void XRFaceTracker::_bind_methods() {
 	// Base Shapes

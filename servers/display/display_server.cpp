@@ -36,27 +36,27 @@ STATIC_ASSERT_INCOMPLETE_TYPE(class, NativeMenu);
 STATIC_ASSERT_INCOMPLETE_TYPE(class, Texture2D);
 STATIC_ASSERT_INCOMPLETE_TYPE(class, RenderingServer);
 
-#include "core/input/input.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "scene/resources/texture.h"
-#include "servers/display/accessibility_server.h"
-#include "servers/display/display_server_headless.h"
-#include "servers/display/native_menu.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/input/input.h"
+#include "../../core/object/class_db.h"
+#include "../../core/os/os.h"
+#include "../../scene/resources/texture.h"
+#include "accessibility_server.h"
+#include "display_server_headless.h"
+#include "native_menu.h"
+#include "../rendering/rendering_server.h"
 
 #if defined(RD_ENABLED)
-#include "servers/rendering/rendering_device.h"
+#include "../rendering/rendering_device.h"
 #endif
 
 #if defined(VULKAN_ENABLED)
-#include "drivers/vulkan/rendering_context_driver_vulkan.h"
+#include "../../drivers/vulkan/rendering_context_driver_vulkan.h"
 #endif
 #if defined(D3D12_ENABLED)
-#include "drivers/d3d12/rendering_context_driver_d3d12.h"
+#include "../../drivers/d3d12/rendering_context_driver_d3d12.h"
 #endif
 #if defined(METAL_ENABLED)
-#include "drivers/metal/rendering_context_driver_metal.h"
+#include "../../drivers/metal/rendering_context_driver_metal.h"
 #endif
 
 DisplayServer *DisplayServer::singleton = nullptr;

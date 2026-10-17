@@ -30,7 +30,7 @@
 
 #include "physics_intersect_shape_result_2d.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 PhysicsIntersectShapeResult2D::PhysicsIntersectShapeResult2D(int p_max_intersections) {
 	ERR_FAIL_COND(p_max_intersections < 0);

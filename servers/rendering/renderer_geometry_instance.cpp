@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-#include "servers/rendering/renderer_geometry_instance.h"
+#include "renderer_geometry_instance.h"
 
 void RenderGeometryInstanceBase::set_skeleton(RID p_skeleton) {
 	data->skeleton = p_skeleton;

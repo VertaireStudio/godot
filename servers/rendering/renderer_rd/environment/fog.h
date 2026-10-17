@@ -30,14 +30,14 @@
 
 #pragma once
 
-#include "core/templates/rid_owner.h"
-#include "servers/rendering/environment/renderer_fog.h"
-#include "servers/rendering/renderer_rd/environment/gi.h"
-#include "servers/rendering/renderer_rd/pipeline_deferred_rd.h"
-#include "servers/rendering/renderer_rd/shaders/environment/volumetric_fog.glsl.gen.h"
-#include "servers/rendering/renderer_rd/shaders/environment/volumetric_fog_process.glsl.gen.h"
-#include "servers/rendering/renderer_rd/storage_rd/render_buffer_custom_data_rd.h"
-#include "servers/rendering/storage/utilities.h"
+#include "../../../../core/templates/rid_owner.h"
+#include "../../environment/renderer_fog.h"
+#include "gi.h"
+#include "../pipeline_deferred_rd.h"
+#include "../shaders/environment/volumetric_fog.glsl.gen.h"
+#include "../shaders/environment/volumetric_fog_process.glsl.gen.h"
+#include "../storage_rd/render_buffer_custom_data_rd.h"
+#include "../../storage/utilities.h"
 
 #define RB_SCOPE_FOG SNAME("Fog")
 

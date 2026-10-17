@@ -30,11 +30,11 @@
 
 #include "scene_shader_forward_mobile.h"
 
-#include "core/config/project_settings.h"
-#include "core/math/math_defs.h"
-#include "servers/rendering/renderer_rd/forward_mobile/render_forward_mobile.h"
-#include "servers/rendering/renderer_rd/renderer_compositor_rd.h"
-#include "servers/rendering/renderer_rd/storage_rd/material_storage.h"
+#include "../../../../core/config/project_settings.h"
+#include "../../../../core/math/math_defs.h"
+#include "render_forward_mobile.h"
+#include "../renderer_compositor_rd.h"
+#include "../storage_rd/material_storage.h"
 
 using namespace RendererSceneRenderImplementation;
 

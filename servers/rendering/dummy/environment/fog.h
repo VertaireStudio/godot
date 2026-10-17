@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/math/aabb.h"
-#include "core/templates/rid.h"
-#include "servers/rendering/environment/renderer_fog.h"
+#include "../../../../core/math/aabb.h"
+#include "../../../../core/templates/rid.h"
+#include "../../environment/renderer_fog.h"
 
 namespace RendererDummy {
 

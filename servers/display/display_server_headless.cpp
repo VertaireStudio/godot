@@ -30,10 +30,10 @@
 
 #include "display_server_headless.h"
 
-#include "core/input/input.h"
-#include "core/input/input_event.h"
-#include "servers/display/native_menu.h"
-#include "servers/rendering/dummy/rasterizer_dummy.h"
+#include "../../core/input/input.h"
+#include "../../core/input/input_event.h"
+#include "native_menu.h"
+#include "../rendering/dummy/rasterizer_dummy.h"
 
 DisplayServer *DisplayServerHeadless::create_func(const String &p_rendering_driver, DisplayServerEnums::WindowMode p_mode, DisplayServerEnums::VSyncMode p_vsync_mode, uint32_t p_flags, const Vector2i *p_position, const Vector2i &p_resolution, int p_screen, DisplayServerEnums::Context p_context, int64_t p_parent_window, Error &r_error) {
 	r_error = OK;

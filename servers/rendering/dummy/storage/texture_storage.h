@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/templates/rid_owner.h"
-#include "servers/rendering/storage/texture_storage.h"
+#include "../../../../core/templates/rid_owner.h"
+#include "../../storage/texture_storage.h"
 
 namespace RendererDummy {
 

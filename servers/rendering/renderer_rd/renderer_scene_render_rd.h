@@ -30,28 +30,28 @@
 
 #pragma once
 
-#include "servers/rendering/renderer_compositor.h"
-#include "servers/rendering/renderer_rd/effects/bokeh_dof.h"
-#include "servers/rendering/renderer_rd/effects/copy_effects.h"
-#include "servers/rendering/renderer_rd/effects/debug_effects.h"
-#include "servers/rendering/renderer_rd/effects/fsr.h"
-#include "servers/rendering/renderer_rd/effects/luminance.h"
-#include "servers/rendering/renderer_rd/effects/resolve.h"
-#include "servers/rendering/renderer_rd/effects/smaa.h"
-#include "servers/rendering/renderer_rd/effects/tone_mapper.h"
-#include "servers/rendering/renderer_rd/effects/vrs.h"
-#include "servers/rendering/renderer_rd/environment/gi.h"
-#include "servers/rendering/renderer_rd/environment/sky.h"
-#include "servers/rendering/renderer_rd/storage_rd/light_storage.h"
-#include "servers/rendering/renderer_rd/storage_rd/render_data_rd.h"
-#include "servers/rendering/renderer_rd/storage_rd/render_scene_buffers_rd.h"
-#include "servers/rendering/renderer_scene_render.h"
-#include "servers/rendering/rendering_device.h"
-#include "servers/rendering/rendering_server_types.h"
-#include "servers/rendering/rendering_shader_library.h"
+#include "../renderer_compositor.h"
+#include "effects/bokeh_dof.h"
+#include "effects/copy_effects.h"
+#include "effects/debug_effects.h"
+#include "effects/fsr.h"
+#include "effects/luminance.h"
+#include "effects/resolve.h"
+#include "effects/smaa.h"
+#include "effects/tone_mapper.h"
+#include "effects/vrs.h"
+#include "environment/gi.h"
+#include "environment/sky.h"
+#include "storage_rd/light_storage.h"
+#include "storage_rd/render_data_rd.h"
+#include "storage_rd/render_scene_buffers_rd.h"
+#include "../renderer_scene_render.h"
+#include "../rendering_device.h"
+#include "../rendering_server_types.h"
+#include "../rendering_shader_library.h"
 
 #ifdef METAL_ENABLED
-#include "servers/rendering/renderer_rd/effects/metal_fx.h"
+#include "effects/metal_fx.h"
 #endif
 
 class RendererSceneRenderRD : public RendererSceneRender, public RenderingShaderLibrary {

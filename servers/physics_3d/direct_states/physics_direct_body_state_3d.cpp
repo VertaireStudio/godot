@@ -30,7 +30,7 @@
 
 #include "physics_direct_body_state_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 void PhysicsDirectBodyState3D::integrate_forces() {
 	real_t step = get_step();

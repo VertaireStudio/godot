@@ -31,23 +31,23 @@
 #include "rendering_device.h"
 #include "rendering_device.compat.inc"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "core/profiling/profiling.h"
-#include "core/templates/fixed_vector.h"
-#include "servers/rendering/renderer_rd/uniform_set_cache_rd.h"
-#include "servers/rendering/rendering_device_binds.h"
-#include "servers/rendering/rendering_shader_container.h"
-#include "servers/rendering/shader_include_db.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/io/dir_access.h"
+#include "../../core/io/file_access.h"
+#include "../../core/object/class_db.h"
+#include "../../core/os/os.h"
+#include "../../core/profiling/profiling.h"
+#include "../../core/templates/fixed_vector.h"
+#include "renderer_rd/uniform_set_cache_rd.h"
+#include "rendering_device_binds.h"
+#include "rendering_shader_container.h"
+#include "shader_include_db.h"
 
-#include "modules/modules_enabled.gen.h"
+#include "../../modules/modules_enabled.gen.h"
 
 #ifdef MODULE_GLSLANG_ENABLED
-#include "modules/glslang/shader_compile.h"
+#include "../../modules/glslang/shader_compile.h"
 #endif
 
 #define FORCE_SEPARATE_PRESENT_QUEUE 0

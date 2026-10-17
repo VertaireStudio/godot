@@ -30,7 +30,7 @@
 
 #include "physics_cast_motion_result_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 real_t PhysicsCastMotionResult3D::get_safe_fraction() const {
 	return safe_fraction;

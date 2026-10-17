@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "servers/audio/audio_effect.h"
-#include "servers/audio/effects/reverb_filter.h"
+#include "../audio_effect.h"
+#include "reverb_filter.h"
 
 class AudioEffectReverb;
 

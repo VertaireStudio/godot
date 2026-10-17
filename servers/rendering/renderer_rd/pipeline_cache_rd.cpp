@@ -30,7 +30,7 @@
 
 #include "pipeline_cache_rd.h"
 
-#include "core/os/memory.h"
+#include "../../../core/os/memory.h"
 
 RID PipelineCacheRD::_generate_version(RD::VertexFormatID p_vertex_format_id, RD::FramebufferFormatID p_framebuffer_format_id, bool p_wireframe, uint32_t p_render_pass, uint32_t p_bool_specializations) {
 	RD::PipelineMultisampleState multisample_state_version = multisample_state;

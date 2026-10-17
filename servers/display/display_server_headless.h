@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "servers/display/display_server.h"
+#include "display_server.h"
 
 class InputEvent;
 class NativeMenu;

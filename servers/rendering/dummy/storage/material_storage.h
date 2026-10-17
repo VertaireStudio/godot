@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/templates/rid_owner.h"
-#include "servers/rendering/rendering_server_types.h"
-#include "servers/rendering/shader_compiler.h"
-#include "servers/rendering/shader_language.h"
-#include "servers/rendering/storage/material_storage.h"
+#include "../../../../core/templates/rid_owner.h"
+#include "../../rendering_server_types.h"
+#include "../../shader_compiler.h"
+#include "../../shader_language.h"
+#include "../../storage/material_storage.h"
 
 class DependencyTracker;
 

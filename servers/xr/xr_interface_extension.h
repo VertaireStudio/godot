@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/gdvirtual.gen.h"
-#include "servers/xr/xr_interface.h"
+#include "../../core/object/gdvirtual.gen.h"
+#include "xr_interface.h"
 
 class XRInterfaceExtension : public XRInterface {
 	GDCLASS(XRInterfaceExtension, XRInterface);

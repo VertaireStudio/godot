@@ -31,12 +31,12 @@
 #include "xr_server.h"
 #include "xr_server.compat.inc"
 
-#include "core/config/project_settings.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "servers/rendering/rendering_server.h"
-#include "servers/xr/xr_interface.h"
-#include "servers/xr/xr_positional_tracker.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../rendering/rendering_server.h"
+#include "xr_interface.h"
+#include "xr_positional_tracker.h"
 
 XRServer::XRMode XRServer::xr_mode = XRMODE_DEFAULT;
 

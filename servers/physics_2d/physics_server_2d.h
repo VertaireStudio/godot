@@ -30,14 +30,14 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "servers/physics_2d/direct_states/physics_direct_body_state_2d.h"
-#include "servers/physics_2d/direct_states/physics_direct_space_state_2d.h"
-#include "servers/physics_2d/physics_server_2d_enums.h"
-#include "servers/physics_2d/physics_server_2d_types.h"
-#include "servers/physics_2d/queries/physics_shape_query_parameters_2d.h"
-#include "servers/physics_2d/queries/physics_testmotion_query_parameters_2d.h"
-#include "servers/physics_2d/queries/physics_testmotion_query_result_2d.h"
+#include "../../core/object/ref_counted.h"
+#include "direct_states/physics_direct_body_state_2d.h"
+#include "direct_states/physics_direct_space_state_2d.h"
+#include "physics_server_2d_enums.h"
+#include "physics_server_2d_types.h"
+#include "queries/physics_shape_query_parameters_2d.h"
+#include "queries/physics_testmotion_query_parameters_2d.h"
+#include "queries/physics_testmotion_query_result_2d.h"
 
 class PhysicsServer2D : public Object {
 	GDCLASS(PhysicsServer2D, Object);

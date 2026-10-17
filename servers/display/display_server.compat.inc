@@ -32,7 +32,7 @@
 
 #include "display_server.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 Error DisplayServer::_file_dialog_show_bind_compat_98194(const String &p_title, const String &p_current_directory, const String &p_filename, bool p_show_hidden, DisplayServerEnums::FileDialogMode p_mode, const Vector<String> &p_filters, const Callable &p_callback) {
 	return file_dialog_show(p_title, p_current_directory, p_filename, p_show_hidden, p_mode, p_filters, p_callback, DisplayServerEnums::MAIN_WINDOW_ID);
