@@ -32,11 +32,11 @@
 
 #include "view_3d_controller.h"
 
-#include "core/config/engine.h"
-#include "core/input/input.h"
-#include "core/input/shortcut.h"
-#include "scene/debugger/debugger_helpers.h"
-#include "scene/main/scene_tree.h"
+#include "../../core/config/engine.h"
+#include "../../core/input/input.h"
+#include "../../core/input/shortcut.h"
+#include "debugger_helpers.h"
+#include "../main/scene_tree.h"
 
 using namespace View3DControllerConsts;
 

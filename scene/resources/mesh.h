@@ -30,16 +30,16 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/math/face3.h"
-#include "core/math/triangle_mesh.h"
-#include "core/variant/typed_array.h"
-#include "scene/resources/material.h"
-#include "servers/rendering/rendering_server_enums.h"
-#include "servers/rendering/rendering_server_types.h"
+#include "../../core/io/resource.h"
+#include "../../core/math/face3.h"
+#include "../../core/math/triangle_mesh.h"
+#include "../../core/variant/typed_array.h"
+#include "material.h"
+#include "../../servers/rendering/rendering_server_enums.h"
+#include "../../servers/rendering/rendering_server_types.h"
 
 #ifndef PHYSICS_3D_DISABLED
-#include "scene/resources/3d/shape_3d.h"
+#include "3d/shape_3d.h"
 
 class ConcavePolygonShape3D;
 class ConvexPolygonShape3D;

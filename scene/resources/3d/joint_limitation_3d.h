@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/io/resource.h"
+#include "../../../core/io/resource.h"
 
 #ifdef TOOLS_ENABLED
-#include "scene/resources/surface_tool.h"
+#include "../surface_tool.h"
 #endif // TOOLS_ENABLED
 
 class JointLimitation3D : public Resource {

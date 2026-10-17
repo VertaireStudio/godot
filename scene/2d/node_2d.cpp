@@ -30,11 +30,11 @@
 
 #include "node_2d.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/main/viewport.h"
-#include "servers/display/accessibility_server.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../main/viewport.h"
+#include "../../servers/display/accessibility_server.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #ifdef DEBUG_ENABLED
 Dictionary Node2D::_edit_get_state() const {

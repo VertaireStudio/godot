@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/2d/physics/collision_object_2d.h"
-#include "scene/2d/physics/kinematic_collision_2d.h"
+#include "collision_object_2d.h"
+#include "kinematic_collision_2d.h"
 
 class PhysicsBody2D : public CollisionObject2D {
 	GDCLASS(PhysicsBody2D, CollisionObject2D);

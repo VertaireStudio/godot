@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/3d/bone_constraint_3d.h"
+#include "bone_constraint_3d.h"
 
 class AimModifier3D : public BoneConstraint3D {
 	GDCLASS(AimModifier3D, BoneConstraint3D);

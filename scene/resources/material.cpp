@@ -30,18 +30,18 @@
 
 #include "material.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/error/error_macros.h"
-#include "core/io/resource_loader.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/object/property_info.h"
-#include "core/os/os.h"
-#include "core/version.h"
-#include "scene/main/scene_tree.h"
-#include "scene/resources/texture.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/error/error_macros.h"
+#include "../../core/io/resource_loader.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../core/object/property_info.h"
+#include "../../core/os/os.h"
+#include "../../core/version.h"
+#include "../main/scene_tree.h"
+#include "texture.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #include "modules/modules_enabled.gen.h" // IWYU pragma: keep. For texture_streaming.
 

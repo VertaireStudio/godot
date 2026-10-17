@@ -31,8 +31,8 @@
 #include "audio_stream_polyphonic.h"
 #include "audio_stream_polyphonic.compat.inc"
 
-#include "core/object/class_db.h"
-#include "servers/audio/audio_server.h"
+#include "../../../core/object/class_db.h"
+#include "../../../servers/audio/audio_server.h"
 
 constexpr uint64_t ID_MASK = 0xFFFFFFFF;
 constexpr uint64_t INDEX_SHIFT = 32;

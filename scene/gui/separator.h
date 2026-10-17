@@ -30,7 +30,8 @@
 
 #pragma once
 
-#include "scene/gui/control.h"
+#include "control.h"
+
 class Separator : public Control {
 	GDCLASS(Separator, Control);
 

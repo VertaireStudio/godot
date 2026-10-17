@@ -30,9 +30,9 @@
 
 #include "physical_bone_2d.h"
 
-#include "core/object/class_db.h"
-#include "scene/2d/physics/joints/joint_2d.h"
-#include "servers/physics_2d/physics_server_2d.h"
+#include "../../../core/object/class_db.h"
+#include "joints/joint_2d.h"
+#include "../../../servers/physics_2d/physics_server_2d.h"
 
 void PhysicalBone2D::_notification(int p_what) {
 	switch (p_what) {

@@ -31,18 +31,18 @@
 #include "shader.h"
 #include "shader.compat.inc"
 
-#include "core/config/engine.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/main/scene_tree.h"
-#include "scene/resources/texture.h"
-#include "servers/rendering/rendering_server.h"
-#include "servers/rendering/shader_language.h"
-#include "servers/rendering/shader_preprocessor.h"
+#include "../../core/config/engine.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../main/scene_tree.h"
+#include "texture.h"
+#include "../../servers/rendering/rendering_server.h"
+#include "../../servers/rendering/shader_language.h"
+#include "../../servers/rendering/shader_preprocessor.h"
 
 #ifdef TOOLS_ENABLED
-#include "core/string/regex.h"
-#include "editor/doc/editor_help.h"
+#include "../../core/string/regex.h"
+#include "../../editor/doc/editor_help.h"
 #endif
 
 Shader::Mode Shader::get_mode() const {

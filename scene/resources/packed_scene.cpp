@@ -30,27 +30,27 @@
 
 #include "packed_scene.h"
 
-#include "core/config/engine.h"
-#include "core/io/file_access.h"
-#include "core/io/missing_resource.h"
-#include "core/io/resource_loader.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/object/script_language.h"
-#include "core/templates/local_vector.h"
-#include "core/variant/callable_bind.h"
-#include "core/variant/container_type_validate.h"
-#include "scene/gui/control.h"
-#include "scene/main/instance_placeholder.h"
-#include "scene/main/missing_node.h"
-#include "scene/property_utils.h"
+#include "../../core/config/engine.h"
+#include "../../core/io/file_access.h"
+#include "../../core/io/missing_resource.h"
+#include "../../core/io/resource_loader.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../core/object/script_language.h"
+#include "../../core/templates/local_vector.h"
+#include "../../core/variant/callable_bind.h"
+#include "../../core/variant/container_type_validate.h"
+#include "../gui/control.h"
+#include "../main/instance_placeholder.h"
+#include "../main/missing_node.h"
+#include "../property_utils.h"
 
 #ifndef _2D_DISABLED
-#include "scene/2d/node_2d.h"
+#include "../2d/node_2d.h"
 #endif // _2D_DISABLED
 
 #ifndef _3D_DISABLED
-#include "scene/3d/node_3d.h"
+#include "../3d/node_3d.h"
 #endif // _3D_DISABLED
 
 #define PACKED_SCENE_VERSION 3

@@ -31,9 +31,9 @@
 #pragma once
 
 #ifdef DEBUG_ENABLED
-#include "core/input/input.h"
-#include "core/object/ref_counted.h"
-#include "scene/debugger/debugger_helpers.h"
+#include "../../core/input/input.h"
+#include "../../core/object/ref_counted.h"
+#include "debugger_helpers.h"
 
 class CanvasItem;
 class Control;

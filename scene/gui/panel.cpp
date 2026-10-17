@@ -30,8 +30,8 @@
 
 #include "panel.h"
 
-#include "scene/theme/theme_db.h"
-#include "servers/display/accessibility_server.h"
+#include "../theme/theme_db.h"
+#include "../../servers/display/accessibility_server.h"
 
 void Panel::_notification(int p_what) {
 	switch (p_what) {

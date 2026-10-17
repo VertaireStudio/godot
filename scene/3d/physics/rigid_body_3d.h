@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/templates/vset.h"
-#include "scene/3d/physics/physics_body_3d.h"
+#include "../../../core/templates/vset.h"
+#include "physics_body_3d.h"
 
 class PhysicsMaterial;
 

@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/2d/physics/static_body_2d.h"
+#include "static_body_2d.h"
 
 class PhysicsDirectBodyState2D;
 

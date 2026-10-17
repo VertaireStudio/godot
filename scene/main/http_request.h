@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/io/http_client.h"
-#include "core/templates/safe_refcount.h"
-#include "scene/main/node.h"
+#include "../../core/io/http_client.h"
+#include "../../core/templates/safe_refcount.h"
+#include "node.h"
 
 class Thread;
 class Timer;

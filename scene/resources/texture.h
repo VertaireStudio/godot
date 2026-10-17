@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/io/image.h"
-#include "core/io/resource.h"
-#include "core/variant/typed_array.h"
+#include "../../core/io/image.h"
+#include "../../core/io/resource.h"
+#include "../../core/variant/typed_array.h"
 
 class Texture : public Resource {
 	GDCLASS(Texture, Resource);

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/3d/physics/kinematic_collision_3d.h"
-#include "scene/3d/physics/physics_body_3d.h"
+#include "kinematic_collision_3d.h"
+#include "physics_body_3d.h"
 
 class CharacterBody3D : public PhysicsBody3D {
 	GDCLASS(CharacterBody3D, PhysicsBody3D);

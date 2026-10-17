@@ -30,9 +30,9 @@
 
 #include "color_mode.h"
 
-#include "core/math/color.h"
-#include "scene/gui/slider.h"
-#include "scene/resources/gradient_texture.h"
+#include "../../core/math/color.h"
+#include "slider.h"
+#include "../resources/gradient_texture.h"
 
 ColorMode::ColorMode(ColorPicker *p_color_picker) {
 	color_picker = p_color_picker;

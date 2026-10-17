@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/templates/local_vector.h"
-#include "scene/resources/mesh.h"
+#include "../../core/templates/local_vector.h"
+#include "mesh.h"
 
 class ImmediateMesh : public Mesh {
 	GDCLASS(ImmediateMesh, Mesh)

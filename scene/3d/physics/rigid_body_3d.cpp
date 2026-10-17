@@ -30,11 +30,11 @@
 
 #include "rigid_body_3d.h"
 
-#include "core/config/engine.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/resources/physics_material.h"
-#include "servers/physics_3d/physics_server_3d_constants.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/object/callable_mp.h"
+#include "../../../core/object/class_db.h"
+#include "../../resources/physics_material.h"
+#include "../../../servers/physics_3d/physics_server_3d_constants.h"
 
 void RigidBody3D::_body_enter_tree(ObjectID p_id) {
 	Object *obj = ObjectDB::get_instance(p_id);

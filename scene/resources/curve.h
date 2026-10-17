@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/templates/rb_map.h"
-#include "scene/property_list_helper.h"
+#include "../../core/io/resource.h"
+#include "../../core/templates/rb_map.h"
+#include "../property_list_helper.h"
 
 // y(x) curve
 class Curve : public Resource {

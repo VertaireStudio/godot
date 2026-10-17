@@ -30,7 +30,7 @@
 
 #include "line_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 PackedStringArray Line3D::get_configuration_warnings() const {
 	PackedStringArray warnings = VisualInstance3D::get_configuration_warnings();

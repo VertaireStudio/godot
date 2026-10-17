@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/2d/physics/rigid_body_2d.h"
-#include "scene/2d/skeleton_2d.h"
+#include "rigid_body_2d.h"
+#include "../skeleton_2d.h"
 
 class Joint2D;
 

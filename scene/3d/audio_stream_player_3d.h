@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/templates/fixed_vector.h"
-#include "scene/3d/node_3d.h"
-#include "servers/audio/audio_server_constants.h"
-#include "servers/audio/audio_server_enums.h"
+#include "../../core/templates/fixed_vector.h"
+#include "node_3d.h"
+#include "../../servers/audio/audio_server_constants.h"
+#include "../../servers/audio/audio_server_enums.h"
 
 #ifndef PHYSICS_3D_DISABLED
 class Area3D;

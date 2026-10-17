@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/3d/node_3d.h"
-#include "scene/resources/material.h"
+#include "../node_3d.h"
+#include "../../resources/material.h"
 
 class ArrayMesh;
 class CollisionObject3D;

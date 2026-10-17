@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/3d/visual_instance_3d.h"
+#include "visual_instance_3d.h"
 
 class VisibleOnScreenNotifier3D : public VisualInstance3D {
 	GDCLASS(VisibleOnScreenNotifier3D, VisualInstance3D);

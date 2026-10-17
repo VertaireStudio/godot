@@ -30,8 +30,8 @@
 
 #include "audio_stream_microphone.h"
 
-#include "servers/audio/audio_driver.h"
-#include "servers/audio/audio_server.h"
+#include "../../../servers/audio/audio_driver.h"
+#include "../../../servers/audio/audio_server.h"
 
 Ref<AudioStreamPlayback> AudioStreamMicrophone::instantiate_playback() {
 	Ref<AudioStreamPlaybackMicrophone> playback;

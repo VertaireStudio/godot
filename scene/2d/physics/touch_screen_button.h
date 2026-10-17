@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "scene/2d/node_2d.h"
-#include "scene/resources/2d/rectangle_shape_2d.h"
-#include "scene/resources/bit_map.h"
-#include "scene/resources/texture.h"
+#include "../node_2d.h"
+#include "../../resources/2d/rectangle_shape_2d.h"
+#include "../../resources/bit_map.h"
+#include "../../resources/texture.h"
 
 class TouchScreenButton : public Node2D {
 	GDCLASS(TouchScreenButton, Node2D);

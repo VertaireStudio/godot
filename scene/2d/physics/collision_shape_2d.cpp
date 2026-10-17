@@ -30,15 +30,15 @@
 
 #include "collision_shape_2d.h"
 
-#include "core/config/engine.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/2d/physics/area_2d.h"
-#include "scene/2d/physics/collision_object_2d.h"
-#include "scene/main/scene_tree.h"
-#include "scene/resources/2d/concave_polygon_shape_2d.h"
-#include "scene/resources/2d/convex_polygon_shape_2d.h"
-#include "servers/physics_2d/physics_server_2d.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/object/callable_mp.h"
+#include "../../../core/object/class_db.h"
+#include "area_2d.h"
+#include "collision_object_2d.h"
+#include "../../main/scene_tree.h"
+#include "../../resources/2d/concave_polygon_shape_2d.h"
+#include "../../resources/2d/convex_polygon_shape_2d.h"
+#include "../../../servers/physics_2d/physics_server_2d.h"
 
 void CollisionShape2D::_shape_changed() {
 	queue_redraw();

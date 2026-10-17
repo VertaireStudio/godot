@@ -30,8 +30,8 @@
 
 #include "kinematic_collision_2d.h"
 
-#include "core/object/class_db.h"
-#include "scene/2d/physics/physics_body_2d.h"
+#include "../../../core/object/class_db.h"
+#include "physics_body_2d.h"
 
 Vector2 KinematicCollision2D::get_position() const {
 	return result.collision_point;

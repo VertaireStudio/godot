@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/2d/node_2d.h"
+#include "node_2d.h"
 
 class Light2D : public Node2D {
 	GDCLASS(Light2D, Node2D);

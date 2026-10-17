@@ -31,27 +31,27 @@
 #include "animation_mixer.h"
 #include "animation_mixer.compat.inc"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/string/string_name.h"
-#include "scene/2d/audio_stream_player_2d.h"
-#include "scene/animation/animation_player.h"
-#include "scene/audio/audio_stream_player.h"
-#include "scene/resources/animation.h"
-#include "scene/resources/audio/audio_stream.h"
-#include "servers/audio/audio_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../core/string/string_name.h"
+#include "../2d/audio_stream_player_2d.h"
+#include "animation_player.h"
+#include "../audio/audio_stream_player.h"
+#include "../resources/animation.h"
+#include "../resources/audio/audio_stream.h"
+#include "../../servers/audio/audio_server.h"
 
 #ifndef _3D_DISABLED
-#include "scene/3d/audio_stream_player_3d.h"
-#include "scene/3d/mesh_instance_3d.h"
-#include "scene/3d/node_3d.h"
-#include "scene/3d/skeleton_3d.h"
+#include "../3d/audio_stream_player_3d.h"
+#include "../3d/mesh_instance_3d.h"
+#include "../3d/node_3d.h"
+#include "../3d/skeleton_3d.h"
 #endif // _3D_DISABLED
 
 #ifdef TOOLS_ENABLED
-#include "editor/editor_undo_redo_manager.h"
+#include "../../editor/editor_undo_redo_manager.h"
 #endif // TOOLS_ENABLED
 
 bool AnimationMixer::_set(const StringName &p_name, const Variant &p_value) {

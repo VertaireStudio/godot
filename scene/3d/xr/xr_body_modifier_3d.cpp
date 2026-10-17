@@ -30,10 +30,10 @@
 
 #include "xr_body_modifier_3d.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/3d/skeleton_3d.h"
-#include "servers/xr/xr_server.h"
+#include "../../../core/object/callable_mp.h"
+#include "../../../core/object/class_db.h"
+#include "../skeleton_3d.h"
+#include "../../../servers/xr/xr_server.h"
 
 void XRBodyModifier3D::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("set_body_tracker", "tracker_name"), &XRBodyModifier3D::set_body_tracker);

@@ -32,7 +32,7 @@
 
 #include "split_container.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void SplitContainer::_clamp_split_offset_bind_compat_90411() {
 	clamp_split_offset(0);

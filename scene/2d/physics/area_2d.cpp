@@ -30,11 +30,11 @@
 
 #include "area_2d.h"
 
-#include "core/config/engine.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "servers/audio/audio_server.h"
-#include "servers/physics_2d/physics_server_2d.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/object/callable_mp.h"
+#include "../../../core/object/class_db.h"
+#include "../../../servers/audio/audio_server.h"
+#include "../../../servers/physics_2d/physics_server_2d.h"
 
 void Area2D::set_gravity_space_override_mode(SpaceOverride p_mode) {
 	gravity_space_override = p_mode;

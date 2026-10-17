@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/gui/range.h"
+#include "range.h"
 
 class ProgressBar : public Range {
 	GDCLASS(ProgressBar, Range);

@@ -30,10 +30,10 @@
 
 #include "texture_rect.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/resources/atlas_texture.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../resources/atlas_texture.h"
+#include "../../servers/rendering/rendering_server.h"
 
 void TextureRect::_notification(int p_what) {
 	switch (p_what) {

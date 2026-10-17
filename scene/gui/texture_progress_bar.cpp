@@ -30,11 +30,11 @@
 
 #include "texture_progress_bar.h"
 
-#include "core/config/engine.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "servers/display/accessibility_server.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../servers/display/accessibility_server.h"
+#include "../../servers/rendering/rendering_server.h"
 
 void TextureProgressBar::set_under_texture(const Ref<Texture2D> &p_texture) {
 	_set_texture(&under, p_texture);

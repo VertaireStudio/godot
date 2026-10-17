@@ -30,10 +30,10 @@
 
 #include "audio_stream.h"
 
-#include "core/config/project_settings.h"
-#include "core/object/class_db.h"
-#include "servers/audio/audio_driver.h"
-#include "servers/audio/audio_server.h"
+#include "../../../core/config/project_settings.h"
+#include "../../../core/object/class_db.h"
+#include "../../../servers/audio/audio_driver.h"
+#include "../../../servers/audio/audio_server.h"
 
 void AudioStreamPlayback::start(double p_from_pos) {
 	GDVIRTUAL_CALL(_start, p_from_pos);

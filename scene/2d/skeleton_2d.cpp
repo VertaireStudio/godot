@@ -30,16 +30,16 @@
 
 #include "skeleton_2d.h"
 
-#include "core/config/engine.h"
-#include "core/math/transform_interpolator.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/math/transform_interpolator.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #ifdef TOOLS_ENABLED
-#include "editor/editor_data.h"
-#include "editor/scene/canvas_item_editor_plugin.h"
-#include "editor/settings/editor_settings.h"
+#include "../../editor/editor_data.h"
+#include "../../editor/scene/canvas_item_editor_plugin.h"
+#include "../../editor/settings/editor_settings.h"
 #endif //TOOLS_ENABLED
 
 bool Bone2D::_set(const StringName &p_path, const Variant &p_value) {

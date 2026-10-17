@@ -30,7 +30,7 @@
 
 #include "bone_constraint_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 bool BoneConstraint3D::_set(const StringName &p_path, const Variant &p_value) {
 	String path = p_path;

@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/templates/local_vector.h"
-#include "scene/3d/visual_instance_3d.h"
-#include "scene/resources/mesh.h"
+#include "../../core/templates/local_vector.h"
+#include "visual_instance_3d.h"
+#include "../resources/mesh.h"
 
 #ifndef NAVIGATION_3D_DISABLED
 class NavigationMesh;

@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/object/gdvirtual.gen.h"
-#include "core/variant/native_ptr.h"
-#include "core/variant/typed_array.h"
-#include "servers/audio/audio_frame.h"
+#include "../../../core/io/resource.h"
+#include "../../../core/object/gdvirtual.gen.h"
+#include "../../../core/variant/native_ptr.h"
+#include "../../../core/variant/typed_array.h"
+#include "../../../servers/audio/audio_frame.h"
 
 class AudioStream;
 class AudioStreamPlayback;

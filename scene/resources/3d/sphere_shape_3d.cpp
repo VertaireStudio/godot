@@ -30,9 +30,9 @@
 
 #include "sphere_shape_3d.h"
 
-#include "core/object/class_db.h"
-#include "scene/resources/3d/primitive_meshes.h"
-#include "servers/physics_3d/physics_server_3d.h"
+#include "../../../core/object/class_db.h"
+#include "primitive_meshes.h"
+#include "../../../servers/physics_3d/physics_server_3d.h"
 
 Vector<Vector3> SphereShape3D::get_debug_mesh_lines() const {
 	float r = get_radius();

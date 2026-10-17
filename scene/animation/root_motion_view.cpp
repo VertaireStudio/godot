@@ -32,10 +32,10 @@
 
 #include "root_motion_view.h"
 
-#include "core/config/engine.h"
-#include "core/object/class_db.h"
-#include "scene/animation/animation_mixer.h"
-#include "scene/resources/material.h"
+#include "../../core/config/engine.h"
+#include "../../core/object/class_db.h"
+#include "animation_mixer.h"
+#include "../resources/material.h"
 
 void RootMotionView::set_animation_mixer(const NodePath &p_path) {
 	path = p_path;

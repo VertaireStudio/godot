@@ -32,45 +32,45 @@
 
 STATIC_ASSERT_INCOMPLETE_TYPE(class, RenderingServer);
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/input/input.h"
-#include "core/io/image_loader.h"
-#include "core/io/resource_loader.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/object/worker_thread_pool.h"
-#include "core/os/os.h"
-#include "core/profiling/profiling.h"
-#include "scene/animation/tween.h"
-#include "scene/audio/audio_stream_player.h"
-#include "scene/debugger/scene_debugger.h"
-#include "scene/gui/control.h"
-#include "scene/main/multiplayer_api.h"
-#include "scene/main/node.h"
-#include "scene/main/viewport.h"
-#include "scene/main/window.h"
-#include "scene/resources/environment.h"
-#include "scene/resources/image_texture.h"
-#include "scene/resources/material.h"
-#include "scene/resources/mesh.h"
-#include "scene/resources/packed_scene.h"
-#include "scene/resources/world_2d.h"
-#include "servers/display/accessibility_server.h"
-#include "servers/display/display_server.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/input/input.h"
+#include "../../core/io/image_loader.h"
+#include "../../core/io/resource_loader.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../core/object/worker_thread_pool.h"
+#include "../../core/os/os.h"
+#include "../../core/profiling/profiling.h"
+#include "../animation/tween.h"
+#include "../audio/audio_stream_player.h"
+#include "../debugger/scene_debugger.h"
+#include "../gui/control.h"
+#include "multiplayer_api.h"
+#include "node.h"
+#include "viewport.h"
+#include "window.h"
+#include "../resources/environment.h"
+#include "../resources/image_texture.h"
+#include "../resources/material.h"
+#include "../resources/mesh.h"
+#include "../resources/packed_scene.h"
+#include "../resources/world_2d.h"
+#include "../../servers/display/accessibility_server.h"
+#include "../../servers/display/display_server.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #ifndef _3D_DISABLED
-#include "scene/3d/node_3d.h"
-#include "scene/resources/3d/world_3d.h"
+#include "../3d/node_3d.h"
+#include "../resources/3d/world_3d.h"
 #endif // _3D_DISABLED
 
 #ifndef PHYSICS_2D_DISABLED
-#include "servers/physics_2d/physics_server_2d.h"
+#include "../../servers/physics_2d/physics_server_2d.h"
 #endif // PHYSICS_2D_DISABLED
 
 #ifndef PHYSICS_3D_DISABLED
-#include "servers/physics_3d/physics_server_3d.h"
+#include "../../servers/physics_3d/physics_server_3d.h"
 #endif // PHYSICS_3D_DISABLED
 
 void SceneTreeTimer::_bind_methods() {

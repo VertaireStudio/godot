@@ -30,11 +30,11 @@
 
 #include "button.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/gui/dialogs.h"
-#include "scene/theme/theme_db.h"
-#include "servers/display/accessibility_server.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "dialogs.h"
+#include "../theme/theme_db.h"
+#include "../../servers/display/accessibility_server.h"
 
 Size2 Button::get_minimum_size() const {
 	Ref<Texture2D> _icon = icon;

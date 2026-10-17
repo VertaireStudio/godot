@@ -31,11 +31,11 @@
 #include "animation_tree.h"
 #include "animation_tree.compat.inc"
 
-#include "core/config/engine.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/animation/animation_blend_tree.h"
-#include "scene/animation/animation_player.h"
+#include "../../core/config/engine.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "animation_blend_tree.h"
+#include "animation_player.h"
 
 thread_local AnimationNode::ProcessState *AnimationNode::tls_process_state = nullptr;
 thread_local AnimationNodeInstance *AnimationNode::current_instance = nullptr;

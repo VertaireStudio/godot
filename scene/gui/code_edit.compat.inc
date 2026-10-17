@@ -32,7 +32,7 @@
 
 #include "code_edit.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 String CodeEdit::_get_text_for_symbol_lookup_bind_compat_73196() {
 	return get_text_for_symbol_lookup();

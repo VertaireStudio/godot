@@ -32,7 +32,7 @@
 
 #include "popup_menu.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void PopupMenu::_add_shortcut_bind_compat_36493(const Ref<Shortcut> &p_shortcut, int p_id, bool p_global) {
 	add_shortcut(p_shortcut, p_id, p_global, false);

@@ -30,14 +30,14 @@
 
 #include "shape_cast_2d.h"
 
-#include "core/config/engine.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/2d/physics/collision_object_2d.h"
-#include "scene/main/scene_tree.h"
-#include "scene/resources/world_2d.h"
-#include "servers/physics_2d/direct_states/physics_direct_space_state_2d.h"
-#include "servers/physics_2d/physics_server_2d.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/object/callable_mp.h"
+#include "../../../core/object/class_db.h"
+#include "collision_object_2d.h"
+#include "../../main/scene_tree.h"
+#include "../../resources/world_2d.h"
+#include "../../../servers/physics_2d/direct_states/physics_direct_space_state_2d.h"
+#include "../../../servers/physics_2d/physics_server_2d.h"
 
 void ShapeCast2D::set_target_position(const Vector2 &p_point) {
 	target_position = p_point;

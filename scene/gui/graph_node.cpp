@@ -30,14 +30,14 @@
 
 #include "graph_node.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/gui/box_container.h"
-#include "scene/gui/graph_edit.h"
-#include "scene/gui/label.h"
-#include "scene/main/scene_tree.h"
-#include "scene/theme/theme_db.h"
-#include "servers/display/accessibility_server.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "box_container.h"
+#include "graph_edit.h"
+#include "label.h"
+#include "../main/scene_tree.h"
+#include "../theme/theme_db.h"
+#include "../../servers/display/accessibility_server.h"
 
 bool GraphNode::_set(const StringName &p_name, const Variant &p_value) {
 	String str = p_name;

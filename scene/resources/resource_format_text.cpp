@@ -30,14 +30,14 @@
 
 #include "resource_format_text.h"
 
-#include "core/config/project_settings.h"
-#include "core/error/error_macros.h"
-#include "core/io/dir_access.h"
-#include "core/io/missing_resource.h"
-#include "core/object/class_db.h"
-#include "core/object/script_language.h"
-#include "scene/property_utils.h"
-#include "scene/resources/packed_scene.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/error/error_macros.h"
+#include "../../core/io/dir_access.h"
+#include "../../core/io/missing_resource.h"
+#include "../../core/object/class_db.h"
+#include "../../core/object/script_language.h"
+#include "../property_utils.h"
+#include "packed_scene.h"
 
 String ResourceLoaderText::_get_error_string() {
 	return vformat("%s:%d - Parse Error: %s.", res_path, lines, error_text);

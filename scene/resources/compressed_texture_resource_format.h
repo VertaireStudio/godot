@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/io/resource_loader.h"
+#include "../../core/io/resource_loader.h"
 
 class ResourceFormatLoaderCompressedTexture2D : public ResourceFormatLoader {
 	GDSOFTCLASS(ResourceFormatLoaderCompressedTexture2D, ResourceFormatLoader);

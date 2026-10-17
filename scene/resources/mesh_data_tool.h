@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/resources/mesh.h"
+#include "mesh.h"
 
 class MeshDataTool : public RefCounted {
 	GDCLASS(MeshDataTool, RefCounted);

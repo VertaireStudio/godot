@@ -30,10 +30,10 @@
 
 #include "trail_3d.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/resources/material.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../resources/material.h"
+#include "../../servers/rendering/rendering_server.h"
 
 // Points calculation, line construction and shaders are taken
 // and adapted from CozyCubeGames.

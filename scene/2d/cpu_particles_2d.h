@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "scene/2d/node_2d.h"
-#include "scene/resources/curve.h"
-#include "scene/resources/gradient.h"
+#include "node_2d.h"
+#include "../resources/curve.h"
+#include "../resources/gradient.h"
 
 class RandomNumberGenerator;
 

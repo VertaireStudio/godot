@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/resources/3d/shape_3d.h"
+#include "shape_3d.h"
 
 class ArrayMesh;
 

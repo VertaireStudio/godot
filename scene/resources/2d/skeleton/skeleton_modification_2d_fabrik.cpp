@@ -30,8 +30,8 @@
 
 #include "skeleton_modification_2d_fabrik.h"
 
-#include "core/object/class_db.h"
-#include "scene/2d/skeleton_2d.h"
+#include "../../../../core/object/class_db.h"
+#include "../../../2d/skeleton_2d.h"
 
 bool SkeletonModification2DFABRIK::_set(const StringName &p_path, const Variant &p_value) {
 	String path = p_path;

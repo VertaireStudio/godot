@@ -30,13 +30,13 @@
 
 #include "spring_arm_3d.h"
 
-#include "core/config/engine.h"
-#include "core/object/class_db.h"
-#include "scene/3d/camera_3d.h"
-#include "scene/main/scene_tree.h"
-#include "scene/resources/3d/shape_3d.h"
-#include "servers/physics_3d/direct_states/physics_direct_space_state_3d.h"
-#include "servers/physics_3d/physics_server_3d.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/object/class_db.h"
+#include "../camera_3d.h"
+#include "../../main/scene_tree.h"
+#include "../../resources/3d/shape_3d.h"
+#include "../../../servers/physics_3d/direct_states/physics_direct_space_state_3d.h"
+#include "../../../servers/physics_3d/physics_server_3d.h"
 
 void SpringArm3D::_notification(int p_what) {
 	switch (p_what) {

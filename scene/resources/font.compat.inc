@@ -32,7 +32,7 @@
 
 #include "font.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void Font::_draw_string_bind_compat_104872(RID p_canvas_item, const Point2 &p_pos, const String &p_text, HorizontalAlignment p_alignment, float p_width, int p_font_size, const Color &p_modulate, BitField<TextServer::JustificationFlag> p_jst_flags, TextServer::Direction p_direction, TextServer::Orientation p_orientation) const {
 	draw_string(p_canvas_item, p_pos, p_text, p_alignment, p_width, p_font_size, p_modulate, p_jst_flags, p_direction, p_orientation, 0.0);

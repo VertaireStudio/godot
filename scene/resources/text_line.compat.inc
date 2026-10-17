@@ -32,7 +32,7 @@
 
 #include "text_line.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void TextLine::_draw_bind_compat_104872(RID p_canvas, const Vector2 &p_pos, const Color &p_color) const {
 	draw(p_canvas, p_pos, p_color, 0.0);

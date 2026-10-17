@@ -30,9 +30,9 @@
 
 #include "skeleton_modification_2d_jiggle.h"
 
-#include "core/object/class_db.h"
-#include "scene/2d/skeleton_2d.h"
-#include "scene/resources/world_2d.h"
+#include "../../../../core/object/class_db.h"
+#include "../../../2d/skeleton_2d.h"
+#include "../../world_2d.h"
 
 #ifndef PHYSICS_2D_DISABLED
 #include "servers/physics_2d/physics_server_2d.h"

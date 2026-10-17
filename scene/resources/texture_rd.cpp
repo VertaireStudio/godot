@@ -31,10 +31,10 @@
 #ifdef RD_ENABLED
 #include "texture_rd.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "servers/rendering/rendering_device.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../servers/rendering/rendering_device.h"
+#include "../../servers/rendering/rendering_server.h"
 
 ////////////////////////////////////////////////////////////////////////////
 // Texture2DRD

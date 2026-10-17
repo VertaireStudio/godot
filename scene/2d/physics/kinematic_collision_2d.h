@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "servers/physics_2d/physics_server_2d_types.h"
+#include "../../../core/object/ref_counted.h"
+#include "../../../servers/physics_2d/physics_server_2d_types.h"
 
 class CharacterBody2D;
 class PhysicsBody2D;

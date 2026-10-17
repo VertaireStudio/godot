@@ -30,10 +30,10 @@
 
 #include "theme_owner.h"
 
-#include "core/object/callable_mp.h"
-#include "scene/gui/control.h"
-#include "scene/main/window.h"
-#include "scene/theme/theme_db.h"
+#include "../../core/object/callable_mp.h"
+#include "../gui/control.h"
+#include "../main/window.h"
+#include "theme_db.h"
 
 // Theme owner node.
 

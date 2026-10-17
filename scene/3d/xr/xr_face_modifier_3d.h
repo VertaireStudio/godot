@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/templates/rb_map.h"
-#include "scene/3d/mesh_instance_3d.h"
-#include "scene/3d/node_3d.h"
+#include "../../../core/templates/rb_map.h"
+#include "../mesh_instance_3d.h"
+#include "../node_3d.h"
 
 /**
 	The XRFaceModifier3D node drives the blend shapes of a MeshInstance3D

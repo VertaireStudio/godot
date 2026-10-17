@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/gui/control.h"
+#include "control.h"
 
 class VirtualJoystick : public Control {
 	GDCLASS(VirtualJoystick, Control);

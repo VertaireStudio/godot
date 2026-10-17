@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/resources/texture.h"
+#include "texture.h"
 
 class Mesh;
 

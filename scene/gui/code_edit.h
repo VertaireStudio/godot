@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/script_language.h"
-#include "scene/gui/text_edit.h"
+#include "../../core/object/script_language.h"
+#include "text_edit.h"
 
 class CodeEdit : public TextEdit {
 	GDCLASS(CodeEdit, TextEdit)

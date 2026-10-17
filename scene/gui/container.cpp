@@ -30,9 +30,9 @@
 
 #include "container.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "servers/display/accessibility_server.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../servers/display/accessibility_server.h"
 
 void Container::_child_minsize_changed() {
 	update_minimum_size();

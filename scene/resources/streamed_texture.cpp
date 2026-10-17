@@ -30,22 +30,22 @@
 
 #include "streamed_texture.h"
 
-#include "core/config/project_settings.h"
-#include "core/io/file_access.h"
-#include "core/io/image.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "core/profiling/profiling.h"
-#include "core/string/print_string.h"
-#include "scene/resources/bit_map.h"
-#include "scene/resources/compressed_texture.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/io/file_access.h"
+#include "../../core/io/image.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../core/os/os.h"
+#include "../../core/profiling/profiling.h"
+#include "../../core/string/print_string.h"
+#include "bit_map.h"
+#include "compressed_texture.h"
+#include "../../servers/rendering/rendering_server.h"
 
-#include "modules/modules_enabled.gen.h"
+#include "../../modules/modules_enabled.gen.h"
 
 #ifdef MODULE_TEXTURE_STREAMING_ENABLED
-#include "modules/texture_streaming/texture_streaming.h"
+#include "../../modules/texture_streaming/texture_streaming.h"
 #endif
 
 StreamedTexture2D::TextureFormatRoughnessRequestCallback StreamedTexture2D::request_roughness_callback = nullptr;

@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/3d/visual_instance_3d.h"
+#include "visual_instance_3d.h"
 
 class Decal : public VisualInstance3D {
 	GDCLASS(Decal, VisualInstance3D);

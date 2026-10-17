@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/templates/vset.h"
-#include "scene/2d/physics/physics_body_2d.h"
-#include "servers/physics_2d/direct_states/physics_direct_body_state_2d.h"
+#include "../../../core/templates/vset.h"
+#include "physics_body_2d.h"
+#include "../../../servers/physics_2d/direct_states/physics_direct_body_state_2d.h"
 
 class PhysicsMaterial;
 

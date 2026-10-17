@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/3d/skeleton_modifier_3d.h"
-#include "servers/xr/xr_hand_tracker.h"
+#include "../skeleton_modifier_3d.h"
+#include "../../../servers/xr/xr_hand_tracker.h"
 
 /**
 	The XRHandModifier3D node drives a hand skeleton using hand tracking

@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/templates/local_vector.h"
-#include "scene/3d/lightmapper.h"
-#include "scene/3d/visual_instance_3d.h"
+#include "../../core/io/resource.h"
+#include "../../core/templates/local_vector.h"
+#include "lightmapper.h"
+#include "visual_instance_3d.h"
 
 class CameraAttributes;
 class Light3D;

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/resource_loader.h"
-#include "core/io/resource_saver.h"
+#include "../../core/io/resource_loader.h"
+#include "../../core/io/resource_saver.h"
 
 class ResourceFormatLoaderShader : public ResourceFormatLoader {
 	GDSOFTCLASS(ResourceFormatLoaderShader, ResourceFormatLoader);

@@ -31,14 +31,14 @@
 #include "split_container.h"
 #include "split_container.compat.inc"
 
-#include "core/config/engine.h"
-#include "core/input/input.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/gui/texture_rect.h"
-#include "scene/main/viewport.h"
-#include "scene/theme/theme_db.h"
-#include "servers/display/accessibility_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/input/input.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "texture_rect.h"
+#include "../main/viewport.h"
+#include "../theme/theme_db.h"
+#include "../../servers/display/accessibility_server.h"
 
 void SplitContainerMultiDragger::_notification(int p_what) {
 	switch (p_what) {

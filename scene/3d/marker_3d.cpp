@@ -30,7 +30,7 @@
 
 #include "marker_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void Marker3D::set_gizmo_extents(real_t p_extents) {
 	if (Math::is_equal_approx(gizmo_extents, p_extents)) {

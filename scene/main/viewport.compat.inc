@@ -32,7 +32,7 @@
 
 #include "viewport.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 #ifndef XR_DISABLED
 bool Viewport::_is_using_xr_115799() {

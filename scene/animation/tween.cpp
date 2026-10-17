@@ -30,11 +30,11 @@
 
 #include "tween.h"
 
-#include "core/object/class_db.h"
-#include "scene/animation/easing_equations.h"
-#include "scene/main/node.h"
-#include "scene/main/scene_tree.h"
-#include "scene/resources/animation.h"
+#include "../../core/object/class_db.h"
+#include "easing_equations.h"
+#include "../main/node.h"
+#include "../main/scene_tree.h"
+#include "../resources/animation.h"
 
 #define CHECK_VALID() \
 	ERR_FAIL_COND_V_MSG(!valid, nullptr, "Tween invalid. Either finished or created outside scene tree."); \

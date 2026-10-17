@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/templates/fixed_vector.h"
-#include "core/templates/local_vector.h"
-#include "core/templates/pair.h"
+#include "../../core/io/resource.h"
+#include "../../core/templates/fixed_vector.h"
+#include "../../core/templates/local_vector.h"
+#include "../../core/templates/pair.h"
 
 #define ANIM_MIN_LENGTH 0.001
 

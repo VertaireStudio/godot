@@ -30,13 +30,13 @@
 
 #pragma once
 
-#include "core/input/input_event.h"
-#include "core/object/gdvirtual.gen.h"
-#include "core/object/object.h"
-#include "core/object/ref_counted.h"
-#include "core/os/thread_safe.h"
-#include "core/templates/iterable.h"
-#include "scene/scene_string_names.h" // IWYU pragma: export. Make available to all Nodes.
+#include "../../core/input/input_event.h"
+#include "../../core/object/gdvirtual.gen.h"
+#include "../../core/object/object.h"
+#include "../../core/object/ref_counted.h"
+#include "../../core/os/thread_safe.h"
+#include "../../core/templates/iterable.h"
+#include "../scene_string_names.h" // IWYU pragma: export. Make available to all Nodes.
 
 class MultiplayerAPI;
 class NodePath;

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/resources/texture.h"
-#include "servers/rendering/rendering_server_enums.h"
+#include "texture.h"
+#include "../../servers/rendering/rendering_server_enums.h"
 
 class BitMap;
 

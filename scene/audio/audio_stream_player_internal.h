@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/templates/safe_refcount.h"
-#include "servers/audio/audio_server_enums.h"
+#include "../../core/object/ref_counted.h"
+#include "../../core/templates/safe_refcount.h"
+#include "../../servers/audio/audio_server_enums.h"
 
 class AudioStream;
 class AudioStreamPlayback;

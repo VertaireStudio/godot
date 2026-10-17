@@ -30,7 +30,7 @@
 
 #include "generic_6dof_joint_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../../../core/object/class_db.h"
 
 #include <cfloat> // FLT_MAX
 

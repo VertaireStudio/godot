@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "scene/gui/control.h"
-#include "scene/resources/video_stream.h"
-#include "servers/audio/audio_rb_resampler.h"
+#include "control.h"
+#include "../resources/video_stream.h"
+#include "../../servers/audio/audio_rb_resampler.h"
 
 class VideoStreamPlayer : public Control {
 	GDCLASS(VideoStreamPlayer, Control);

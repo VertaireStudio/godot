@@ -33,9 +33,9 @@
 #ifdef GODOT_SCENE_TREE_FTI_VERIFY
 #include "scene_tree_fti_tests.h"
 
-#include "scene/3d/node_3d.h"
-#include "scene/3d/visual_instance_3d.h"
-#include "scene/main/scene_tree_fti.h"
+#include "../3d/node_3d.h"
+#include "../3d/visual_instance_3d.h"
+#include "scene_tree_fti.h"
 
 void SceneTreeFTITests::debug_verify_failed(const Node3D *p_node_3d, const Transform3D &p_test) {
 	print_line("VERIFY FAILED\n");

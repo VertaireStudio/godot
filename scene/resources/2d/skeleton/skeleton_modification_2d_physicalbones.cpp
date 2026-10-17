@@ -30,10 +30,10 @@
 
 #include "skeleton_modification_2d_physicalbones.h"
 
-#include "core/config/engine.h"
-#include "core/object/class_db.h"
-#include "scene/2d/physics/physical_bone_2d.h"
-#include "scene/2d/skeleton_2d.h"
+#include "../../../../core/config/engine.h"
+#include "../../../../core/object/class_db.h"
+#include "../../../2d/physics/physical_bone_2d.h"
+#include "../../../2d/skeleton_2d.h"
 
 bool SkeletonModification2DPhysicalBones::_set(const StringName &p_path, const Variant &p_value) {
 	String path = p_path;

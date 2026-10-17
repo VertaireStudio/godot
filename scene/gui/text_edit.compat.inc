@@ -32,7 +32,7 @@
 
 #include "text_edit.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void TextEdit::_set_selection_mode_bind_compat_86978(SelectionMode p_mode, int p_line, int p_column, int p_caret) {
 	set_selection_mode(p_mode);

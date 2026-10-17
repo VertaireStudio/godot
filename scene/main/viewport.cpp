@@ -33,59 +33,59 @@
 
 STATIC_ASSERT_INCOMPLETE_TYPE(class, RenderingServer);
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/debugger/engine_debugger.h"
-#include "core/input/input.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/templates/pair.h"
-#include "core/templates/sort_array.h"
-#include "scene/audio/audio_stream_player.h"
-#include "scene/gui/control.h"
-#include "scene/gui/label.h"
-#include "scene/gui/popup.h"
-#include "scene/gui/subviewport_container.h"
-#include "scene/main/canvas_layer.h"
-#include "scene/main/scene_tree.h"
-#include "scene/main/window.h"
-#include "scene/resources/dpi_texture.h"
-#include "scene/resources/mesh.h"
-#include "scene/resources/text_line.h"
-#include "scene/resources/world_2d.h"
-#include "servers/audio/audio_server.h"
-#include "servers/display/display_server.h"
-#include "servers/rendering/rendering_server.h"
-#include "servers/rendering/rendering_server_enums.h"
-#include "servers/rendering/rendering_server_globals.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/debugger/engine_debugger.h"
+#include "../../core/input/input.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../core/templates/pair.h"
+#include "../../core/templates/sort_array.h"
+#include "../audio/audio_stream_player.h"
+#include "../gui/control.h"
+#include "../gui/label.h"
+#include "../gui/popup.h"
+#include "../gui/subviewport_container.h"
+#include "canvas_layer.h"
+#include "scene_tree.h"
+#include "window.h"
+#include "../resources/dpi_texture.h"
+#include "../resources/mesh.h"
+#include "../resources/text_line.h"
+#include "../resources/world_2d.h"
+#include "../../servers/audio/audio_server.h"
+#include "../../servers/display/display_server.h"
+#include "../../servers/rendering/rendering_server.h"
+#include "../../servers/rendering/rendering_server_enums.h"
+#include "../../servers/rendering/rendering_server_globals.h"
 
 #ifndef _2D_DISABLED
-#include "scene/2d/audio_listener_2d.h"
-#include "scene/2d/camera_2d.h"
+#include "../2d/audio_listener_2d.h"
+#include "../2d/camera_2d.h"
 #endif // _2D_DISABLED
 
 #ifndef _3D_DISABLED
-#include "scene/3d/audio_listener_3d.h"
-#include "scene/3d/camera_3d.h"
-#include "scene/3d/world_environment.h"
-#include "scene/resources/3d/world_3d.h"
+#include "../3d/audio_listener_3d.h"
+#include "../3d/camera_3d.h"
+#include "../3d/world_environment.h"
+#include "../resources/3d/world_3d.h"
 #endif // _3D_DISABLED
 
 #ifndef PHYSICS_2D_DISABLED
-#include "scene/2d/physics/collision_object_2d.h"
-#include "servers/physics_2d/direct_states/physics_direct_space_state_2d.h"
-#include "servers/physics_2d/physics_server_2d.h"
+#include "../2d/physics/collision_object_2d.h"
+#include "../../servers/physics_2d/direct_states/physics_direct_space_state_2d.h"
+#include "../../servers/physics_2d/physics_server_2d.h"
 #endif // PHYSICS_2D_DISABLED
 
 #ifndef PHYSICS_3D_DISABLED
-#include "scene/3d/physics/collision_object_3d.h"
-#include "servers/physics_3d/physics_server_3d.h"
+#include "../3d/physics/collision_object_3d.h"
+#include "../../servers/physics_3d/physics_server_3d.h"
 #endif // PHYSICS_3D_DISABLED
 
 #ifndef XR_DISABLED
-#include "servers/rendering/rendering_server_globals.h"
-#include "servers/xr/xr_interface.h"
-#include "servers/xr/xr_server.h"
+#include "../../servers/rendering/rendering_server_globals.h"
+#include "../../servers/xr/xr_interface.h"
+#include "../../servers/xr/xr_server.h"
 #endif // XR_DISABLED
 
 void ViewportTexture::setup_local_to_scene() {

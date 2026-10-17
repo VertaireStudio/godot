@@ -30,7 +30,7 @@
 
 #include "compressed_texture_resource_format.h"
 
-#include "scene/resources/compressed_texture.h"
+#include "compressed_texture.h"
 
 Ref<Resource> ResourceFormatLoaderCompressedTexture2D::load(const String &p_path, const String &p_original_path, Error *r_error, bool p_use_sub_threads, float *r_progress, CacheMode p_cache_mode) {
 	Ref<CompressedTexture2D> st;

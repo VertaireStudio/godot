@@ -30,9 +30,9 @@
 
 #include "shader_globals_override.h"
 
-#include "core/object/class_db.h"
-#include "scene/main/scene_tree.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/object/class_db.h"
+#include "scene_tree.h"
+#include "../../servers/rendering/rendering_server.h"
 
 StringName *ShaderGlobalsOverride::_remap(const StringName &p_name) const {
 	StringName *r = param_remaps.getptr(p_name);

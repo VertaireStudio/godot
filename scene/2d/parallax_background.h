@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/main/canvas_layer.h"
+#include "../main/canvas_layer.h"
 
 class ParallaxBackground : public CanvasLayer {
 	GDCLASS(ParallaxBackground, CanvasLayer);

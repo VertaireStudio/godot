@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/templates/interpolated_property.h"
-#include "scene/3d/node_3d.h"
-#include "scene/3d/velocity_tracker_3d.h"
-#include "scene/resources/camera_attributes.h"
-#include "scene/resources/compositor.h"
-#include "scene/resources/environment.h"
+#include "../../core/templates/interpolated_property.h"
+#include "node_3d.h"
+#include "velocity_tracker_3d.h"
+#include "../resources/camera_attributes.h"
+#include "../resources/compositor.h"
+#include "../resources/environment.h"
 
 class Camera3D : public Node3D {
 	GDCLASS(Camera3D, Node3D);

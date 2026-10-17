@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "scene/3d/line_3d.h"
-#include "scene/resources/curve.h"
-#include "scene/resources/gradient.h"
-#include "scene/resources/mesh.h"
+#include "line_3d.h"
+#include "../resources/curve.h"
+#include "../resources/gradient.h"
+#include "../resources/mesh.h"
 
 class Trail3D : public Line3D {
 	GDCLASS(Trail3D, Line3D);

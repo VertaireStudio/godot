@@ -30,7 +30,7 @@
 
 #include "pin_joint_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../../../core/object/class_db.h"
 
 void PinJoint3D::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("set_param", "param", "value"), &PinJoint3D::set_param);

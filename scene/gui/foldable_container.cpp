@@ -30,9 +30,9 @@
 
 #include "foldable_container.h"
 
-#include "core/object/class_db.h"
-#include "scene/resources/text_line.h"
-#include "scene/theme/theme_db.h"
+#include "../../core/object/class_db.h"
+#include "../resources/text_line.h"
+#include "../theme/theme_db.h"
 
 Size2 FoldableContainer::get_minimum_size() const {
 	_update_title_min_size();

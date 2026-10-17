@@ -30,7 +30,7 @@
 
 #include "joint_limitation_cone_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 #ifndef DISABLE_DEPRECATED
 bool JointLimitationCone3D::_set(const StringName &p_path, const Variant &p_value) {

@@ -30,8 +30,8 @@
 
 #include "atlas_texture.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
 
 int AtlasTexture::get_width() const {
 	if (rounded_region.size.width == 0) {

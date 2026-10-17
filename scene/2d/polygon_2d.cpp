@@ -30,17 +30,17 @@
 
 #include "polygon_2d.h"
 
-#include "core/config/engine.h"
-#include "core/math/geometry_2d.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/2d/skeleton_2d.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/math/geometry_2d.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "skeleton_2d.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #ifndef NAVIGATION_2D_DISABLED
-#include "scene/resources/2d/navigation_mesh_source_geometry_data_2d.h"
-#include "scene/resources/2d/navigation_polygon.h"
-#include "servers/navigation_2d/navigation_server_2d.h"
+#include "../resources/2d/navigation_mesh_source_geometry_data_2d.h"
+#include "../resources/2d/navigation_polygon.h"
+#include "../../servers/navigation_2d/navigation_server_2d.h"
 
 Callable Polygon2D::_navmesh_source_geometry_parsing_callback;
 RID Polygon2D::_navmesh_source_geometry_parser;

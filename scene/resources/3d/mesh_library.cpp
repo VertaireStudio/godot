@@ -30,12 +30,12 @@
 
 #include "mesh_library.h"
 
-#include "core/object/class_db.h"
-#include "scene/resources/texture.h"
-#include "servers/rendering/rendering_server.h" // IWYU pragma: keep // Needed to bind RSE enums.
+#include "../../../core/object/class_db.h"
+#include "../texture.h"
+#include "../../../servers/rendering/rendering_server.h" // IWYU pragma: keep // Needed to bind RSE enums.
 
 #ifndef PHYSICS_3D_DISABLED
-#include "scene/resources/3d/box_shape_3d.h"
+#include "box_shape_3d.h"
 #endif // PHYSICS_3D_DISABLED
 
 bool MeshLibrary::_validate_index(int p_idx) {

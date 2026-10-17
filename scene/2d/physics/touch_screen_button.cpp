@@ -30,17 +30,17 @@
 
 #include "touch_screen_button.h"
 
-#include "core/config/engine.h"
-#include "core/input/input.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/main/scene_tree.h"
-#include "scene/main/viewport.h"
-#include "servers/display/accessibility_server.h"
-#include "servers/display/display_server.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/input/input.h"
+#include "../../../core/object/callable_mp.h"
+#include "../../../core/object/class_db.h"
+#include "../../main/scene_tree.h"
+#include "../../main/viewport.h"
+#include "../../../servers/display/accessibility_server.h"
+#include "../../../servers/display/display_server.h"
 
 #if defined(DEBUG_ENABLED) && !defined(PHYSICS_2D_DISABLED)
-#include "servers/physics_2d/physics_server_2d.h"
+#include "../../../servers/physics_2d/physics_server_2d.h"
 #endif
 
 void TouchScreenButton::set_texture_normal(const Ref<Texture2D> &p_texture) {

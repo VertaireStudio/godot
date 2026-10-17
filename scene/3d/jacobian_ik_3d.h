@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/3d/iterate_ik_3d.h"
+#include "iterate_ik_3d.h"
 
 class JacobianIK3D : public IterateIK3D {
 	GDCLASS(JacobianIK3D, IterateIK3D);

@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/3d/physics/joints/joint_3d.h"
+#include "joint_3d.h"
 
 class HingeJoint3D : public Joint3D {
 	GDCLASS(HingeJoint3D, Joint3D);

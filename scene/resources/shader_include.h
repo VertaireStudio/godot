@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/templates/hash_set.h"
+#include "../../core/io/resource.h"
+#include "../../core/templates/hash_set.h"
 
 class ShaderInclude : public Resource {
 	GDCLASS(ShaderInclude, Resource);

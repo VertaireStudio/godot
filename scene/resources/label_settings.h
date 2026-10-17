@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "scene/property_list_helper.h"
-#include "scene/resources/font.h"
+#include "../../core/io/resource.h"
+#include "../property_list_helper.h"
+#include "font.h"
 
 /*************************************************************************/
 

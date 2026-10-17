@@ -30,16 +30,16 @@
 
 #include "tab_bar.h"
 
-#include "core/input/input.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/gui/box_container.h"
-#include "scene/gui/label.h"
-#include "scene/gui/texture_rect.h"
-#include "scene/main/timer.h"
-#include "scene/main/viewport.h"
-#include "scene/theme/theme_db.h"
-#include "servers/display/accessibility_server.h"
+#include "../../core/input/input.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "box_container.h"
+#include "label.h"
+#include "texture_rect.h"
+#include "../main/timer.h"
+#include "../main/viewport.h"
+#include "../theme/theme_db.h"
+#include "../../servers/display/accessibility_server.h"
 
 #include <cfloat> // FLT_MAX
 

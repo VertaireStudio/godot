@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/resources/3d/shape_3d.h"
+#include "shape_3d.h"
 
 class BoxShape3D : public Shape3D {
 	GDCLASS(BoxShape3D, Shape3D);

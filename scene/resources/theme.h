@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "scene/resources/audio/audio_stream.h"
-#include "scene/resources/font.h"
-#include "scene/resources/style_box.h"
-#include "scene/resources/texture.h"
+#include "../../core/io/resource.h"
+#include "audio/audio_stream.h"
+#include "font.h"
+#include "style_box.h"
+#include "texture.h"
 
 class Theme : public Resource {
 	GDCLASS(Theme, Resource);

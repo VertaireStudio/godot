@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/resources/texture.h"
+#include "texture.h"
 
 // External textures as defined by OES_EGL_image_external (GLES) or VK_ANDROID_external_memory_android_hardware_buffer (Vulkan).
 class ExternalTexture : public Texture2D {

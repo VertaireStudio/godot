@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/object/gdvirtual.gen.h"
-#include "scene/main/canvas_item.h"
-#include "scene/resources/theme.h"
-#include "servers/display/accessibility_server_enums.h"
+#include "../../core/object/gdvirtual.gen.h"
+#include "../main/canvas_item.h"
+#include "../resources/theme.h"
+#include "../../servers/display/accessibility_server_enums.h"
 
 class Label;
 class Panel;

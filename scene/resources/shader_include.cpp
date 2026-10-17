@@ -30,9 +30,9 @@
 
 #include "shader_include.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "servers/rendering/shader_preprocessor.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../servers/rendering/shader_preprocessor.h"
 
 void ShaderInclude::_dependency_changed() {
 	emit_changed();

@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "scene/main/node.h"
-#include "servers/navigation_2d/navigation_constants_2d.h"
-#include "servers/navigation_2d/navigation_path_query_parameters_2d.h"
-#include "servers/navigation_2d/navigation_path_query_result_2d.h"
+#include "../../main/node.h"
+#include "../../../servers/navigation_2d/navigation_constants_2d.h"
+#include "../../../servers/navigation_2d/navigation_path_query_parameters_2d.h"
+#include "../../../servers/navigation_2d/navigation_path_query_result_2d.h"
 
 class Node2D;
 

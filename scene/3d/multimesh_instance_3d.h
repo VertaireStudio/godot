@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/3d/visual_instance_3d.h"
-#include "scene/resources/multimesh.h"
+#include "visual_instance_3d.h"
+#include "../resources/multimesh.h"
 
 #ifndef NAVIGATION_3D_DISABLED
 class NavigationMesh;

@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/extension/ext_wrappers.gen.h"
-#include "core/io/packet_peer.h"
-#include "core/object/gdvirtual.gen.h"
-#include "core/variant/native_ptr.h"
+#include "../../core/extension/ext_wrappers.gen.h"
+#include "../../core/io/packet_peer.h"
+#include "../../core/object/gdvirtual.gen.h"
+#include "../../core/variant/native_ptr.h"
 
 class MultiplayerPeer : public PacketPeer {
 	GDCLASS(MultiplayerPeer, PacketPeer);

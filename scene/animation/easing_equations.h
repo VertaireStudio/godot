@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/math/math_funcs.h"
+#include "../../core/math/math_funcs.h"
 
 /*
  * Derived from Robert Penner's easing equations: http://robertpenner.com/easing/

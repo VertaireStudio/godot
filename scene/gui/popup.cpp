@@ -30,15 +30,15 @@
 
 #include "popup.h"
 
-#include "core/config/engine.h"
-#include "core/object/callable_mp.h"
-#include "scene/gui/panel.h"
-#include "scene/resources/style_box_flat.h"
-#include "scene/theme/theme_db.h"
-#include "servers/display/display_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/object/callable_mp.h"
+#include "panel.h"
+#include "../resources/style_box_flat.h"
+#include "../theme/theme_db.h"
+#include "../../servers/display/display_server.h"
 
 #ifdef TOOLS_ENABLED
-#include "core/config/project_settings.h"
+#include "../../core/config/project_settings.h"
 #endif
 
 void Popup::_input_from_window(const Ref<InputEvent> &p_event) {

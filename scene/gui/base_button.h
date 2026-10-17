@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/input/shortcut.h"
-#include "scene/gui/control.h"
+#include "../../core/input/shortcut.h"
+#include "control.h"
 
 class ButtonGroup;
 class Timer;

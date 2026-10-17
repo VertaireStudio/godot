@@ -30,9 +30,9 @@
 
 #include "texture.h"
 
-#include "core/object/class_db.h"
-#include "scene/resources/placeholder_textures.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/object/class_db.h"
+#include "placeholder_textures.h"
+#include "../../servers/rendering/rendering_server.h"
 
 Ref<Image> Texture2D::get_image() const {
 	Ref<Image> ret;

@@ -30,8 +30,8 @@
 
 #include "navigation_mesh_source_geometry_data_2d.h"
 
-#include "core/object/class_db.h"
-#include "core/variant/typed_array.h"
+#include "../../../core/object/class_db.h"
+#include "../../../core/variant/typed_array.h"
 
 void NavigationMeshSourceGeometryData2D::clear() {
 	RWLockWrite write_lock(geometry_rwlock);

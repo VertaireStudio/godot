@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/io/resource_loader.h"
-#include "scene/resources/texture.h"
-#include "servers/rendering/rendering_server_types.h"
+#include "../../core/io/resource_loader.h"
+#include "texture.h"
+#include "../../servers/rendering/rendering_server_types.h"
 
 #include <atomic>
 

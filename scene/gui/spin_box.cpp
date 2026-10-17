@@ -30,13 +30,13 @@
 
 #include "spin_box.h"
 
-#include "core/input/input.h"
-#include "core/math/expression.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/string/translation_server.h"
-#include "scene/theme/theme_db.h"
-#include "servers/display/accessibility_server.h"
+#include "../../core/input/input.h"
+#include "../../core/math/expression.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../core/string/translation_server.h"
+#include "../theme/theme_db.h"
+#include "../../servers/display/accessibility_server.h"
 
 void SpinBoxLineEdit::_accessibility_action_inc(const Variant &p_data) {
 	SpinBox *parent_sb = Object::cast_to<SpinBox>(get_parent());

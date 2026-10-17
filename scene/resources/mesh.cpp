@@ -30,15 +30,15 @@
 
 #include "mesh.h"
 
-#include "core/math/convex_hull.h"
-#include "core/object/class_db.h"
-#include "core/templates/pair.h"
-#include "scene/resources/surface_tool.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/math/convex_hull.h"
+#include "../../core/object/class_db.h"
+#include "../../core/templates/pair.h"
+#include "surface_tool.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #ifndef PHYSICS_3D_DISABLED
-#include "scene/resources/3d/concave_polygon_shape_3d.h"
-#include "scene/resources/3d/convex_polygon_shape_3d.h"
+#include "3d/concave_polygon_shape_3d.h"
+#include "3d/convex_polygon_shape_3d.h"
 #endif // PHYSICS_3D_DISABLED
 
 void MeshConvexDecompositionSettings::set_max_concavity(real_t p_max_concavity) {

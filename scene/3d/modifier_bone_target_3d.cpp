@@ -30,9 +30,9 @@
 
 #include "modifier_bone_target_3d.h"
 
-#include "core/config/engine.h"
-#include "core/object/class_db.h"
-#include "scene/main/scene_tree.h"
+#include "../../core/config/engine.h"
+#include "../../core/object/class_db.h"
+#include "../main/scene_tree.h"
 
 void ModifierBoneTarget3D::_validate_bone_names() {
 	// Prior bone name.

@@ -30,7 +30,7 @@
 
 #include "audio_stream_randomizer.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 void AudioStreamRandomizer::add_stream(int p_index, Ref<AudioStream> p_stream, float p_weight) {
 	if (p_index < 0) {

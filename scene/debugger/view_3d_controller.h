@@ -32,8 +32,8 @@
 
 #if defined(DEBUG_ENABLED) && !defined(_3D_DISABLED)
 
-#include "core/object/ref_counted.h"
-#include "core/os/keyboard.h"
+#include "../../core/object/ref_counted.h"
+#include "../../core/os/keyboard.h"
 
 namespace View3DControllerConsts {
 constexpr float DISTANCE_DEFAULT = 4;

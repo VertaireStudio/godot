@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "scene/gui/control.h"
-#include "scene/resources/text_paragraph.h"
-#include "servers/display/accessibility_server.h"
+#include "control.h"
+#include "../resources/text_paragraph.h"
+#include "../../servers/display/accessibility_server.h"
 
 class VBoxContainer;
 class HScrollBar;

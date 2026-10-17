@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/templates/vset.h"
-#include "scene/3d/physics/collision_object_3d.h"
+#include "../../../core/templates/vset.h"
+#include "collision_object_3d.h"
 
 class Area3D : public CollisionObject3D {
 	GDCLASS(Area3D, CollisionObject3D);

@@ -30,11 +30,11 @@
 
 #include "compressed_texture.h"
 
-#include "core/io/file_access.h"
-#include "core/io/resource_loader.h"
-#include "core/object/class_db.h"
-#include "scene/resources/bit_map.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/io/file_access.h"
+#include "../../core/io/resource_loader.h"
+#include "../../core/object/class_db.h"
+#include "bit_map.h"
+#include "../../servers/rendering/rendering_server.h"
 
 Error CompressedTexture2D::_load_data(const String &p_path, int &r_width, int &r_height, Ref<Image> &image, bool &r_request_3d, bool &r_request_normal, bool &r_request_roughness, int &mipmap_limit) {
 	alpha_cache.unref();

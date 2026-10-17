@@ -32,10 +32,10 @@
 
 #ifdef DEBUG_ENABLED
 
-#include "core/object/object.h"
-#include "core/string/ustring.h"
-#include "core/templates/list.h"
-#include "core/templates/pair.h"
+#include "../../core/object/object.h"
+#include "../../core/string/ustring.h"
+#include "../../core/templates/list.h"
+#include "../../core/templates/pair.h"
 
 class Node;
 class Script;

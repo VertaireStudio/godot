@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "scene/gui/box_container.h"
-#include "scene/gui/graph_frame.h"
-#include "scene/gui/graph_node.h"
-#include "scene/resources/shader.h"
+#include "box_container.h"
+#include "graph_frame.h"
+#include "graph_node.h"
+#include "../resources/shader.h"
 
 class Button;
 class GraphEdit;

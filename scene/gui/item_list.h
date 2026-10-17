@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "scene/gui/control.h"
-#include "scene/gui/scroll_bar.h"
-#include "scene/property_list_helper.h"
-#include "scene/resources/text_paragraph.h"
+#include "control.h"
+#include "scroll_bar.h"
+#include "../property_list_helper.h"
+#include "../resources/text_paragraph.h"
 
 class ItemList : public Control {
 	GDCLASS(ItemList, Control);

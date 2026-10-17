@@ -32,7 +32,7 @@
 
 #include "rich_text_label.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void RichTextLabel::_push_font_bind_compat_79053(const Ref<Font> &p_font, int p_size) {
 	push_font(p_font, p_size);

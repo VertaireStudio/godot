@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/animation/animation_tree.h"
-#include "scene/resources/curve.h"
+#include "animation_tree.h"
+#include "../resources/curve.h"
 
 class AnimationNodeAnimation : public AnimationRootNode {
 	GDCLASS(AnimationNodeAnimation, AnimationRootNode);

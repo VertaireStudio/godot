@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/2d/node_2d.h"
-#include "scene/resources/2d/skeleton/skeleton_modification_2d.h"
+#include "node_2d.h"
+#include "../resources/2d/skeleton/skeleton_modification_2d.h"
 
 class Skeleton2D;
 

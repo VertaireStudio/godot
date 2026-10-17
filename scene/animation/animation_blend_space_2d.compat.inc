@@ -32,7 +32,7 @@
 
 #include "animation_blend_space_2d.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void AnimationNodeBlendSpace2D::_add_blend_point_bind_compat_110369(const Ref<AnimationRootNode> &p_node, const Vector2 &p_position, int p_at_index) {
 	int n = p_at_index == -1 ? blend_points_used : p_at_index;

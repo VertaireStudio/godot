@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/3d/skeleton_modifier_3d.h"
-#include "servers/xr/xr_body_tracker.h"
+#include "../skeleton_modifier_3d.h"
+#include "../../../servers/xr/xr_body_tracker.h"
 
 class Skeleton3D;
 

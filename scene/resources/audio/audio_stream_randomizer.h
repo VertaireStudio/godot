@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/property_list_helper.h"
-#include "scene/resources/audio/audio_stream.h"
+#include "../../property_list_helper.h"
+#include "audio_stream.h"
 
 class AudioStreamPlaybackRandomizer;
 

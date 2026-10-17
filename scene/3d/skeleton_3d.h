@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/templates/a_hash_map.h"
-#include "scene/3d/node_3d.h"
-#include "scene/resources/3d/skin.h"
+#include "../../core/templates/a_hash_map.h"
+#include "node_3d.h"
+#include "../resources/3d/skin.h"
 
 typedef int BoneId;
 

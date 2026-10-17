@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "scene/3d/visual_instance_3d.h"
-#include "scene/resources/material.h"
-#include "scene/resources/sprite_frames.h"
+#include "visual_instance_3d.h"
+#include "../resources/material.h"
+#include "../resources/sprite_frames.h"
 
 class SpriteBase3D : public GeometryInstance3D {
 	GDCLASS(SpriteBase3D, GeometryInstance3D);

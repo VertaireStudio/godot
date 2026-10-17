@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/os/rw_lock.h"
-#include "scene/resources/mesh.h"
+#include "../../../core/os/rw_lock.h"
+#include "../mesh.h"
 
 class NavigationMeshSourceGeometryData3D : public Resource {
 	GDCLASS(NavigationMeshSourceGeometryData3D, Resource);

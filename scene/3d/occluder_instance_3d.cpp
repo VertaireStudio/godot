@@ -30,22 +30,22 @@
 
 #include "occluder_instance_3d.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/io/marshalls.h"
-#include "core/io/resource_saver.h"
-#include "core/math/geometry_2d.h"
-#include "core/math/triangulate.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/3d/importer_mesh_instance_3d.h"
-#include "scene/3d/mesh_instance_3d.h"
-#include "scene/resources/3d/importer_mesh.h"
-#include "scene/resources/surface_tool.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/io/marshalls.h"
+#include "../../core/io/resource_saver.h"
+#include "../../core/math/geometry_2d.h"
+#include "../../core/math/triangulate.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "importer_mesh_instance_3d.h"
+#include "mesh_instance_3d.h"
+#include "../resources/3d/importer_mesh.h"
+#include "../resources/surface_tool.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #ifdef TOOLS_ENABLED
-#include "editor/editor_node.h"
+#include "../../editor/editor_node.h"
 #endif
 
 RID Occluder3D::get_rid() const {

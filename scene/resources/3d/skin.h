@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/io/resource.h"
+#include "../../../core/io/resource.h"
 
 class Skin : public Resource {
 	GDCLASS(Skin, Resource)

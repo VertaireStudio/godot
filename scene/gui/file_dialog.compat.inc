@@ -32,7 +32,7 @@
 
 #include "file_dialog.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void FileDialog::_add_filter_bind_compat_111439(const String &p_filter, const String &p_description) {
 	add_filter(p_filter, p_description, "");

@@ -30,11 +30,11 @@
 
 #include "slider.h"
 
-#include "core/config/engine.h"
-#include "core/input/input.h"
-#include "core/object/class_db.h"
-#include "scene/theme/theme_db.h"
-#include "servers/display/accessibility_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/input/input.h"
+#include "../../core/object/class_db.h"
+#include "../theme/theme_db.h"
+#include "../../servers/display/accessibility_server.h"
 
 Size2 Slider::get_minimum_size() const {
 	Size2i ss = theme_cache.slider_style->get_minimum_size();

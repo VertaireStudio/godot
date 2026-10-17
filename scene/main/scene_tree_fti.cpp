@@ -32,14 +32,14 @@
 
 #include "scene_tree_fti.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/math/transform_interpolator.h"
-#include "core/os/os.h"
-#include "scene/3d/visual_instance_3d.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/math/transform_interpolator.h"
+#include "../../core/os/os.h"
+#include "../3d/visual_instance_3d.h"
 
 #ifdef GODOT_SCENE_TREE_FTI_VERIFY
-#include "scene/main/scene_tree_fti_tests.h"
+#include "scene_tree_fti_tests.h"
 #endif
 
 #ifdef DEV_ENABLED

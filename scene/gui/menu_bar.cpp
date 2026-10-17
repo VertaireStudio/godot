@@ -30,11 +30,11 @@
 
 #include "menu_bar.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/main/window.h"
-#include "scene/theme/theme_db.h"
-#include "servers/display/accessibility_server.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../main/window.h"
+#include "../theme/theme_db.h"
+#include "../../servers/display/accessibility_server.h"
 
 void MenuBar::gui_input(const Ref<InputEvent> &p_event) {
 	ERR_FAIL_COND(p_event.is_null());

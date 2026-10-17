@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/animation/animation_tree.h"
+#include "animation_tree.h"
 
 class AnimationNodeBlendSpace2D : public AnimationRootNode {
 	GDCLASS(AnimationNodeBlendSpace2D, AnimationRootNode);

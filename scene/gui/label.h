@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/gui/control.h"
-#include "scene/resources/label_settings.h"
+#include "control.h"
+#include "../resources/label_settings.h"
 
 class Label : public Control {
 	GDCLASS(Label, Control);

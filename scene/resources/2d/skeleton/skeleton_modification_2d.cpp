@@ -30,12 +30,12 @@
 
 #include "skeleton_modification_2d.h"
 
-#include "core/config/engine.h"
-#include "core/object/class_db.h"
-#include "scene/2d/skeleton_2d.h"
+#include "../../../../core/config/engine.h"
+#include "../../../../core/object/class_db.h"
+#include "../../../2d/skeleton_2d.h"
 
 #ifdef TOOLS_ENABLED
-#include "editor/settings/editor_settings.h"
+#include "../../../../editor/settings/editor_settings.h"
 #endif // TOOLS_ENABLED
 
 ///////////////////////////////////////

@@ -31,10 +31,10 @@
 #include "bone_attachment_3d.h"
 #include "bone_attachment_3d.compat.inc"
 
-#include "core/config/engine.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/main/scene_tree.h"
+#include "../../core/config/engine.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../main/scene_tree.h"
 
 void BoneAttachment3D::_validate_property(PropertyInfo &p_property) const {
 	if (Engine::get_singleton()->is_editor_hint() && p_property.name == "bone_name") {

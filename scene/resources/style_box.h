@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/object/gdvirtual.gen.h"
+#include "../../core/io/resource.h"
+#include "../../core/object/gdvirtual.gen.h"
 
 class CanvasItem;
 

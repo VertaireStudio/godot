@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/2d/node_2d.h"
-#include "scene/resources/multimesh.h"
+#include "node_2d.h"
+#include "../resources/multimesh.h"
 
 class NavigationPolygon;
 class NavigationMeshSourceGeometryData2D;

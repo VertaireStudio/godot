@@ -30,10 +30,10 @@
 
 #include "world_environment.h"
 
-#include "core/object/class_db.h"
-#include "scene/3d/node_3d.h"
-#include "scene/main/scene_tree.h"
-#include "scene/main/viewport.h"
+#include "../../core/object/class_db.h"
+#include "node_3d.h"
+#include "../main/scene_tree.h"
+#include "../main/viewport.h"
 
 void WorldEnvironment::_notification(int p_what) {
 	switch (p_what) {

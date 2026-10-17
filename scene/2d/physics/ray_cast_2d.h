@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/2d/node_2d.h"
+#include "../node_2d.h"
 
 class CollisionObject2D;
 

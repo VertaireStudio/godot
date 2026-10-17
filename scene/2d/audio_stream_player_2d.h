@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/2d/node_2d.h"
-#include "servers/audio/audio_server_enums.h"
+#include "node_2d.h"
+#include "../../servers/audio/audio_server_enums.h"
 
 struct AudioFrame;
 class AudioStream;

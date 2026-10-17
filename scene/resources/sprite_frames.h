@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/resources/texture.h"
+#include "texture.h"
 
 static const float SPRITE_FRAME_MINIMUM_DURATION = 0.01;
 

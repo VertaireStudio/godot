@@ -30,7 +30,7 @@
 
 #include "separator.h"
 
-#include "scene/theme/theme_db.h"
+#include "../theme/theme_db.h"
 
 Size2 Separator::get_minimum_size() const {
 	Size2 ms(3, 3);

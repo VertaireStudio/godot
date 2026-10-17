@@ -30,15 +30,15 @@
 
 #include "property_utils.h"
 
-#include "core/config/engine.h"
-#include "core/io/resource_loader.h"
-#include "core/object/class_db.h"
-#include "core/object/script_language.h"
-#include "core/templates/local_vector.h"
-#include "scene/resources/packed_scene.h"
+#include "../core/config/engine.h"
+#include "../core/io/resource_loader.h"
+#include "../core/object/class_db.h"
+#include "../core/object/script_language.h"
+#include "../core/templates/local_vector.h"
+#include "resources/packed_scene.h"
 
 #ifdef TOOLS_ENABLED
-#include "editor/editor_node.h"
+#include "../editor/editor_node.h"
 #endif // TOOLS_ENABLED
 
 bool PropertyUtils::is_property_value_different(const Object *p_object, const Variant &p_a, const Variant &p_b) {

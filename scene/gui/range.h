@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/gui/control.h"
+#include "control.h"
 
 class Range : public Control {
 	GDCLASS(Range, Control);

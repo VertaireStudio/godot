@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/3d/ik_modifier_3d.h"
+#include "ik_modifier_3d.h"
 
 class ChainIK3D : public IKModifier3D {
 	GDCLASS(ChainIK3D, IKModifier3D);

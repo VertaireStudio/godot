@@ -30,8 +30,8 @@
 
 #include "sky.h"
 
-#include "core/object/class_db.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/object/class_db.h"
+#include "../../servers/rendering/rendering_server.h"
 
 void Sky::set_radiance_size(RadianceSize p_size) {
 	ERR_FAIL_INDEX(p_size, RADIANCE_SIZE_MAX);

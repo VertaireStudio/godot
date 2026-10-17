@@ -31,20 +31,20 @@
 #include "audio_stream_player_2d.h"
 #include "audio_stream_player_2d.compat.inc"
 
-#include "core/config/project_settings.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/2d/audio_listener_2d.h"
-#include "scene/audio/audio_stream_player_internal.h"
-#include "scene/main/viewport.h"
-#include "scene/resources/audio/audio_stream.h"
-#include "scene/resources/world_2d.h"
-#include "servers/audio/audio_server.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "audio_listener_2d.h"
+#include "../audio/audio_stream_player_internal.h"
+#include "../main/viewport.h"
+#include "../resources/audio/audio_stream.h"
+#include "../resources/world_2d.h"
+#include "../../servers/audio/audio_server.h"
 
 #ifndef PHYSICS_2D_DISABLED
-#include "scene/2d/physics/area_2d.h"
-#include "servers/physics_2d/direct_states/physics_direct_space_state_2d.h"
-#include "servers/physics_2d/physics_server_2d.h"
+#include "physics/area_2d.h"
+#include "../../servers/physics_2d/direct_states/physics_direct_space_state_2d.h"
+#include "../../servers/physics_2d/physics_server_2d.h"
 #endif // PHYSICS_2D_DISABLED
 
 void AudioStreamPlayer2D::_notification(int p_what) {

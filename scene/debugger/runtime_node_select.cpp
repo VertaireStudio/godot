@@ -32,40 +32,40 @@
 
 #include "runtime_node_select.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/debugger/debugger_marshalls.h"
-#include "core/debugger/engine_debugger.h"
-#include "core/input/input.h"
-#include "core/input/input_event.h"
-#include "core/math/geometry_3d.h"
-#include "core/object/callable_mp.h"
-#include "scene/2d/camera_2d.h"
-#include "scene/debugger/scene_debugger_object.h"
-#include "scene/gui/popup_menu.h"
-#include "scene/gui/view_panner.h"
-#include "scene/main/canvas_layer.h"
-#include "scene/main/scene_tree.h"
-#include "scene/resources/mesh.h"
-#include "scene/resources/texture.h"
-#include "scene/theme/theme_db.h"
-#include "servers/display/display_server.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/debugger/debugger_marshalls.h"
+#include "../../core/debugger/engine_debugger.h"
+#include "../../core/input/input.h"
+#include "../../core/input/input_event.h"
+#include "../../core/math/geometry_3d.h"
+#include "../../core/object/callable_mp.h"
+#include "../2d/camera_2d.h"
+#include "scene_debugger_object.h"
+#include "../gui/popup_menu.h"
+#include "../gui/view_panner.h"
+#include "../main/canvas_layer.h"
+#include "../main/scene_tree.h"
+#include "../resources/mesh.h"
+#include "../resources/texture.h"
+#include "../theme/theme_db.h"
+#include "../../servers/display/display_server.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #ifndef PHYSICS_2D_DISABLED
-#include "scene/2d/physics/collision_shape_2d.h"
+#include "../2d/physics/collision_shape_2d.h"
 #endif // PHYSICS_2D_DISABLED
 
 #ifndef _3D_DISABLED
-#include "scene/3d/camera_3d.h"
+#include "../3d/camera_3d.h"
 #ifndef PHYSICS_3D_DISABLED
-#include "scene/3d/physics/collision_object_3d.h"
-#include "scene/3d/physics/collision_shape_3d.h"
-#include "servers/physics_3d/direct_states/physics_direct_space_state_3d.h"
+#include "../3d/physics/collision_object_3d.h"
+#include "../3d/physics/collision_shape_3d.h"
+#include "../../servers/physics_3d/direct_states/physics_direct_space_state_3d.h"
 #endif // PHYSICS_3D_DISABLED
-#include "scene/3d/visual_instance_3d.h"
-#include "scene/resources/3d/convex_polygon_shape_3d.h"
-#include "scene/resources/surface_tool.h"
+#include "../3d/visual_instance_3d.h"
+#include "../resources/3d/convex_polygon_shape_3d.h"
+#include "../resources/surface_tool.h"
 #endif // _3D_DISABLED
 
 RuntimeNodeSelect *RuntimeNodeSelect::get_singleton() {

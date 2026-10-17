@@ -30,8 +30,8 @@
 
 #include "shader_include_resource_format.h"
 
-#include "core/io/file_access.h"
-#include "scene/resources/shader_include.h"
+#include "../../core/io/file_access.h"
+#include "shader_include.h"
 
 // ResourceFormatLoaderShaderInclude
 

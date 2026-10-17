@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/2d/physics/joints/joint_2d.h"
+#include "joint_2d.h"
 
 class PhysicsBody2D;
 

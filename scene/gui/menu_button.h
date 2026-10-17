@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "scene/gui/button.h"
-#include "scene/gui/popup_menu.h"
-#include "scene/property_list_helper.h"
+#include "button.h"
+#include "popup_menu.h"
+#include "../property_list_helper.h"
 
 class MenuButton : public Button {
 	GDCLASS(MenuButton, Button);

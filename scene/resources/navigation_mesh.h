@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/os/rw_lock.h"
-#include "scene/resources/mesh.h"
-#include "servers/navigation_3d/navigation_constants_3d.h"
+#include "../../core/os/rw_lock.h"
+#include "mesh.h"
+#include "../../servers/navigation_3d/navigation_constants_3d.h"
 
 class NavigationMesh : public Resource {
 	GDCLASS(NavigationMesh, Resource);

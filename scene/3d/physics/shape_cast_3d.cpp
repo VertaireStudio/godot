@@ -30,15 +30,15 @@
 
 #include "shape_cast_3d.h"
 
-#include "core/config/engine.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/3d/physics/collision_object_3d.h"
-#include "scene/main/scene_tree.h"
-#include "scene/resources/3d/concave_polygon_shape_3d.h"
-#include "scene/resources/mesh.h"
-#include "servers/physics_3d/physics_server_3d.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/object/callable_mp.h"
+#include "../../../core/object/class_db.h"
+#include "collision_object_3d.h"
+#include "../../main/scene_tree.h"
+#include "../../resources/3d/concave_polygon_shape_3d.h"
+#include "../../resources/mesh.h"
+#include "../../../servers/physics_3d/physics_server_3d.h"
+#include "../../../servers/rendering/rendering_server.h"
 
 void ShapeCast3D::_notification(int p_what) {
 	switch (p_what) {

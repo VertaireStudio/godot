@@ -30,13 +30,13 @@
 
 #include "graph_frame.h"
 
-#include "core/config/engine.h"
-#include "core/object/class_db.h"
-#include "scene/gui/box_container.h"
-#include "scene/gui/label.h"
-#include "scene/resources/style_box_flat.h"
-#include "scene/resources/style_box_texture.h"
-#include "scene/theme/theme_db.h"
+#include "../../core/config/engine.h"
+#include "../../core/object/class_db.h"
+#include "box_container.h"
+#include "label.h"
+#include "../resources/style_box_flat.h"
+#include "../resources/style_box_texture.h"
+#include "../theme/theme_db.h"
 
 void GraphFrame::gui_input(const Ref<InputEvent> &p_ev) {
 	ERR_FAIL_COND(p_ev.is_null());

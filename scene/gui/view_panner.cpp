@@ -30,10 +30,10 @@
 
 #include "view_panner.h"
 
-#include "core/input/input.h"
-#include "core/input/shortcut.h"
-#include "core/os/keyboard.h"
-#include "scene/main/viewport.h"
+#include "../../core/input/input.h"
+#include "../../core/input/shortcut.h"
+#include "../../core/os/keyboard.h"
+#include "../main/viewport.h"
 
 bool ViewPanner::gui_input(const Ref<InputEvent> &p_event, Rect2 p_canvas_rect) {
 	Ref<InputEventMouseButton> mb = p_event;

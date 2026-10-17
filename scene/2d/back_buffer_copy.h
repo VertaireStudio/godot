@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/2d/node_2d.h"
+#include "node_2d.h"
 
 class BackBufferCopy : public Node2D {
 	GDCLASS(BackBufferCopy, Node2D);

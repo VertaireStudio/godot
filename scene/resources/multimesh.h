@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/resources/mesh.h"
-#include "servers/rendering/rendering_server_enums.h"
+#include "mesh.h"
+#include "../../servers/rendering/rendering_server_enums.h"
 
 class MultiMesh : public Resource {
 	GDCLASS(MultiMesh, Resource);

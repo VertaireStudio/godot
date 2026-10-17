@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "scene/gui/line_edit.h"
-#include "scene/gui/range.h"
-#include "scene/main/timer.h"
+#include "line_edit.h"
+#include "range.h"
+#include "../main/timer.h"
 
 class SpinBoxLineEdit : public LineEdit {
 	GDCLASS(SpinBoxLineEdit, LineEdit);

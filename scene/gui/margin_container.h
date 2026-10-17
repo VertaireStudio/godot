@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/gui/container.h"
+#include "container.h"
 
 class MarginContainer : public Container {
 	GDCLASS(MarginContainer, Container);

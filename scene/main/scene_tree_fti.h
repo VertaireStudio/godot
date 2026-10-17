@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/os/mutex.h"
-#include "core/templates/local_vector.h"
+#include "../../core/os/mutex.h"
+#include "../../core/templates/local_vector.h"
 
 class Node3D;
 class Node;

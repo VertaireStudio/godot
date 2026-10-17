@@ -30,8 +30,8 @@
 
 #include "sprite_frames.h"
 
-#include "core/object/class_db.h"
-#include "scene/scene_string_names.h"
+#include "../../core/object/class_db.h"
+#include "../scene_string_names.h"
 
 void SpriteFrames::add_frame(const StringName &p_anim, const Ref<Texture2D> &p_texture, float p_duration, int p_at_pos) {
 	HashMap<StringName, Anim>::Iterator E = animations.find(p_anim);

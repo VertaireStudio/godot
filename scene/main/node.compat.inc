@@ -32,7 +32,7 @@
 
 #include "node.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void Node::_set_name_bind_compat_76560(const String &p_name) {
 	set_name(p_name);

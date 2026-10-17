@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/main/node.h"
-#include "scene/resources/packed_scene.h"
+#include "main/node.h"
+#include "resources/packed_scene.h"
 
 class PropertyUtils {
 public:

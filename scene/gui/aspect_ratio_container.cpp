@@ -30,8 +30,8 @@
 
 #include "aspect_ratio_container.h"
 
-#include "core/object/class_db.h"
-#include "scene/gui/texture_rect.h"
+#include "../../core/object/class_db.h"
+#include "texture_rect.h"
 
 Size2 AspectRatioContainer::get_minimum_size() const {
 	return Container::_get_minimum_size();

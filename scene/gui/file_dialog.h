@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/gui/dialogs.h"
-#include "scene/property_list_helper.h"
+#include "dialogs.h"
+#include "../property_list_helper.h"
 
 class DirAccess;
 class FlowContainer;

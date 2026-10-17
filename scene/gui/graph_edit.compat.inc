@@ -32,7 +32,7 @@
 
 #include "graph_edit.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 bool GraphEdit::_is_arrange_nodes_button_hidden_bind_compat_81582() const {
 	return !is_showing_arrange_button();

@@ -30,12 +30,12 @@
 
 #include "joint_2d.h"
 
-#include "core/config/engine.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/2d/physics/physics_body_2d.h"
-#include "scene/main/scene_tree.h"
-#include "servers/physics_2d/physics_server_2d.h"
+#include "../../../../core/config/engine.h"
+#include "../../../../core/object/callable_mp.h"
+#include "../../../../core/object/class_db.h"
+#include "../physics_body_2d.h"
+#include "../../../main/scene_tree.h"
+#include "../../../../servers/physics_2d/physics_server_2d.h"
 
 void Joint2D::_disconnect_signals() {
 	Node *node_a = get_node_or_null(a);

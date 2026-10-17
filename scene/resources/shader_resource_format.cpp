@@ -30,8 +30,8 @@
 
 #include "shader_resource_format.h"
 
-#include "core/io/file_access.h"
-#include "scene/resources/shader.h"
+#include "../../core/io/file_access.h"
+#include "shader.h"
 
 Ref<Resource> ResourceFormatLoaderShader::load(const String &p_path, const String &p_original_path, Error *r_error, bool p_use_sub_threads, float *r_progress, CacheMode p_cache_mode) {
 	if (r_error) {

@@ -30,7 +30,7 @@
 
 #include "remote_transform_3d.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void RemoteTransform3D::_update_cache() {
 	cache = ObjectID();

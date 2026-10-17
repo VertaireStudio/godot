@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "scene/main/node.h"
-#include "scene/resources/camera_attributes.h"
-#include "scene/resources/compositor.h"
-#include "scene/resources/environment.h"
+#include "../main/node.h"
+#include "../resources/camera_attributes.h"
+#include "../resources/compositor.h"
+#include "../resources/environment.h"
 
 class WorldEnvironment : public Node {
 	GDCLASS(WorldEnvironment, Node);

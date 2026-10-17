@@ -33,24 +33,24 @@
 
 STATIC_ASSERT_INCOMPLETE_TYPE(class, RenderingServer);
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
 #ifndef _2D_DISABLED
-#include "scene/2d/canvas_group.h"
+#include "../2d/canvas_group.h"
 #endif // _2D_DISABLED
-#include "scene/main/canvas_layer.h"
-#include "scene/main/scene_tree.h"
-#include "scene/main/window.h"
-#include "scene/resources/atlas_texture.h"
-#include "scene/resources/dpi_texture.h"
-#include "scene/resources/font.h"
-#include "scene/resources/material.h"
-#include "scene/resources/mesh.h"
-#include "scene/resources/multimesh.h"
-#include "scene/resources/style_box.h"
-#include "scene/resources/world_2d.h"
-#include "servers/display/accessibility_server.h"
-#include "servers/rendering/rendering_server.h"
+#include "canvas_layer.h"
+#include "scene_tree.h"
+#include "window.h"
+#include "../resources/atlas_texture.h"
+#include "../resources/dpi_texture.h"
+#include "../resources/font.h"
+#include "../resources/material.h"
+#include "../resources/mesh.h"
+#include "../resources/multimesh.h"
+#include "../resources/style_box.h"
+#include "../resources/world_2d.h"
+#include "../../servers/display/accessibility_server.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #define ERR_DRAW_GUARD \
 	ERR_FAIL_COND_MSG(!drawing, "Drawing is only allowed inside this node's `_draw()`, functions connected to its `draw` signal, or when it receives NOTIFICATION_DRAW.")

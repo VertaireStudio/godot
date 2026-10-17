@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/3d/chain_ik_3d.h"
+#include "chain_ik_3d.h"
 
 class Curve3D;
 

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/resources/style_box.h"
-#include "scene/resources/texture.h"
+#include "style_box.h"
+#include "texture.h"
 
 class StyleBoxTexture : public StyleBox {
 	GDCLASS(StyleBoxTexture, StyleBox);

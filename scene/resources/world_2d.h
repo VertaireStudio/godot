@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/io/resource.h"
+#include "../../core/io/resource.h"
 
 #ifndef PHYSICS_2D_DISABLED
 class PhysicsDirectSpaceState2D;

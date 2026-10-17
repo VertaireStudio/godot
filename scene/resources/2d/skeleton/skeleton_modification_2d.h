@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/resources/2d/skeleton/skeleton_modification_stack_2d.h"
+#include "skeleton_modification_stack_2d.h"
 
 ///////////////////////////////////////
 // SkeletonModification2D

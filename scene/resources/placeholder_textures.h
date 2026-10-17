@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/resources/texture.h"
+#include "texture.h"
 
 class PlaceholderTexture2D : public Texture2D {
 	GDCLASS(PlaceholderTexture2D, Texture2D)

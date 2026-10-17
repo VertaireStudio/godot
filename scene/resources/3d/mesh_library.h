@@ -30,15 +30,15 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/templates/rb_map.h"
-#include "scene/property_list_helper.h"
-#include "scene/resources/mesh.h"
-#include "scene/resources/navigation_mesh.h"
-#include "servers/rendering/rendering_server_enums.h"
+#include "../../../core/io/resource.h"
+#include "../../../core/templates/rb_map.h"
+#include "../../property_list_helper.h"
+#include "../mesh.h"
+#include "../navigation_mesh.h"
+#include "../../../servers/rendering/rendering_server_enums.h"
 
 #ifndef PHYSICS_3D_DISABLED
-#include "scene/resources/3d/shape_3d.h"
+#include "shape_3d.h"
 #endif // PHYSICS_3D_DISABLED
 
 class MeshLibrary : public Resource {

@@ -30,12 +30,12 @@
 
 #include "audio_stream_player_internal.h"
 
-#include "core/config/engine.h"
-#include "core/object/callable_mp.h"
-#include "scene/main/node.h"
-#include "scene/main/scene_tree.h"
-#include "scene/resources/audio/audio_stream.h"
-#include "servers/audio/audio_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/object/callable_mp.h"
+#include "../main/node.h"
+#include "../main/scene_tree.h"
+#include "../resources/audio/audio_stream.h"
+#include "../../servers/audio/audio_server.h"
 
 void AudioStreamPlayerInternal::_set_process(bool p_enabled) {
 	if (physical) {

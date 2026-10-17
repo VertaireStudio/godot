@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/templates/self_list.h"
-#include "scene/resources/shader.h"
-#include "servers/rendering/rendering_server_enums.h"
+#include "../../core/io/resource.h"
+#include "../../core/templates/self_list.h"
+#include "shader.h"
+#include "../../servers/rendering/rendering_server_enums.h"
 
 class Material : public Resource {
 	GDCLASS(Material, Resource);

@@ -32,21 +32,21 @@
 
 STATIC_ASSERT_INCOMPLETE_TYPE(class, RenderingServer);
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/debugger/engine_debugger.h"
-#include "core/input/input.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "scene/gui/control.h"
-#include "scene/main/scene_tree.h"
-#include "scene/theme/theme_db.h"
-#include "scene/theme/theme_owner.h"
-#include "servers/display/accessibility_server.h"
-#include "servers/display/display_server.h"
-#include "servers/rendering/rendering_server.h"
-#include "servers/rendering/rendering_server_enums.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/debugger/engine_debugger.h"
+#include "../../core/input/input.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../core/os/os.h"
+#include "../gui/control.h"
+#include "scene_tree.h"
+#include "../theme/theme_db.h"
+#include "../theme/theme_owner.h"
+#include "../../servers/display/accessibility_server.h"
+#include "../../servers/display/display_server.h"
+#include "../../servers/rendering/rendering_server.h"
+#include "../../servers/rendering/rendering_server_enums.h"
 
 // Editor integration.
 

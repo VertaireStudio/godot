@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "scene/2d/node_2d.h"
-#include "scene/resources/2d/shape_2d.h"
-#include "servers/physics_2d/physics_server_2d_types.h"
+#include "../node_2d.h"
+#include "../../resources/2d/shape_2d.h"
+#include "../../../servers/physics_2d/physics_server_2d_types.h"
 
 class CollisionObject2D;
 

@@ -30,11 +30,11 @@
 
 #include "damped_spring_joint_2d.h"
 
-#include "core/config/engine.h"
-#include "core/object/class_db.h"
-#include "scene/2d/physics/physics_body_2d.h"
-#include "scene/main/scene_tree.h"
-#include "servers/physics_2d/physics_server_2d.h"
+#include "../../../../core/config/engine.h"
+#include "../../../../core/object/class_db.h"
+#include "../physics_body_2d.h"
+#include "../../../main/scene_tree.h"
+#include "../../../../servers/physics_2d/physics_server_2d.h"
 
 void DampedSpringJoint2D::_notification(int p_what) {
 	switch (p_what) {

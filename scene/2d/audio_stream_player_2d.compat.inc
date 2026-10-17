@@ -32,7 +32,7 @@
 
 #include "audio_stream_player_2d.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 bool AudioStreamPlayer2D::_is_autoplay_enabled_bind_compat_86907() {
 	return is_autoplay_enabled();

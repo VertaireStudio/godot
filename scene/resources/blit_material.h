@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/resources/material.h"
+#include "material.h"
 
 class BlitMaterial : public Material {
 	GDCLASS(BlitMaterial, Material);

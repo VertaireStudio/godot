@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "scene/resources/curve.h"
-#include "scene/resources/font.h"
-#include "scene/resources/mesh.h"
-#include "servers/text/text_server.h"
+#include "../curve.h"
+#include "../font.h"
+#include "../mesh.h"
+#include "../../../servers/text/text_server.h"
 
 ///@TODO probably should change a few integers to unsigned integers...
 

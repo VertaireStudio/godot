@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/templates/local_vector.h"
-#include "scene/resources/audio/audio_stream.h"
-#include "scene/scene_string_names.h"
-#include "servers/audio/audio_server_enums.h"
+#include "../../../core/templates/local_vector.h"
+#include "audio_stream.h"
+#include "../../scene_string_names.h"
+#include "../../../servers/audio/audio_server_enums.h"
 
 class AudioStreamPolyphonic : public AudioStream {
 	GDCLASS(AudioStreamPolyphonic, AudioStream)

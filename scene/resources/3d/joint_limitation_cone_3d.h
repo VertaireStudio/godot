@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/resources/3d/joint_limitation_3d.h"
+#include "joint_limitation_3d.h"
 
 class JointLimitationCone3D : public JointLimitation3D {
 	GDCLASS(JointLimitationCone3D, JointLimitation3D);

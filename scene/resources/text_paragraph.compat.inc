@@ -32,7 +32,7 @@
 
 #include "text_paragraph.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 void TextParagraph::_draw_bind_compat_104872(RID p_canvas, const Vector2 &p_pos, const Color &p_color, const Color &p_dc_color) const {
 	draw(p_canvas, p_pos, p_color, p_dc_color, 0.0);

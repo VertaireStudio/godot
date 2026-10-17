@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/resources/2d/shape_2d.h"
+#include "shape_2d.h"
 
 class SegmentShape2D : public Shape2D {
 	GDCLASS(SegmentShape2D, Shape2D);

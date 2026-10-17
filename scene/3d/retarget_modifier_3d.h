@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/3d/skeleton_modifier_3d.h"
-#include "scene/resources/skeleton_profile.h"
+#include "skeleton_modifier_3d.h"
+#include "../resources/skeleton_profile.h"
 
 class RetargetModifier3D : public SkeletonModifier3D {
 	GDCLASS(RetargetModifier3D, SkeletonModifier3D);

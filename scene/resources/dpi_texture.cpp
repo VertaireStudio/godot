@@ -30,14 +30,14 @@
 
 #include "dpi_texture.h"
 
-#include "core/object/class_db.h"
-#include "scene/resources/bit_map.h"
-#include "servers/rendering/rendering_server.h"
-#include "servers/text/text_server.h"
+#include "../../core/object/class_db.h"
+#include "bit_map.h"
+#include "../../servers/rendering/rendering_server.h"
+#include "../../servers/text/text_server.h"
 
-#include "modules/modules_enabled.gen.h" // For svg.
+#include "../../modules/modules_enabled.gen.h" // For svg.
 #ifdef MODULE_SVG_ENABLED
-#include "modules/svg/image_loader_svg.h"
+#include "../../modules/svg/image_loader_svg.h"
 #endif
 
 Mutex DPITexture::mutex;

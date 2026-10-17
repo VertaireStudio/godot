@@ -37,7 +37,7 @@
 // If the renderer is moved into a driver/module, these classes
 // should be moved as well.
 
-#include "scene/resources/texture.h"
+#include "texture.h"
 
 class Texture2DRD : public Texture2D {
 	GDCLASS(Texture2DRD, Texture2D)

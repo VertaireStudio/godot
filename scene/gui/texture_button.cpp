@@ -30,9 +30,9 @@
 
 #include "texture_button.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/typedefs.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../core/typedefs.h"
 
 Size2 TextureButton::get_minimum_size() const {
 	Size2 rscale = Control::get_minimum_size();

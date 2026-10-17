@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/main/node.h"
-#include "scene/resources/3d/world_3d.h"
+#include "../main/node.h"
+#include "../resources/3d/world_3d.h"
 
 class Node3DGizmo : public RefCounted {
 	GDCLASS(Node3DGizmo, RefCounted);

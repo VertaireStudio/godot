@@ -32,12 +32,12 @@
 
 #ifdef DEBUG_ENABLED
 
-#include "core/object/ref_counted.h"
-#include "scene/debugger/canvas_item_manipulator.h"
+#include "../../core/object/ref_counted.h"
+#include "canvas_item_manipulator.h"
 
 #ifndef _3D_DISABLED
-#include "scene/debugger/view_3d_controller.h"
-#include "scene/resources/mesh.h"
+#include "view_3d_controller.h"
+#include "../resources/mesh.h"
 #endif // _3D_DISABLED
 
 class PopupMenu;

@@ -32,12 +32,12 @@
 
 STATIC_ASSERT_INCOMPLETE_TYPE(class, RenderingServer);
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "scene/main/scene_tree.h"
-#include "scene/resources/material.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../core/os/os.h"
+#include "../main/scene_tree.h"
+#include "../resources/material.h"
+#include "../../servers/rendering/rendering_server.h"
 
 AABB VisualInstance3D::get_aabb() const {
 	AABB ret;

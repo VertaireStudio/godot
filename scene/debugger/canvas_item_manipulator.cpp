@@ -31,13 +31,13 @@
 #ifdef DEBUG_ENABLED
 #include "canvas_item_manipulator.h"
 
-#include "core/config/engine.h"
-#include "core/input/shortcut.h"
-#include "scene/2d/node_2d.h"
-#include "scene/gui/container.h"
-#include "scene/main/canvas_layer.h"
-#include "scene/main/scene_tree.h"
-#include "scene/main/window.h"
+#include "../../core/config/engine.h"
+#include "../../core/input/shortcut.h"
+#include "../2d/node_2d.h"
+#include "../gui/container.h"
+#include "../main/canvas_layer.h"
+#include "../main/scene_tree.h"
+#include "../main/window.h"
 
 bool CanvasItemManipulator::_gui_input_rulers_and_guides(const Ref<InputEvent> &p_event) {
 	Ref<InputEventMouseButton> b = p_event;

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "scene/resources/texture.h"
+#include "../../core/io/resource.h"
+#include "texture.h"
 
 class Sky;
 

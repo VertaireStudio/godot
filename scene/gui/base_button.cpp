@@ -30,13 +30,13 @@
 
 #include "base_button.h"
 
-#include "core/config/project_settings.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/gui/label.h"
-#include "scene/main/timer.h"
-#include "scene/theme/theme_db.h"
-#include "servers/display/accessibility_server.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "label.h"
+#include "../main/timer.h"
+#include "../theme/theme_db.h"
+#include "../../servers/display/accessibility_server.h"
 
 void BaseButton::_unpress_group() {
 	if (button_group.is_null()) {

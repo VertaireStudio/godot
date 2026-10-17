@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/3d/skeleton_modifier_3d.h"
-#include "scene/animation/tween.h"
+#include "skeleton_modifier_3d.h"
+#include "../animation/tween.h"
 
 class LookAtModifier3D : public SkeletonModifier3D {
 	GDCLASS(LookAtModifier3D, SkeletonModifier3D);

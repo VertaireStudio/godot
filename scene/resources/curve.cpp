@@ -30,8 +30,8 @@
 
 #include "curve.h"
 
-#include "core/math/math_funcs.h"
-#include "core/object/class_db.h"
+#include "../../core/math/math_funcs.h"
+#include "../../core/object/class_db.h"
 
 #include <cfloat> // FLT_EPSILON
 

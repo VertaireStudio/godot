@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/gui/popup_menu.h"
+#include "popup_menu.h"
 
 class MenuBar : public Control {
 	GDCLASS(MenuBar, Control);

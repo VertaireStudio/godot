@@ -30,8 +30,8 @@
 
 #include "external_texture.h"
 
-#include "core/object/class_db.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/object/class_db.h"
+#include "../../servers/rendering/rendering_server.h"
 
 void ExternalTexture::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("set_size", "size"), &ExternalTexture::set_size);

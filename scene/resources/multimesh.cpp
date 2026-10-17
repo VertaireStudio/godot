@@ -30,8 +30,8 @@
 
 #include "multimesh.h"
 
-#include "core/object/class_db.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/object/class_db.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #ifndef DISABLE_DEPRECATED
 // Kept for compatibility from 3.x to 4.0.

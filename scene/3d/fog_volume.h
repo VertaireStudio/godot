@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/templates/rid.h"
-#include "scene/3d/visual_instance_3d.h"
-#include "scene/resources/material.h"
+#include "../../core/templates/rid.h"
+#include "visual_instance_3d.h"
+#include "../resources/material.h"
 
 class FogVolume : public VisualInstance3D {
 	GDCLASS(FogVolume, VisualInstance3D);

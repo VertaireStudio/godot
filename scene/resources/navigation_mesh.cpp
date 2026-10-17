@@ -30,10 +30,10 @@
 
 #include "navigation_mesh.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 #ifdef DEBUG_ENABLED
-#include "servers/navigation_3d/navigation_server_3d.h"
+#include "../../servers/navigation_3d/navigation_server_3d.h"
 #endif // DEBUG_ENABLED
 
 void NavigationMesh::create_from_mesh(const Ref<Mesh> &p_mesh) {

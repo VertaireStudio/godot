@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/gui/control.h"
+#include "control.h"
 
 class ReferenceRect : public Control {
 	GDCLASS(ReferenceRect, Control);

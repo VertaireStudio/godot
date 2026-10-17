@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/templates/rb_map.h"
-#include "scene/2d/node_2d.h"
-#include "scene/main/viewport.h"
-#include "scene/resources/2d/shape_2d.h"
-#include "servers/physics_2d/physics_server_2d_enums.h"
+#include "../../../core/templates/rb_map.h"
+#include "../node_2d.h"
+#include "../../main/viewport.h"
+#include "../../resources/2d/shape_2d.h"
+#include "../../../servers/physics_2d/physics_server_2d_enums.h"
 
 class CollisionObject2D : public Node2D {
 	GDCLASS(CollisionObject2D, Node2D);

@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "scene/gui/control.h"
-#include "scene/gui/popup_menu.h"
-#include "scene/gui/scroll_bar.h"
-#include "scene/main/timer.h"
-#include "scene/resources/syntax_highlighter.h"
-#include "scene/resources/text_paragraph.h"
+#include "control.h"
+#include "popup_menu.h"
+#include "scroll_bar.h"
+#include "../main/timer.h"
+#include "../resources/syntax_highlighter.h"
+#include "../resources/text_paragraph.h"
 
 class TextEdit : public Control {
 	GDCLASS(TextEdit, Control);

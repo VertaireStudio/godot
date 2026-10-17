@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/templates/a_hash_map.h"
-#include "scene/animation/tween.h"
-#include "scene/main/node.h"
-#include "scene/resources/animation.h"
-#include "scene/resources/animation_library.h"
-#include "scene/resources/audio/audio_stream_polyphonic.h"
+#include "../../core/templates/a_hash_map.h"
+#include "tween.h"
+#include "../main/node.h"
+#include "../resources/animation.h"
+#include "../resources/animation_library.h"
+#include "../resources/audio/audio_stream_polyphonic.h"
 
 class AnimatedValuesBackup;
 

@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "core/object/gdvirtual.gen.h"
-#include "servers/rendering/storage/render_data.h"
+#include "../../core/io/resource.h"
+#include "../../core/object/gdvirtual.gen.h"
+#include "../../servers/rendering/storage/render_data.h"
 
 /* Compositor Effect */
 

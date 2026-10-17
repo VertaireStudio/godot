@@ -32,7 +32,7 @@
 
 #include "mesh_data_tool.h"
 
-#include "core/object/class_db.h"
+#include "../../core/object/class_db.h"
 
 Error MeshDataTool::commit_to_surface_bind_compat_81138(const Ref<ArrayMesh> &p_mesh) {
 	return commit_to_surface(p_mesh, 0);

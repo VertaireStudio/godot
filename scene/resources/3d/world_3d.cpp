@@ -30,19 +30,19 @@
 
 #include "world_3d.h"
 
-#include "core/config/project_settings.h"
-#include "core/object/class_db.h"
-#include "scene/3d/camera_3d.h"
-#include "scene/resources/camera_attributes.h"
-#include "scene/resources/environment.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../../core/config/project_settings.h"
+#include "../../../core/object/class_db.h"
+#include "../../3d/camera_3d.h"
+#include "../camera_attributes.h"
+#include "../environment.h"
+#include "../../../servers/rendering/rendering_server.h"
 
 #ifndef NAVIGATION_3D_DISABLED
-#include "servers/navigation_3d/navigation_server_3d.h"
+#include "../../../servers/navigation_3d/navigation_server_3d.h"
 #endif // NAVIGATION_3D_DISABLED
 
 #ifndef PHYSICS_3D_DISABLED
-#include "servers/physics_3d/physics_server_3d.h"
+#include "../../../servers/physics_3d/physics_server_3d.h"
 #endif // PHYSICS_3D_DISABLED
 
 void World3D::_register_camera(Camera3D *p_camera) {

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/3d/node_3d.h"
-#include "scene/3d/physics/physics_body_3d.h"
+#include "../../node_3d.h"
+#include "../physics_body_3d.h"
 
 class Joint3D : public Node3D {
 	GDCLASS(Joint3D, Node3D);

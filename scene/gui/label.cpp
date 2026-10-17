@@ -30,13 +30,13 @@
 
 #include "label.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/main/scene_tree.h"
-#include "scene/theme/theme_db.h"
-#include "servers/display/accessibility_server.h"
-#include "servers/rendering/rendering_server.h"
-#include "servers/text/text_server.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../main/scene_tree.h"
+#include "../theme/theme_db.h"
+#include "../../servers/display/accessibility_server.h"
+#include "../../servers/rendering/rendering_server.h"
+#include "../../servers/text/text_server.h"
 
 void Label::set_autowrap_mode(TextServer::AutowrapMode p_mode) {
 	if (autowrap_mode == p_mode) {

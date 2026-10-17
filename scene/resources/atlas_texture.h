@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/resources/texture.h"
+#include "texture.h"
 
 class AtlasTexture : public Texture2D {
 	GDCLASS(AtlasTexture, Texture2D);

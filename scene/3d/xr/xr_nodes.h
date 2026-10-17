@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/3d/camera_3d.h"
-#include "servers/xr/xr_positional_tracker.h"
+#include "../camera_3d.h"
+#include "../../../servers/xr/xr_positional_tracker.h"
 
 /*
 	XRCamera is a subclass of camera which will register itself with its parent XROrigin and as a result is automatically positioned

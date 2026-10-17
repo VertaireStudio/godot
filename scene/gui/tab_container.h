@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "scene/gui/container.h"
-#include "scene/gui/tab_bar.h"
-#include "scene/property_list_helper.h"
+#include "container.h"
+#include "tab_bar.h"
+#include "../property_list_helper.h"
 
 class Button;
 class HBoxContainer;

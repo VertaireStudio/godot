@@ -31,7 +31,7 @@
 #pragma once
 
 #ifdef DEBUG_ENABLED
-#include "core/input/input_event.h"
+#include "../../core/input/input_event.h"
 
 class Node;
 

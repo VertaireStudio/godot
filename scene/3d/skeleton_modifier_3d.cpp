@@ -30,8 +30,8 @@
 
 #include "skeleton_modifier_3d.h"
 
-#include "core/config/project_settings.h"
-#include "core/object/class_db.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/class_db.h"
 
 PackedStringArray SkeletonModifier3D::get_configuration_warnings() const {
 	PackedStringArray warnings = Node3D::get_configuration_warnings();

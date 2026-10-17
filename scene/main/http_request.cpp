@@ -30,14 +30,14 @@
 
 #include "http_request.h"
 
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/io/stream_peer_gzip.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "core/os/thread.h"
-#include "scene/main/timer.h"
+#include "../../core/io/dir_access.h"
+#include "../../core/io/file_access.h"
+#include "../../core/io/stream_peer_gzip.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../core/os/os.h"
+#include "../../core/os/thread.h"
+#include "timer.h"
 
 Error HTTPRequest::_request() {
 	return client->connect_to_host(url, port, use_tls ? tls_options : nullptr);

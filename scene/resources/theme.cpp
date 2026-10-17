@@ -30,9 +30,9 @@
 
 #include "theme.h"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/theme/theme_db.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../theme/theme_db.h"
 
 // Dynamic properties.
 bool Theme::_set(const StringName &p_name, const Variant &p_value) {

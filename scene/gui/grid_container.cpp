@@ -30,10 +30,10 @@
 
 #include "grid_container.h"
 
-#include "core/object/class_db.h"
-#include "core/templates/rb_map.h"
-#include "core/templates/rb_set.h"
-#include "scene/theme/theme_db.h"
+#include "../../core/object/class_db.h"
+#include "../../core/templates/rb_map.h"
+#include "../../core/templates/rb_set.h"
+#include "../theme/theme_db.h"
 
 void GridContainer::_resort() {
 	RBMap<int, int> col_minw; // Max of min_width of all controls in each col (indexed by col).

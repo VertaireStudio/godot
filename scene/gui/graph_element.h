@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/gui/container.h"
+#include "container.h"
 
 class GraphElement : public Container {
 	GDCLASS(GraphElement, Container);

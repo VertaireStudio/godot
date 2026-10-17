@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "scene/resources/material.h"
+#include "../../core/io/resource.h"
+#include "material.h"
 
 class Sky : public Resource {
 	GDCLASS(Sky, Resource);

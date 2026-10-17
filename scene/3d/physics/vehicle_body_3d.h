@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/3d/physics/physics_body_3d.h"
-#include "scene/3d/physics/rigid_body_3d.h"
+#include "physics_body_3d.h"
+#include "rigid_body_3d.h"
 
 class VehicleBody3D;
 

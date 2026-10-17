@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/object/ref_counted.h"
-#include "core/variant/type_info.h"
+#include "../../core/object/ref_counted.h"
+#include "../../core/variant/type_info.h"
 
 class Tween;
 class Node;

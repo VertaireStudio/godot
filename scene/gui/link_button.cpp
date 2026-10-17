@@ -30,10 +30,10 @@
 
 #include "link_button.h"
 
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "scene/theme/theme_db.h"
-#include "servers/display/accessibility_server.h"
+#include "../../core/object/class_db.h"
+#include "../../core/os/os.h"
+#include "../theme/theme_db.h"
+#include "../../servers/display/accessibility_server.h"
 
 void LinkButton::_shape() {
 	if (!is_inside_tree()) {

@@ -30,10 +30,10 @@
 
 #include "virtual_joystick.h"
 
-#include "core/config/engine.h"
-#include "core/input/input.h"
-#include "core/object/class_db.h"
-#include "scene/theme/theme_db.h"
+#include "../../core/config/engine.h"
+#include "../../core/input/input.h"
+#include "../../core/object/class_db.h"
+#include "../theme/theme_db.h"
 
 void VirtualJoystick::gui_input(const Ref<InputEvent> &p_event) {
 	Ref<InputEventScreenTouch> touch = p_event;

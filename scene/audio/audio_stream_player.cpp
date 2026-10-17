@@ -31,12 +31,12 @@
 #include "audio_stream_player.h"
 #include "audio_stream_player.compat.inc"
 
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/audio/audio_stream_player_internal.h"
-#include "scene/resources/audio/audio_stream.h"
-#include "servers/audio/audio_server.h"
-#include "servers/display/accessibility_server.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "audio_stream_player_internal.h"
+#include "../resources/audio/audio_stream.h"
+#include "../../servers/audio/audio_server.h"
+#include "../../servers/display/accessibility_server.h"
 
 void AudioStreamPlayer::_notification(int p_what) {
 	if (p_what == NOTIFICATION_ACCESSIBILITY_UPDATE) {

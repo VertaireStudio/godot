@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/gui/base_button.h"
-#include "scene/resources/text_paragraph.h"
+#include "base_button.h"
+#include "../resources/text_paragraph.h"
 
 class Button : public BaseButton {
 	GDCLASS(Button, BaseButton);

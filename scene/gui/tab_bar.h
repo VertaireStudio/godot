@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "scene/gui/control.h"
-#include "scene/property_list_helper.h"
-#include "scene/resources/text_line.h"
+#include "control.h"
+#include "../property_list_helper.h"
+#include "../resources/text_line.h"
 
 class Timer;
 

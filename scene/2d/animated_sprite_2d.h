@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/2d/node_2d.h"
-#include "scene/resources/sprite_frames.h"
+#include "node_2d.h"
+#include "../resources/sprite_frames.h"
 
 class AnimatedSprite2D : public Node2D {
 	GDCLASS(AnimatedSprite2D, Node2D);

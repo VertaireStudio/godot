@@ -30,12 +30,12 @@
 
 #include "rigid_body_2d.h"
 
-#include "core/config/engine.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/resources/physics_material.h"
-#include "servers/physics_2d/physics_server_2d.h"
-#include "servers/physics_2d/physics_server_2d_constants.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/object/callable_mp.h"
+#include "../../../core/object/class_db.h"
+#include "../../resources/physics_material.h"
+#include "../../../servers/physics_2d/physics_server_2d.h"
+#include "../../../servers/physics_2d/physics_server_2d_constants.h"
 
 void RigidBody2D::_body_enter_tree(ObjectID p_id) {
 	Object *obj = ObjectDB::get_instance(p_id);

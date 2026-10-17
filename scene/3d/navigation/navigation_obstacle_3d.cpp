@@ -30,15 +30,15 @@
 
 #include "navigation_obstacle_3d.h"
 
-#include "core/config/engine.h"
-#include "core/math/geometry_2d.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/main/scene_tree.h"
-#include "scene/resources/3d/navigation_mesh_source_geometry_data_3d.h"
-#include "scene/resources/navigation_mesh.h"
-#include "servers/navigation_3d/navigation_server_3d.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/math/geometry_2d.h"
+#include "../../../core/object/callable_mp.h"
+#include "../../../core/object/class_db.h"
+#include "../../main/scene_tree.h"
+#include "../../resources/3d/navigation_mesh_source_geometry_data_3d.h"
+#include "../../resources/navigation_mesh.h"
+#include "../../../servers/navigation_3d/navigation_server_3d.h"
+#include "../../../servers/rendering/rendering_server.h"
 
 Callable NavigationObstacle3D::_navmesh_source_geometry_parsing_callback;
 RID NavigationObstacle3D::_navmesh_source_geometry_parser;

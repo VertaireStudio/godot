@@ -30,13 +30,13 @@
 
 #pragma once
 
-#include "core/object/message_queue.h"
-#include "core/object/ref_counted.h"
-#include "core/os/main_loop.h"
-#include "core/os/thread_safe.h"
-#include "core/templates/paged_allocator.h"
-#include "core/templates/self_list.h"
-#include "scene/main/scene_tree_fti.h"
+#include "../../core/object/message_queue.h"
+#include "../../core/object/ref_counted.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/thread_safe.h"
+#include "../../core/templates/paged_allocator.h"
+#include "../../core/templates/self_list.h"
+#include "scene_tree_fti.h"
 
 #include <cstdlib>
 

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/io/resource.h"
-#include "scene/resources/environment.h"
+#include "../../../core/io/resource.h"
+#include "../environment.h"
 
 #ifndef PHYSICS_3D_DISABLED
 class PhysicsDirectSpaceState3D;

@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/resources/audio/audio_stream.h"
+#include "audio_stream.h"
 
 class AudioStreamPlaybackMicrophone;
 

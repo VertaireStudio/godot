@@ -30,11 +30,11 @@
 
 #include "camera_attributes.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/object/class_db.h"
+#include "../../core/os/os.h"
+#include "../../servers/rendering/rendering_server.h"
 
 void CameraAttributes::set_exposure_multiplier(float p_multiplier) {
 	exposure_multiplier = p_multiplier;

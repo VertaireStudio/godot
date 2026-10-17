@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "scene/resources/navigation_mesh.h"
-#include "servers/navigation_2d/navigation_constants_2d.h"
+#include "../navigation_mesh.h"
+#include "../../../servers/navigation_2d/navigation_constants_2d.h"
 
 class NavigationPolygon : public Resource {
 	GDCLASS(NavigationPolygon, Resource);

@@ -30,47 +30,47 @@
 
 #include "scene_debugger.h"
 
-#include "core/config/engine.h"
-#include "core/debugger/debugger_marshalls.h"
-#include "core/debugger/engine_debugger.h"
-#include "core/debugger/remote_debugger.h"
-#include "core/input/input.h"
-#include "core/input/shortcut.h"
-#include "core/io/dir_access.h"
-#include "core/io/resource_loader.h"
-#include "core/io/resource_saver.h"
-#include "core/math/math_fieldwise.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "core/os/os.h"
-#include "core/os/time.h"
-#include "core/templates/local_vector.h"
-#include "core/variant/array.h"
-#include "scene/2d/camera_2d.h"
-#include "scene/debugger/scene_debugger_object.h"
-#include "scene/main/node.h"
-#include "scene/main/scene_tree.h"
-#include "scene/main/window.h"
-#include "scene/resources/packed_scene.h"
-#include "servers/audio/audio_server.h"
-#include "servers/display/display_server.h"
-#include "servers/rendering/rendering_device.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/debugger/debugger_marshalls.h"
+#include "../../core/debugger/engine_debugger.h"
+#include "../../core/debugger/remote_debugger.h"
+#include "../../core/input/input.h"
+#include "../../core/input/shortcut.h"
+#include "../../core/io/dir_access.h"
+#include "../../core/io/resource_loader.h"
+#include "../../core/io/resource_saver.h"
+#include "../../core/math/math_fieldwise.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../../core/os/os.h"
+#include "../../core/os/time.h"
+#include "../../core/templates/local_vector.h"
+#include "../../core/variant/array.h"
+#include "../2d/camera_2d.h"
+#include "scene_debugger_object.h"
+#include "../main/node.h"
+#include "../main/scene_tree.h"
+#include "../main/window.h"
+#include "../resources/packed_scene.h"
+#include "../../servers/audio/audio_server.h"
+#include "../../servers/display/display_server.h"
+#include "../../servers/rendering/rendering_device.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #ifndef _3D_DISABLED
-#include "scene/3d/camera_3d.h"
+#include "../3d/camera_3d.h"
 #endif
 
 #ifdef DEBUG_ENABLED
-#include "scene/debugger/runtime_node_select.h"
+#include "runtime_node_select.h"
 #endif
 
 #ifndef PHYSICS_2D_DISABLED
-#include "servers/physics_2d/physics_server_2d.h"
+#include "../../servers/physics_2d/physics_server_2d.h"
 #endif
 
 #ifndef PHYSICS_3D_DISABLED
-#include "servers/physics_3d/physics_server_3d.h"
+#include "../../servers/physics_3d/physics_server_3d.h"
 #endif
 
 SceneDebugger::SceneDebugger() {

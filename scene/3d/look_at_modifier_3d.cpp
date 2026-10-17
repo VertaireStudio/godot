@@ -30,9 +30,9 @@
 
 #include "look_at_modifier_3d.h"
 
-#include "core/config/engine.h"
-#include "core/object/class_db.h"
-#include "scene/resources/animation.h"
+#include "../../core/config/engine.h"
+#include "../../core/object/class_db.h"
+#include "../resources/animation.h"
 
 void LookAtModifier3D::_validate_property(PropertyInfo &p_property) const {
 	if (Engine::get_singleton()->is_editor_hint() && (p_property.name == "bone_name" || p_property.name == "origin_bone_name")) {

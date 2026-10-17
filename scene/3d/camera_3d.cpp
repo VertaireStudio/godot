@@ -30,16 +30,16 @@
 
 #include "camera_3d.h"
 
-#include "core/config/engine.h"
-#include "core/math/projection.h"
-#include "core/math/transform_interpolator.h"
-#include "core/object/callable_mp.h"
-#include "core/object/class_db.h"
-#include "scene/main/viewport.h"
-#include "servers/rendering/rendering_server.h"
+#include "../../core/config/engine.h"
+#include "../../core/math/projection.h"
+#include "../../core/math/transform_interpolator.h"
+#include "../../core/object/callable_mp.h"
+#include "../../core/object/class_db.h"
+#include "../main/viewport.h"
+#include "../../servers/rendering/rendering_server.h"
 
 #ifndef PHYSICS_3D_DISABLED
-#include "servers/physics_3d/physics_server_3d.h"
+#include "../../servers/physics_3d/physics_server_3d.h"
 #endif // PHYSICS_3D_DISABLED
 
 void Camera3D::_update_audio_listener_state() {

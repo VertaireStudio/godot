@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/io/file_access.h"
-#include "core/io/resource_loader.h"
-#include "core/io/resource_saver.h"
-#include "core/templates/rb_map.h"
-#include "core/variant/variant_parser.h"
-#include "scene/resources/packed_scene.h"
+#include "../../core/io/file_access.h"
+#include "../../core/io/resource_loader.h"
+#include "../../core/io/resource_saver.h"
+#include "../../core/templates/rb_map.h"
+#include "../../core/variant/variant_parser.h"
+#include "packed_scene.h"
 
 class ResourceLoaderText {
 public:

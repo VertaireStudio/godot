@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/3d/skeleton_3d.h"
+#include "skeleton_3d.h"
 
 class BoneAttachment3D : public Node3D {
 	GDCLASS(BoneAttachment3D, Node3D);

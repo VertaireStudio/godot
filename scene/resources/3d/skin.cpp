@@ -30,7 +30,7 @@
 
 #include "skin.h"
 
-#include "core/object/class_db.h"
+#include "../../../core/object/class_db.h"
 
 void Skin::set_bind_count(int p_size) {
 	ERR_FAIL_COND(p_size < 0);
