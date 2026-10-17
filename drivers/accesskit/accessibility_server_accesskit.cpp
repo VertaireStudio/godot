@@ -32,10 +32,10 @@
 
 #include "accessibility_server_accesskit.h"
 
-#include "servers/text/text_server.h"
+#include "../../servers/text/text_server.h"
 
 #ifdef ANDROID_ENABLED
-#include "platform/android/thread_jandroid.h"
+#include "../../platform/android/thread_jandroid.h"
 #endif
 
 _FORCE_INLINE_ accesskit_role AccessibilityServerAccessKit::_accessibility_role(AccessibilityServerEnums::AccessibilityRole p_role) const {

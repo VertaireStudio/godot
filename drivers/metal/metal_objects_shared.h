@@ -30,15 +30,15 @@
 
 #pragma once
 
-#include "drivers/metal/metal_allocator.h"
-#include "drivers/metal/metal_device_properties.h"
-#include "drivers/metal/metal_utils.h"
-#include "drivers/metal/pixel_formats.h"
-#include "drivers/metal/rendering_shader_container_metal.h"
-#include "drivers/metal/sha256_digest.h"
+#include "metal_allocator.h"
+#include "metal_device_properties.h"
+#include "metal_utils.h"
+#include "pixel_formats.h"
+#include "rendering_shader_container_metal.h"
+#include "sha256_digest.h"
 
 #ifdef DEBUG_ENABLED
-#include "core/os/os.h"
+#include "../../core/os/os.h"
 #endif
 
 #include <CoreFoundation/CoreFoundation.h>

@@ -30,12 +30,12 @@
 
 #include "rendering_shader_container_d3d12.h"
 
-#include "core/templates/sort_array.h"
-#include "drivers/d3d12/dxil_hash.h"
+#include "../../core/templates/sort_array.h"
+#include "dxil_hash.h"
 
-#include <drivers/d3d12/godot_d3d12ma.h>
-#include <drivers/d3d12/godot_d3dx12.h>
-#include <drivers/d3d12/godot_nir.h>
+#include "godot_d3d12ma.h"
+#include "godot_d3dx12.h"
+#include "godot_nir.h"
 #include <wrl/client.h>
 #include <zlib.h>
 

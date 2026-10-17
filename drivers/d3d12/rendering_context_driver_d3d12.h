@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "drivers/d3d12/rendering_device_driver_d3d12.h"
-#include "servers/display/display_server_enums.h"
-#include "servers/rendering/rendering_context_driver.h"
+#include "rendering_device_driver_d3d12.h"
+#include "../../servers/display/display_server_enums.h"
+#include "../../servers/rendering/rendering_context_driver.h"
 
-#include <drivers/d3d12/godot_d3dx12.h>
+#include "godot_d3dx12.h"
 
 #ifdef DCOMP_ENABLED
 #include <dcomp.h>

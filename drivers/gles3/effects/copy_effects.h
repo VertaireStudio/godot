@@ -32,7 +32,7 @@
 
 #ifdef GLES3_ENABLED
 
-#include "drivers/gles3/shaders/effects/copy.glsl.gen.h"
+#include "../shaders/effects/copy.glsl.gen.h"
 
 namespace GLES3 {
 

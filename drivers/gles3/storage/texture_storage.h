@@ -32,17 +32,17 @@
 
 #ifdef GLES3_ENABLED
 
-#include "core/io/image.h"
-#include "core/math/transform_3d.h"
-#include "core/templates/paged_array.h"
-#include "core/templates/rb_map.h"
-#include "core/templates/rid_owner.h"
-#include "drivers/gles3/shaders/canvas_sdf.glsl.gen.h"
-#include "drivers/gles3/storage/config.h"
-#include "servers/rendering/rendering_server_enums.h"
-#include "servers/rendering/rendering_server_types.h"
-#include "servers/rendering/storage/texture_storage.h"
-#include "servers/rendering/storage/utilities.h"
+#include "../../../core/io/image.h"
+#include "../../../core/math/transform_3d.h"
+#include "../../../core/templates/paged_array.h"
+#include "../../../core/templates/rb_map.h"
+#include "../../../core/templates/rid_owner.h"
+#include "../shaders/canvas_sdf.glsl.gen.h"
+#include "config.h"
+#include "../../../servers/rendering/rendering_server_enums.h"
+#include "../../../servers/rendering/rendering_server_types.h"
+#include "../../../servers/rendering/storage/texture_storage.h"
+#include "../../../servers/rendering/storage/utilities.h"
 
 #include <platform_gl.h>
 

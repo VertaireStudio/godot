@@ -32,9 +32,9 @@
 
 #ifdef GLES3_ENABLED
 
-#include "drivers/gles3/storage/config.h"
-#include "drivers/gles3/storage/texture_storage.h"
-#include "drivers/gles3/storage/utilities.h"
+#include "config.h"
+#include "texture_storage.h"
+#include "utilities.h"
 
 // Will only be defined if GLES 3.2 headers are included
 #ifndef GL_TEXTURE_2D_MULTISAMPLE_ARRAY

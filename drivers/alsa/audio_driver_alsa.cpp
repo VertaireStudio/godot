@@ -32,12 +32,12 @@
 
 #ifdef ALSA_ENABLED
 
-#include "core/config/engine.h"
-#include "core/math/math_funcs_binary.h"
-#include "core/os/os.h"
+#include "../../core/config/engine.h"
+#include "../../core/math/math_funcs_binary.h"
+#include "../../core/os/os.h"
 
 #ifdef SOWRAP_ENABLED
-#include "drivers/alsa/asound-so_wrap.h"
+#include "../../drivers/alsa/asound-so_wrap.h"
 #else
 #include <alsa/asoundlib.h>
 #endif

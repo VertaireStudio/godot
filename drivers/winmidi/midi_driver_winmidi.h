@@ -32,8 +32,8 @@
 
 #ifdef WINMIDI_ENABLED
 
-#include "core/os/midi_driver.h"
-#include "core/templates/vector.h"
+#include "../../core/os/midi_driver.h"
+#include "../../core/templates/vector.h"
 
 #include <windows.h>
 

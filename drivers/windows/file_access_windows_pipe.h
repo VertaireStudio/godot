@@ -32,7 +32,7 @@
 
 #ifdef WINDOWS_ENABLED
 
-#include "core/io/file_access.h"
+#include "../../core/io/file_access.h"
 
 #include <windows.h>
 

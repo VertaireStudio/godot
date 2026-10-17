@@ -30,26 +30,26 @@
 
 #pragma once
 
-#include "core/os/thread_safe.h"
-#include "servers/display/display_server.h"
+#include "../../core/os/thread_safe.h"
+#include "../../servers/display/display_server.h"
 
 #if defined(RD_ENABLED)
-#include "servers/rendering/renderer_rd/renderer_compositor_rd.h"
-#include "servers/rendering/rendering_device.h"
+#include "../../servers/rendering/renderer_rd/renderer_compositor_rd.h"
+#include "../../servers/rendering/rendering_device.h"
 
 #if defined(VULKAN_ENABLED)
-#import "drivers/apple_embedded/rendering_context_driver_vulkan_apple_embedded.h"
+#import "rendering_context_driver_vulkan_apple_embedded.h"
 
-#include <drivers/vulkan/godot_vulkan.h>
+#include "../vulkan/godot_vulkan.h"
 #endif // VULKAN_ENABLED
 
 #if defined(METAL_ENABLED)
-#import "drivers/metal/rendering_context_driver_metal.h"
+#import "../metal/rendering_context_driver_metal.h"
 #endif // METAL_ENABLED
 #endif // RD_ENABLED
 
 #if defined(GLES3_ENABLED)
-#include "drivers/gles3/rasterizer_gles3.h"
+#include "../gles3/rasterizer_gles3.h"
 #endif // GLES3_ENABLED
 
 #import <Foundation/Foundation.h>

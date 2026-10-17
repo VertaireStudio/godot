@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/input/input.h"
+#include "../../core/input/input.h"
 
 typedef uint32_t SDL_JoystickID;
 typedef struct SDL_Joystick SDL_Joystick;

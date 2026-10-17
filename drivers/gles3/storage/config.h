@@ -32,7 +32,7 @@
 
 #ifdef GLES3_ENABLED
 
-#include "core/templates/hash_set.h"
+#include "../../../core/templates/hash_set.h"
 
 #include <platform_gl.h>
 #undef ConnectFlags // Defined by windows.h through egl.h, breaks object.h.

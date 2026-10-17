@@ -32,7 +32,7 @@
 
 #ifdef WINDOWS_ENABLED
 
-#include "core/io/net_socket.h"
+#include "../../core/io/net_socket.h"
 
 #include <winsock2.h>
 #include <ws2tcpip.h>

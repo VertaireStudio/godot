@@ -32,7 +32,7 @@
 
 #ifdef GLES3_ENABLED
 
-#include "servers/rendering/environment/renderer_gi.h"
+#include "../../../servers/rendering/environment/renderer_gi.h"
 
 namespace GLES3 {
 

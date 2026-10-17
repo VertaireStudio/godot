@@ -30,10 +30,10 @@
 
 #include "rendering_context_driver_d3d12.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/string/ustring.h"
-#include "core/templates/local_vector.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/string/ustring.h"
+#include "../../core/templates/local_vector.h"
 
 GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Wnon-virtual-dtor")
 GODOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wnon-virtual-dtor")
@@ -44,7 +44,7 @@ GODOT_CLANG_WARNING_POP
 #include <dxgi1_6.h>
 
 #if !defined(_MSC_VER)
-#include <thirdparty/directx_headers/include/dxguids/dxguids.h>
+#include "../../thirdparty/directx_headers/include/dxguids/dxguids.h"
 
 #include <guiddef.h>
 #endif

@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "core/templates/safe_refcount.h"
-#include "core/typedefs.h"
+#include "../../core/templates/safe_refcount.h"
+#include "../../core/typedefs.h"
 
 #include <pthread.h>
 

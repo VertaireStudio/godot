@@ -32,7 +32,7 @@
 
 #ifdef VULKAN_ENABLED
 
-#include "drivers/vulkan/rendering_context_driver_vulkan.h"
+#include "../vulkan/rendering_context_driver_vulkan.h"
 
 #import <QuartzCore/CAMetalLayer.h>
 

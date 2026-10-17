@@ -32,13 +32,13 @@
 
 #ifdef GLES3_ENABLED
 
-#include "core/config/engine.h"
-#include "core/variant/typed_array.h"
-#include "drivers/gles3/effects/copy_effects.h"
-#include "drivers/gles3/rasterizer_gles3.h"
-#include "drivers/gles3/rasterizer_util_gles3.h"
-#include "drivers/gles3/storage/material_storage.h"
-#include "drivers/gles3/storage/utilities.h"
+#include "../../../core/config/engine.h"
+#include "../../../core/variant/typed_array.h"
+#include "../effects/copy_effects.h"
+#include "../rasterizer_gles3.h"
+#include "../rasterizer_util_gles3.h"
+#include "material_storage.h"
+#include "utilities.h"
 
 using namespace GLES3;
 

@@ -30,11 +30,11 @@
 
 #pragma once
 
-#include "core/templates/paged_allocator.h"
-#include "drivers/metal/metal_allocator.h"
-#include "drivers/metal/metal_device_profile.h"
-#include "drivers/metal/metal_objects_shared.h"
-#include "servers/rendering/rendering_device_driver.h"
+#include "../../core/templates/paged_allocator.h"
+#include "metal_allocator.h"
+#include "metal_device_profile.h"
+#include "metal_objects_shared.h"
+#include "../../servers/rendering/rendering_device_driver.h"
 
 #include <Metal/Metal.hpp>
 

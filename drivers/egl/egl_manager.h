@@ -32,8 +32,8 @@
 
 #ifdef EGL_ENABLED
 
-#include "core/templates/local_vector.h"
-#include "servers/display/display_server_enums.h"
+#include "../../core/templates/local_vector.h"
+#include "../../servers/display/display_server_enums.h"
 
 #include <platform_egl.h>
 

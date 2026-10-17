@@ -32,13 +32,13 @@
 
 #ifdef PULSEAUDIO_ENABLED
 
-#include "core/os/mutex.h"
-#include "core/os/thread.h"
-#include "core/templates/safe_refcount.h"
-#include "servers/audio/audio_driver.h"
+#include "../../core/os/mutex.h"
+#include "../../core/os/thread.h"
+#include "../../core/templates/safe_refcount.h"
+#include "../../servers/audio/audio_driver.h"
 
 #ifdef SOWRAP_ENABLED
-#include "drivers/pulseaudio/pulse-so_wrap.h" // IWYU pragma: keep. Relies on pulseaudio.h transitive includes.
+#include "pulse-so_wrap.h" // IWYU pragma: keep. Relies on pulseaudio.h transitive includes.
 #else
 #include <pulse/pulseaudio.h>
 #endif

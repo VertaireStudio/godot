@@ -31,7 +31,7 @@
 #pragma once
 
 // IWYU pragma: begin_exports.
-#import "drivers/apple_embedded/godot_app_delegate_service_apple_embedded.h"
-#import "drivers/apple_embedded/godot_view_apple_embedded.h"
-#import "drivers/apple_embedded/godot_view_controller.h"
+#import "godot_app_delegate_service_apple_embedded.h"
+#import "godot_view_apple_embedded.h"
+#import "godot_view_controller.h"
 // IWYU pragma: end_exports.

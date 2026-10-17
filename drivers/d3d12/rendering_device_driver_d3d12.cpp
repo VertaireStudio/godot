@@ -30,18 +30,18 @@
 
 #include "rendering_device_driver_d3d12.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/os/os.h"
-#include "drivers/d3d12/d3d12_hooks.h"
-#include "drivers/d3d12/rendering_context_driver_d3d12.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/os/os.h"
+#include "d3d12_hooks.h"
+#include "rendering_context_driver_d3d12.h"
 
-#include <drivers/d3d12/godot_d3d12ma.h>
-#include <drivers/d3d12/godot_nir.h>
+#include "godot_d3d12ma.h"
+#include "godot_nir.h"
 #include <dxgi1_6.h>
 
 #if !defined(_MSC_VER)
-#include <thirdparty/directx_headers/include/dxguids/dxguids.h>
+#include "../../thirdparty/directx_headers/include/dxguids/dxguids.h"
 
 #include <guiddef.h>
 #endif

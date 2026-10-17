@@ -32,8 +32,8 @@
 
 #include "thread_windows.h"
 
-#include "core/os/thread.h"
-#include "core/string/ustring.h"
+#include "../../core/os/thread.h"
+#include "../../core/string/ustring.h"
 
 #include <windows.h>
 

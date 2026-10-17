@@ -32,8 +32,8 @@
 
 #ifdef GLES3_ENABLED
 
-#include "drivers/gles3/effects/glow.h"
-#include "servers/rendering/storage/render_scene_buffers.h"
+#include "../effects/glow.h"
+#include "../../../servers/rendering/storage/render_scene_buffers.h"
 
 #include <platform_gl.h>
 

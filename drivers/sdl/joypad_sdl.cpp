@@ -32,8 +32,8 @@
 
 #ifdef SDL_ENABLED
 
-#include "core/input/default_controller_mappings.h"
-#include "core/variant/dictionary.h"
+#include "../../core/input/default_controller_mappings.h"
+#include "../../core/variant/dictionary.h"
 
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_error.h>

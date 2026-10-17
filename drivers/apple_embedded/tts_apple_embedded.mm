@@ -30,7 +30,7 @@
 
 #import "tts_apple_embedded.h"
 
-#include "servers/display/display_server.h"
+#include "../../servers/display/display_server.h"
 
 @implementation GDTTTS
 

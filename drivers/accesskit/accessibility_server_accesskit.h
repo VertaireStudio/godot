@@ -32,8 +32,8 @@
 
 #ifdef ACCESSKIT_ENABLED
 
-#include "core/templates/rid_owner.h"
-#include "servers/display/accessibility_server.h"
+#include "../../core/templates/rid_owner.h"
+#include "../../servers/display/accessibility_server.h"
 
 #include <accesskit.h>
 

@@ -30,21 +30,21 @@
 
 #include "rendering_context_driver_metal.h"
 
-#include "core/os/os.h"
-#include "core/templates/sort_array.h"
-#include "drivers/metal/metal3_objects.h"
-#include "drivers/metal/metal_objects_shared.h"
-#include "drivers/metal/rendering_device_driver_metal3.h"
+#include "../../core/os/os.h"
+#include "../../core/templates/sort_array.h"
+#include "metal3_objects.h"
+#include "metal_objects_shared.h"
+#include "rendering_device_driver_metal3.h"
 
-#include "modules/modules_enabled.gen.h"
+#include "../../modules/modules_enabled.gen.h"
 
 #include <objc/message.h>
 #include <os/log.h>
 #include <os/signpost.h>
 
 #if defined(VISIONOS_ENABLED) && defined(MODULE_VISIONOS_XR_ENABLED)
-#include "modules/visionos_xr/visionos_xr_interface.h"
-#include "platform/visionos/render_mode_visionos.h"
+#include "../../modules/visionos_xr/visionos_xr_interface.h"
+#include "../../platform/visionos/render_mode_visionos.h"
 #endif
 
 #pragma mark - Logging

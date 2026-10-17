@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "servers/rendering/rendering_shader_container.h"
+#include "../../servers/rendering/rendering_shader_container.h"
 
 class RenderingShaderContainerVulkan : public RenderingShaderContainer {
 	GDSOFTCLASS(RenderingShaderContainerVulkan, RenderingShaderContainer);

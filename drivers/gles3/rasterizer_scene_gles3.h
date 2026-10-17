@@ -32,15 +32,15 @@
 
 #ifdef GLES3_ENABLED
 
-#include "core/math/projection.h"
-#include "core/templates/paged_allocator.h"
-#include "core/templates/rid_owner.h"
-#include "core/templates/self_list.h"
-#include "drivers/gles3/storage/light_storage.h"
-#include "drivers/gles3/storage/material_storage.h"
-#include "servers/rendering/renderer_scene_render.h"
-#include "servers/rendering/rendering_server_enums.h"
-#include "servers/rendering/rendering_server_types.h"
+#include "../../core/math/projection.h"
+#include "../../core/templates/paged_allocator.h"
+#include "../../core/templates/rid_owner.h"
+#include "../../core/templates/self_list.h"
+#include "storage/light_storage.h"
+#include "storage/material_storage.h"
+#include "../../servers/rendering/renderer_scene_render.h"
+#include "../../servers/rendering/rendering_server_enums.h"
+#include "../../servers/rendering/rendering_server_types.h"
 
 class RenderSceneBuffersGLES3;
 

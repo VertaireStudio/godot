@@ -30,7 +30,7 @@
 
 #import "key_mapping_apple_embedded.h"
 
-#include "core/templates/hash_map.h"
+#include "../../core/templates/hash_map.h"
 
 struct HashMapHasherKeys {
 	static _FORCE_INLINE_ uint32_t hash(const Key p_key) { return hash_fmix32(static_cast<uint32_t>(p_key)); }

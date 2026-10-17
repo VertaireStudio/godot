@@ -32,14 +32,14 @@
 
 #ifdef GLES3_ENABLED
 
-#include "core/config/project_settings.h"
-#include "core/math/geometry_3d.h"
-#include "core/os/os.h"
-#include "drivers/gles3/effects/cubemap_filter.h"
-#include "drivers/gles3/rasterizer_scene_gles3.h"
-#include "drivers/gles3/rasterizer_util_gles3.h"
-#include "drivers/gles3/storage/render_scene_buffers_gles3.h"
-#include "drivers/gles3/storage/utilities.h"
+#include "../../../core/config/project_settings.h"
+#include "../../../core/math/geometry_3d.h"
+#include "../../../core/os/os.h"
+#include "../effects/cubemap_filter.h"
+#include "../rasterizer_scene_gles3.h"
+#include "../rasterizer_util_gles3.h"
+#include "render_scene_buffers_gles3.h"
+#include "utilities.h"
 
 using namespace GLES3;
 

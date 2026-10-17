@@ -32,7 +32,7 @@
 
 #ifdef GLES3_ENABLED
 
-#include "drivers/gles3/shaders/effects/cubemap_filter.glsl.gen.h"
+#include "../shaders/effects/cubemap_filter.glsl.gen.h"
 
 namespace GLES3 {
 

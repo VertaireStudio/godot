@@ -32,7 +32,7 @@
 
 #include "file_access_windows_pipe.h"
 
-#include "core/string/ustring.h"
+#include "../../core/string/ustring.h"
 
 #include <winbase.h>
 

@@ -32,11 +32,11 @@
 
 #ifdef ALSAMIDI_ENABLED
 
-#include "core/os/midi_driver.h"
-#include "core/os/mutex.h"
-#include "core/os/thread.h"
-#include "core/templates/safe_refcount.h"
-#include "core/templates/vector.h"
+#include "../../core/os/midi_driver.h"
+#include "../../core/os/mutex.h"
+#include "../../core/os/thread.h"
+#include "../../core/templates/safe_refcount.h"
+#include "../../core/templates/vector.h"
 
 typedef struct _snd_rawmidi snd_rawmidi_t;
 

@@ -30,12 +30,12 @@
 
 #include "register_driver_types.h"
 
-#include "core/io/resource_saver.h"
-#include "drivers/png/image_loader_png.h"
-#include "drivers/png/resource_saver_png.h"
+#include "../core/io/resource_saver.h"
+#include "png/image_loader_png.h"
+#include "png/resource_saver_png.h"
 
 #ifdef ACCESSKIT_ENABLED
-#include "drivers/accesskit/accessibility_server_accesskit.h"
+#include "accesskit/accessibility_server_accesskit.h"
 #endif
 
 static Ref<ImageLoaderPNG> image_loader_png;

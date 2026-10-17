@@ -32,25 +32,25 @@
 
 #ifdef APPLE_EMBEDDED_ENABLED
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/os/main_loop.h"
-#include "core/os/os.h"
-#include "core/profiling/profiling.h"
-#import "drivers/apple/os_log_logger.h"
-#import "drivers/apple_embedded/display_server_apple_embedded.h"
-#import "drivers/apple_embedded/godot_app_delegate_service_apple_embedded.h"
-#import "drivers/apple_embedded/godot_view_apple_embedded.h"
-#import "drivers/apple_embedded/godot_view_controller.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/io/dir_access.h"
+#include "../../core/io/file_access.h"
+#include "../../core/os/main_loop.h"
+#include "../../core/os/os.h"
+#include "../../core/profiling/profiling.h"
+#import "../apple/os_log_logger.h"
+#import "display_server_apple_embedded.h"
+#import "godot_app_delegate_service_apple_embedded.h"
+#import "godot_view_apple_embedded.h"
+#import "godot_view_controller.h"
 #ifdef SDL_ENABLED
-#include "drivers/sdl/joypad_sdl.h"
+#include "../sdl/joypad_sdl.h"
 #endif
-#include "main/main.h"
-#include "servers/audio/audio_driver.h"
-#include "servers/camera/camera_server.h"
-#include "servers/display/accessibility_server.h"
+#include "../../main/main.h"
+#include "../../servers/audio/audio_driver.h"
+#include "../../servers/camera/camera_server.h"
+#include "../../servers/display/accessibility_server.h"
 
 #import <AVFoundation/AVFAudio.h>
 #import <AudioToolbox/AudioServices.h>
@@ -62,12 +62,12 @@
 #include <iterator>
 
 #if defined(RD_ENABLED)
-#include "servers/rendering/renderer_rd/renderer_compositor_rd.h"
+#include "../../servers/rendering/renderer_rd/renderer_compositor_rd.h"
 
 #import <QuartzCore/CAMetalLayer.h>
 
 #if defined(VULKAN_ENABLED)
-#include <drivers/vulkan/godot_vulkan.h>
+#include "../vulkan/godot_vulkan.h"
 #endif // VULKAN_ENABLED
 #endif
 

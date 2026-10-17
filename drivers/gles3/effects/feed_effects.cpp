@@ -32,8 +32,8 @@
 
 #ifdef GLES3_ENABLED
 
-#include "core/os/os.h"
-#include "servers/rendering/rendering_server_enums.h"
+#include "../../../core/os/os.h"
+#include "../../../servers/rendering/rendering_server_enums.h"
 
 using namespace GLES3;
 

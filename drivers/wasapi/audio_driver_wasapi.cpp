@@ -32,8 +32,8 @@
 
 #include "audio_driver_wasapi.h"
 
-#include "core/config/engine.h"
-#include "core/os/os.h"
+#include "../../core/config/engine.h"
+#include "../../core/os/os.h"
 
 #include <functiondiscoverykeys.h>
 #include <wrl/client.h>

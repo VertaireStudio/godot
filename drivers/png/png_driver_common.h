@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/io/image.h"
+#include "../../core/io/image.h"
 
 namespace PNGDriverCommon {
 

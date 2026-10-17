@@ -30,20 +30,20 @@
 
 #include "rendering_device_driver_vulkan.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/os/os.h"
-#include "core/templates/fixed_vector.h"
-#include "drivers/vulkan/vulkan_hooks.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/os/os.h"
+#include "../../core/templates/fixed_vector.h"
+#include "vulkan_hooks.h"
 
-#include <thirdparty/misc/smolv.h>
+#include "../../thirdparty/misc/smolv.h"
 
 #if defined(SWAPPY_FRAME_PACING_ENABLED)
-#include "platform/android/java_godot_wrapper.h"
-#include "platform/android/os_android.h"
-#include "platform/android/thread_jandroid.h"
+#include "../../platform/android/java_godot_wrapper.h"
+#include "../../platform/android/os_android.h"
+#include "../../platform/android/thread_jandroid.h"
 
-#include <thirdparty/swappy-frame-pacing/swappyVk.h>
+#include "../../thirdparty/swappy-frame-pacing/swappyVk.h"
 #endif
 
 #define ARRAY_SIZE(a) std_size(a)
@@ -74,7 +74,7 @@
 #define RECORD_PIPELINE_STATISTICS 0
 
 #if RECORD_PIPELINE_STATISTICS
-#include "core/io/file_access.h"
+#include "../../core/io/file_access.h"
 #define RECORD_PIPELINE_STATISTICS_PATH "./pipelines.csv"
 #endif
 

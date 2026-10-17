@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "drivers/metal/metal3_objects.h"
-#include "drivers/metal/rendering_device_driver_metal.h"
+#include "metal3_objects.h"
+#include "rendering_device_driver_metal.h"
 
 #include <Metal/Metal.hpp>
 

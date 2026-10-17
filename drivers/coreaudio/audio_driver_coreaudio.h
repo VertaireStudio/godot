@@ -32,8 +32,8 @@
 
 #ifdef COREAUDIO_ENABLED
 
-#include "core/os/mutex.h"
-#include "servers/audio/audio_driver.h"
+#include "../../core/os/mutex.h"
+#include "../../servers/audio/audio_driver.h"
 
 #import <AudioUnit/AudioUnit.h>
 #ifdef MACOS_ENABLED

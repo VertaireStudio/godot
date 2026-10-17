@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "core/math/vector2i.h"
-#include "core/templates/local_vector.h"
+#include "../../core/math/vector2i.h"
+#include "../../core/templates/local_vector.h"
 
-#include <drivers/vulkan/godot_vulkan.h>
+#include "godot_vulkan.h"
 
 class VulkanHooks {
 private:

@@ -50,9 +50,9 @@
 
 #include "metal_device_properties.h"
 
-#include "core/os/os.h"
-#include "drivers/metal/metal_utils.h"
-#include "servers/rendering/renderer_rd/effects/metal_fx.h"
+#include "../../core/os/os.h"
+#include "metal_utils.h"
+#include "../../servers/rendering/renderer_rd/effects/metal_fx.h"
 
 #include <MetalFX/MetalFX.hpp>
 #include <spirv_cross.hpp>

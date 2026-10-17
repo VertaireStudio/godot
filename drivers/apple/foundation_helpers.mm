@@ -30,8 +30,8 @@
 
 #import "foundation_helpers.h"
 
-#import "core/string/ustring.h"
-#import "core/templates/span.h"
+#import "../../core/string/ustring.h"
+#import "../../core/templates/span.h"
 
 #import <CoreFoundation/CFString.h>
 

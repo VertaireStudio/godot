@@ -32,7 +32,7 @@
 
 #ifdef GLES3_ENABLED
 
-#include "drivers/gles3/storage/texture_storage.h"
+#include "../storage/texture_storage.h"
 
 using namespace GLES3;
 

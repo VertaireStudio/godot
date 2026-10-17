@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/io/image_loader.h"
+#include "../../core/io/image_loader.h"
 
 class ImageLoaderPNG : public ImageFormatLoader {
 private:

@@ -32,11 +32,11 @@
 
 #include "rendering_context_driver_vulkan.h"
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/version.h"
-#include "drivers/vulkan/rendering_device_driver_vulkan.h"
-#include "drivers/vulkan/vulkan_hooks.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/version.h"
+#include "rendering_device_driver_vulkan.h"
+#include "vulkan_hooks.h"
 
 #ifndef DEV_ENABLED
 #include "core/os/os.h"

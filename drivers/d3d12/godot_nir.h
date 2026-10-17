@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "core/typedefs.h"
+#include "../../core/typedefs.h"
 
 GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Wmissing-field-initializers")
 GODOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wmissing-field-initializers")

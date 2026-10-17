@@ -30,12 +30,12 @@
 
 #pragma once
 
-#include "core/typedefs.h"
+#include "../../core/typedefs.h"
 
 GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Wnon-virtual-dtor")
 GODOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wnon-virtual-dtor")
 
-#include <drivers/d3d12/godot_d3dx12.h>
+#include "godot_d3dx12.h"
 #include <dxgi1_6.h>
 
 #define D3D12MA_D3D12_HEADERS_ALREADY_INCLUDED

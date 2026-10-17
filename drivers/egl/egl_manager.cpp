@@ -32,14 +32,14 @@
 
 #ifdef EGL_ENABLED
 
-#include "core/config/engine.h"
-#include "core/crypto/crypto_core.h"
-#include "core/io/dir_access.h"
-#include "core/io/file_access.h"
-#include "core/os/os.h"
+#include "../../core/config/engine.h"
+#include "../../core/crypto/crypto_core.h"
+#include "../../core/io/dir_access.h"
+#include "../../core/io/file_access.h"
+#include "../../core/os/os.h"
 
 #ifdef WINDOWS_ENABLED
-#include "drivers/gles3/rasterizer_gles3.h"
+#include "../gles3/rasterizer_gles3.h"
 #endif
 
 #if defined(EGL_STATIC)

@@ -50,9 +50,9 @@
 /* permissions and limitations under the License.                         */
 /**************************************************************************/
 
-#include "drivers/metal/metal_objects_shared.h"
-#include "drivers/metal/rendering_device_driver_metal.h"
-#include "servers/rendering/rendering_device_driver.h"
+#include "metal_objects_shared.h"
+#include "rendering_device_driver_metal.h"
+#include "../../servers/rendering/rendering_device_driver.h"
 
 #include <Metal/Metal.hpp>
 

@@ -32,9 +32,9 @@
 
 #include "file_access_windows.h"
 
-#include "core/config/project_settings.h"
-#include "core/os/os.h"
-#include "core/string/print_string.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/os/os.h"
+#include "../../core/string/print_string.h"
 
 #include <io.h>
 #include <share.h> // _SH_DENYNO

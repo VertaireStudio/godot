@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "servers/rendering/rendering_shader_container.h"
+#include "../../servers/rendering/rendering_shader_container.h"
 
 #define NIR_ENABLED 1
 
@@ -38,7 +38,7 @@
 #undef NIR_ENABLED
 #endif
 
-#include "drivers/d3d12/d3d12_godot_nir_bridge.h"
+#include "d3d12_godot_nir_bridge.h"
 
 #define D3D12_BITCODE_OFFSETS_NUM_STAGES 3
 

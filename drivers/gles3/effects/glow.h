@@ -32,7 +32,7 @@
 
 #ifdef GLES3_ENABLED
 
-#include "drivers/gles3/shaders/effects/glow.glsl.gen.h"
+#include "../shaders/effects/glow.glsl.gen.h"
 
 namespace GLES3 {
 

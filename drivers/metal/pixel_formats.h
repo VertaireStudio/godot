@@ -50,13 +50,13 @@
 /* permissions and limitations under the License.                         */
 /**************************************************************************/
 
-#include "core/typedefs.h"
+#include "../../core/typedefs.h"
 
 GODOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wdeprecated-declarations")
 
-#include "drivers/metal/inflection_map.h"
-#include "drivers/metal/metal_device_properties.h"
-#include "servers/rendering/rendering_device_commons.h"
+#include "inflection_map.h"
+#include "metal_device_properties.h"
+#include "../../servers/rendering/rendering_device_commons.h"
 
 #ifdef __OBJC__
 #include <Metal/Metal.h>

@@ -32,8 +32,8 @@
 
 #include "thread_posix.h"
 
-#include "core/os/thread.h"
-#include "core/string/ustring.h"
+#include "../../core/os/thread.h"
+#include "../../core/string/ustring.h"
 
 #if defined(PLATFORM_THREAD_OVERRIDE) && defined(__APPLE__)
 void init_thread_posix() {

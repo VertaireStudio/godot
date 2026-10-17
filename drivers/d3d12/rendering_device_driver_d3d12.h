@@ -30,15 +30,15 @@
 
 #pragma once
 
-#include "core/templates/a_hash_map.h"
-#include "core/templates/hash_map.h"
-#include "core/templates/paged_allocator.h"
-#include "core/templates/rb_map.h"
-#include "core/templates/self_list.h"
-#include "drivers/d3d12/rendering_shader_container_d3d12.h"
-#include "servers/rendering/rendering_device_driver.h"
+#include "../../core/templates/a_hash_map.h"
+#include "../../core/templates/hash_map.h"
+#include "../../core/templates/paged_allocator.h"
+#include "../../core/templates/rb_map.h"
+#include "../../core/templates/self_list.h"
+#include "rendering_shader_container_d3d12.h"
+#include "../../servers/rendering/rendering_device_driver.h"
 
-#include <drivers/d3d12/godot_d3dx12.h>
+#include "godot_d3dx12.h"
 #include <wrl/client.h>
 
 #ifdef DEV_ENABLED

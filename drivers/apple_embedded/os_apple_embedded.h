@@ -32,17 +32,17 @@
 
 #ifdef APPLE_EMBEDDED_ENABLED
 
-#import "drivers/apple_embedded/apple_embedded.h"
-#import "drivers/coreaudio/audio_driver_coreaudio.h"
-#include "drivers/unix/os_unix.h"
-#include "servers/audio/audio_server.h"
-#include "servers/rendering/renderer_compositor.h"
+#import "apple_embedded.h"
+#import "../coreaudio/audio_driver_coreaudio.h"
+#include "../unix/os_unix.h"
+#include "../../servers/audio/audio_server.h"
+#include "../../servers/rendering/renderer_compositor.h"
 
 #if defined(RD_ENABLED)
-#include "servers/rendering/rendering_device.h"
+#include "../../servers/rendering/rendering_device.h"
 
 #if defined(VULKAN_ENABLED)
-#import "drivers/apple_embedded/rendering_context_driver_vulkan_apple_embedded.h"
+#import "rendering_context_driver_vulkan_apple_embedded.h"
 #endif
 #endif
 

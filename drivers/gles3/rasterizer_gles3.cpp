@@ -32,15 +32,15 @@
 
 #ifdef GLES3_ENABLED
 
-#include "core/config/engine.h"
-#include "core/config/project_settings.h"
-#include "core/io/dir_access.h"
-#include "core/io/image.h"
-#include "core/os/os.h"
-#include "drivers/gles3/rasterizer_util_gles3.h"
-#include "servers/display/display_server.h"
-#include "servers/rendering/rendering_server.h"
-#include "servers/rendering/rendering_server_types.h"
+#include "../../core/config/engine.h"
+#include "../../core/config/project_settings.h"
+#include "../../core/io/dir_access.h"
+#include "../../core/io/image.h"
+#include "../../core/os/os.h"
+#include "rasterizer_util_gles3.h"
+#include "../../servers/display/display_server.h"
+#include "../../servers/rendering/rendering_server.h"
+#include "../../servers/rendering/rendering_server_types.h"
 
 #define _EXT_DEBUG_OUTPUT_SYNCHRONOUS_ARB 0x8242
 #define _EXT_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_ARB 0x8243

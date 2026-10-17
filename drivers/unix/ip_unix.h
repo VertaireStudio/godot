@@ -32,7 +32,7 @@
 
 #if defined(UNIX_ENABLED) && !defined(UNIX_SOCKET_UNAVAILABLE)
 
-#include "core/io/ip.h"
+#include "../../core/io/ip.h"
 
 class IPUnix : public IP {
 	GDSOFTCLASS(IPUnix, IP);

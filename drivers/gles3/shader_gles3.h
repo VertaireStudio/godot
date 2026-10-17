@@ -32,11 +32,11 @@
 
 #ifdef GLES3_ENABLED
 
-#include "core/templates/a_hash_map.h"
-#include "core/templates/hash_map.h"
-#include "core/templates/local_vector.h"
-#include "core/templates/rid_owner.h"
-#include "servers/rendering/rendering_server_types.h"
+#include "../../core/templates/a_hash_map.h"
+#include "../../core/templates/hash_map.h"
+#include "../../core/templates/local_vector.h"
+#include "../../core/templates/rid_owner.h"
+#include "../../servers/rendering/rendering_server_types.h"
 
 #include <platform_gl.h>
 

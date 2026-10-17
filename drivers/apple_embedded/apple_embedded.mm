@@ -30,9 +30,9 @@
 
 #import "apple_embedded.h"
 
-#include "core/object/class_db.h"
-#import "drivers/apple_embedded/godot_app_delegate_service_apple_embedded.h"
-#import "drivers/apple_embedded/godot_view_controller.h"
+#include "../../core/object/class_db.h"
+#import "godot_app_delegate_service_apple_embedded.h"
+#import "godot_view_controller.h"
 
 #import <CoreHaptics/CoreHaptics.h>
 #import <UIKit/UIKit.h>

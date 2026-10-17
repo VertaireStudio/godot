@@ -30,7 +30,7 @@
 
 #pragma once
 
-#import "drivers/apple_embedded/godot_renderer.h"
+#import "godot_renderer.h"
 
 #import <UIKit/UIKit.h>
 

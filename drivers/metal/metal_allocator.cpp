@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-#include "drivers/metal/metal_allocator.h"
+#include "metal_allocator.h"
 
 namespace {
 

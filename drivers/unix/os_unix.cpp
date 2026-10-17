@@ -32,17 +32,17 @@
 
 #ifdef UNIX_ENABLED
 
-#include "core/debugger/engine_debugger.h"
-#include "core/debugger/script_debugger.h"
-#include "core/string/char_utils.h"
-#include "drivers/unix/dir_access_unix.h"
-#include "drivers/unix/file_access_unix.h"
-#include "drivers/unix/file_access_unix_pipe.h"
-#include "drivers/unix/thread_posix.h"
+#include "../../core/debugger/engine_debugger.h"
+#include "../../core/debugger/script_debugger.h"
+#include "../../core/string/char_utils.h"
+#include "dir_access_unix.h"
+#include "file_access_unix.h"
+#include "file_access_unix_pipe.h"
+#include "thread_posix.h"
 
 #ifndef UNIX_SOCKET_UNAVAILABLE
-#include "drivers/unix/ip_unix.h"
-#include "drivers/unix/net_socket_unix.h"
+#include "ip_unix.h"
+#include "net_socket_unix.h"
 #endif
 
 #if defined(__APPLE__)

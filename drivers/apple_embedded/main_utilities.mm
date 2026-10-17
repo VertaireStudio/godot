@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-#include "core/string/ustring.h"
+#include "../../core/string/ustring.h"
 
 #import <UIKit/UIKit.h>
 #include <unistd.h>

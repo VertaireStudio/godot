@@ -30,22 +30,22 @@
 
 #pragma once
 
-#include "core/templates/hash_map.h"
-#include "core/templates/paged_allocator.h"
-#include "core/templates/rb_map.h"
-#include "drivers/vulkan/rendering_context_driver_vulkan.h"
-#include "drivers/vulkan/rendering_shader_container_vulkan.h"
-#include "servers/rendering/rendering_device_driver.h"
+#include "../../core/templates/hash_map.h"
+#include "../../core/templates/paged_allocator.h"
+#include "../../core/templates/rb_map.h"
+#include "rendering_context_driver_vulkan.h"
+#include "rendering_shader_container_vulkan.h"
+#include "../../servers/rendering/rendering_device_driver.h"
 
 #ifdef DEBUG_ENABLED
 #ifndef _MSC_VER
 #define _DEBUG
 #endif
 #endif
-#include <thirdparty/re-spirv/re-spirv.h>
-#include <thirdparty/vulkan/vk_mem_alloc.h>
+#include "../../thirdparty/re-spirv/re-spirv.h"
+#include "../../thirdparty/vulkan/vk_mem_alloc.h"
 
-#include <drivers/vulkan/godot_vulkan.h>
+#include "godot_vulkan.h"
 
 class FileAccess;
 
